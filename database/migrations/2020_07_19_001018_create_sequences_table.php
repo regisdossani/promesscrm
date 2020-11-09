@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateSequencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('sequences', function (Blueprint $table) {
             $table->id();
-           $table->string('name');
-            $table->string('password');
-            $table->rememberToken();
+           $table->unsignedBigInteger('module_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
+            $table->foreign('module_id')->references('id')->on('modules')
+            ->onDelete('cascade')
+           ->onUpdate('cascade');
+
         });
     }
 
@@ -29,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('sequences');
     }
 }
