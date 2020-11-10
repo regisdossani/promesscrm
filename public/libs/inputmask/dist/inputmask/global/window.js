@@ -1,5 +1,5 @@
 /*!
-* global/document.js
+* global/window.js
 * https://github.com/RobinHerbots/Inputmask
 * Copyright (c) 2010 - 2017 Robin Herbots
 * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
@@ -7,5 +7,5 @@
 */
 
 "function" == typeof define && define.amd ? define(function() {
-    return document;
-}) : "object" == typeof exports && (module.exports = document);
+    return window;
+}) : "object" == typeof exports && (module.exports = window);
