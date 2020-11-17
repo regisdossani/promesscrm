@@ -189,34 +189,14 @@ class CandidatsController extends Controller
             'nom' => 'required',
             'prenom'=> 'required',
             'civilite'=> 'required',
-            // 'date_naiss'=> 'required',
             'tel_1'=> 'required',
-            // 'pj_depotdossier'=> 'required',
 
             'email_1' => 'required|email|unique:candidats,email_1',
             'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
-            'test_pj.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
             $requestData = $request->all();
-
-           /*  if ($request->hasFile('avatar')) {
-                $filenameWithExt = $request->file('avatar')->getClientOriginalName(); */
-                // Get just filename
-                // $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-              /*  $extension = $request->file('avatar')->getClientOriginalExtension();
-               $fileNameToStore = $filename.'_'.time().'.'.$extension; */
-               //Filename to store
-            // $fileNameToStore = $filename.'_'.time().'.'.$extension;
-
-            //upload the image
-                // $path = $request->file('avatar')->storeAs(public_path('uploads/candidats/images'),$fileNameToStore);
-
-
-
-
 
             if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
@@ -240,9 +220,7 @@ class CandidatsController extends Controller
   Candidat::create($requestData);
 
 
-    //    session()->flash('flash_message', 'Votre dossier a été envoyé !', 'Successfully done the operation. ');
-        // return url()->previous();
-                //  return redirect()->to('welcome')->with('flash_message', 'Votre dossier a été envoyé !');
+
                     return redirect('candidat')->with('flash_message', 'Votre dossier a été envoyé !');
 
                 }
