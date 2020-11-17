@@ -222,7 +222,7 @@
                 <ul class="dropdown-menu extended logout">
                     <li><a href="{{ url('/admins' . '/' . Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li  class="dropdown"><a href="#"><i class="fa fa-cog"></i> Paramètres</a>
-
+                    <li><a href="{{ url('/calendrier') }}"><i class="fa fa-cog"></i> Calendrier</a></li>
 
 
                     </li>

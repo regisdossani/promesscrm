@@ -320,3 +320,7 @@ Route::get('/candidat', function () {
 
 
 //fullcalender
+Route::get('/calendrier','CalendrierController@index');
+Route::post('/calendrier/create','CalendrierController@create');
+Route::post('/calendrier/update','CalendrierController@update');
+Route::post('/calendrier/delete','CalendrierController@destroy');
