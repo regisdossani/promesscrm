@@ -20,7 +20,7 @@
             @if (Auth::guard('admin')->check())
                       <li>
                     <a class="active" href="{{ url('/admin') }}">
-                        <i class="fa fa-dashboard"></i>
+                        <i class="fa fa-home"></i>
                         <span>TABLEAU DE BOARD ADMIN</span>
                     </a>
                 </li>
@@ -123,8 +123,8 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ url('fullcalendareventmaster') }}">
-        <i class="nav-icon fa-fw fas fa-calendar">
+    <a href="{{ url('/calendrier') }}">
+        <i class="nav-icon fa-fw fa fa-calendar">
         </i>
         {{ trans('Calendrier') }}
     </a>

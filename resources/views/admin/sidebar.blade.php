@@ -6,7 +6,7 @@
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
                     <a class="active" href="index.html">
-                        <i class="fa fa-dashboard"></i>
+                        <i class="fa fa-home"></i>
                         <span>TABLEAU DE BOARD</span>
                     </a>
                 </li>

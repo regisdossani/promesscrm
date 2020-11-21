@@ -240,6 +240,7 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
+            <a href="{{url('/attendances')}}">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
@@ -252,6 +253,7 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-6">
+            <a href="{{url('/eqattendances')}}">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>

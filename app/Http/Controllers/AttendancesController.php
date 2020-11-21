@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Classe;
+use App\Apprenant;
 use App\Formateur;
 
 use App\Attendance;
@@ -27,7 +28,6 @@ class AttendancesController extends Controller
         } else {
             $attendances = Attendance::latest()->paginate($perPage);
         }
-
         return view('attendances.index', compact('attendances'));
     }
 
@@ -39,9 +39,10 @@ class AttendancesController extends Controller
     public function create()
     {
         $classes=Classe::all();
-        $teachers=Formateur::all();
+        $formateurs=Formateur::all();
+        $apprenants=Apprenant::all();
 
-        return view('attendances.create',compact('classes','teachers'));
+        return view('attendances.create',compact('classes','formateurs','apprenants'));
     }
 
     /**
@@ -84,9 +85,13 @@ class AttendancesController extends Controller
      */
     public function edit($id)
     {
+        $classes=Classe::all();
+        $formateurs=Formateur::all();
+        $apprenants=Apprenant::all();
+
         $attendance = Attendance::findOrFail($id);
 
-        return view('attendances.edit', compact('attendance'));
+        return view('attendances.edit', compact('classes','formateurs','apprenants','attendance'));
     }
 
     /**

@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @include('inc.styles')
+@include('admins.sidebar')
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admins.sidebar')
-
+            <div class="col-md-3">
+            </div>
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">LES PRÉSENCES</div>
@@ -46,7 +47,7 @@
                                         <td>{{ $item->class->name }}</td>
                                         <td>{{ $item->formateur->nom }}</td>
                                         <td>{{ $item->apprenant->nom }}</td>
-                                        <td>{{ $item->attendence_date }}</td>
+                                        <td>{{ $item->date }}</td>
                                         <td>{{ $item->attendence_status }}</td>
 
                                         <td>

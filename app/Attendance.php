@@ -14,7 +14,7 @@ class Attendance extends Model
         'class_id',
         'formateur_id',
         'apprenant_id',
-        'attendence_date',
+        'date',
         'attendence_status'
     ];
 
