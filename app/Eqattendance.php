@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Eqattendance extends Model
 {
@@ -25,10 +26,10 @@ class Eqattendance extends Model
         return $this->belongsTo('App\Equipe', 'employee_id');
     }
 
-    public function setAttendanceDateAttribute($value)
+    /*public function setAttendanceDateAttribute($value)
     {
         $this->attributes['attendance_date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
-    }
+    }*/
 
     public function getAttendanceDateAttribute($value)
     {

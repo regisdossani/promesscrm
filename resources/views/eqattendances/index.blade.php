@@ -1,19 +1,20 @@
 @extends('layouts.app')
-{{-- @include('inc.styles') --}}
+@include('inc.styles')
+@include('admins.sidebar')
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admins.sidebar')
-
+            <div class="col-md-3">
+            </div>
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Suivis horaire des Employés</div>
                     <div class="card-body">
-                        <a href="{{ url('/eqattendances/create') }}" class="btn btn-success btn-sm" title="Ajout">
+                        <a href="{{ url('/eqattendance/create') }}" class="btn btn-success btn-sm" title="Ajout">
                             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
                         </a>
 
-                        <form method="GET" action="{{ url('/eqattendances') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                        <form method="GET" action="{{ url('/eqattendance') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                 <span class="input-group-append">
@@ -47,20 +48,20 @@
 
                                           @foreach($equipes as $eq)
 
-                                            @if( $item->eq_id == $eq->id)
+                                            @if( $item->employee_id == $eq->id)
                                                 <td>{{$eq->nom }}</td>
                                             @endif
                                            @endforeach
-                                        <td>{{ $item->date }}</td>
-                                        <td>{{ $item->time_from }}</td>
-                                        <td>{{ $item->time_to }}</td>
+                                        <td>{{ $item->attendance_date }}</td>
+                                        <td>{{ $item->in_time }}</td>
+                                        <td>{{ $item->out_time }}</td>
                                         <td>{{ $item->comments }}</td>
 
                                         <td>
-                                            <a href="{{ url('/eqattendances/' . $item->id) }}" title="Voir"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                            <a href="{{ url('/eqattendances/' . $item->id . '/edit') }}" title="Modifier"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                            <a href="{{ url('/eqattendance/' . $item->id) }}" title="Voir"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
+                                            <a href="{{ url('/eqattendance/' . $item->id . '/edit') }}" title="Modifier"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
-                                            <form method="POST" action="{{ url('/eqattendances/' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="POST" action="{{ url('/eqattendance' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Supprimer" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
