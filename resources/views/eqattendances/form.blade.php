@@ -29,7 +29,7 @@
             <input class="form-control" name="time_to" type="time"  id="time_to" pattern="[0-9]{2}:[0-9]{2}"  required>
             {!! $errors->first('time_to', '<p class="help-block">:message</p>') !!}
         </div>
-    
+
 
         {{-- <div class="form-group {{ $errors->has('nbhours') ? 'has-error' : ''}}">
             <label for="nbhours" class="control-label">{{ 'Heures' }}</label>
@@ -45,7 +45,7 @@
             {!! $errors->first('comments', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-md-12 mb-3">
             <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
