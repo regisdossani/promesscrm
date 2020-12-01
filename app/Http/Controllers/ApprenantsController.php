@@ -82,7 +82,9 @@ class ApprenantsController extends Controller
             'note_1' => $request->note_1,
             'note_2' => $request->note_2,
             'note_3' => $request->note_3,
-            'visite_terain' => $request->visite_terain,
+            'visite_terain1' => $request->visite_terain1,
+            'visite_terain2' => $request->visite_terain2,
+            'visite_terain3' => $request->visite_terain3,
             'password' =>  Hash::make($request->password),
             'candidat_id' => $request->candidat_id,
 
@@ -225,7 +227,6 @@ class ApprenantsController extends Controller
             'note_1' => ['required', 'string', 'max:255'],
             'note_2' => ['required', 'string', 'max:255'],
             'note_3' => ['required', 'string', 'max:255'],
-            'visite_terain' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
             'password' => ['required', 'string', 'min:5'],
 

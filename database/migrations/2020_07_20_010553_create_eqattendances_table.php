@@ -22,7 +22,7 @@ class CreateEqattendancesTable extends Migration
             $table->time('working_hour');
             $table->string('status',20)->nullable();//1 = in late, 2 = out early
             $table->enum('present', [0,1])->default(0);
-            $table->text('comments')->nullable()->default('commentaire');
+            $table->longText('comments')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
