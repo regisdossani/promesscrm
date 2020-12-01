@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 
 class Eqattendance extends Model
 {
@@ -39,7 +40,7 @@ class Eqattendance extends Model
 
     public function getPresentAttribute($value)
     {
-        return Arr::get(AppHelper::ATTENDANCE_TYPE, $value);
+        //return Arr::get(AppHelper::ATTENDANCE_TYPE, $value);
     }
 
     public function scopeEmployee($query, $employee)

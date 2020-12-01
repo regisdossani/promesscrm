@@ -37,7 +37,7 @@
                                         <th>De</th>
                                         <th>A</th>
                                         {{-- <th>Heures</th> --}}
-                                        <th>Commentaires</th>
+                                        <th>Statut</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -55,7 +55,7 @@
                                         <td>{{ $item->attendance_date }}</td>
                                         <td>{{ $item->in_time }}</td>
                                         <td>{{ $item->out_time }}</td>
-                                        <td>{{ $item->comments }}</td>
+                                        <td>{{ $item->status }}</td>
 
                                         <td>
                                             <a href="{{ url('/eqattendance/' . $item->id) }}" title="Voir"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

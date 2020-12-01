@@ -5,7 +5,7 @@
             <select name="class_id" class="form-control" id="grid-state" required>
                 <option value="">--Selectionnez une Classe--</option>
                 @foreach ($classes as $classe)
-                    <option value="{{ $classe->id }}">{{ $classe->name }}</option>
+                    <option value="{{ $classe->id }}" {{ isset($attendance) && $attendance->class_id == $classe->id ? 'selected' : '' }}>{{ $classe->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -14,7 +14,7 @@
             <select name="formateur_id" class="form-control" id="grid-state" required>
                 <option value="">--Selectionnez le Formateur --</option>
                 @foreach ($formateurs as $formateur)
-                    <option value="{{ $formateur->id }}">{{ $formateur->nom }}</option>
+                    <option value="{{ $formateur->id }}" {{ isset($attendance) && $attendance->formateur_id == $formateur->id ? 'selected' : ''}}>{{ $formateur->nom }}</option>
                 @endforeach
             </select>
         </div>
@@ -26,7 +26,7 @@
             <select name="apprenant_id" class="form-control" id="grid-state" required>
                 <option value="">--Selectionnez  Apprenant --</option>
                 @foreach ($apprenants as $apprenant)
-                    <option value="{{ $apprenant->id }}">{{ $apprenant->nom }}</option>
+                    <option value="{{ $apprenant->id }}" {{ isset($attendance) && $attendance->apprenant_id == $apprenant->id ? 'selected' : ''}}>{{ $apprenant->nom }}</option>
                 @endforeach
             </select>
         </div>
