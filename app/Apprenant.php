@@ -14,8 +14,8 @@ class Apprenant extends Authenticatable
     protected $table = 'apprenants';
 
     protected $fillable = [
-        'username', 'email', 'password','visite_terain1','note_3','note_2','note_1',
-        'note_3','prenom','nom','candidat_id','formation_id','visite_terain2','visite_terain3'
+        'username', 'email', 'password','visite_terain','note_3','note_2','note_1',
+        'note_3','prenom','nom','candidat_id','formation_id',
     ];
 
     protected $hidden = [

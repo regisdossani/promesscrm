@@ -73,25 +73,11 @@
     {!! $errors->first('note_3', '<p class="help-block">:message</p>') !!}
 </div>
 
- <div class="form-group {{ $errors->has('visite_terain1') ? 'has-error' : ''}}">
-    <label for="visite_terain" class="control-label">{{ 'Visite Terain 1' }}</label>
-    <input class="form-control" name="visite_terain1" type="text" id="visite_terain1" value="{{ isset($apprenant->visite_terain1) ? $apprenant->visite_terain1 : ''}}" >
+{{-- <div class="form-group {{ $errors->has('visite_terain') ? 'has-error' : ''}}">
+    <label for="visite_terain" class="control-label">{{ 'Visite Terain' }}</label>
+    <input class="form-control" name="visite_terain" type="text" id="visite_terain" value="{{ isset($apprenant->visite_terain) ? $apprenant->visite_terain : ''}}" >
     {!! $errors->first('visite_terain', '<p class="help-block">:message</p>') !!}
-</div>
-
-<div class="form-group {{ $errors->has('visite_terain2') ? 'has-error' : ''}}">
-    <label for="visite_terain2" class="control-label">{{ 'Visite Terain 2' }}</label>
-    <input class="form-control" name="visite_terain2" type="text" id="visite_terain2" value="{{ isset($apprenant->visite_terain2) ? $apprenant->visite_terain2 : ''}}" >
-    {!! $errors->first('visite_terain2', '<p class="help-block">:message</p>') !!}
-</div>
-
-<div class="form-group {{ $errors->has('visite_terain3') ? 'has-error' : ''}}">
-    <label for="visite_terain3" class="control-label">{{ 'Visite Terain 3' }}</label>
-    <input class="form-control" name="visite_terain3" type="text" id="visite_terain3" value="{{ isset($apprenant->visite_terain3) ? $apprenant->visite_terain3 : ''}}" >
-    {!! $errors->first('visite_terain3', '<p class="help-block">:message</p>') !!}
-</div>
-
-
+</div> --}}
 
 
 <div class="col-md-6 form-group {{ $errors->has('formation_id') ? 'has-error' : ''}}">
