@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Classe;
 use App\Module;
 use App\Formateur;
+use App\Formation;
 class ClassesController extends Controller
 {
     public function index()
@@ -18,55 +19,71 @@ class ClassesController extends Controller
     public function create()
     {
         $teachers = Formateur::latest()->get();
+        $formations = Formation::latest()->get();
 
-        return view('classe.create', compact('teachers'));
+        return view('classe.create', compact('teachers','formations'));
     }
     public function store(Request $request)
     {
         $request->validate([
             'name'        => 'required|string|max:255|unique:classes',
             'class_numeric'     => 'required|numeric',
-            'formateur_id'        => 'required|numeric',
+            'formation_id'        => 'required|numeric',
             'class_description' => 'required|string|max:255'
         ]);
 
         Classe::create([
-            'name'        => $request->class_name,
+            'name'        => $request->name,
             'class_numeric'     => $request->class_numeric,
-            'formateur_id'        => $request->teacher_id,
+            'formation_id'        => $request->formation_id,
             'class_description' => $request->class_description
         ]);
 
-        return redirect()->route('classes.index');
+        return redirect()->route('classe.index');
+    }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $classe = Classe::findOrFail($id);
+
+        return view('classe.show', compact('classe'));
     }
 
     public function edit($id)
     {
         $teachers = Formateur::latest()->get();
-        $class = Classe::findOrFail($id);
+        $formations = Formation::latest()->get();
+        $classe = Classe::findOrFail($id);
 
-        return view('classes.edit', compact('class','teachers'));
+        return view('classe.edit', compact('classe','teachers','formations'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'        => 'required|string|max:255|unique:classes,class_name,'.$id,
+            'name'        => 'required|string|max:255|unique:classes,name,'.$id,
             'class_numeric'     => 'required|numeric',
-            'formateur_id'        => 'required|numeric',
+            'formation_id'        => 'required|numeric',
             'class_description' => 'required|string|max:255'
         ]);
 
         $class = Classe::findOrFail($id);
 
         $class->update([
-            'name'        => $request->class_name,
+            'name'        => $request->name,
             'class_numeric'     => $request->class_numeric,
-            'formateur_id'        => $request->teacher_id,
+            'formation_id'        => $request->formation_id,
             'class_description' => $request->class_description
         ]);
 
-        return redirect()->route('classes.index');
+        return redirect()->route('classe.index');
     }
 
     public function destroy($id)
@@ -76,7 +93,8 @@ class ClassesController extends Controller
         $class->modules()->detach();
         $class->delete();
 
-        return back();
+        //return back();
+        return redirect()->route('classe.index');
     }
 
     public function assignSubject($classid)

@@ -9,7 +9,8 @@ class Classe extends Model
     protected $fillable = [
         'name',
         'class_numeric',
-        'formateur_id',
+        //'formateur_id',
+        'formation_id',
         'class_description'
     ];
 
@@ -26,5 +27,9 @@ class Classe extends Model
     public function formateur()
     {
         return $this->belongsToMany(Formateur::class);
+    }
+
+    public function formation() {
+        return $this->belongsTo(Formation::class);
     }
 }

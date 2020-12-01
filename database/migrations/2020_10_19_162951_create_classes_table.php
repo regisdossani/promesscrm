@@ -23,6 +23,10 @@ class CreateClassesTable extends Migration
             $table->string('class_description');
 
             $table->timestamps();
+
+            $table->foreign('formation_id')->references('id')->on('formations')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
