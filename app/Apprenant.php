@@ -45,8 +45,8 @@ public function class()
     return $this->belongsTo(Classe::class, 'class_id');
 }
 
-/* public function schoolattendances()
+public function schoolattendances()
 {
     return $this->hasMany(Schoolattendance::class);
-} */
+}
 }

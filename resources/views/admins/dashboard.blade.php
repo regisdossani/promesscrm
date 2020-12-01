@@ -221,7 +221,7 @@
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <a href='{{ url('classes') }}' >
+                <a href="{{ url('classe') }}" >
                     <span>Classes</span>
                 </a>
             </div>

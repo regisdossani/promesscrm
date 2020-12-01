@@ -9,28 +9,27 @@ class Classe extends Model
     protected $fillable = [
         'name',
         'class_numeric',
-        'formateur_id','formation_id',
-        'class_description','apprenant_id','module_id'
-
+        //'formateur_id',
+        'formation_id',
+        'class_description'
     ];
 
     public function apprenants()
     {
-        return $this->hasMany(Apprenant::class,'apprenant_id');
+        return $this->hasMany(Apprenant::class,'class_id');
     }
 
     public function modules()
     {
-        return $this->belongsToMany(Module::class,'module_id');
+        return $this->belongsToMany(Module::class);
     }
 
-    public function formateurs()
+    public function formateur()
     {
-        return $this->belongsToMany(Formateur::class,'formateur_id');
-    }
-    public function formation()
-    {
-        return $this->belongTo(Formation::class,'formation_id');
+        return $this->belongsToMany(Formateur::class);
     }
 
+    public function formation() {
+        return $this->belongsTo(Formation::class);
+    }
 }

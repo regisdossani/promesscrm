@@ -1,38 +1,38 @@
 @extends('layouts.app')
-{{-- @include('inc.styles') --}}
-
+@include('inc.styles')
+@include('admins.sidebar')
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">Modifier #{{ $eqattendance->id }}</div>
+                <div class="card-body">
+                    <a href="{{ url('/eqattendance') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
+                    <br />
+                    <br />
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Modifier #{{ $eqattendance->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url('/eqattendance') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
-                        <br />
-                        <br />
+                    @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                    <form method="POST" action="{{ url('/eqattendance/' . $eqattendance->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        {{ method_field('PATCH') }}
+                        {{ csrf_field() }}
 
-                        <form method="POST" action="{{ url('/eqattendance/' . $eqattendance->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
+                        @include ('eqattendances.form', ['formMode' => 'edit'])
 
-                            @include ('eqattendances.form', ['formMode' => 'edit'])
+                    </form>
 
-                        </form>
-
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

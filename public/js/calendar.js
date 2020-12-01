@@ -9,7 +9,7 @@ $(document).ready(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    
+
     var calendar = $('#calendar').fullCalendar({
         locale: 'fr',
         editable: true,
@@ -54,7 +54,7 @@ $(document).ready(function () {
             }
             calendar.fullCalendar('unselect');
         },
-         
+
         eventDrop: function (event, delta) {
                     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
                     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
@@ -85,7 +85,7 @@ $(document).ready(function () {
         }
 
     });
-   
+
     calendar.setOption('locale','fr');
     calendar.render();
 });

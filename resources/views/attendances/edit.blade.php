@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @include('inc.styles')
-@include('admin.sidebar')
+@include('admins.sidebar')
 @section('content')
     <div class="container">
         <div class="row">
