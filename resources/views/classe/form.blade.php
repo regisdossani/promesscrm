@@ -1,4 +1,4 @@
-<div class="form-group {{ $errors->has('class_name') ? 'has-error' : ''}}">
+<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
     <label for="class_name" class="control-label">{{ 'Nom de la classe' }}</label>
     <input class="form-control" name="class_name" type="text" id="class_name" value="{{ isset($classe->name) ? $classe->name : ''}}" required>
     {!! $errors->first('class_name', '<p class="help-block">:message</p>') !!}
@@ -10,13 +10,12 @@
     {!! $errors->first('class_numeric', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div class="form-group {{ $errors->has('teacher_id') ? 'has-error' : ''}}">
-     <label for="teacher_id" class="control-label">{{ 'Assigner un Formateur' }}</label>
-
-    <select name="teacher_id" class="control-label" id="grid-state">
-        <option value="">--Selectionnez Formateur--</option>
-        @foreach ($teachers as $teacher)
-            <option value="{{ $teacher->id }}">{{ $teacher->nom }}</option>
+<div class="form-group {{ $errors->has('formateur_id') ? 'has-error' : ''}}">
+     <label for="formateur_id" class="control-label">{{ 'Assigner des Formateurs(ctrl pour multiple):' }}</label>
+  <select name="formateurs" class="form-control input-lg" id="prettify" data-placeholder = "Choisissez au moins un formateur" multiple>
+        <option value="">--Selectionnez les Formateurs--</option>
+        @foreach ($formateurs as $teacher)
+            <option value="{{ $teacher->id }}">{{ $teacher->nom }}{{ $teacher->prenom }}</option>
         @endforeach
     </select>
 </div>

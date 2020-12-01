@@ -9,4 +9,7 @@ class Formation extends Model
     protected $fillable = [
         'nom', 'annee', 'type',
     ];
+
+
+    
 }
