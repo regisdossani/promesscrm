@@ -1,13 +1,21 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
+@extends('inc.master')
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
-@section('title', ' | Créer pers_ressource')
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Créer un pers_ressource</div>
                     <div class="card-body">
@@ -35,4 +43,7 @@
             </div>
         </div>
     </div>
+    </div>
+</section>
+</section>
 @endsection

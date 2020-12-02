@@ -1,12 +1,13 @@
-@extends('layouts.app')
-@include('inc.styles')
-
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Modifier pers_ressource #{{ $pers_ressource->id }}</div>
                     <div class="card-body">
@@ -35,4 +36,8 @@
             </div>
         </div>
     </div>
+    </div>
+</section>
+</section>
+
 @endsection

@@ -1,16 +1,31 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
-@section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+@extends('inc.master')
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Pers_ressources</div>
+@section('content')
+<section id="main-content">
+
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
+                    <section  class="card">
+                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    GESTION DES PERSONNES RESSOURCES DE PROMESS
+                                </div>
+                            </header>
                     <div class="card-body">
                         <a href="{{ url('/persressources/create') }}" class="btn btn-success btn-sm" title="Ajouter une nouvelle personne ressource">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
+                            <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                         </a>
 
                         <form method="GET" action="{{ url('/persressources') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -60,4 +75,6 @@
             </div>
         </div>
     </div>
+</section>
+</section>
 @endsection

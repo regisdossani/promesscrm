@@ -1,10 +1,20 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
+@extends('inc.master')
+@role('apprenant')
+@include('equipes.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('equipes.sidebar')
+<section id="main-content">
+
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+            <div class="col-md-10">
 
             <div class="col-md-9">
                 <div class="card">
@@ -62,4 +72,8 @@
             </div>
         </div>
     </div>
+    </div>
+    </div>
+    </section>
+</section>
 @endsection
