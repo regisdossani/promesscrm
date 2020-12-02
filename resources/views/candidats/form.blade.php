@@ -199,7 +199,7 @@
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div class="col-md-6 form-group">
+<div class="col-md-6 ">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
 </div>
 

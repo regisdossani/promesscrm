@@ -1,9 +1,15 @@
 @extends('inc.master')
-@include('inc.header')
+@role('formateur')
+@include('formateurs.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
-<section class="wrapper">
-    <div class="form-w3layouts">
+<section id="main-content">
+    <section class="wrapper">
+        <div class="form-w3layouts">
 
             <div class="container">
                 <div class="row">
@@ -53,6 +59,8 @@
                     </div>
                 </div>
             </div>
-    </div>
+   
 </section>
+</section>
+
 @endsection
