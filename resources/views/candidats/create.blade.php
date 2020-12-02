@@ -1,13 +1,18 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
-{{-- @include('admin.sidebar') --}}
+@extends('inc.master')
 
-@section('title', ' | Incription candidat')
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
+
 @section('content')
-    <div class="container">
-        <div class="row">
+<section id="main-content">
 
-            <div class="col-md-9">
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Candidature</div>
                     <div class="card-body">
@@ -35,4 +40,7 @@
             </div>
         </div>
     </div>
+        </div>
+    </section>
+</section>
 @endsection

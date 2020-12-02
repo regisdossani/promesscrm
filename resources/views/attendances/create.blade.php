@@ -1,13 +1,21 @@
-@extends('layouts.app')
-@include('inc.styles')
+@extends('inc.master')
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
 @include('admins.sidebar')
+@endrole
 
 @section('title', ' | Créer attendance')
+
 @section('content')
+<section id="main-content">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-            </div>
+            
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Créer un attendance</div>
@@ -29,13 +37,9 @@
 
                             @include ('attendances.form', ['formMode' => 'Créer'])
 
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+    </section>
+</section>
 @endsection
 
 

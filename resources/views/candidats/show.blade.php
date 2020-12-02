@@ -1,14 +1,18 @@
+
 @extends('inc.master')
-@include('inc.header')
+
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
+<section id="main-content">
+
 <section class="wrapper">
     <div class="form-w3layouts">
 
     <div class="container">
         <div class="row">
-            {{-- @include('admin.sidebar') --}}
-
             <div class="col-md-9">
                 <section  class="panel">
                     <header class="panel-heading">
@@ -50,6 +54,6 @@
         </div>
     </div>
 </div>
-
+</section>
 </section>
 @endsection

@@ -1,14 +1,21 @@
 @extends('inc.master')
-@include('inc.header')
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
-<section class="wrapper">
-    <div class="form-w3layouts">
-    <div class="container">
-        <div class="row">
+<section id="main-content">
 
-            <div class="col-md-12">
-                <section  class="panel">
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+            <div class="col-md-10">
+                <section  class="card">
                     <header class="panel-heading">
                         <div class="panel-title">
                             GESTION DES CANDIDATS
@@ -89,5 +96,6 @@
         </div>
     </div>
     </div>
+</section>
 </section>
 @endsection

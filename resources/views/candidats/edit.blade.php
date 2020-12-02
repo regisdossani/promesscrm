@@ -1,5 +1,9 @@
+
 @extends('inc.master')
-@include('inc.header')
+
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
 <section class="wrapper">
@@ -48,6 +52,6 @@
         </div>
     </div>
 </div>
-
+</section>
 </section>
 @endsection
