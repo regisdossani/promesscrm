@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@include('inc.styles')
+@extends('layouts.master')
+{{-- @include('inc.styles') --}}
 @include('admins.sidebar')
 
 @section('title', ' | Créer classe')

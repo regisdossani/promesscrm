@@ -56,9 +56,8 @@ class ApprenantsController extends Controller
         $stages= Stage::all();
         $formations= Formation::latest()->get();
         $profs = Professionnel::latest()->get();
-        $roles = Role::pluck('name','name')->all();
 
-        return view('apprenants.create',compact('classes','candidats','apprenants','stages','formations','profs','roles'));
+        return view('apprenants.create',compact('classes','candidats','apprenants','stages','formations','profs'));
     }
 
     /**
@@ -82,7 +81,10 @@ class ApprenantsController extends Controller
             'note_1' => $request->note_1,
             'note_2' => $request->note_2,
             'note_3' => $request->note_3,
-            'visite_terain' => $request->visite_terain,
+            'visite_terain1' => $request->visite_terain1,
+            'visite_terain2' => $request->visite_terain2,
+            'visite_terain3' => $request->visite_terain3,
+
             'password' =>  Hash::make($request->password),
             'candidat_id' => $request->candidat_id,
 
@@ -90,13 +92,13 @@ class ApprenantsController extends Controller
 
 
 
-        if ($request->hasFile('pjconvention_stage')) {
+       /*  if ($request->hasFile('pjconvention_stage')) {
             checkDirectory("apprenants");
             $request->pjconvention_stage= uploadFile($request,'pjconvention_stage', public_path('uploads/candidats'));
-        }
-        $apprennant->assignRole( $requestData['roles']);
+        } */
+        $apprennant->assignRole("apprenant");
 
-
+/*
          Stage::create([
             'titre' => $request->titre,
             'stage_entreprise' => $request->stage_entreprise,
@@ -108,16 +110,15 @@ class ApprenantsController extends Controller
 
         ]);
 
+ */
 
-
-        $apprennant = Apprenant::create($request->only('email', 'username', 'password')); //Retrieving only the email and password data
-        // $user->assignRole('apprenant');
-
+/*         $apprennant = Apprenant::create($request->only('email', 'username', 'password')); //Retrieving only the email and password data
+ */
 
         // $apprennant = Apprenant::first();
-        $stageid=Stage::first();
+      /*   $stageid=Stage::first();
         $apprennant->stages()->attach($stageid);
-
+ */
 
          return redirect('apprenants')->with('flash_message', 'Apprenant crée avec succès');
     }
@@ -138,7 +139,7 @@ class ApprenantsController extends Controller
         $apprenant = Apprenant::findOrFail($id);
         $class = Classe::with('modules')->where('id', $apprenant->class_id)->first();
 
-        return view('apprenants.show', compact('apprenant','Class'));
+        return view('apprenants.show', compact('apprenant','class'));
     }
 
      public function showprofile()
@@ -159,14 +160,11 @@ class ApprenantsController extends Controller
     public function edit($id)
     {
         $classes = Classe::latest()->get();
-        $roles = Role::all(); //Get all roles
         $apprenant = Apprenant::findOrFail($id);
         $candidats = Candidat::all();
         $formations= Formation::all();
-        $roles = Role::pluck('name','name')->all();
-        $apprenantRole = $apprenant->roles->pluck('name','name')->all();
 
-        return view('apprenants.edit', compact('apprenant','classes','candidats','stages','formations','profs','roles','apprenantRole'));
+        return view('apprenants.edit', compact('apprenant','classes','candidats','formations'));
     }
 
     /**
@@ -192,8 +190,7 @@ class ApprenantsController extends Controller
         $apprenant->update($requestData);
 
 
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
-        $apprenant->assignRole($requestData['roles']);
+
         return redirect('apprenants')->with('flash_message', 'Apprenant mis à jour!');
     }
 
@@ -218,21 +215,18 @@ class ApprenantsController extends Controller
 
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::make($data,
+        [
+
             'username' => ['required', 'string', 'max:255'],
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
             'note_1' => ['required', 'string', 'max:255'],
             'note_2' => ['required', 'string', 'max:255'],
             'note_3' => ['required', 'string', 'max:255'],
-            'visite_terain' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
             'password' => ['required', 'string', 'min:5'],
 
-
-            'roles' => 'required',
-            'class_id' => 'required|numeric',
-
-             ]);
+        ]);
     }
 }

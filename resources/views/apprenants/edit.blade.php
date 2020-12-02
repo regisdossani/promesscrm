@@ -1,21 +1,20 @@
 @extends('inc.master')
-@include('inc.header')
-
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
-<section class="wrapper">
-    <div class="form-w3layouts">
+<section id="main-content">
 
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-
-                    {{-- @if (Auth::guard("admin")->check())
-                    @include('admins.sidebar')
-                    @endif
-                    @if (Auth::guard("apprenant")->check())
-                    @include('apprenants.sidebar')
-                    @endif --}}
-                    <div class="col-md-10">
+                    <div class="col-lg-10">
                         <section  class="panel">
 
                             <header class="panel-heading">
@@ -65,6 +64,6 @@
                 </div>
 
     </div>
-
+</section>
 </section>
 @endsection

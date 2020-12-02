@@ -29,7 +29,10 @@ class CreateApprenantsTable extends Migration
             $table->string('note_1')->nullable()->default('note 1');
             $table->string('note_2')->nullable()->default('note 2');
             $table->string('note_3')->nullable()->default('note 3');
-            $table->string('visite_terain')->nullable()->default('visite terain');
+            $table->longText('visite_terain1')->nullable();
+            $table->longText('visite_terain2')->nullable();
+            $table->longText('visite_terain3')->nullable();
+
             $table->unsignedBigInteger('formation_id')->unique()->nullable();
 
             //Ajouter un document convention de stage,
