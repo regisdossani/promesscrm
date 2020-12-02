@@ -105,7 +105,7 @@
 
             <div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-4">
-                    <a href="{{url('/persressources')}}">
+                    <a href="{{url('/equipes')}}">
 					<div class="col-md-4 market-update-right">
                         <i class="fas  fa-user" style="font-size:36px;color:white"></i>                    </div>
                         <div class="col-md-8 market-update-left">
@@ -123,6 +123,8 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
+            <a href="{{url('/persressources')}}">
+
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
