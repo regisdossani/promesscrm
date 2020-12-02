@@ -6,7 +6,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 @extends('inc.master')
 @include('equipes.sidebar')
-@include('inc.header')
 
 @section('content')
 

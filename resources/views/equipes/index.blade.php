@@ -1,17 +1,22 @@
 @extends('inc.master')
-@include('inc.header')
-{{-- @include('inc.styles') --}}
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
+<section id="main-content">
+
 <section class="wrapper">
     <div class="form-w3layouts">
 
         <div class="container">
             <div class="row">
-                {{-- @include('equipes.sidebar') --}}
 
-                <div class="col-md-12">
-                    <section  class="panel">
+                <div class="col-md-10">
+                    <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -91,6 +96,6 @@
         </div>
 
     </div>
-
+</section>
 </section>
 @endsection
