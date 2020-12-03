@@ -1,12 +1,21 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
+@extends('inc.master')
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+        <div class="container">
+            <div class="row">
+                {{-- @include('admins.sidebar') --}}
+
+                <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Modifier typeformation #{{ $typeformation->id }}</div>
                     <div class="card-body">
@@ -35,4 +44,7 @@
             </div>
         </div>
     </div>
+        </div>
+    </section>
+</section>
 @endsection

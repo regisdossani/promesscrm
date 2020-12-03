@@ -16,7 +16,7 @@ class CreateApprenantsTable extends Migration
         Schema::create('apprenants', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidat_id')->nullable();
-            $table->unsignedBigInteger('class_id')->nullable();
+            $table->unsignedBigInteger('classe_id')->nullable();
 
             $table->string('username')->nullable()->default('username');
 

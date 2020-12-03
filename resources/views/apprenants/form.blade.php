@@ -63,12 +63,11 @@
             </select>
         </div>
 
-         <div class="col-md-6 mb-3 {{ $errors->has('class_id') ? 'has-error' : ''}}">
+         <div class="col-md-6 mb-3 {{ $errors->has('classe_id') ? 'has-error' : ''}}">
             <label for="class_id" class="control-label">{{ 'Classe' }}</label>
-            <select class="form-control" name="class_id"  id="class_id" >
-                @foreach($classes as $class)
-                <option value="{{ $class->id }}" {{ isset($apprenants->class_id) && $apprenants->class_id === $class->id ? 'selected' : ''}}>{{ $class->nom}}</option>
-
+            <select class="form-control" name="classe_id"  id="classe_id" >
+                @foreach($classes as $classe)
+                <option value="{{ $classe->id }}" {{ isset($apprenants->classe_id) && $apprenants->classe_id === $classe->id ? 'selected' : ''}}>{{ $classe->nom}}</option>
                 @endforeach
             </select>
         </div>

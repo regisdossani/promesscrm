@@ -8,9 +8,7 @@
 
 @section('content')
 <section id="main-content">
-
     <section class="wrapper">
-
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
@@ -56,7 +54,7 @@
                                                         <th>Username</th>
                                                         <th>Nom</th>
                                                         <th>Prénom</th>
-                                                        <th>Rôle</th>
+                                                        <th>Classe</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -67,7 +65,9 @@
                                                         <td>{{ $item->username }}</td>
                                                         <td>{{ $item->nom }}</td>
                                                         <td>{{ $item->prenom }}</td>
-                                                        <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td>
+                                                        <td>{{ $item->class()->pluck('name')->implode(' ') }}</td>
+
+                                                        {{-- <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td> --}}
 
                                                         <td>
                                                             <a href="{{ url('/apprenants/' . $item->id) }}" title="Voir cet apprenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

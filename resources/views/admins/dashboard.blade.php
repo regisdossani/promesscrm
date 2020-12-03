@@ -45,7 +45,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <a href="{{ url("/types")}}">Créer un type de formation</a><br/>
+            <a href="{{ url("/typeformations")}}">Créer un type de formation</a><br/>
 
             <a href="{{ url("/formations")}}">Créer une formation</a><br/>
             <a href="{{ url("/classes")}}">Créer une Classe</a><br/>

@@ -74,7 +74,7 @@ class ApprenantsController extends Controller
 
       $apprenant= Apprenant::create([
             'username' => $request->username,
-            'class_id' => $request->class_id,
+            'classe_id' => $request->classe_id,
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'email' => $request->email,

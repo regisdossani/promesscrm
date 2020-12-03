@@ -2,4 +2,5 @@
 @include('inc.styles')
 
 @yield('content')
-@include('inc.footer')
+{{-- @include('inc.footer')
+ --}}
