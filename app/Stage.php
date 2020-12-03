@@ -17,13 +17,16 @@ class Stage extends Model
     // }
 
 
+    public function encadreurs()
+    {
+        return $this->belongsToMany(Encadreur::class,'encadreur_stage','stage_id','encadreur_id');
+    }
 
 
 
-
-    public function apprenant()
+    public function stagiaires()
 {
-   return $this->belongsToMany('App\Apprenant','apprenant_stage','stage_id','apprenant_id');
+   return $this->belongsToMany(Stagiaires::class,'stage_stagiaire','stagiaire_id','stage_id');
 }
 
 }

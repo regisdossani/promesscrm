@@ -14,7 +14,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <section  class="card">
                     <header class="panel-heading">
                         <div class="panel-title">

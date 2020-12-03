@@ -1,15 +1,31 @@
-@extends('layouts.app')
+@extends('inc.master')
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('formateur')
+@include('formateurs.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Stages</div>
                     <div class="card-body">
                         <a href="{{ url('/stages/create') }}" class="btn btn-success btn-sm" title="Add New stage">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
+                            <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                         </a>
 
                         <form method="GET" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -63,4 +79,7 @@
             </div>
         </div>
     </div>
+    </div>
+</section>
+</section>
 @endsection

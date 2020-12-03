@@ -23,6 +23,7 @@ class CreateStagesTable extends Migration
 			// $table->string('stage_encadreur_s', 20);
             $table->string('pjconvention_stage')->nullable();
             $table->unsignedBigInteger('professionnel_id');
+
             $table->timestamps();
 
 
