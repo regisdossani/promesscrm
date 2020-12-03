@@ -49,7 +49,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->nom }}</td>
-                                                            <td>{{ $item->type }}</td>
+                                                            <td>{{ $item->typeformation->nom}}</td>
                                                             <td>{{ $item->annee }}</td>
                                                             <td>
                                                                 <a href="{{ url('/formations/' . $item->id) }}" title="Voir formation"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

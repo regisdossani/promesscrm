@@ -54,7 +54,7 @@ class FormationsController extends Controller
 
         Formation::create($requestData);
 
-        return redirect('admin/formations')->with('flash_message', 'Formation added!');
+        return redirect('formations')->with('flash_message', 'Formation added!');
     }
 
     /**

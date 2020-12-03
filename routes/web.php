@@ -57,7 +57,9 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
 
     Route::resource('/professionnels', 'ProfessionnelsController');
     Route::resource('/persressources', 'Pers_ressourcesController');
+
     Route::resource('/formations', 'FormationsController');
+    
     Route::resource('/typeformations', 'TypeformationsController');
     Route::resource('/admin/roles','RolesController');
     Route::resource('admin/permissions', 'PermissionsController');

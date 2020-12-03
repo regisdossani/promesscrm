@@ -1,15 +1,16 @@
 @extends('inc.master')
-@include('inc.header')
-
+@include('admins.sidebar')
 
 @section('content')
-<section class="wrapper">
-    <div class="form-w3layouts">
-    <div class="container">
-        <div class="row">
-            {{-- @include('admins.sidebar') --}}
+<section id="main-content">
 
-            <div class="col-md-10">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9">
                 <section  class="panel">
                     <header class="panel-heading">
                         <div class="panel-title">

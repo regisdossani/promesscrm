@@ -9,7 +9,6 @@ class Classe extends Model
     protected $fillable = [
         'name',
         'class_numeric',
-        //'formateur_id',
         'formation_id',
         'class_description'
     ];
