@@ -76,7 +76,7 @@
 			return new Date(year, month - 1, day).getTime();
 		}
 
-		graphArea2 = Morris.Area({
+		/*graphArea2 = Morris.Area({
 			element: 'hero-area',
 			padding: 10,
         behaveLikeLine: true,
@@ -108,7 +108,7 @@
 			pointSize: 2,
 			hideHover: 'auto',
 			resize: true
-		});
+		});*/
 
 
 	});
@@ -118,11 +118,11 @@
 	<script type="text/javascript">
 		$(window).load( function() {
 
-			$('#mycalendar').monthly({
+			/*$('#mycalendar').monthly({
 				mode: 'event',
 
-			});
-
+			});*/
+			
 			$('#mycalendar2').monthly({
 				mode: 'picker',
 				target: '#mytarget',
