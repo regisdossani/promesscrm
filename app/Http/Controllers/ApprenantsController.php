@@ -96,7 +96,7 @@ class ApprenantsController extends Controller
             checkDirectory("apprenants");
             $request->pjconvention_stage= uploadFile($request,'pjconvention_stage', public_path('uploads/candidats'));
         } */
-        $apprenant->assignRole("apprenant");
+        $apprenant->assignRole("Apprenant");
 
 /*
          Stage::create([
