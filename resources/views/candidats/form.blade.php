@@ -67,11 +67,10 @@
 <div class="col-md-6  {{ $errors->has('statut') ? 'has-error' : ''}}">
     <label for="statut" class="control-label">{{ 'Statut' }}</label>
     <select class="form-control" name="statut" id="statut">
-        <option value="1">Intention</option>
-        <option value="2">En attente</option>
-        <option value="3">Acceptée</option>
-        <option value="4">Refusée</option>
-
+        <option value="1" {{ isset($candidat->statut) && $candidat->statut == 1 ? 'selected' : ''}}>Intention</option>
+        <option value="2" {{ isset($candidat->statut) && $candidat->statut == 2 ? 'selected' : ''}}>En attente</option>
+        <option value="3" {{ isset($candidat->statut) && $candidat->statut == 3 ? 'selected' : ''}}>Acceptée</option>
+        <option value="4" {{ isset($candidat->statut) && $candidat->statut == 4 ? 'selected' : ''}}>Refusée</option>
     </select>
     {!! $errors->first('statut', '<p class="help-block">:message</p>') !!}
 </div>
