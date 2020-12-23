@@ -45,6 +45,12 @@
     {!! $errors->first('tel_1', '<p class="help-block">:message</p>') !!}
 </div>
 
+<div class="col-md-6 {{ $errors->has('password') ? 'has-error' : ''}}">
+    <label for="password" class="control-label">{{ 'Mot de passe' }}</label>
+    <input class="form-control" name="password" type="password" id="password" value="{{ isset($formateur->password) ? $formateur->password : ''}}">
+    {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+</div>
+
 @role('superadmin')
 <div class="col-md-6 {{ $errors->has('contratcadre') ? 'has-error' : ''}}">
     <label for="contratcadre" class="control-label">{{ 'Contrat cadre' }}</label>
