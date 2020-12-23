@@ -15,7 +15,7 @@ class Classe extends Model
 
     public function apprenants()
     {
-        return $this->hasMany(Apprenant::class,'class_id');
+        return $this->hasMany(Apprenant::class,'classe_id');
     }
 
     public function modules()
