@@ -1,14 +1,16 @@
 @extends('inc.master')
-@include('inc.header')
+@include('admins.sidebar')
 
 @section('content')
-<section class="wrapper">
-    <div class="form-w3layouts">
+<section id="main-content">
 
-        <div class="container">
-            <div class="row">
+    <section class="wrapper">
+        <div class="form-w3layouts">
 
-                <div class="col-md-10">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-10">
                     <section  class="panel">
 
                         <header class="panel-heading">
@@ -19,7 +21,7 @@
 
                         {{-- <div class="card-header">Modifier formation #{{ $formation->id }}</div> --}}
                         <div class="panel-body">
-                            <a href="{{ url('/admnin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                            <a href="{{ url('/formations') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />
                             <br />
 

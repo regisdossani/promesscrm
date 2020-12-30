@@ -17,12 +17,12 @@ class FormateursController extends Controller
      * @return \Illuminate\View\View
      */
 
-    function __construct()
+   /*  function __construct()
     {
          $this->middleware('auth');
 
     }
-
+ */
 
     public function index(Request $request)
     {
@@ -59,8 +59,26 @@ class FormateursController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nom' => 'required',
+            'prenom'=> 'required',
+            'civilite'=> 'required',
+            'tel_1'=> 'required'
+        ]);
 
         $requestData = $request->all();
+        if($request->hasFile('Contratcadre_pj'))
+         {
+            checkDirectory("formateurs");
+                $requestData['Contratcadre_pj'] =uploadFile($request,'Contratcadre_pj',public_path('uploads/formateurs'));
+        }
+
+        if ($request->hasFile('CV_pj')) {
+            checkDirectory("formateurs");
+            $requestData['CV_pj'] = uploadFile($request,'CV_pj', public_path('uploads/formateurs'));
+        }
+        
+
 
         Formateur::create($requestData);
 

@@ -36,12 +36,6 @@ class ProfessionnelsController extends Controller
     public function create()
     {
 
-
-
-
-
-
-
         return view('professionnels.create');
     }
 

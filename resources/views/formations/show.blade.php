@@ -20,7 +20,7 @@
                                 {{-- <div class="card-header">formation {{ $formation->id }}</div> --}}
                                 <div class="panel-body">
 
-                                        <a href="{{ url('/formations') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                        <a href="{{ url('/formations') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                         <a href="{{ url('/formations/' . $formation->id . '/edit') }}" title="Modifier formation"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
                                             <form method="POST" action="{{ url('/formations' . '/' . $formation->id) }}" accept-charset="UTF-8" style="display:inline">
@@ -37,7 +37,10 @@
                                                             <tr>
                                                                 <th>ID</th><td>{{ $formation->id }}</td>
                                                             </tr>
-                                                            <tr><th> Nom </th><td> {{ $formation->nom }} </td></tr><tr><th> Type </th><td> {{ $formation->type }} </td></tr><tr><th> Annee </th><td> {{ $formation->annee }} </td></tr>
+                                                            <tr><th> Nom </th><td> {{ $formation->nom }} </td></tr>
+                                                            <tr><th> Type </th><td> {{ $formation->type }} </td></tr>
+                                                            <tr><th> Annee </th><td> {{ $formation->annee }} </td></tr>
+
                                                         </tbody>
                                                     </table>
                                                 </div>

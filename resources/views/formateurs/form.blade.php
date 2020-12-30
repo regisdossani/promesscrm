@@ -55,16 +55,16 @@
 </div>
 
 @if(isset($formateur->Contratcadre_pj) && !empty($formateur->Contratcadre_pj))
-    <img src="{{url('/uploads/formateur/' . $formateur->Contratcadre_pj) }}" width="100" height="100"/>
+    <a href="{{ url('uploads/formateurs/' . $formateur->Contratcadre_pj) }}" ><i class="fa fa-download"></i> {{$formateur->Contratcadre_pj}}</a>
 @endif
 <div class="col-md-6 {{ $errors->has('Contratcadre_pj') ? 'has-error' : ''}}">
-    <label for="Contratcadre_pj" class="control-label">{{ 'Contrat cadre Pj' }}</label>
+    <label for="Contratcadre_pj" class="control-label">{{ 'Pj Contrat cadre ' }}</label>
     <input class="form-control" name="Contratcadre_pj" type="file" id="Contratcadre_pj" value="{{ isset($formateur->Contratcadre_pj) ? $formateur->Contratcadre_pj : ''}}" >
     {!! $errors->first('Contratcadre_pj', '<p class="help-block">:message</p>') !!}
 </div>
 
 @if(isset($formateur->CV_pj) && !empty($formateur->CV_pj))
-    <img src="{{url('/uploads/formateur/' . $formateur->CV_pj) }}" width="100" height="100"/>
+    <a href="{{ url('uploads/formateurs/' . $formateur->CV_pj) }}" ><i class="fa fa-download"></i> {{$formateur->CV_pj}}</a>
 @endif
 <div class="col-md-6 {{ $errors->has('CV_pj') ? 'has-error' : ''}}">
     <label for="CV_pj" class="control-label">{{ 'Le Cv' }}</label>

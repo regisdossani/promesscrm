@@ -77,6 +77,11 @@
     <textarea class="form-control" rows="5" name="exemple_realisation" type="textarea" id="exemple_realisation" >{{ isset($professionnel->exemple_realisation) ? $professionnel->exemple_realisation : ''}}</textarea>
     {!! $errors->first('exemple_realisation', '<p class="help-block">:message</p>') !!}
 </div>
+
+
+@if(isset($formateur->CV_pj) && !empty($formateur->pjexemple_realisation))
+    <a href="{{ url('uploads/professionnels/' . $professionnel->pjexemple_realisation) }}" ><i class="fa fa-download"></i> {{$professionnel->pjexemple_realisation}}</a>
+@endif
 <div class="form-group {{ $errors->has('pjexemple_realisation') ? 'has-error' : ''}}">
     <label for="pjexemple_realisation" class="control-label">{{ 'Pj exemple Réalisation' }}</label>
     <input class="form-control" name="pjexemple_realisation" type="file" id="pjexemple_realisation" value="1" >

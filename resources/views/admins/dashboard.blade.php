@@ -48,7 +48,7 @@
             <a href="{{ url("/typeformations")}}">Créer un type de formation</a><br/>
 
             <a href="{{ url("/formations")}}">Créer une formation</a><br/>
-            <a href="{{ url("/classes")}}">Créer une Classe</a><br/>
+            <a href="{{ url("/classe")}}">Créer une Classe</a><br/>
 
         </div>
        {{--  <div class="modal-footer">
