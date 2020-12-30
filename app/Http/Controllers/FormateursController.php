@@ -19,7 +19,8 @@ class FormateursController extends Controller
 
     function __construct()
     {
-        $this->middleware('auth');
+         $this->middleware('auth');
+
     }
 
 
@@ -44,9 +45,9 @@ class FormateursController extends Controller
      */
     public function create()
     {
-        $formateurs = Formateur::all();
+        $formateurs= Formateur::all();
 
-        return view('formateurs.create', compact('formateurs'));
+        return view('formateurs.create',compact('formateurs'));
     }
 
     /**
@@ -81,10 +82,10 @@ class FormateursController extends Controller
     }
     public function showprofile()
     {
-        $id = Auth::guard('formateur')->user()->id;
+        $id=Auth::guard('formateur')->user()->id;
         $formateur = Formateur::findOrFail($id);
 
-        return view('formateurs.show', compact('formateur'));
+              return view('formateurs.show', compact('formateur'));
     }
     /**
      * Show the form for editing the specified resource.

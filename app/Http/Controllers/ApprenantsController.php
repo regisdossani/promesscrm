@@ -74,7 +74,7 @@ class ApprenantsController extends Controller
 
       $apprenant= Apprenant::create([
             'username' => $request->username,
-            'class_id' => $request->classe_id,
+            'classe_id' => $request->classe_id,
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'email' => $request->email,
@@ -96,7 +96,7 @@ class ApprenantsController extends Controller
             checkDirectory("apprenants");
             $request->pjconvention_stage= uploadFile($request,'pjconvention_stage', public_path('uploads/candidats'));
         } */
-        $apprenant->assignRole("Apprenant");
+        $apprennant->assignRole("apprenant");
 
 /*
          Stage::create([
@@ -204,9 +204,9 @@ class ApprenantsController extends Controller
     public function destroy($id)
     {
 
-        /*$apprennant = Apprenant::findorfail($id);
+        $apprennant = Apprenant::findorfail($id);
         $stageid= Stage::findorfail($id);
-        $apprennant->stages()->dettach($stageid);*/
+        $apprennant->stages()->dettach($stageid);
         Apprenant::destroy($id);
 
         return redirect('apprenants')->with('flash_message', 'Apprenant deleted!');

@@ -13,7 +13,7 @@ use Carbon\Carbon;
 class CandidatsController extends Controller
 {
 
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -62,64 +62,66 @@ class CandidatsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validate($request,[
             'nom' => 'required',
-            'prenom' => 'required',
-            'civilite' => 'required',
-            'statut' => 'required',
-            'date_naiss'=> 'required',
-            'parrain' => 'required',
-            'tel_1' => 'required',
-            'tel_2' => 'required',
-            'email_2' => 'required',
-            'depot_dossier' => 'required',
-            'pj_depotdossier' => 'required',
-            'test_ecrit' => 'required',
-            'test_oral' => 'required',
-            'test_pj' => 'required',
-            'test_oral' => 'required',
-            'orientation' => 'required',
+            'prenom'=> 'required',
+            'civilite'=> 'required',
+            'statut'=> 'required',
+            // 'date_naiss'=> 'required',
+            'parrain'=> 'required',
+            'tel_1'=> 'required',
+            'tel_2'=> 'required',
+            'email_2'=> 'required',
+            'depot_dossier'=> 'required',
+            'pj_depotdossier'=> 'required',
+            'test_ecrit'=> 'required',
+            'test_oral'=> 'required',
+            'test_pj'=> 'required',
+            'test_oral'=> 'required',
+           'orientation'=> 'required',
 
             'email_1' => 'required|email|unique:candidats,email_1',
-            'avatar' => ['sometimes', 'image', 'mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
+            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'test_pj.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
-        ]);
-        $requestData = $request->all();
-        //$DateNaiss = Carbon::createFromFormat('d/m/Y', $request->get('date_naiss'));
+            ]);
+            $requestData = $request->all();
+            $DateNaiss = Carbon::createFromFormat('d/m/Y',$request->get('date_naiss'));
 
-        //$requestData['date_naiss'] = $DateNaiss;
+             $requestData['date_naiss']=$DateNaiss;
 
-        if ($request->hasFile('pj_depotdossier2')) {
-            checkDirectory("candidats");
-            $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
-        }
+            if ($request->hasFile('pj_depotdossier2')) {
+                checkDirectory("candidats");
+                $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
+            }
 
-        if ($request->hasFile('pj_depotdossier')) {
-            checkDirectory("candidats");
-            $requestData['pj_depotdossier'] = uploadFile($request, 'pj_depotdossier', public_path('uploads/candidats'));
-        }
+            if ($request->hasFile('pj_depotdossier')) {
+                checkDirectory("candidats");
+                $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
+            }
 
-        if ($request->hasFile('test_pj')) {
-            checkDirectory("candidats");
-            $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-        }
-        if ($request->hasFile('avatar')) {
-            checkDirectory("candidats");
-            $requestData['avatar'] = uploadFile($request, 'avatar', public_path('uploads/candidats'));
-        }
 
-        Candidat::create($requestData);
+
+            if ($request->hasFile('test_pj')) {
+                checkDirectory("candidats");
+                $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
+            }
+            if ($request->hasFile('avatar')) {
+                checkDirectory("candidats");
+                $requestData['avatar'] = uploadFile($request, 'avatar', public_path('uploads/candidats'));
+            }
+
+  Candidat::create($requestData);
 
 
         // session()->flash('msg', 'Successfully done the operation. ');
         // return url()->previous();
-        return redirect()->to('/candidats')->with('flash_message', 'Votre dossier a été envoyé !');
-        // return redirect()->route('/');
+                  return redirect()->to('/candidats')->with('flash_message', 'Votre dossier a été envoyé !');
+                    // return redirect()->route('/');
 
-    }
+                }
 
     /**
      * Display the specified resource.
@@ -183,41 +185,45 @@ class CandidatsController extends Controller
     }
     public function inscription(Request $request)
     {
-        $this->validate($request, [
+        $this->validate($request,[
             'nom' => 'required',
-            'prenom' => 'required',
-            'civilite' => 'required',
-            'tel_1' => 'required',
+            'prenom'=> 'required',
+            'civilite'=> 'required',
+            'tel_1'=> 'required',
 
             'email_1' => 'required|email|unique:candidats,email_1',
-            'avatar' => ['sometimes', 'image', 'mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
+            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt'
 
-        ]);
-        $requestData = $request->all();
+            ]);
+            $requestData = $request->all();
 
-        if ($request->hasFile('pj_depotdossier')) {
-            checkDirectory("candidats");
-            $requestData['pj_depotdossier'] = uploadFile($request, 'pj_depotdossier', public_path('uploads/candidats'));
-        }
-        if ($request->hasFile('pj_depotdossier2')) {
-            checkDirectory("candidats");
-            $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
-        }
+            if ($request->hasFile('pj_depotdossier')) {
+                checkDirectory("candidats");
+                $requestData['pj_depotdossier'] = uploadFile($request, 'pj_depotdossier', public_path('uploads/candidats'));
+            }
+            if ($request->hasFile('pj_depotdossier2')) {
+                checkDirectory("candidats");
+                $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
+            }
 
-        if ($request->hasFile('test_pj')) {
-            checkDirectory("candidats");
-            $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-        }
-        if ($request->hasFile('avatar')) {
-            checkDirectory("candidats");
-            $requestData['avatar'] = $requestData['avatar'] = uploadFile($request, 'avatar', public_path('uploads/candidats'));
-        }
+            if ($request->hasFile('test_pj')) {
+                checkDirectory("candidats");
+                $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
+            }
+            if ($request->hasFile('avatar')) {
+                checkDirectory("candidats");
+                $requestData['avatar'] = $requestData['avatar'] =uploadFile($request, 'avatar', public_path('uploads/candidats'));
 
-        Candidat::create($requestData);
+            }
+
+  Candidat::create($requestData);
 
 
 
-        return redirect('candidat')->with('flash_message', 'Votre dossier a été envoyé !');
-    }
+                    return redirect('candidat')->with('flash_message', 'Votre dossier a été envoyé !');
+
+                }
+
+
 }

@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
-                        <section class="panel">
+                        <section  class="panel">
 
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -25,26 +25,26 @@
 
                             <div class="panel-body">
                                 @if (Auth::guard("admin")->check())
-                                <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 @endif
                                 @if (Auth::guard("apprenant")->check())
-                                {{-- <a href="{{ url('/apprenant/profile') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a> --}}
-                                <a href="{{ url('/apprenant') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    {{-- <a href="{{ url('/apprenant/profile') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a> --}}
+                                    <a href="{{ url('/apprenant') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 @endif
 
                                 @role('Resp-pedagogique')
-                                <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 @endrole
 
                                 <br />
                                 <br />
 
                                 @if ($errors->any())
-                                <ul class="alert alert-danger">
-                                    @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                                    <ul class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
                                 @endif
 
                                 <div class="row">
@@ -59,10 +59,11 @@
 
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+
+    </div>
+</section>
 </section>
 @endsection

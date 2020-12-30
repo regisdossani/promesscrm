@@ -15,7 +15,7 @@ class Formateur extends Authenticatable
 
 
     protected $fillable = [
-        'username', 'civilite', 'prenom', 'nom', 'date_naiss', 'contratcadre', 'tel_1', 'email', 'password',
+        'username', 'email', 'password',
 
     ];
 
