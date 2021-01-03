@@ -1,15 +1,18 @@
 
 @extends('inc.master')
-@include('inc.header')
+ @include('inc.header')
 
 @section('content')
-
 <section id="container">
 <!--main content start-->
 <section id="main-content">
-	<section class="wrapper">
+
+<section class="wrapper">
 
 <!-- //market-->
+
+
+
 
     <div class="market-updates">
         <div class="col-md-6 market-update-gd">
