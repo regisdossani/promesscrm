@@ -14,10 +14,10 @@
                         <section class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    MODIFIER UN STAGIAIRES
+                                    ENRÉGISTRER UN STAGIAIRES
                                 </div>
                             </header>
-                                    <div class="card-header">Créer un stagiaire</div>
+                                    {{-- <div class="card-header">Créer un stagiaire</div> --}}
                                 <div class="card-body">
                                     <a href="{{ url('/stagiaires') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
                                     <br />
