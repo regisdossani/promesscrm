@@ -1,19 +1,34 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
-@section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+@extends('inc.master')
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Liste des Clients</div>
-                    <div class="card-body">
+@section('content')
+<section id="main-content">
+
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+            <div class="col-md-12">
+
+
+                <section class="card">
+                    <header class="panel-heading">
+                        <div class="panel-title">
+                            GESTION DES CLIENTS
+                        </div>
+                    </header>
+                    <div class="panel-body">
                         <a href="{{ url('/clients/create') }}" class="btn btn-success btn-sm" title="Add New client">
                             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
                         </a>
 
-                        <form method="GET" action="{{ url('/clients') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                       {{--  <form method="GET" action="{{ url('/clients') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                 <span class="input-group-append">
@@ -22,7 +37,7 @@
                                     </button>
                                 </span>
                             </div>
-                        </form>
+                        </form> --}}
 
                         <br/>
                         <br/>
@@ -30,7 +45,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Civilite</th><th>Prenom</th><th>Nom</th><th>Actions</th>
+                                        <th>#</th><th>Civilité</th><th>Prénom</th><th>Nom</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +60,7 @@
                                             <form method="POST" action="{{ url('/clients' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete client" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer un client" onclick="return  confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -56,8 +71,9 @@
                         </div>
 
                     </div>
-                </div>
+                </section>
             </div>
         </div>
-    </div>
+    </section>
+</section>
 @endsection
