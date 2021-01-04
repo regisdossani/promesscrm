@@ -24,6 +24,7 @@
                 <div class="card">
                     <div class="card-header">Stages</div>
                     <div class="card-body">
+                        
                         <a href="{{ url('/stages/create') }}" class="btn btn-success btn-sm" title="Add New stage">
                             <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                         </a>

@@ -18,7 +18,6 @@
                                 <div class="panel-title">
                                     GESTION DES APPRENANTS
                                 </div>
-
                             </header>
                             <div class="panel-body">
                                 @role('superadmin')

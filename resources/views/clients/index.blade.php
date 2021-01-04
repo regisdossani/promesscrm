@@ -11,7 +11,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-            <div class="col-md-12">
+                    <section  class="card">
 
 
                 <section class="card">
