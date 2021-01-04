@@ -329,12 +329,15 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
+            <a href="{{url('/stages')}}">
+
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Stagiaires école</h4>
+                <h4>Stages école</h4>
             </div>
+            </a>
           <div class="clearfix"> </div>
         </div>
     </div>

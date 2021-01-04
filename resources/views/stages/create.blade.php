@@ -1,37 +1,51 @@
-@extends('layouts.app')
+@extends('inc.master')
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
 
-@section('title', ' | Créer stage')
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                            <section class="panel">
+                                {{-- <div class="card-header">Créer un stage</div> --}}
+                                <header class="panel-heading">
+                                    <div class="panel-title">
+                                        ENRÉGITRER UN STAGE
+                                    </div>
+                                </header>
+                                <div class="panel-body">
+                                    <a href="{{ url('/stages') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    <br />
+                                    <br />
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Créer un stage</div>
-                    <div class="card-body">
-                        <a href="{{ url('/stages') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                        <br />
-                        <br />
+                                    @if ($errors->any())
+                                        <ul class="alert alert-danger">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                                    <form method="POST" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
 
-                        <form method="POST" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                                        @include ('stages.form', ['formMode' => 'Créer'])
 
-                            @include ('stages.form', ['formMode' => 'Créer'])
+                                    </form>
 
-                        </form>
-
+                                </div>
+                            </section>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+</section>
 @endsection

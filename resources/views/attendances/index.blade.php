@@ -11,9 +11,13 @@
 
                 <div class="col-lg-10">
                     <section  class="panel">
-
-                        <div class="card-header">LES PRÉSENCES</div>
-                        <div class="card-body">
+                        <header class="panel-heading">
+                            <div class="panel-title">
+                                GESTION DES PRÉSENCES
+                            </div>
+                        </header>
+                        {{-- <div class="card-header">LES PRÉSENCES</div> --}}
+                        <div class="panel-body">
                             <a href="{{ url('/attendances/create') }}" class="btn btn-success btn-sm" title="Add New attendance">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                             </a>
