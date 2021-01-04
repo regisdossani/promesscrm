@@ -44,6 +44,60 @@
             @endif
 
             <!-- user login dropdown end -->
+          @if (Auth::guard("apprenant")->check())
+            <li>
+
+                <a data-toggle="dropdown" >
+                    <img alt="" src="{{Auth::guard('apprenant')->user()->avatar}}">
+                    <span class="username">
+                            {{Auth::guard('apprenant')->user()->username}}
+                    </span>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <li><a href="{{ url('/apprenant' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+
+                    <li>
+                                <a class="fa fa-key" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                    </li>
+                </ul>
+
+            </li>
+            @endif
+            @if (Auth::guard("equipe")->check())
+            <li>
+
+                <a data-toggle="dropdown" >
+                    <img alt="" src="{{Auth::guard('equipe')->user()->avatar}}">
+                    <span class="username">
+                            {{Auth::guard('equipe')->user()->username}}
+                    </span>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <li><a href="{{ url('/equipe' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+
+                    <li>
+                                <a class="fa fa-key" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                    </li>
+                </ul>
+
+            </li>
+            @endif
 
         </ul>
         <!--search & user info end-->
@@ -55,92 +109,9 @@
 
 
 
-           {{--  <li>
-                <input type="text" class="form-control search" placeholder=" Rechercher">
-            </li> --}}
 
-            <!-- user login dropdown start-->
-        {{-- @if (Auth::guard("admin")->check()) --}}
-
-                   {{--  <ul class="dropdown-menu">
-                                <li><a href="{{ url('/admin' . '/' . Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                                <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
-                                {{-- <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Déconnexion</a></li> --}}
-
-                                {{-- <li>
-                                            <a class="fa fa-key" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('Déconnexion') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                </li>
-                    </ul>  --}}
-
-                {{-- <div class="dropdown">
-                        <h1 data-toggle="dropdown">
-                            <span class="badge badge-secondary">{{Auth::guard('admin')->user()->username}} </span>
-                        </h1>
-
-                    <div class="dropdown-menu">
-                        <a href="{{ url('/admin' . '/' . Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a>
-                        <a href="#"><i class="fa fa-cog"></i> Paramètres</a>
-                        <a class="fa fa-key" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                {{ __('Déconnexion') }}
-                        </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                    </div>
-                </div>
-
-
-
-        </li>--}}
-
-
-
-        <!-- user login dropdown end -->
-        @if (Auth::guard("apprenant")->check())
-        <li>
-
-            <a data-toggle="dropdown" >
-                <img alt="" src="{{Auth::guard('apprenant')->user()->avatar}}">
-                <span class="username">
-                        {{Auth::guard('apprenant')->user()->username}}
-                </span>
-            </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="{{ url('/apprenant' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
-                {{-- <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Déconnexion</a></li> --}}
-
-                <li>
-                            <a class="fa fa-key" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Déconnexion') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                </li>
-            </ul>
-
-        </li>
-        @endif
-
-    </div>
-        <!--search & user info end-->
-    </div>
-    </header>
-    <!--header end-->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        {{-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -153,13 +124,5 @@
                     <a href="{{ url("/typeformations")}}">Créer un type de formation</a><br/>
                     <a href="{{ url("/formations")}}">Créer une formation</a><br/>
                     <a href="{{ url("/classe")}}">Créer une Classe</a><br/>
-                </div>
-            {{--  <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                 </div> --}}
-            </div>
-            </div>
-        </div>
-        </div>
-        </header>
-        <!--header end-->
+

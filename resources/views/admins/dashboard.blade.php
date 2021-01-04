@@ -1,6 +1,6 @@
 
 @extends('inc.master')
- @include('inc.header')
+ {{-- @include('inc.header') --}}
 
 @section('content')
 <section id="container">
