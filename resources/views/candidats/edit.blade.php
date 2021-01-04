@@ -4,6 +4,12 @@
 @role('superadmin')
 @include('admins.sidebar')
 @endrole
+@role('Resp-Pedagogique')
+@include('equipes.sidebar')
+@endrole
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
 
 @section('content')
 <section class="wrapper">

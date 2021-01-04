@@ -5,6 +5,10 @@
 @role('superadmin')
 @include('admins.sidebar')
 @endrole
+@role('Resp-Pedagogique')
+@include('equipes.sidebar')
+@endrole
+
 
 @section('content')
 <section id="main-content">

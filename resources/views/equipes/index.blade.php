@@ -1,10 +1,9 @@
 @extends('inc.master')
-@role('equipe')
 @include('equipes.sidebar')
-@endrole
-@role('superadmin')
+
+{{-- @role('superadmin')
 @include('admins.sidebar')
-@endrole
+@endrole --}}
 
 @section('content')
 <section id="main-content">

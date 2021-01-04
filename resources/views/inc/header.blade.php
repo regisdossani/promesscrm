@@ -2,9 +2,29 @@
 <header class="header fixed-top clearfix">
     <!--logo start-->
     <div class="brand">
-        <a href="{{ url('') }}" class="logo">
+        @if (Auth::guard("admin")->check())
+            <a href="{{ url('/admin') }}" class="logo">
+                <h3>CRM PROMESS</h3>
+            </a>
+        @endif
+
+        @if (Auth::guard("equipe")->check())
+        <a href="{{ url('/equipe') }}" class="logo">
             <h3>CRM PROMESS</h3>
         </a>
+        @endif
+
+        @if (Auth::guard("apprenant")->check())
+        <a href="{{ url('/apprenant') }}" class="logo">
+            <h3>CRM PROMESS</h3>
+        </a>
+        @endif
+        @if (Auth::guard("formateur")->check())
+        <a href="{{ url('/formateur') }}" class="logo">
+            <h3>CRM PROMESS</h3>
+        </a>
+        @endif
+
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars"></div>
         </div>
@@ -71,6 +91,8 @@
 
             </li>
             @endif
+
+
             @if (Auth::guard("equipe")->check())
             <li>
 
@@ -81,7 +103,7 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu extended logout">
-                    <li><a href="{{ url('/equipe' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ url('/equipe' . '/' . Auth::guard('equipe')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
 
                     <li>
@@ -98,6 +120,36 @@
 
             </li>
             @endif
+
+
+            @if (Auth::guard("formateur")->check())
+            <li>
+
+                <a data-toggle="dropdown" >
+                    <img alt="" src="{{Auth::guard('formateur')->user()->avatar}}">
+                    <span class="username">
+                            {{Auth::guard('equipe')->user()->username}}
+                    </span>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <li><a href="{{ url('/formateur' . '/' . Auth::guard('formateur')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+
+                    <li>
+                                <a class="fa fa-key" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Déconnexion') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                    </li>
+                </ul>
+
+            </li>
+            @endif
+
 
         </ul>
         <!--search & user info end-->
