@@ -302,14 +302,14 @@
     </div>
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
-            <a href="{{url('/modules')}}">
+            <a href="{{url('/stagiaires')}}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
 
-                    <span>Modules</span>
+                    <span>Stagiaires</span>
 
             </div>
             </a>

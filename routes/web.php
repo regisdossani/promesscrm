@@ -52,8 +52,9 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/fiches', 'FichedescriptivesController');
     Route::resource('/suivipostchantiers', 'PostchantiersController');
     Route::resource('/eqattendances', 'EqattendancesController');
+    Route::resource('/stagiaires', 'EqattendanceController');
 
-    Route::resource('/eqattendance', 'EqattendanceController');
+    Route::resource('/eqattendance', 'StagiairesController');
 
     Route::resource('/professionnels', 'ProfessionnelsController');
     Route::resource('/persressources', 'Pers_ressourcesController');
