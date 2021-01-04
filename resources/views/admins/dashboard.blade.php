@@ -344,16 +344,19 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-6">
+            <a href="{{url('/encadreurs')}}">
+
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
                 <h4>Encadreurs stages</h4>
             </div>
+            </a>
           <div class="clearfix"> </div>
         </div>
     </div>
-    <div class="col-md-3 market-update-gd">
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-7">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
@@ -364,8 +367,8 @@
             </div>
           <div class="clearfix"> </div>
         </div>
-    </div>
-    <div class="col-md-3 market-update-gd">
+    </div> --}}
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
@@ -377,7 +380,7 @@
             </div>
           <div class="clearfix"> </div>
         </div>
-    </div>
+    </div> --}}
 
    <div class="clearfix"> </div>
 
