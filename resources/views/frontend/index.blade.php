@@ -43,12 +43,12 @@
       <div class="row no-gutters">
         <div class="col-lg-4 text-center text-lg-left">
           <a class="text-color mr-3" href="callto:+221 33 951 13 15"><strong>Tél:</strong> +221 33 951 13 15</a>
-          <ul class="list-inline d-inline">
+          {{-- <ul class="list-inline d-inline">
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
-          </ul>
+          </ul> --}}
         </div>
         <div class="col-lg-8 text-center text-lg-right">
           <ul class="list-inline">
@@ -82,23 +82,7 @@
               <a class="nav-link" href="{{('courses')}}">Nos Cours</a>
             </li>
 
-           <!--  <li class="nav-item dropdown view">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Pages
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="teacher.html">Teacher</a>
-                <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
-                <a class="dropdown-item" href="notice.html">Notice</a>
-                <a class="dropdown-item" href="notice-single.html">Notice Details</a>
-                <a class="dropdown-item" href="research.html">Research</a>
-                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
-                <a class="dropdown-item" href="course-single.html">Course Details</a>
-                <a class="dropdown-item" href="event-single.html">Event Details</a>
-                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
-              </div>
-            </li> -->
+
             <li class="nav-item @@contact">
               <a class="nav-link" href="{{('contact')}}">CONTACT</a>
             </li>
@@ -792,32 +776,32 @@
           </ul>
         </div>
         <!-- company -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">PROMESS</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
             <li class="mb-3"><a class="text-color" href="teacher.html">Our Formateur</a></li>
             <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
           </ul>
-        </div>
+        </div> --}}
         <!-- links -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">LIENS</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
             <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
             <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
           </ul>
-        </div>
+        </div> --}}
         <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">SUPPORT</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
             <li class="mb-3"><a class="text-color" href="#">Language</a></li>
             <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
           </ul>
-        </div>
+        </div> --}}
         <!-- support -->
        <!--  <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">RECOMMEND</h4>
@@ -844,12 +828,12 @@
             ©   <a href="https://promess.ngo">promess.ngo</a></p> . All Rights Reserved.
         </div>
         <div class="col-sm-5 text-sm-right text-center">
-          <ul class="list-inline">
+          {{-- <ul class="list-inline">
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/themefisher"><i class="ti-facebook text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://dribbble.com/themefisher"><i class="ti-dribbble text-primary"></i></a></li>
-          </ul>
+          </ul> --}}
         </div>
       </div>
     </div>
