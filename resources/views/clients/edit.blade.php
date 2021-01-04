@@ -1,38 +1,51 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
+@extends('inc.master')
+
+@include('admins.sidebar')
+
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Modifier client #{{ $client->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url('/clients') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
-                        <br />
-                        <br />
+    <section class="wrapper">
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
 
-                        <form method="POST" action="{{ url('/clients/' . $client->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
+                    <div class="col-md-9">
+                        <section class="card">
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    MODIFIER UN CLIENT
+                                </div>
+                            </header>                            <div class="card-body">
+                                <a href="{{ url('/clients') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
+                                <br />
+                                <br />
 
-                            @include ('clients.form', ['formMode' => 'edit'])
+                                @if ($errors->any())
+                                    <ul class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
 
-                        </form>
+                                <form method="POST" action="{{ url('/clients/' . $client->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                    {{ method_field('PATCH') }}
+                                    {{ csrf_field() }}
 
+                                    @include ('clients.form', ['formMode' => 'edit'])
+
+                                </form>
+
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+</section>
+
+</section>
 @endsection

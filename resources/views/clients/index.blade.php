@@ -1,10 +1,7 @@
 @extends('inc.master')
-@role('apprenant')
-@include('apprenants.sidebar')
-@endrole
-@role('superadmin')
+
 @include('admins.sidebar')
-@endrole
+
 
 @section('content')
 <section id="main-content">
@@ -20,7 +17,7 @@
                 <section class="card">
                     <header class="panel-heading">
                         <div class="panel-title">
-                            GESTION DES CLIENTS
+                            LISTE DES CLIENTS
                         </div>
                     </header>
                     <div class="panel-body">
