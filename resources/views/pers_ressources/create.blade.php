@@ -1,10 +1,19 @@
 @extends('inc.master')
-@role('equipe')
-@include('equipes.sidebar')
-@endrole
-@role('superadmin')
-@include('admins.sidebar')
-@endrole
+@extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 @section('content')
 <section id="main-content">
@@ -17,7 +26,12 @@
 
                 <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Créer un pers_ressource</div>
+                    <header class="panel-heading">
+                        <div class="panel-title">
+                            ENRÉGISTRER UNE PERSONNE RESSOURCE
+                        </div>
+                    </header>
+                    {{-- <div class="card-header">Créer un pers_ressource</div> --}}
                     <div class="card-body">
                         <a href="{{ url('/persressources') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                         <br />

@@ -104,9 +104,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
 
 
 
-
-
-Route::group(['middleware'=>'auth:apprenant,admin'],
+Route::group(['middleware'=>'auth:apprenant,admin,equipe'],
 function() {
     Route::get('candidats/{id}', [ 'as'=>'candidat.edit', 'uses' => 'CandidatsController@edit']);
     Route::resource('/apprenants', 'ApprenantsController');

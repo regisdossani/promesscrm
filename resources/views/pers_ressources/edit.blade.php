@@ -9,7 +9,12 @@
 
                 <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Modifier pers_ressource #{{ $pers_ressource->id }}</div>
+                    <header class="panel-heading">
+                        <div class="panel-title">
+                            MODIFIER UNE PERSONNES RESSOURCE
+                        </div>
+                    </header>
+                    {{-- <div class="card-header">Modifier pers_ressource #{{ $pers_ressource->id }}</div> --}}
                     <div class="card-body">
                         <a href="{{ url('/persressources') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />

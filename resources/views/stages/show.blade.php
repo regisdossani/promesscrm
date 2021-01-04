@@ -1,6 +1,13 @@
 @extends('inc.master')
+
+@role('equipe')
+@include('equipes.sidebar')
+@endrole
 @role('apprenant')
 @include('apprenants.sidebar')
+@endrole
+@role('formateur')
+@include('formateurs.sidebar')
 @endrole
 @role('superadmin')
 @include('admins.sidebar')

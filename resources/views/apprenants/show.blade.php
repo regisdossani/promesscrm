@@ -1,10 +1,19 @@
 @extends('inc.master')
-@role('apprenant')
-@include('apprenants.sidebar')
-@endrole
-@role('superadmin')
-@include('admins.sidebar')
-@endrole
+
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 @section('content')
 <section id="main-content">
@@ -43,7 +52,7 @@
                                                 <a href="{{ url('/apprenants/' . $apprenant->id . '/edit') }}" title="Modifier cet apprenant"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
 
-                                        
+
 
                                                     <form method="POST" action="{{ url('/admin/apprenants' . '/' . $apprenant->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
