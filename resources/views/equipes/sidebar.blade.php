@@ -56,27 +56,20 @@
     </a>
 </li>
 
-<li class="sub-menu">
-    <a href="javascript:;">
+<li>
+    <a href="{{ url('/formations') }}"
         <i class="fa fa-th"></i>
         <span>Gestion des Formations</span>
     </a>
-<ul class="sub">
+</li>
+
     <li>
         <a href="{{ url('/typeformations') }}">
             <i class="fa fa-tasks"></i>
-            <span>Les types de Formations</span>
+            <span>Gestion des types de Formations</span>
         </a>
     </li>
-    <li>
-        <a href="{{ url('/formations') }}">
-            <i class="fa fa-tasks"></i>
-            <span>Les Formations</span>
-        </a>
-    </li>
-</ul>
 
-</li>
 
 <li>
     <a  class="active"  href="{{ url('/formateurs') }}">
@@ -85,18 +78,18 @@
     </a>
 </li>
 
-<li  >
+<li>
 <a href="{{ url('/stages') }}">
         <i class="fa fa-bullhorn"></i>
         <span>Gestion des Stages </span>
 </a>
 </li>
-<li  >
+{{-- <li  >
 <a href="#">
 
     <span>Liste des Apprenants post-formation</span>
 </a>
-</li>
+</li> --}}
 
 @endrole
 
