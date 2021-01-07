@@ -155,7 +155,7 @@
           <div class="clearfix"> </div>
         </div>
     </div>
-    <div class="col-md-3 market-update-gd">
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-7">
             <a href="{{url('/chantiers')}}">
 
@@ -169,7 +169,7 @@
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div>
+    </div> --}}
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">
