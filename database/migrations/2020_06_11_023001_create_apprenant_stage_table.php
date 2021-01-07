@@ -17,7 +17,7 @@ class CreateApprenantStageTable extends Migration
             // $table->id();
             $table->unsignedBigInteger('stage_id');
             $table->unsignedBigInteger('apprenant_id');
-            $table->unsignedBigInteger('class_id');
+            // $table->unsignedBigInteger('class_id');
 
             $table->foreign('stage_id')->references('id')->on('stages')
             ->onDelete('cascade')

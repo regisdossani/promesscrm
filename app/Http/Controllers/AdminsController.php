@@ -146,7 +146,7 @@ class AdminsController extends Controller
         return redirect('admins')->with('flash_message', 'Admin deleted!');
     }
 
-    public function getRole($id)
+   /*  public function getRole($id)
     {
         $admin = Admin::findOrFail($id);
 
@@ -154,7 +154,7 @@ class AdminsController extends Controller
 
         return view('pages.users.role', compact('admin', 'roles'));
     }
-
+ */
     public function updateRole(Request $request, $id)
     {
         $this->validate($request, [

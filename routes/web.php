@@ -51,10 +51,9 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/clients', 'ClientsController');
     Route::resource('/fiches', 'FichedescriptivesController');
     Route::resource('/suivipostchantiers', 'PostchantiersController');
-    Route::resource('/eqattendances', 'EqattendancesController');
-    Route::resource('/stagiaires', 'EqattendanceController');
+    // Route::resource('/eqattendances', 'EqattendancesController');
 
-    Route::resource('/eqattendance', 'StagiairesController');
+    Route::resource('/admins', 'AdminsController');
 
     Route::resource('/professionnels', 'ProfessionnelsController');
     Route::resource('/persressources', 'Pers_ressourcesController');
@@ -89,8 +88,15 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/formateurs', 'FormateursController');
     Route::resource('/stages', 'StagesController');
     Route::get('/listpartenaires','PartenairesController@index');
+
+    Route::get('marks','MarksController@index');
+    Route::post('marks/update','MarksController@update');
+
     Route::resource('/equipes', 'EquipesController');
     Route::resource('/formations', 'FormationsController');
+    Route::resource('/eqattendance', 'EqattendanceController');
+    Route::resource('/stagiaires', 'StagiairesController');
+    Route::resource('/teacherattendances', 'TeacherattendancesController');
 
     });
 

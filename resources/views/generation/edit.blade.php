@@ -1,73 +1,104 @@
-@extends('layouts.app')
+@extends('inc.master')
 
-@section('title')
-  Modifier
-@endsection
-@section('contents')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
 
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 portlets ui-sortable">
-						<div class="widget">
-							<div class="widget-header transparent">
-								<h2><strong>Generations</strong></h2>
-							</div>
-							<div class="widget-content padding">
-								<div id="basic-form">
-									<form action="{{ route('edit.generation',$generation->id) }}" method="POST" role="form">
 
-                    <div class="form-group @if($errors->has('type_id')) has-error @endif">
-										{{ Form::label('type_id','Types : ')}}
-									{{ Form::select('type_id',$types, null, ['class' => 'form-control']) }}
-                  </div>
-                  <div class="form-group @if($errors->has('date')) has-error @endif">
-                  <label for="date">Date</label>
-                  <input type="text" class="form-control datepicker-input" value="{{ $generation->date }}"  name="date" data-mask="9999-99-99">
-                    @if($errors->has('date')) <div class="help-block">
-                       {{ $errors->first('date') }}
-                    </div>
-                  @endif
-                </div>
-                    <div class="form-group @if($errors->has('nfacture')) has-error @endif">
-										<label for="nfacture">N°Facture</label>
-										<input type="text" class="form-control" value="{{ $generation->nfacture }}" name ="nfacture">
-                    @if($errors->has('nfacture')) <div class="help-block">
-                       {{ $errors->first('nfacture') }}
-                    </div>
-                  @endif
-                    </div>
-                    <div class="form-group @if($errors->has('quantite')) has-error @endif">
-                    <label for="quantite">Quantité</label>
-                    <input type="text" class="form-control" value="{{ $generation->quantite }}" name="quantite" data-mask="999999" placeholder="999999">
-                    @if($errors->has('quantite')) <div class="help-block">
-                       {{ $errors->first('quantite') }}
-                    </div>
-                  @endif
-                  </div>
-                  <div class="form-group @if($errors->has('prix_uni')) has-error @endif">
-                  <label for="prix_uni">Prix Unitaire</label>
-                  <input type="text" class="form-control" value="{{ $generation->prix_uni }}" name="prix_uni" data-mask="999999" placeholder="999999">
-                  @if($errors->has('prix_uni')) <div class="help-block">
-                     {{ $errors->first('prix_uni') }}
-                  </div>
-                @endif
-                </div>
-                <div class="form-group @if($errors->has('fourni')) has-error @endif">
-                <label for="fourni">Fournisseur</label>
-                <input type="text" class="form-control" value="{{ $generation->fourni }}" name ="fourni">
-                @if($errors->has('fourni')) <div class="help-block">
-                   {{ $errors->first('fourni') }}
-                </div>
-              @endif
-                </div>
-                <input type="hidden" name="_token" value="{{ Session::token() }}">
-									  <button type="submit" class="btn btn-default">Submit</button>
-									</form>
-								</div>
-							</div>
-						</div>
 
-					</div>
-      </div>
+{{-- @section('styles')
+<link rel="stylesheet" href="assets/css/main.css" charset="utf-8">
+@endsection --}}
+@section('content')
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    GESTION DES STOCK
+                                </div>
+                            </header>
+                            <div class="widget">
+                                <div class="widget-header transparent">
+                                    <h2><strong>Generations</strong></h2>
+                                </div>
+
+
+                                <div class="widget-content padding">
+                                    <div id="basic-form">
+                                        <form action="{{ route('edit.generation',$generation->id) }}" method="POST" role="form">
+
+                                                    <div class="form-group @if($errors->has('type_id')) has-error @endif">
+                                                                        {{ Form::label('type_id','Types : ')}}
+                                                                    {{ Form::select('type_id',$types, null, ['class' => 'form-control']) }}
+                                                    </div>
+                                                    <div class="form-group @if($errors->has('date')) has-error @endif">
+                                                            <label for="date">Date</label>
+                                                            <input type="text" class="form-control datepicker-input" value="{{ $generation->date }}"  name="date" data-mask="9999-99-99">
+                                                                @if($errors->has('date'))
+                                                                <div class="help-block">
+                                                                {{ $errors->first('date') }}
+                                                                </div>
+                                                                @endif
+                                                    </div>
+                                                    <div class="form-group @if($errors->has('nfacture')) has-error @endif">
+                                                                <label for="nfacture">N°Facture</label>
+                                                                <input type="text" class="form-control" value="{{ $generation->nfacture }}" name ="nfacture">
+                                                        @if($errors->has('nfacture'))
+                                                            <div class="help-block">
+                                                            {{ $errors->first('nfacture') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                    <div class="form-group @if($errors->has('quantite')) has-error @endif">
+                                                            <label for="quantite">Quantité</label>
+                                                            <input type="text" class="form-control" value="{{ $generation->quantite }}" name="quantite" data-mask="999999" placeholder="999999">
+                                                            @if($errors->has('quantite'))
+                                                                <div class="help-block">
+                                                                    {{ $errors->first('quantite') }}
+                                                                </div>
+                                                            @endif
+                                                    </div>
+                                                    <div class="form-group @if($errors->has('prix_uni')) has-error @endif">
+                                                            <label for="prix_uni">Prix Unitaire</label>
+                                                            <input type="text" class="form-control" value="{{ $generation->prix_uni }}" name="prix_uni" data-mask="999999" placeholder="999999">
+                                                        @if($errors->has('prix_uni'))
+                                                            <div class="help-block">
+                                                                {{ $errors->first('prix_uni') }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+
+                                                    <div class="form-group @if($errors->has('fourni')) has-error @endif">
+                                                        <label for="fourni">Fournisseur</label>
+                                                        <input type="text" class="form-control" value="{{ $generation->fourni }}" name ="fourni">
+                                                            @if($errors->has('fourni'))
+                                                                <div class="help-block">
+                                                                    {{ $errors->first('fourni') }}
+                                                                </div>
+                                                            @endif
+                                                    </div>
+
+                                                    <input type="hidden" name="_token" value="{{ Session::token() }}">
+                                                    <button type="submit" class="btn btn-default">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+					    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+</section>
 
 @endsection
 @section('scripts')

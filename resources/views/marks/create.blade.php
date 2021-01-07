@@ -1,16 +1,17 @@
 @extends('layouts.app')
 @include('inc.styles')
+@include('admin.sidebar')
 
+@section('title', ' | Créer mark')
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Modifier leaf #{{ $leaf->id }}</div>
+                    <div class="card-header">Créer un mark</div>
                     <div class="card-body">
-                        <a href="{{ url('/leaves') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/marks') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
                         <br />
                         <br />
 
@@ -22,11 +23,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/leaves/' . $leaf->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
+                        <form method="POST" action="{{ url('/marks') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('leaves.form', ['formMode' => 'edit'])
+                            @include ('marks.form', ['formMode' => 'Créer'])
 
                         </form>
 

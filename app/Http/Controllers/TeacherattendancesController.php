@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Classe;
+use App\Formateur;
 
-use App\Partenaire;
+use App\Teacherattendance;
 use Illuminate\Http\Request;
 
-class PartenairesController extends Controller
+class TeacherattendancesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +23,12 @@ class PartenairesController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $partenaires = Partenaire::latest()->paginate($perPage);
+            $attendances = Teacherattendance::latest()->paginate($perPage);
         } else {
-            $partenaires = Partenaire::latest()->paginate($perPage);
+            $attendances = Teacherattendance::latest()->paginate($perPage);
         }
 
-        return view('partenaires.index', compact('partenaires'));
+        return view('teacherattendances.index', compact('attendances'));
     }
 
     /**
@@ -36,7 +38,9 @@ class PartenairesController extends Controller
      */
     public function create()
     {
-        return view('partenaires.create');
+        $classes=Classe::all();
+        $formateurs=Formateur::all();
+        return view('teacherattendances.create',compact('classes','formateurs'));
     }
 
     /**
@@ -50,13 +54,10 @@ class PartenairesController extends Controller
     {
 
         $requestData = $request->all();
-        if ($request->hasFile('fiche')) {
-            checkDirectory("partenaires");
-            $requestData['fiche'] = uploadFile($request,'fiche', public_path('uploads/partenaires'));
-        }
-        Partenaire::create($requestData);
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire added!');
+        Teacherattendance::create($requestData);
+
+        return redirect('teacherattendances')->with('flash_message', 'Teacherattendance added!');
     }
 
     /**
@@ -68,9 +69,9 @@ class PartenairesController extends Controller
      */
     public function show($id)
     {
-        $partenaire = Partenaire::findOrFail($id);
+        $teacherattendance = Teacherattendance::findOrFail($id);
 
-        return view('partenaires.show', compact('partenaire'));
+        return view('teacherattendances.show', compact('attendance'));
     }
 
     /**
@@ -82,9 +83,11 @@ class PartenairesController extends Controller
      */
     public function edit($id)
     {
-        $partenaire = Partenaire::findOrFail($id);
+        $classes=Classe::all();
+        $formateurs=Formateur::all();
+        $attendance = Teacherattendance::findOrFail($id);
 
-        return view('partenaires.edit', compact('partenaire'));
+        return view('teacherattendances.edit', compact('attendance','classes','formateurs'));
     }
 
     /**
@@ -100,10 +103,10 @@ class PartenairesController extends Controller
 
         $requestData = $request->all();
 
-        $partenaire = Partenaire::findOrFail($id);
-        $partenaire->update($requestData);
+        $teacherattendance = Teacherattendance::findOrFail($id);
+        $teacherattendance->update($requestData);
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire updated!');
+        return redirect('teacherattendances')->with('flash_message', 'Teacherattendance updated!');
     }
 
     /**
@@ -115,8 +118,8 @@ class PartenairesController extends Controller
      */
     public function destroy($id)
     {
-        Partenaire::destroy($id);
+        Teacherattendance::destroy($id);
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire deleted!');
+        return redirect('teacherattendances')->with('flash_message', 'Teacherattendance deleted!');
     }
 }

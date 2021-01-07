@@ -1,38 +1,48 @@
-@extends('layouts.app')
-@include('inc.styles')
+@extends('inc.master')
+@include('admins.sidebar')
+
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+<section id="main-content">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <section  class="panel">
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    MODIFIER UN ADMIN
+                                </div>
+                            </header>
+                            <div class="panel-body">
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Modifier admin #{{ $admin->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url('/admins') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                                <a href="{{ url('/admins') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent <button></a>
+                                <br />
+                                <br />
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                                @if ($errors->any())
+                                    <ul class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
 
-                        <form method="POST" action="{{ url('/admins/' . $admin->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
+                                <form method="POST" action="{{ url('/admins/' . $admin->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                    {{ method_field('PATCH') }}
+                                    {{ csrf_field() }}
 
-                            @include ('admins.form', ['formMode' => 'edit'])
+                                    @include ('admins.form', ['formMode' => 'edit'])
 
-                        </form>
+                                </form>
 
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+</section>
 @endsection

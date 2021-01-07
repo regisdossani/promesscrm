@@ -19,6 +19,7 @@ class CreatePartenairesTable extends Migration
             $table->longText('champ_activite')->nullable();
             $table->string('type_partenariat')->nullable()->default('text');
             $table->string('modalite')->nullable()->default('text');
+            $table->string('fiche')->nullable();
 
             $table->timestamps();
         });

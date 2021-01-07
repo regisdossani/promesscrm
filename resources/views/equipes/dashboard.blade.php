@@ -1,9 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 @extends('inc.master')
 @include('equipes.sidebar')
 
@@ -211,17 +206,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="market-updates">
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-4">
-            <div class="col-md-4 market-update-right">
+            <a class="active"  href="{{url('/eqattendance') }}">
 
-                <i class="fas  fa-user" style="font-size:36px;color:white"></i>                    </div>
-                <div class="col-md-8 market-update-left">
-                <h4>Créer ou modifier le suivi horaire équipe  </h4>
-            </div>
+                <div class="col-md-4 market-update-right">
+                    <i class="fas  fa-user" style="font-size:36px;color:white"></i>                    </div>
+                    <div class="col-md-8 market-update-left">
+                    <h4>Créer ou modifier le suivi horaire équipe  </h4>
+                </div>
+            </a>
           <div class="clearfix"> </div>
         </div>
     </div>
     <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-6">
+        <div class="market-update-block clr-block-5">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
@@ -232,7 +229,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
     <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-7">
+        <div class="market-update-block clr-block-6">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
@@ -243,8 +240,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div class="clearfix"> </div>
         </div>
     </div>
+
      <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-8">
+        <div class="market-update-block clr-block-7">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
@@ -254,9 +252,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             </div>
             <div class="clearfix"> </div>
-
-
         </div>
+    </div>
+</div>
 @endrole
 
 
@@ -278,7 +276,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
             </div>
 
-			<div class="col-md-3 market-update-gd">
+			{{-- <div class="col-md-3 market-update-gd">
 
 				<div class="market-update-block clr-block-2">
                     <a class="active"  href="#">
@@ -293,13 +291,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </a>
 				  <div class="clearfix"> </div>
 				</div>
-            </div>
+            </div> --}}
 
 
 
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-3">
-                    <a class="active"  href="#">
+                    <a class="active"  href="{{url('/listpartenaires') }}">
 
 					<div class="col-md-4 market-update-right">
                         <i class="fas fa-chalkboard-teacher" style="font-size:40px;color:white"></i>
@@ -313,8 +311,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
 
 
-            <div class="col-md-3 market-update-gd">
-                <div class="market-update-block clr-block-5">
+            {{-- <div class="col-md-3 market-update-gd">
+                <div class="market-update-block clr-block-4">
                     <a class="active"  href="#">
 
                     <div class="col-md-4 market-update-right">
@@ -326,11 +324,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <div class="clearfix"> </div>
                 </div>
             </div>
-        </a>
             <div class="clearfix"> </div>
+ --}}
+</div>
 
-        </div>
-
+<div class="market-updates">
         <div class="col-md-3 market-update-gd">
             <div class="market-update-block clr-block-5">
                 <a class="active"  href="#">
@@ -345,17 +343,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <div class="clearfix"> </div>
             </div>
         </div>
-    </a>
-        <div class="clearfix"> </div>
-
-    </div>
-
-
 
 
 
     <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-3">
+        <div class="market-update-block clr-block-6">
             <a class="active"  href="#">
 
             <div class="col-md-4 market-update-right">
@@ -371,9 +363,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 
+</div>
 
-
-
+{{--
 <div class="col-md-3 market-update-gd">
     <div class="market-update-block clr-block-5">
         <a class="active"  href="#">
@@ -385,13 +377,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h4>Suivi inventaire et stocks équipements à
                 disposition des apprenants en post formation</h4>
         </div>
+    </a>
       <div class="clearfix"> </div>
     </div>
-</div>
-</a>
-<div class="clearfix"> </div>
+</div> --}}
 
-</div>
+{{-- <div class="clearfix"> </div> --}}
 
 @endrole
 

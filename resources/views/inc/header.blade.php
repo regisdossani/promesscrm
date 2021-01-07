@@ -47,7 +47,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="{{ url('/admin' . '/' . Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="{{ url('/admins/'. Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
                         <li>
                             <a  href="{{ route('logout') }}"
@@ -74,7 +74,7 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu extended logout">
-                    <li><a href="{{ url('/apprenant' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ url('/apprenants' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
 
                     <li>
@@ -103,7 +103,7 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu extended logout">
-                    <li><a href="{{ url('/equipe' . '/' . Auth::guard('equipe')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ url('/equipes' . '/' . Auth::guard('equipe')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
 
                     <li>
@@ -128,11 +128,11 @@
                 <a data-toggle="dropdown" >
                     <img alt="" src="{{Auth::guard('formateur')->user()->avatar}}">
                     <span class="username">
-                            {{Auth::guard('equipe')->user()->username}}
+                            {{Auth::guard('formateur')->user()->username}}
                     </span>
                 </a>
                 <ul class="dropdown-menu extended logout">
-                    <li><a href="{{ url('/formateur' . '/' . Auth::guard('formateur')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ url('/formateurs' . '/' . Auth::guard('formateur')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                     <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
 
                     <li>

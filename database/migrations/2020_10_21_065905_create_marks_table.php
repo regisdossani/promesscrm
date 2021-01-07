@@ -15,7 +15,6 @@ class CreateMarksTable extends Migration
     {
         Schema::create('marks', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedInteger('apprenant_id')->nullable();
             $table->unsignedInteger('module_id')->nullable();
             $table->unsignedInteger('formation_id')->nullable();
@@ -23,6 +22,7 @@ class CreateMarksTable extends Migration
             $table->double('note_exam')->nullable();
             $table->double('note1')->nullable();
             $table->double('note2')->nullable();
+            $table->double('moyenne')->nullable();
             $table->string('year')->nullable();
 
             $table->timestamps();

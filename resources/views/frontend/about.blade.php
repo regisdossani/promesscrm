@@ -43,8 +43,8 @@
     <div class="container">
       <div class="row no-gutters">
         <div class="col-lg-4 text-center text-lg-left">
-          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
-          <ul class="list-inline d-inline">
+            <a class="text-color mr-3" href="callto:+221 33 951 13 15"><strong>Tél:</strong> +221 33 951 13 15</a>
+            <ul class="list-inline d-inline">
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
@@ -180,7 +180,7 @@
     <div class="row">
       <div class="col-12">
         <img class="img-fluid w-100 mb-4" src="images/about/about-page.jpg" alt="about image">
-        <h2 class="section-title">À PROPOS DE NOTRE VOYAGE</h2>
+        <h2 class="section-title">À PROPOS DE PROMESS</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ipsa illo quod veritatis, magni debitis fugiat dolore voluptates! Consequatur, aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis sint optio similique. Et amet magni facilis vero corporis quos.</p>
         <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum a, facere fugit error accusamus est officiis vero in, nostrum laboriosam corrupti explicabo, cumque repudiandae deleniti perspiciatis quae consectetur enim. Laboriosam!</p>
       </div>
@@ -351,32 +351,32 @@
           </ul>
         </div>
         <!-- company -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">PROMESS</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
             <li class="mb-3"><a class="text-color" href="teacher.html">Our Formateur</a></li>
             <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
           </ul>
-        </div>
+        </div> --}}
         <!-- links -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">LIENS</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
             <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
             <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
           </ul>
-        </div>
+        </div> --}}
         <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+        {{-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">SUPPORT</h4>
           <ul class="list-unstyled">
             <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
             <li class="mb-3"><a class="text-color" href="#">Language</a></li>
             <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
           </ul>
-        </div>
+        </div> --}}
   <!-- copyright -->
   <div class="copyright py-4 bg-footer">
     <div class="container">
@@ -390,12 +390,12 @@
             ©   <a href="https://promess.ngo">promess.ngo</a></p> . All Rights Reserved.
         </div>
         <div class="col-sm-5 text-sm-right text-center">
-          <ul class="list-inline">
+          {{-- <ul class="list-inline">
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/themefisher"><i class="ti-facebook text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://dribbble.com/themefisher"><i class="ti-dribbble text-primary"></i></a></li>
-          </ul>
+          </ul> --}}
         </div>
       </div>
     </div>

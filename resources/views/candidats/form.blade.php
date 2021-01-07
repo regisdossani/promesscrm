@@ -1,7 +1,4 @@
 
-
-
-
                                     <div class="col-md-3  {{ $errors->has('civilite') ? 'has-error' : ''}}">
                                             <label for="civilite" class="control-label">{{ 'Civilité :' }}</label>
                                             <div class="select-list">
@@ -84,6 +81,8 @@
                                 <div class="col-md-6  {{ $errors->has('statut') ? 'has-error' : ''}}">
                                         <label for="statut" class="control-label">{{ 'Statut' }}</label>
                                         <select class="form-control" name="statut"  id="statut" >
+                                            <option>-- --Choisissez un statut--</option>
+
                                                 <option value="1">Intention</option>
                                                 <option value="2">En attente</option>
                                                 <option value="3">Acceptée</option>

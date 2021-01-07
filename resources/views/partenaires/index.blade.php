@@ -38,14 +38,23 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th><th>Nom</th><th>Type de Partenariat</th><th>Modalité</th><th>Actions</th>
+                                                        <th>#</th>
+                                                        <th>Nom</th>
+                                                        <th>Type de Partenariat</th>
+                                                        <th>Modalité</th>
+                                                        <th>Fiche de description</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                         @foreach($partenaires as $item)
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
-                                                                <td>{{ $item->nom }}</td><td>{{ $item->type_partenariat }}</td><td>{{ $item->modalite }}</td>
+                                                                <td>{{ $item->nom }}</td>
+                                                                <td>{{ $item->type_partenariat }}</td>
+                                                                <td>{{ $item->modalite }}</td>
+                                                                <td>{{ $item->fiche }}</td>
+
                                                                 <td>
                                                                     <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                                                     <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>

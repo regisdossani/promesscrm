@@ -13,7 +13,7 @@
                     <section  class="panel">
                         <header class="panel-heading">
                             <div class="panel-title">
-                                GESTION DES PRÉSENCES
+                                GESTION DES PRÉSENCES DES APPRENANTS
                             </div>
                         </header>
                         {{-- <div class="card-header">LES PRÉSENCES</div> --}}

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Partenaire;
+use App\Mark;
 use Illuminate\Http\Request;
 
-class PartenairesController extends Controller
+class MarksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +17,16 @@ class PartenairesController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
+        /* $keyword = $request->get('search');
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $partenaires = Partenaire::latest()->paginate($perPage);
+            $mark = Mark::latest()->paginate($perPage);
         } else {
-            $partenaires = Partenaire::latest()->paginate($perPage);
-        }
-
-        return view('partenaires.index', compact('partenaires'));
+            $mark = Mark::latest()->paginate($perPage);
+        } */
+        $data=Mark::all();
+        return view('marks.index', compact('data'));
     }
 
     /**
@@ -34,10 +34,10 @@ class PartenairesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
-        return view('partenaires.create');
-    }
+    // public function create()
+    // {
+    //     return view('.create');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -46,18 +46,15 @@ class PartenairesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
 
         $requestData = $request->all();
-        if ($request->hasFile('fiche')) {
-            checkDirectory("partenaires");
-            $requestData['fiche'] = uploadFile($request,'fiche', public_path('uploads/partenaires'));
-        }
-        Partenaire::create($requestData);
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire added!');
-    }
+        Mark::create($requestData);
+
+        return redirect('')->with('flash_message', 'Mark added!');
+    } */
 
     /**
      * Display the specified resource.
@@ -66,12 +63,12 @@ class PartenairesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    /* public function show($id)
     {
-        $partenaire = Partenaire::findOrFail($id);
+        $ = Mark::findOrFail($id);
 
-        return view('partenaires.show', compact('partenaire'));
-    }
+        return view('.show', compact(''));
+    } */
 
     /**
      * Show the form for editing the specified resource.
@@ -80,12 +77,12 @@ class PartenairesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($id)
+    /* public function edit($id)
     {
-        $partenaire = Partenaire::findOrFail($id);
+        $ = Mark::findOrFail($id);
 
-        return view('partenaires.edit', compact('partenaire'));
-    }
+        return view('.edit', compact(''));
+    } */
 
     /**
      * Update the specified resource in storage.
@@ -98,12 +95,15 @@ class PartenairesController extends Controller
     public function update(Request $request, $id)
     {
 
-        $requestData = $request->all();
+        // $requestData = $request->all();
+            if($request->ajax()){
 
-        $partenaire = Partenaire::findOrFail($id);
-        $partenaire->update($requestData);
+            }
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire updated!');
+            $mark = Mark::find($request->input('pk'))->update([$request->input('note1') => $request->input('value')]);
+        $mark->update($requestData);
+
+        return response()->json(['succes'=>true]);
     }
 
     /**
@@ -113,10 +113,10 @@ class PartenairesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    /* public function destroy($id)
     {
-        Partenaire::destroy($id);
+        Mark::destroy($id);
 
-        return redirect('partenaires')->with('flash_message', 'Partenaire deleted!');
-    }
+        return redirect('')->with('flash_message', 'Mark deleted!');
+    } */
 }

@@ -14,7 +14,7 @@
                         <section class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    Modifier UN ENCADREUR
+                                    MODIFIER UN ENCADREUR
                                 </div>
                             </header>
                                 {{-- <div class="card-header">Modifier encadreur #{{ $encadreur->id }}</div> --}}
