@@ -10,4 +10,5 @@ class Filiere extends Model
         'nom', 'annee'
     ];
 
+    
 }
