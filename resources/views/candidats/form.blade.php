@@ -1,38 +1,4 @@
 
-                                    <div class="col-md-3  {{ $errors->has('civilite') ? 'has-error' : ''}}">
-                                            <label for="civilite" class="control-label">{{ 'Civilité :' }}</label>
-                                            <div class="select-list">
-                                                <select name="civilite" id="civilite" class="form-control">
-                                                    <option value="M">M</option>
-                                                    <option value="Mme">Mme</option>
-                                                    <option value="Mlle">Mlle</option>
-                                                </select>
-                                                {!! $errors->first('civilite', '<p class="help-block">:message</p>') !!}
-                                            </div>
-                                    </div>
-
-                                    <div class="col-md-3  {{ $errors->has('date_naiss') ? 'has-error' : ''}}">
-                                        <label for="date_naiss" class="control-label">{{ 'Date de Naissance :' }}</label>
-                                        <input class="form-control" name="date_naiss" type="date" id="date_naiss" value="{{ isset($candidat->date_naiss) ? $candidat->date_naiss : ''}}" >
-                                        {!! $errors->first('date_naiss', '<p class="help-block">:message</p>') !!}
-                                    </div>
-                                    <div class="col-md-6 {{ $errors->has('adresse') ? 'has-error' : ''}}">
-                                        <label for="adresse" class="control-label">{{ 'Adresse :' }}</label>
-                                        <input class="form-control" name="adresse" type="text" id="adresse" value="{{ isset($candidat->date_naiss) ? $candidat->date_naiss : ''}}" >
-                                        {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
-                                    </div>
-
-
-
-
-
-
-                                    <div class="col-md-6 ">
-                                        <label for="prenom" class="control-label">{{ 'Prénom :' }}</label>
-                                        <input class="form-control" name="prenom" type="text" id="prenom" >
-                                        {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
-                                    </div>
-
 
                                     <div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}} ">
                                         <label for="nom" class="control-label">{{ 'Nom :' }}</label>
@@ -43,96 +9,126 @@
 
 
 
-                                <div class="col-md-6  {{ $errors->has('email_1') ? 'has-error' : ''}}">
-                                    <label for="email_1" class="control-label">{{ 'Email 1:' }}</label>
-                                    <input class="form-control" name="email_1" type="text" id="email_1" value="{{ isset($candidat->email_1) ? $candidat->email_1 : ''}}" >
-                                    {!! $errors->first('email_1', '<p class="help-block">:message</p>') !!}
-                                </div>
-
-                                <div class="col-md-6  {{ $errors->has('email_2') ? 'has-error' : ''}}">
-                                    <label for="email_2" class="control-label">{{ 'Email 2:' }}</label>
-                                    <input class="form-control" name="email_2" type="text" id="email_2" value="{{ isset($candidat->email_2) ? $candidat->email_2 : ''}}" >
-                                    {!! $errors->first('email_2', '<p class="help-block">:message</p>') !!}
+                                <div class="col-md-6  {{ $errors->has('email') ? 'has-error' : ''}}">
+                                    <label for="email" class="control-label">{{ 'Email:' }}</label>
+                                    <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email_1 : ''}}" >
+                                    {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                                 </div>
 
 
-
-                            <div class="col-md-6  {{ $errors->has('tel_1') ? 'has-error' : ''}}">
-								<label for="tel_1" class="control-label">{{'Téléphonel 1:' }}</label>
-								<input class="form-control" name="tel_1" type="text" id="tel_1" value="{{ isset($candidat->tel_1) ? $candidat->tel_1 : ''}}" >
-								{!! $errors->first('tel_1', '<p class="help-block">:message</p>') !!}
-							</div>
-
-							<div class="col-md-6  {{ $errors->has('tel_2') ? 'has-error' : ''}}">
-								<label for="tel_2" class="control-label">{{'Téléphone 2:' }}</label>
-									<input class="form-control" name="tel_2" type="text" id="tel_2" value="{{ isset($candidat->tel_2) ? $candidat->tel_2 : ''}}" >
-									{!! $errors->first('tel_2', '<p class="help-block">:message</p>') !!}
+                            <div class="col-md-6  {{ $errors->has('tel') ? 'has-error' : ''}}">
+								<label for="tel" class="control-label">{{'Téléphonel:' }}</label>
+								<input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel_1 : ''}}" >
+								{!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 							</div>
 
 
-                            <div class="col-md-6 ">
-                                <label for="choix_formation">Choix de la formation du candidat:</label>
-                                <input class="form-control" name="choix_formation" type="text" id="choix_formation" value="{{ isset($candidat->choix_formation) ? $candidat->choix_formation : ''}}" >
-                                    {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
+                        <div>
+                            <label for="orientation">promo:</label>
+                                <select class="form-control" name="promo"  id="promo" >
+                                        <option>--Choisissez une orientation--</option>
+                                        <option value="Formation initiale">Formation initiale</option>
+                                        <option value="Formation initiale">Formation continue</option>
+                                </select>
+                                {!! $errors->first('promo', '<p class="help-block">:message</p>') !!}
                             </div>
 
-                             @role('superadmin')
+                            <div class="col-md-6 {{ $errors->has('parrain') ? 'has-error' : ''}} ">
+                                <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
+                                <input class="form-control" name="parrain" type="text" id="parrain" >
+                                {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
+                            </div>
+                            <div class="col-md-6 {{ $errors->has('tel_parrain') ? 'has-error' : ''}} ">
+                                <label for="tel_parrain" class="control-label">{{ 'Tél Parrain :' }}</label>
+                                <input class="form-control" name="tel_parrain" type="text" id="tel_parrain" >
+                                {!! $errors->first('tel_parrain', '<p class="help-block">:message</p>') !!}
+                            </div>
 
-                                <div class="col-md-6  {{ $errors->has('statut') ? 'has-error' : ''}}">
-                                        <label for="statut" class="control-label">{{ 'Statut' }}</label>
-                                        <select class="form-control" name="statut"  id="statut" >
-                                            <option>-- --Choisissez un statut--</option>
+                            <div class="col-md-6 {{ $errors->has('email_parrain') ? 'has-error' : ''}} ">
+                                <label for="email_parrain" class="control-label">{{ 'Email Parrain :' }}</label>
+                                <input class="form-control" name="email_parrain" type="text" id="email_parrain" >
+                                {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
+                            </div>
 
-                                                <option value="1">Intention</option>
-                                                <option value="2">En attente</option>
-                                                <option value="3">Acceptée</option>
-                                                <option value="4">Refusée</option>
+                            <div class="col-md-6 {{ $errors->has('provenance') ? 'has-error' : ''}}">
+                                <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
+                                <input class="form-control" name="provenance" type="text" id="provenance" value="{{ isset($candidat->date_naiss) ? $candidat->date_naiss : ''}}" >
+                                {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
+                            </div>
+                            <div class="col-md-6 {{ $errors->has('region') ? 'has-error' : ''}}">
+                                <label for="region" class="control-label">{{ 'Region :' }}</label>
+                                <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
+                                {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
+                            </div>
 
+
+
+
+                             @role('superadmin,Resp-Pedagogique')
+                             <div>
+                                <label for="filiere">Filière:</label>
+                                <select class="form-control" name="filiere"  id="filiere" >
+                                        <option>--Choisissez un filiere--</option>
+                                            @foreach ($filiere as $item)
+                                                <option value="$item->nom">{{$item->nom}}</option>
+                                            @endforeach
+                                </select>
+                            </div>
+                             <div class="col-md-2  {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
+                                <label for="reception_dossier" class="control-label">{{ 'Reception Deposé?' }}</label>
+                                <div class="radio">
+                                        <label><input name="reception_dossier" type="radio" value="1" {{ (isset($candidat) && 1 == $candidat->reception_dossier) ? 'checked' : '' }}> Oui</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input name="reception_dossier" type="radio" value="0" @if (isset($candidat)) {{ (0 == $candidat->reception_dossier) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Non</label>
+                                </div>
+                                {!! $errors->first('reception_dossier', '<p class="help-block">:message</p>') !!}
+                            </div>
+                             <div class="col-md-2  {{ $errors->has('test_ecrit') ? 'has-error' : ''}}">
+                                <label for="test_ecrit" class="control-label">{{ 'Test Ecrit' }}</label>
+                                <input class="form-control" name="test_ecrit" type="date" id="test_ecrit" value="{{ isset($candidat->test_ecrit) ? $candidat->test_ecrit : ''}}" >
+                                {!! $errors->first('test_ecrit', '<p class="help-block">:message</p>') !!}
+                            </div>
+                            <div class="col-md-2  {{ $errors->has('entretien') ? 'has-error' : ''}}">
+                                <label for="entretien" class="control-label">{{ 'Entretien' }}</label>
+                                <input class="form-control" name="entretien" type="date" id="entretien" value="{{ isset($candidat->entretien) ? $candidat->entretien : ''}}" >
+                                {!! $errors->first('entretien', '<p class="help-block">:message</p>') !!}
+                            </div>
+
+
+                                <div class="col-md-6  {{ $errors->has('resultat') ? 'has-error' : ''}}">
+                                        <label for="resultat" class="control-label">{{ 'Résultat' }}</label>
+                                        <select class="form-control" name="resultat"  id="resultat" >
+                                            <option>-- --Choisissez un resultat--</option>
+
+                                                <option value="1">Non retenu</option>
+                                                <option value="2">Absent(e)</option>
+                                                <option value="3">Excusé(e)</option>
+                                                <option value="4">Accepté(e) en FI</option>
+                                                <option value="5">Passer tests en FC</option>
                                         </select>
-                                            {!! $errors->first('statut', '<p class="help-block">:message</p>') !!}
+                                            {!! $errors->first('resultat', '<p class="help-block">:message</p>') !!}
+                                </div>
+
+                                <div class="col-md-10   {{ $errors->has('commentaire') ? 'has-error' : ''}}">
+                                    <label class="label" for="commentaire">Commentaire</label>
+                                    <textarea name="commentaire" class="form-control" id="commentaire" cols="10" rows="4" placeholder="commentaire"></textarea>
+                                    {!! $errors->first('commentaire', '<p class="help-block">:message</p>') !!}
+
                                 </div>
                             @endrole
 
 
 
-@role('superadmin')
 
-
-
-
-
-<div class="col-md-2  {{ $errors->has('depot_dossier') ? 'has-error' : ''}}">
-    <label for="depot_dossier" class="control-label">{{ 'Dossier Deposé?' }}</label>
-    <div class="radio">
-            <label><input name="depot_dossier" type="radio" value="1" {{ (isset($candidat) && 1 == $candidat->depot_dossier) ? 'checked' : '' }}> Oui</label>
-    </div>
-    <div class="radio">
-        <label><input name="depot_dossier" type="radio" value="0" @if (isset($candidat)) {{ (0 == $candidat->depot_dossier) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Non</label>
-    </div>
-    {!! $errors->first('depot_dossier', '<p class="help-block">:message</p>') !!}
-</div>
-
-
-<div class="col-md-6  {{ $errors->has('parrain') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6  {{ $errors->has('parrain') ? 'has-error' : ''}}">
     <label for="parrain" class="control-label">{{ 'Parrain' }}</label>
     <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
     {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
 </div>
+ --}}
 
 
-
-<div class="col-md-2  {{ $errors->has('test_ecrit') ? 'has-error' : ''}}">
-    <label for="test_ecrit" class="control-label">{{ 'Date du test Ecrit' }}</label>
-    <input class="form-control" name="test_ecrit" type="date" id="test_ecrit" value="{{ isset($candidat->test_ecrit) ? $candidat->test_ecrit : ''}}" >
-    {!! $errors->first('test_ecrit', '<p class="help-block">:message</p>') !!}
-</div>
-
-
-<div class="col-md-2  {{ $errors->has('test_oral') ? 'has-error' : ''}}">
-    <label for="test_oral" class="control-label">{{ 'Date Test Oral' }}</label>
-    <input class="form-control" name="test_oral" type="date" id="test_oral" value="{{ isset($candidat->test_oral) ? $candidat->test_oral : ''}}" >
-    {!! $errors->first('test_oral', '<p class="help-block">:message</p>') !!}
-</div>
     <div class="col-md-4  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
         @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
@@ -153,15 +149,10 @@
     </div>
 
 
-
-
-
          <div class="col-md-6  {{ $errors->has('test_pj') ? 'has-error' : ''}}">
             @if(isset($candidat->test_pj) && !empty($candidat->test_pj))
             <a href="{{ url('uploads/candidats/' . $candidat->test_pj) }}" ><i class="fa fa-download"></i> {{$candidat->test_pj}}</a>
-
-        @endif
-
+            @endif
                     <label for="test_pj" class="control-label">{{ 'Pièce jointe Test' }}</label>
                     <input class="form-control" name="test_pj" type="file" id="test_pj"  >
                     {!! $errors->first('test_pj', '<p class="help-block">:message</p>') !!}
@@ -169,24 +160,7 @@
 
 
 
-        <div class="col-md-6 {{ $errors->has('orientation') ? 'has-error' : ''}}">
-            <label for="orientation" class="label">{{ 'Orientation' }}</label>
-            <input type="text" class="form-control" name="orientation" id="orientation" placeholder="orientation">
-            {!! $errors->first('orientation', '<p class="help-block">:message</p>') !!}
-
-        </div>
-
-
-<div class="col-md-10   {{ $errors->has('commentaire') ? 'has-error' : ''}}">
-    <label class="label" for="commentaire">Commentaire</label>
-    <textarea name="commentaire" class="form-control" id="commentaire" cols="30" rows="4" placeholder="commentaire"></textarea>
-    {!! $errors->first('commentaire', '<p class="help-block">:message</p>') !!}
-
-</div>
-@endrole
-
-
-
+{{--
 
 <div class="col-md-8 form-group {{ $errors->has('avatar') ? 'has-error' : ''}}">
     @if(isset($candidat->avatar) && !empty($candidat->avatar))
@@ -196,7 +170,7 @@
     <label for="avatar" class="control-label">{{ 'Photo' }}</label>
     <input class="form-control" name="avatar" type="file" id="avatar" >
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
-</div>
+</div> --}}
 
 <div class="col-md-6 ">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">

@@ -19,7 +19,7 @@ class CreateSuivipostchantiersTable extends Migration
             $table->string('evaluation')->nullable();
             $table->longText('maintenance')->nullable();
             $table->timestamps();
-            $table->foreign('chantier_id')->references('id')->on('chantier_ecoles')
+            $table->foreign('chantier_id')->references('id')->on('chantiers')
             ->onDelete('cascade')
            ->onUpdate('cascade');
 

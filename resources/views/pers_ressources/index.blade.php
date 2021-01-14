@@ -52,7 +52,18 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nom</th><th>Prénom</th><th>Email</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Nom</th>
+                                        <th>Réference</th>
+                                        <th>Sexe</th>
+                                        <th>Tél</th>
+                                        <th>Email</th>
+                                        <th>Qualite</th>
+                                        <th>Spécialites</th>
+                                        <th>Atelier de juillet_2018</th>
+                                        <th>formation dejanvier_2019</th>
+
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

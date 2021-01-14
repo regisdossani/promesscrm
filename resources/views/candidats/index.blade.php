@@ -60,10 +60,12 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Civilité</th>
-                                        <th>Prénom</th>
+                                        <th>#</th>
                                         <th>Nom</th>
-                                        <th>Photo</th>
+                                        <th>Provenance</th>
+                                        <th>Région</th>
+                                        <th>Filière</th>
+                                        <th>Reception de dossier</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -71,11 +73,14 @@
                                 @foreach($candidats as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->civilite }}</td>
-                                        <td>{{ $item->prenom }}</td>
                                         <td>{{ $item->nom }}</td>
-                                        <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>
-                                        <td>
+                                        <td>{{ $item->provenance }}</td>
+                                        <td>{{ $item->region }}</td>
+                                        <td>{{ $item->filiere->nom }}</td>
+                                        <td>{{ $item->reception_dossier }}</td>
+
+                                       {{--  <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>
+                                        <td> --}}
                                             <a href="{{ url('/candidats/' . $item->id) }}" title="Voir ce candidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                             <a href="{{ url('/candidats/' . $item->id . '/edit') }}" title="Modifier ce candidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 

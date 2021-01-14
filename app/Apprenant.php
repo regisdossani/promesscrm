@@ -14,8 +14,8 @@ class Apprenant extends Authenticatable
     protected $table = 'apprenants';
 
     protected $fillable = [
-        'username', 'email', 'password','visite_terain1','visite_terain2','visite_terain3','note_3','note_2','note_1',
-        'note_3','prenom','nom','candidat_id','formation_id','classe_id'
+         'email', 'password','annee','visite_terain','lieu_naiss','date_naiss'
+       ,'prenom','nom','candidat_id','filiere_id','tel','promo_id','reference','sexe','annee'
     ];
 
     protected $hidden = [
@@ -26,27 +26,30 @@ class Apprenant extends Authenticatable
 
  public function stages()
 {
-   return $this->belongsToMany(Stage::class,'apprenant_stage','apprenant_id','stage_id')
-   ;
+   return $this->belongsToMany(Stage::class,'apprenant_stage','apprenant_id','stage_id') ;
 }
 public function chantiers()
 {
-   return $this->belongsToMany(Chantier_ecole::class,'apprenant_chantier','chantier_id','apprenant_id')
-   ->withPivot('professionnel_id','formateur_id');
+   return $this->belongsToMany(Chantier::class,'apprenant_chantier');
+
 }
 
 
- public function candidat()
-{
-    return $this->hasOne(Candidat::class);
-}
-public function class()
-{
-    return $this->belongsTo(Classe::class, 'classe_id');
-}
+    public function candidat()
+    {
+        return $this->hasOne(Candidat::class);
+    }
+   
 
-/* public function schoolattendances()
-{
-    return $this->hasMany(Schoolattendance::class);
-} */
+    public function filieres()
+    {
+        return $this->belongsTo(Filiere::class,'filiere_id');
+    }
+
+    public function promos()
+    {
+        return $this->belongsTo(Promo::class,'promo_id');
+    }
+
+
 }

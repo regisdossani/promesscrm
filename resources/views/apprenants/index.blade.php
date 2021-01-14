@@ -47,7 +47,7 @@
                                                 <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
 
                                                     <button class="btn btn-secondary" type="submit">
-                                                        <i class="fa fa-search"></i>
+                                                      <i class="fa fa-search"></i>
                                                     </button>
                                             </div>
                                         </form>
@@ -60,21 +60,40 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Username</th>
                                                         <th>Nom</th>
                                                         <th>Prénom</th>
-                                                        <th>Classe</th>
-                                                        <th>Actions</th>
+                                                        <th>Référence</th>
+                                                        <th>Sexe </th>
+                                                        <th>Tel</th>
+                                                        <th>Date de naissance</th>
+                                                        <th>Lieu</th>
+                                                        <th>Filière</th>
+                                                        <th>Promo</th>
+                                                        <th>Année</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($apprenants as $item)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $item->username }}</td>
                                                         <td>{{ $item->nom }}</td>
                                                         <td>{{ $item->prenom }}</td>
-                                                        <td>{{ $item->class()->pluck('name')->implode(' ') }}</td>
+                                                        <td>{{ $item->reference }}</td>
+                                                        <td>{{ $item->sexe}}</td>
+                                                        <td>{{ $item->tel}}</td>
+                                                        <td>{{ $item->date_naiss}}</td>
+                                                        <td>{{ $item->lieu_naiss}}</td>
+                                                        <td>{{ $item->filiere}}</td>
+                                                        <td>{{ $item->promo}}</td>
+                                                        <td>{{ $item->annee}}</td>
+                                                        <td>
+                                                            {{-- <ul>
+                                                                @foreach($item->stages as $stage)
+                                                                <li>{{ $stage->titre }}</li>
+                                                                @endforeach
+                                                            </ul> --}}
+                                                        </td>
 
                                                         {{-- <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td> --}}
 

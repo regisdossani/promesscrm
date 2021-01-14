@@ -15,29 +15,27 @@ class CreateCandidatsTable extends Migration
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
-            $table->string('civilite')->nullable()->default('username');
-            $table->string('prenom')->nullable()->default('prenom');
             $table->string('nom')->nullable()->default('nom');
-            $table->string('statut')->nullable()->default('statut');
-            $table->date('date_naiss')->nullable();
-            $table->string('parrain')->nullable()->default('parrain');
-            $table->string('tel_1')->nullable()->default('tel_1');
-            $table->string('tel_2')->nullable()->default('tel_2');
-            $table->string('email_1')->unique();
-            $table->string('email_2')->nullable();
-            $table->string('adresse')->nullable();
-            $table->string('choix_formation')->nullable();
+            $table->string('tel')->nullable()->default('tel_1');
+            $table->string('email')->unique();
+            $table->string('provenance')->nullable();
+            $table->string('region')->nullable();
+            $table->unsignedBigInteger('promo')->nullable();
+            $table->unsignedBigInteger('filiere')->nullable();
+            $table->string('parrain')->nullable();
+            $table->string('tel_parrain')->nullable();
+            $table->string('email_parrain')->nullable();
 
-            $table->boolean('depot_dossier')->nullable()->default(false);
+           $table->boolean('reception_dossier')->nullable()->default(false);
             $table->string('pj_depotdossier')->nullable()->default('pj_depotdossier');
             $table->string('pj_depotdossier2')->nullable()->default('pj_depotdossier2');
 
             $table->date('test_ecrit')->nullable();
-            $table->date('test_oral')->nullable();
+            $table->date('entretien')->nullable();
             $table->string('test_pj')->nullable();
-            $table->string('orientation')->nullable()->default('orientation');
+            $table->string('resultat')->nullable();
+            $table->boolean('signature')->nullable();
             $table->longText('commentaire')->nullable();
-            $table->string('avatar')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -91,9 +91,9 @@ class EquipesController extends Controller
             checkDirectory("equipe");
             $requestData['cv'] = uploadFile($request, 'cv', public_path('uploads/equipe'));
         }
-        if ($request->hasFile('avatar')) {
+        if ($request->hasFile('photo')) {
             checkDirectory("equipe");
-            $requestData['avatar'] = $requestData['avatar'] =uploadFile($request, 'avatar', public_path('uploads/equipe'));
+            $requestData['photo'] = $requestData['photo'] =uploadFile($request, 'photo', public_path('uploads/equipe'));
         }
         if ($request->hasFile('contrat')) {
             checkDirectory("equipe");
@@ -136,9 +136,8 @@ class EquipesController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::findOrFail($id);
-        $roles = Role::pluck('name','name')->all();
-        $equipeRole = $equipe->roles->pluck('name','name')->all();
-        return view('equipes.edit', compact('equipe','roles','equipeRole'));
+        $roles = Role::only('name');
+        return view('equipes.edit', compact('equipe','roles'));
     }
 
     /**
@@ -152,15 +151,10 @@ class EquipesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'username' => 'required',
-            'nom'=> 'required',
-            'prenom'=> 'required',
+            'nom_prenom'=> 'required',
             'password'=> 'required',
-            'tel_1'=> 'required',
-           'adresse'=> 'required',
-
-            'email' => 'required|email|unique:equipes,email_1',
-            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
+            'email' => 'email|unique:equipes,email',
+            'photo' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'cv.*' => 'mimes:doc,docx,pdf,txt',
             'contrat.*' => 'mimes:doc,docx,pdf,txt',
 

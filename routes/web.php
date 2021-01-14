@@ -97,15 +97,8 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/eqattendance', 'EqattendanceController');
     Route::resource('/stagiaires', 'StagiairesController');
     Route::resource('/teacherattendances', 'TeacherattendancesController');
-
+    Route::resource('/chantiers', 'ChantiersController');
     });
-
-
-
-
-
-
-
 
 
 
@@ -114,7 +107,7 @@ Route::group(['middleware'=>'auth:apprenant,admin,equipe'],
 function() {
     Route::get('candidats/{id}', [ 'as'=>'candidat.edit', 'uses' => 'CandidatsController@edit']);
     Route::resource('/apprenants', 'ApprenantsController');
-
+    Route::get('stage/apprenant/{apprenant}', 'ApprenantsController@removeStage')->name('stage.apprenant.delete');
 });
 
 
@@ -127,7 +120,7 @@ Route::group(['middleware'=>'auth:apprenant'],
 
  Route::post('/inscription','CandidatsController@inscription');
 
- Route::group(['middleware'=>['auth:admin,equipe']], function(){
+    Route::group(['middleware'=>['auth:admin,equipe']], function(){
     Route::get('/partenaires', 'PartenairesController@index');
     Route::get('/persressources', 'Pers_ressourcesController@index');
 

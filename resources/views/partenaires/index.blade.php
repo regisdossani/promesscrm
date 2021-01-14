@@ -39,10 +39,12 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Nom</th>
-                                                        <th>Type de Partenariat</th>
-                                                        <th>Modalité</th>
-                                                        <th>Fiche de description</th>
+                                                        <th>Raison social</th>
+                                                        <th>Référence</th>
+                                                        <th>Activité entreprise</th>
+                                                        <th>Responsable</th>
+                                                        <th>Téléphone</th>
+                                                        <th>Email</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -50,10 +52,12 @@
                                                         @foreach($partenaires as $item)
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
-                                                                <td>{{ $item->nom }}</td>
-                                                                <td>{{ $item->type_partenariat }}</td>
-                                                                <td>{{ $item->modalite }}</td>
-                                                                <td>{{ $item->fiche }}</td>
+                                                                <td>{{ $item->raison_social }}</td>
+                                                                <td>{{ $item->reference }}</td>
+                                                                <td>{{ $item->activite_entreprise }}</td>
+                                                                <td>{{ $item->responsable }}</td>
+                                                                <td>{{ $item->tel }}</td>
+                                                                <td>{{ $item->email }}</td>
 
                                                                 <td>
                                                                     <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

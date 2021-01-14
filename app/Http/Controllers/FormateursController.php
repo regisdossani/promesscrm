@@ -62,8 +62,8 @@ class FormateursController extends Controller
         $this->validate($request,[
             'nom' => 'required',
             'prenom'=> 'required',
-            'civilite'=> 'required',
-            'tel_1'=> 'required'
+            'sexe'=> 'required',
+            'tel'=> 'required'
         ]);
 
         $requestData = $request->all();
@@ -73,11 +73,11 @@ class FormateursController extends Controller
                 $requestData['Contratcadre_pj'] =uploadFile($request,'Contratcadre_pj',public_path('uploads/formateurs'));
         }
 
-        if ($request->hasFile('CV_pj')) {
+        if ($request->hasFile('cv_pj')) {
             checkDirectory("formateurs");
-            $requestData['CV_pj'] = uploadFile($request,'CV_pj', public_path('uploads/formateurs'));
+            $requestData['cv_pj'] = uploadFile($request,'cv_pj', public_path('uploads/formateurs'));
         }
-        
+
 
 
         Formateur::create($requestData);

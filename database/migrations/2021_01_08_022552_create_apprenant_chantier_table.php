@@ -17,18 +17,9 @@ class CreateApprenantChantierTable extends Migration
             // $table->id();
             $table->unsignedBigInteger('chantier_id');
             $table->unsignedBigInteger('apprenant_id');
-            $table->unsignedBigInteger('formateur_id');
-            $table->unsignedBigInteger('professionnel_id');
 
 
-            $table->foreign('formateur_id')->references('id')->on('formateurs')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->foreign('professionnel_id')->references('id')->on('professionnels')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
-            $table->foreign('chantier_id')->references('id')->on('chantier_ecoles')
+            $table->foreign('chantier_id')->references('id')->on('chantiers')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->foreign('apprenant_id')->references('id')->on('apprenants')

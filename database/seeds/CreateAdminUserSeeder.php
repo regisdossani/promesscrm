@@ -6,8 +6,9 @@ use Spatie\Permission\Models\Permission;
 use App\Admin;
 use App\Equipe;
 use App\Formateur;
+use App\Promo;
 use App\Apprenant;
-
+use App\filiere;
 
 class CreateAdminUserSeeder extends Seeder
 {
@@ -46,7 +47,7 @@ $admin1->assignRole('superadmin');
     $directeur->assignRole('superadmin');
 
     $apprenant=  Apprenant::create([
-        'username' => 'apprenant1',
+        'nom' => 'apprenant1',
         'password' => bcrypt('passer'),
         'candidat_id'=> 1,
         'email' => 'apprenant1@email.com',
@@ -56,7 +57,7 @@ $admin1->assignRole('superadmin');
 
 
     $formateur=  Formateur::create([
-        'username' => 'formateur',
+        'nom' => 'formateur',
         'password' => bcrypt('passer'),
         'email' => 'formateur@email.com',
     ]);
@@ -65,7 +66,7 @@ $admin1->assignRole('superadmin');
 
 
     $membre1=  Equipe::create([
-        'username' => 'Responsable Pédagogique',
+        'nom_prenom' => 'Responsable Pédagogique',
         'password' => bcrypt('passer'),
         'email' => 'membre1@email.com',
     ]);
@@ -73,7 +74,7 @@ $admin1->assignRole('superadmin');
     $membre1->assignRole('Resp-Pedagogique');
 
     $membre2=  Equipe::create([
-        'username' => 'Responsable Administrative et Comptable',
+        'nom_prenom'=>'membre Promes',
         'password' => bcrypt('passer'),
         'email' => 'membre2@email.com',
     ]);
@@ -81,7 +82,7 @@ $admin1->assignRole('superadmin');
     $membre2->assignRole('Resp-Admin-Comptable');
 
     $membre3=  Equipe::create([
-        'username' => 'Responsable Relations Extérieures',
+        'nom_prenom' => 'Responsable Relations Extérieures',
         'password' => bcrypt('passer'),
         'email' => 'membre3@email.com',
     ]);
@@ -90,7 +91,7 @@ $admin1->assignRole('superadmin');
 
 
     $membre4=  Equipe::create([
-        'username' => 'Responsable ULDLR',
+        'nom_prenom' => 'Responsable ULDLR',
         'password' => bcrypt('passer'),
         'email' => 'membre4@email.com',
     ]);
@@ -98,7 +99,7 @@ $admin1->assignRole('superadmin');
 
 
     $membre5=  Equipe::create([
-        'username' => 'Responsable AccEd',
+        'nom_prenom' => 'Responsable AccEd',
         'password' => bcrypt('passer'),
         'email' => 'membre5@email.com',
     ]);
@@ -106,14 +107,26 @@ $admin1->assignRole('superadmin');
     $membre5->assignRole('Responsable-AccEd');
 
     $membre6=  Equipe::create([
-        'username' => 'Responsable Fond PVSYST',
+        'nom_prenom' => 'Responsable Fond PVSYST',
         'password' => bcrypt('passer'),
         'email' => 'membre6@email.com',
     ]);
     $membre6->assignRole('Resp-Fond-PVSYST');
 
 
+     Promo::create([
+        'nom' => 'FCIG1',
+    ]);
 
+    Promo::create([
+        'nom' => 'formation continue',
+    ]);
+    Filiere::create([
+        'nom' => 'FI',
+    ]);
+    Filiere::create([
+        'nom' => 'FC',
+    ]);
 
     }
 }

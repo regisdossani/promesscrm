@@ -4,7 +4,7 @@
     {!! $errors->first('professionel_id', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('formateur_id') ? 'has-error' : ''}}">
-    <label for="formateur_id" class="control-label">{{ 'Formateur Id' }}</label>
+    <label for="formateur_id" class="control-label">{{ 'Formateur' }}</label>
     <input class="form-control" name="formateur_id" type="number" id="formateur_id" value="{{ isset($encadreur->formateur_id) ? $encadreur->formateur_id : ''}}" >
     {!! $errors->first('formateur_id', '<p class="help-block">:message</p>') !!}
 </div>

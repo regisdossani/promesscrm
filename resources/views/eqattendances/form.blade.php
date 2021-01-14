@@ -51,7 +51,7 @@
                 <label><input name="present" type="radio" value="1" {{ (isset($eqattendance) && 1 == $eqattendance->present) ? 'checked' : '' }}> Oui</label>
             </div>
             <div class="radio">
-                <label><input name="present" type="radio" value="0" @if (isset($zqattendance)) {{ (0 == $eqattendance->present) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Non</label>
+                <label><input name="present" type="radio" value="0" @if (isset($eqattendance)) {{ (0 == $eqattendance->present) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Non</label>
             </div>
             {!! $errors->first('present', '<p class="help-block">:message</p>') !!}
         </div>

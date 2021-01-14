@@ -16,9 +16,9 @@ class Equipe extends Authenticatable
      protected $guard_name = 'web';
 
     protected $fillable = [
-        'username', 'email', 'password','adressse','tel_1','tel_2','email_2',
-        'titre_poste','prenom','nom','avatar','date_naiss','cv','status',
-        'duty_start','duty_end'
+         'email', 'password','adressse','tel',
+        'role','nom_prenom','photo','reference','cv','contrat',
+        'duty_start','duty_end','duty_start','duty_end'
 
     ];
 

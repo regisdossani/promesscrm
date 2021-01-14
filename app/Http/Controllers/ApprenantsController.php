@@ -7,9 +7,11 @@ use App\Stage;
 
 use App\Candidat;
 use App\Professionnel;
-use App\Classe;
+
 use App\Apprenant;
-use App\Formation;
+use App\Chantier;
+use App\Filiere;
+
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,11 +56,16 @@ class ApprenantsController extends Controller
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
         $stages= Stage::all();
+        $chantiers= Chantier::all();
+
         $formations= Formation::latest()->get();
         $profs = Professionnel::latest()->get();
 
-        return view('apprenants.create',compact('classes','candidats','apprenants','stages','formations','profs'));
+
+        return view('apprenants.create',compact('chantiers','classes','candidats','apprenants','stages','formations','profs'));
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -72,6 +79,22 @@ class ApprenantsController extends Controller
         $this->validator($request->all())->validate();
          $requestData = $request->all();
 
+
+        $requestData['password'] = Hash::make($request->password);
+        Apprenant::create($requestData);
+
+        if (!empty($_POST)) {
+            if(!empty($_POST['stage'])) {
+                foreach($_POST['stage'] as $value){
+                    $stage=$value;
+                    $apprennant = Apprenant::first();
+                    $apprennant->stages()->attach($stage);
+                }
+            }
+        }
+
+
+/*
       $apprenant= Apprenant::create([
             'username' => $request->username,
             'class_id' => $request->classe_id,
@@ -81,50 +104,20 @@ class ApprenantsController extends Controller
             'note_1' => $request->note_1,
             'note_2' => $request->note_2,
             'note_3' => $request->note_3,
-            'visite_terain1' => $request->visite_terain1,
-            'visite_terain2' => $request->visite_terain2,
-            'visite_terain3' => $request->visite_terain3,
+            'visite_terain' => $request->visite_terain,
 
             'password' =>  Hash::make($request->password),
             'candidat_id' => $request->candidat_id,
 
         ]);
-
-
-
-       /*  if ($request->hasFile('pjconvention_stage')) {
-            checkDirectory("apprenants");
-            $request->pjconvention_stage= uploadFile($request,'pjconvention_stage', public_path('uploads/candidats'));
-        } */
-        $apprennant->assignRole("apprenant");
-
-/*
-         Stage::create([
-            'titre' => $request->titre,
-            'stage_entreprise' => $request->stage_entreprise,
-            'professionel_id' => $request->professionel_id,
-            'stage_debut' => $request->stage_debut,
-            'stage_fin' => $request->stage_fin,
-            'pjconvention_stage' => $request->pjconvention_stage,
-            'professionel_id' => $request->professionel_id,
-
-        ]);
-
  */
 
-/*         $apprennant = Apprenant::create($request->only('email', 'username', 'password')); //Retrieving only the email and password data
- */
 
-        // $apprennant = Apprenant::first();
-      /*   $stageid=Stage::first();
-        $apprennant->stages()->attach($stageid);
- */
+
+
 
          return redirect('apprenants')->with('flash_message', 'Apprenant crée avec succès');
     }
-
-
-
 
 
     /**
@@ -159,12 +152,11 @@ class ApprenantsController extends Controller
      */
     public function edit($id)
     {
-        $classes = Classe::latest()->get();
         $apprenant = Apprenant::findOrFail($id);
         $candidats = Candidat::all();
-        $formations= Formation::all();
+        $filieres= Formation::all();
 
-        return view('apprenants.edit', compact('apprenant','classes','candidats','formations'));
+        return view('apprenants.edit', compact('apprenant','candidats','filieres'));
     }
 
     /**
@@ -205,8 +197,6 @@ class ApprenantsController extends Controller
     {
 
         $apprennant = Apprenant::findorfail($id);
-        $stageid= Stage::findorfail($id);
-        $apprennant->stages()->dettach($stageid);
         Apprenant::destroy($id);
 
         return redirect('apprenants')->with('flash_message', 'Apprenant deleted!');
@@ -218,15 +208,24 @@ class ApprenantsController extends Controller
         return Validator::make($data,
         [
 
-            'username' => ['required', 'string', 'max:255'],
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
-            'note_1' => ['required', 'string', 'max:255'],
-            'note_2' => ['required', 'string', 'max:255'],
-            'note_3' => ['required', 'string', 'max:255'],
+            'tel' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
             'password' => ['required', 'string', 'min:5'],
 
         ]);
     }
+
+    public function removeStage(Apprenant $apprenant)
+{
+        $stageid = Stage::find(3);
+
+        $apprenant->stages()->detach($stageid);
+
+        return 'Success';
+}
+
+
+
 }

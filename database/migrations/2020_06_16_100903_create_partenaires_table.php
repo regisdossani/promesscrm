@@ -15,11 +15,11 @@ class CreatePartenairesTable extends Migration
     {
         Schema::create('partenaires', function (Blueprint $table) {
             $table->id();
-            $table->string('nom')->nullable()->default('nom partenaire');
-            $table->longText('champ_activite')->nullable();
-            $table->string('type_partenariat')->nullable()->default('text');
-            $table->string('modalite')->nullable()->default('text');
-            $table->string('fiche')->nullable();
+            $table->string('raison_social')->nullable()->default('nom partenaire');
+            $table->string('type_organisation')->nullable();
+            $table->string('nom_referent')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('email')->nullable();
 
             $table->timestamps();
         });

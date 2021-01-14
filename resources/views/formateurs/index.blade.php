@@ -63,15 +63,29 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th><th>Username</th><th>Civilité</th><th>Nom</th><th>Actions</th>
+                                                <th>#</th>
+                                                <th>Prénom</th>
+                                                <th>Nom</th>
+                                                <th>Référence</th>
+                                                <th>Sexe</th>
+                                                <th>Tél</th>
+                                                <th>Email</th>
+                                                <th>Module</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($formateurs as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->username }}</td><td>{{ $item->civilite }}</td><td>{{ $item->nom }}</td>
-                                                <td>
+                                                <td>{{ $item->prenom }}</td>
+                                                <td>{{ $item->nom }}</td>
+                                                <td>{{ $item->reference }}</td>
+                                                <td>{{ $item->sexe }}</td>
+                                                <td>{{ $item->tel }}</td>
+                                                <td>{{ $item->email }}</td>
+                                                <td>{{ $item->modules }}</td>
+
                                                     <a href="{{ url('/formateurs/' . $item->id) }}" title="View formateur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                                     <a href="{{ url('/formateurs/' . $item->id . '/edit') }}" title="Edit formateur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 

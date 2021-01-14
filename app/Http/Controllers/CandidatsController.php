@@ -64,33 +64,14 @@ class CandidatsController extends Controller
     {
         $this->validate($request,[
             'nom' => 'required',
-            'prenom'=> 'required',
-            'civilite'=> 'required',
-            'statut'=> 'required',
-            // 'date_naiss'=> 'required',
-            'parrain'=> 'required',
-            'tel_1'=> 'required',
-            'tel_2'=> 'required',
-            'email_2'=> 'required',
-            'depot_dossier'=> 'required',
-            'pj_depotdossier'=> 'required',
-            'test_ecrit'=> 'required',
-            'test_oral'=> 'required',
-            'test_pj'=> 'required',
-            'test_oral'=> 'required',
-           'orientation'=> 'required',
 
-            'email_1' => 'required|email|unique:candidats,email_1',
-            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'test_pj.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
             $requestData = $request->all();
-            $DateNaiss = Carbon::createFromFormat('d/m/Y',$request->get('date_naiss'));
 
-             $requestData['date_naiss']=$DateNaiss;
 
             if ($request->hasFile('pj_depotdossier2')) {
                 checkDirectory("candidats");
@@ -108,10 +89,7 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
             }
-            if ($request->hasFile('avatar')) {
-                checkDirectory("candidats");
-                $requestData['avatar'] = uploadFile($request, 'avatar', public_path('uploads/candidats'));
-            }
+            
 
   Candidat::create($requestData);
 
@@ -188,11 +166,8 @@ class CandidatsController extends Controller
         $this->validate($request,[
             'nom' => 'required',
             'prenom'=> 'required',
-            'civilite'=> 'required',
-            'tel_1'=> 'required',
+            'tel'=> 'required',
 
-            'email_1' => 'required|email|unique:candidats,email_1',
-            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
@@ -211,11 +186,7 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
             }
-            if ($request->hasFile('avatar')) {
-                checkDirectory("candidats");
-                $requestData['avatar'] = $requestData['avatar'] =uploadFile($request, 'avatar', public_path('uploads/candidats'));
 
-            }
 
   Candidat::create($requestData);
 

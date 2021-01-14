@@ -1,43 +1,35 @@
-<div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}}">
-    <label for="nom" class="control-label">{{ 'Nom' }}</label>
-    <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($equipe->nom) ? $equipe->nom : ''}}" >
-    {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+<div class="col-md-6 {{ $errors->has('nom_prenom') ? 'has-error' : ''}}">
+    <label for="nom_prenom" class="control-label">{{ 'Nom & Prénom' }}</label>
+    <input class="form-control" name="nom_prenom" type="text" id="nom_prenom" value="{{ isset($equipe->nom) ? $equipe->nom : ''}}" >
+    {!! $errors->first('nom_prenom', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 {{ $errors->has('prenom') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 {{ $errors->has('prenom') ? 'has-error' : ''}}">
     <label for="prenom" class="control-label">{{ 'Prénom' }}</label>
     <input class="form-control" name="prenom" type="text" id="prenom" value="{{ isset($equipe->prenom) ? $equipe->prenom : ''}}" >
     {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
-</div>
+</div> --}}
 <div class="col-md-6 {{ $errors->has('password') ? 'has-error' : ''}}">
     <label for="password" class="control-label">{{ 'Password' }}</label>
     <input class="form-control" name="password" type="password" id="password" value="{{ isset($equipe->password) ? $equipe->password : ''}}" >
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 {{ $errors->has('date_naiss') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 {{ $errors->has('date_naiss') ? 'has-error' : ''}}">
     <label for="date_naiss" class="control-label">{{ 'Date de naissance' }}</label>
     <input class="form-control" name="date_naiss" type="date" id="date_naiss" value="{{ isset($equipe->date_naiss) ? $equipe->date_naiss : ''}}" >
     {!! $errors->first('date_naiss', '<p class="help-block">:message</p>') !!}
-</div>
+</div> --}}
 <div class="col-md-6 {{ $errors->has('email') ? 'has-error' : ''}}">
-    <label for="email_1" class="control-label">{{ 'Email 1' }}</label>
-    <input class="form-control" name="email_1" type="text" id="email_1" value="{{ isset($equipe->email_1) ? $equipe->email_1 : ''}}" >
-    {!! $errors->first('email_1', '<p class="help-block">:message</p>') !!}
+    <label for="email" class="control-label">{{ 'Email' }}</label>
+    <input class="form-control" name="email" type="text" id="email" value="{{ isset($equipe->email) ? $equipe->email : ''}}" >
+    {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 {{ $errors->has('email_2') ? 'has-error' : ''}}">
-    <label for="email_2" class="control-label">{{ 'Email 2' }}</label>
-    <input class="form-control" name="email_2" type="text" id="email_2" value="{{ isset($equipe->email_2) ? $equipe->email_2 : ''}}" >
-    {!! $errors->first('email_2', '<p class="help-block">:message</p>') !!}
+
+<div class="col-md-6 {{ $errors->has('tel') ? 'has-error' : ''}}">
+    <label for="tel_1" class="control-label">{{ 'Tel' }}</label>
+    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($equipe->tel) ? $equipe->tel : ''}}" >
+    {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 {{ $errors->has('tel_1') ? 'has-error' : ''}}">
-    <label for="tel_1" class="control-label">{{ 'Tel 1' }}</label>
-    <input class="form-control" name="tel_1" type="text" id="tel_1" value="{{ isset($equipe->tel_1) ? $equipe->tel_1 : ''}}" >
-    {!! $errors->first('tel_1', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="col-md-6 {{ $errors->has('tel_2') ? 'has-error' : ''}}">
-    <label for="tel_2" class="control-label">{{ 'Tel 2' }}</label>
-    <input class="form-control" name="tel_2" type="text" id="tel_2" value="{{ isset($equipe->tel_2) ? $equipe->tel_2 : ''}}" >
-    {!! $errors->first('tel_2', '<p class="help-block">:message</p>') !!}
-</div>
+
 
 
 {{-- <div class='form-group'>
@@ -62,10 +54,10 @@
 
  @role('superadmin')
 
-<div class="col-md-6 {{ $errors->has('titre_poste') ? 'has-error' : ''}}">
-    <label for="titre_poste" class="control-label">{{ 'Titre du Poste' }}</label>
-    <input class="form-control" name="titre_poste" type="text" id="titre_poste" value="{{ isset($equipe->titre_poste) ? $equipe->titre_poste : ''}}" >
-    {!! $errors->first('titre_poste', '<p class="help-block">:message</p>') !!}
+<div class="col-md-6 {{ $errors->has('role') ? 'has-error' : ''}}">
+    <label for="role" class="control-label">{{ 'Role' }}</label>
+    <input class="form-control" name="role" type="text" id="role" value="{{ isset($equipe->role) ? $equipe->role : ''}}" >
+    {!! $errors->first('role', '<p class="help-block">:message</p>') !!}
 </div>
 @if(isset($equipe->cv) && !empty($equipe->cv))
     <a href="{{ url('uploads/equipe/' . $equipe->cv) }}" ><i class="fa fa-download"></i> {{$equipe->cv}}</a>
@@ -88,21 +80,15 @@
 
 @endrole
 
-<div class="col-md-6 {{ $errors->has('adresse') ? 'has-error' : ''}}">
-    <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
-    <input class="form-control" name="adresse" type="text" id="adresse" value="{{ isset($equipe->adresse) ? $equipe->adresse : ''}}" >
-    {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
-</div>
 
 
-
-@if(isset($equipe->avatar) && !empty($equipe->avatar))
-    <img src="{{url('/uploads/equipe/' . $equipe->avatar) }}" width="100" height="100"/>
+@if(isset($equipe->photo) && !empty($equipe->photo))
+    <img src="{{url('/uploads/equipe/' . $equipe->photo) }}" width="100" height="100"/>
 @endif
-<div class="col-md-6 {{ $errors->has('avatar') ? 'has-error' : ''}}">
+<div class="col-md-6 {{ $errors->has('photo') ? 'has-error' : ''}}">
     <label for="avatar" class="control-label">{{ 'Photo' }}</label>
-    <input class="form-control" name="avatar" type="file" id="avatar" value="{{ isset($equipe->avatar) ? $equipe->avatar : ''}}" >
-    {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
+    <input class="form-control" name="photo" type="file" id="photo" value="{{ isset($equipe->photo) ? $equipe->photo : ''}}" >
+    {!! $errors->first('photo', '<p class="help-block">:message</p>') !!}
 </div>
 
 

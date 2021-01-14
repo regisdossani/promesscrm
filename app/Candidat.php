@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Candidat extends Model
 {
     protected $fillable = [
-        'date_naiss','civilite',  'nom', 'email_1', 'email_2','prenom', 'tel_1','tel_2', 'avatar',
-        'parrain','depot_dossier','pj_depotdossier','test_ecrit','test_oral','test_pj',
-        'orientation','commentaire','avatar','pj_depotdossier2'
+        'provenance',  'nom', 'email', 'tel',
+        'type_formation','reception_dossier','pj_depotdossier','test_ecrit','entretien','test_pj',
+        'region','commentaire','pj_depotdossier2','resultat','promo','filiere','parrain',
+        'tel_parrain','email_parrain'
     ];
 
     /**
@@ -22,9 +23,16 @@ class Candidat extends Model
     ];
 
 
-     public function apprenant()
+    /*  public function apprenant()
      {
-
-             return $this->hasOne('App\Apprenant','candidat_id');
+             return $this->belongsTo('App\Apprenant','candidat_id');
+     } */
+     public function promo()
+     {
+             return $this->belongsTo(Promo::class,'promo');
+     }
+     public function filiere()
+     {
+             return $this->belongsTo(Filiere::class,'filiere');
      }
 }

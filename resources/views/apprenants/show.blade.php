@@ -78,15 +78,25 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <th>ID</th><td>{{ $apprenant->id }}</td>
+                                            <th>Nom</th>
+                                            <td>{{ $apprenant->nom }}</td>
                                         </tr>
                                         <tr>
-                                            <th> Username </th><td> {{ $apprenant->username }} </td>
+                                            <th> Username </th>
+                                            <td> {{ $apprenant->username }} </td>
                                         </tr>
                                         <tr>
-                                            <th> Nom </th><td> {{ $apprenant->nom }} </td>
+                                            <th> Nom </th>
+                                            <td> {{ $apprenant->nom }} </td>
                                         </tr>
-                                        <tr><th> Prenom </th><td> {{ $apprenant->prenom }} </td>
+                                        <tr>
+                                            <th> Prenom </th>
+                                            <td> {{ $apprenant->prenom }} </td>
+                                        <tr>
+                                            <th> Chantiers école</th>
+                                            @foreach($apprenant->chantiers as $chantier)
+                                            <td>{{ $chantier->titre }}<td>
+                                            @endforeach
                                         </tr>
                                     </tbody>
                                 </table>

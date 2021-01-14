@@ -15,16 +15,17 @@ class CreatePersRessourcesTable extends Migration
     {
         Schema::create('pers_ressources', function (Blueprint $table) {
             $table->id();
-            $table->string('nom')->nullable()->default('nom');
-            $table->string('prenom')->nullable()->default('prenom');
+            $table->string('nom')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('tel')->nullable();
             $table->string('email')->unique();
-            $table->string('tel')->nullable()->default('tel');
+            $table->string('qualite')->nullable();
+            $table->string('specialites')->nullable();
+            $table->boolean('atelier_de_juillet_2018')->nullable();
+            $table->boolean('formation_de_janvier_2019')->nullable();
 
-            $table->string('nature_personne_ressource')->nullable()->default('text');
-            $table->longText('objet_du_contact')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('piece_jointe')->nullable()->default('text');
-
+            $table->string('piece_jointe')->nullable();
             $table->timestamps();
         });
     }

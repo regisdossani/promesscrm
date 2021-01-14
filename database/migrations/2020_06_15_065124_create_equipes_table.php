@@ -15,24 +15,17 @@ class CreateEquipesTable extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->nullable();
-            $table->string('nom')->nullable()->default('nom');
-            $table->string('prenom')->nullable()->default('prenom');
+            $table->string('nom_prenom')->nullable();
+            $table->string('reference')->nullable();
             $table->string('password');
-            $table->date('date_naiss')->nullable();
-            $table->string('tel_1')->nullable()->default('tel_1');
-            $table->string('tel_2')->nullable()->default('tel_2');
+            $table->string('tel')->nullable()->default('tel_1');
             $table->string('email')->nullable()->unique();
-            $table->string('email_2')->nullable();
-            $table->string('titre_poste')->nullable();
-            $table->string('adresse')->nullable()->default('adresse');
+             $table->string('role')->nullable();
             $table->time('duty_start')->nullable();
             $table->time('duty_end')->nullable();
-
             $table->string('cv')->nullable();
             $table->string('contrat')->nullable();
-            $table->enum('status', [0,1])->default(1);
-            $table->string('avatar')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

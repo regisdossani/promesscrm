@@ -1,30 +1,36 @@
-<div class="col-md-6 {{ $errors->has('username') ? 'has-error' : ''}}">
-    <label for="username" class="control-label">{{ 'Username' }}</label>
-    <input class="form-control" name="username" type="text" id="username" value="{{ isset($formateur->username) ? $formateur->username : ''}}" required>
-    {!! $errors->first('username', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="col-md-6 {{ $errors->has('civilite') ? 'has-error' : ''}}">
-    <label for="civilite" class="control-label">{{ 'Civilité' }}</label>
+
+<div class="col-md-6 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+    <label for="civilite" class="control-label">{{ 'Sexe' }}</label>
     {{-- <input class="form-control" name="civilite" type="text" id="civilite" value="{{ isset($candidat->civilite) ? $candidat->civilite : ''}}" > --}}
-    <select name="civilite" id="civilite" class="form-control">
+    <select name="sexe" id="sexe" class="form-control">
 
             <option value="M">M</option>
-            <option value="Mme">Mme</option>
-            <option value="Mlle">Mlle</option>
+            <option value="F">F</option>
 
     </select>
-    {!! $errors->first('civilite', '<p class="help-block">:message</p>') !!}
+    {!! $errors->first('sexe', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}}">
     <label for="nom" class="control-label">{{ 'Nom' }}</label>
     <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($formateur->nom) ? $formateur->nom : ''}}" >
     {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
 </div>
+
+
 <div class="col-md-6 {{ $errors->has('prenom') ? 'has-error' : ''}}">
     <label for="prenom" class="control-label">{{ 'Prénom' }}</label>
     <input class="form-control" name="prenom" type="text" id="prenom" value="{{ isset($formateur->prenom) ? $formateur->prenom : ''}}" >
-    {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
+    {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
+
+
+<div class="col-md-6 {{ $errors->has('reference') ? 'has-error' : ''}}">
+    <label for="reference" class="control-label">{{ 'Référence' }}</label>
+    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($formateur->reference) ? $formateur->reference : ''}}" >
+    {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
+</div>
+
+
 <div class="col-md-6 {{ $errors->has('date_naiss') ? 'has-error' : ''}}">
     <label for="date_naiss" class="control-label">{{ 'Date de naissance' }}</label>
     <input class="form-control" name="date_naiss" type="date" id="date_naiss" value="{{ isset($formateur->date_naiss) ? $formateur->date_naiss : ''}}" >

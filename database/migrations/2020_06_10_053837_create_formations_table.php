@@ -19,7 +19,7 @@ class CreateFormationsTable extends Migration
             $table->unsignedBigInteger('type')->nullable();
             $table->string('annee')->nullable()->default('année formation');
              $table->timestamps();
-             
+
             $table->foreign('type')->references('id')->on('typeformations')
             ->onDelete('cascade')
             ->onUpdate('cascade');

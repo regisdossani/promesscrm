@@ -135,14 +135,19 @@
                             <div class="col-md-6 form-group">
                                 <label for="choix_formation">Choix de la formation:</label>
                                 <div class="select-list">
-                                    <select name="choix_formation" id="formation">
+                        {{--             <select class="form-control" name="formation_id"  id="formation_id" >
+                                        @foreach($formations as $formation)
+                                            <option value="{{ $formation->id }}" {{ isset($apprenants->formation_id) && $apprenants->formation_id == $formation->id ? 'selected' : ''}}>{{ $formation->nom}}</option>
+                                        @endforeach
+                                    </select> --}}
+                                    <select name="formation_id" id="formation_id">
                                         <option value=""></option>
                                         <option value="1">Formation initiale</option>
                                         <option value="2">Formation  intermédiaire</option>
                                         <option value="3">Formation continue </option>
                                         <option value="4">Formation de formateurs en PV </option>
 
-                                    </select>
+                                    </select> 
                                     <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                                 </div>
                             </div>
