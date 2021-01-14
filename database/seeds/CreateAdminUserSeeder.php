@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Admin;
-use App\filiere;
+// use App\filiere;
 use App\Equipe;
 use App\Formateur;
 use App\Promo;
@@ -122,12 +122,12 @@ $admin1->assignRole('superadmin');
     Promo::create([
         'nom' => 'formation continue',
     ]);
-    Filiere::create([
+ /*    Filiere::create([
         'nom' => 'FI',
     ]);
     Filiere::create([
         'nom' => 'FC',
-    ]);
+    ]); */
 
     }
 }
