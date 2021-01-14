@@ -4,11 +4,12 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Admin;
+use App\filiere;
 use App\Equipe;
 use App\Formateur;
 use App\Promo;
 use App\Apprenant;
-use App\filiere;
+
 
 class CreateAdminUserSeeder extends Seeder
 {
