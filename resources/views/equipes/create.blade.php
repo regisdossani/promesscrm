@@ -20,7 +20,7 @@
                         {{-- <div class="card-header">Créer un membre de l'équipe Pomess</div> --}}
                         <header class="panel-heading">
                             <div class="panel-title">
-                                CRÉER UN MEMBRE DE L'ÉQUIPE PROMESS
+                                CRÉER UN MEMBRE DU PERSONNEL
                         </header>
 
                         <div class="panel-body">

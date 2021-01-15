@@ -53,7 +53,7 @@
                                                         <th>#</th>
                                                         <th>Nom & Prénom</th>
                                                         <th>Référence</th>
-                                                        <th>Sexe</th>
+                                                        {{-- <th>Sexe</th> --}}
                                                         <th>Tel</th>
                                                         <th>Email</th>
                                                         <th>Rôle</th>
@@ -66,7 +66,7 @@
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $item->nom_prenom }}</td>
                                                         <td>{{ $item->reference }}</td>
-                                                        <td>{{ $item->sexe }}</td>
+                                                        {{-- <td>{{ $item->sexe }}</td> --}}
                                                         <td>{{ $item->tel }}</td>
                                                         <td>{{ $item->email }}</td>
                                                         <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td>
@@ -83,7 +83,7 @@
                                                             <form method="POST" action="{{ url('/equipes' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                                 {{ method_field('DELETE') }}
                                                                 {{ csrf_field() }}
-                                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce membre" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                                <a href="#"><button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce membre" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o fa-fw"></i></button></a>
                                                             </form>
                                                         </td>
                                                     </tr>

@@ -22,7 +22,8 @@
 <link rel="stylesheet" href="{{asset('css/font.css')}}" type="text/css"/>
 <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/morris.css')}}" type="text/css"/>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
 
