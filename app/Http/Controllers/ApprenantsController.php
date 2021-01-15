@@ -124,9 +124,10 @@ class ApprenantsController extends Controller
     public function show($id)
     {
         $apprenant = Apprenant::findOrFail($id);
-        $filiere = Filiere::with('modules')->where('id', $apprenant->filiere_id)->first();
+        $filiere = Filiere::where('id', $apprenant->filiere_id)->first();
+        $promo= Promo::where('id', $apprenant->promo_id)->first();
 
-        return view('apprenants.show', compact('apprenant','filiere'));
+        return view('apprenants.show', compact('apprenant','filiere','promo'));
     }
 
      public function showprofile()
@@ -149,8 +150,9 @@ class ApprenantsController extends Controller
         $apprenant = Apprenant::findOrFail($id);
         $candidats = Candidat::all();
         $filieres= Filiere::all();
+        $promos= Promo::all();
 
-        return view('apprenants.edit', compact('apprenant','candidats','filieres'));
+        return view('apprenants.edit', compact('promos','apprenant','candidats','filieres'));
     }
 
     /**
