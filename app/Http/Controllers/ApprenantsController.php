@@ -49,7 +49,7 @@ class ApprenantsController extends Controller
      */
     public function create()
     {
-        $filieres = filiere::latest()->get();
+        $filieres = Filiere::latest()->get();
 
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
