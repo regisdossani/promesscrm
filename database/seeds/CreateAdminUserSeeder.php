@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Admin;
-// use App\filiere;
+ use App\Filiere;
 use App\Equipe;
 use App\Formateur;
 use App\Promo;
@@ -119,7 +119,7 @@ $admin1->assignRole('superadmin');
         'nom' => 'FCIG1',
     ]);
 
-   
+
     Filiere::create([
         'nom' => 'FI',
     ]);
