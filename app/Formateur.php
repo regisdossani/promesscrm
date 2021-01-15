@@ -16,7 +16,7 @@ class Formateur extends Authenticatable
 
     protected $fillable = [
         'email', 'prenom','nom','formation','contratcadre_pj','cv_pj','structure','fonction',
-        'modules','adresse','sexe'
+        'adresse','sexe',
     ];
 
     protected $hidden = [
@@ -24,14 +24,19 @@ class Formateur extends Authenticatable
     ];
     public function chantiers()
     {
-       return $this->hasMany('App\Chantier_ecole','formateur_id');
+       return $this->hasMany(Chantier::class,'chantier_id');
     }
+    public function modules()
+    {
+       return $this->hasMany(Module::class,'module_id');
+    }
+
    /*  public function Modules()
     {
         return $this->hasMany(Module::class);
     } */
 
-      public function classes()
+     public function classes()
     {
         return $this->hasMany(Classe::class);
     }

@@ -56,12 +56,12 @@
                                                 <th>ID</th><td>{{ $formateur->id }}</td>
                                             </tr>
                                             {{-- <tr><th> Username </th><td> {{ $formateur->username }} </td></tr> --}}
-                                            <tr><th> Civilité </th><td> {{ $formateur->civilite }} </td></tr>
+                                            <tr><th> Sexe </th><td> {{ $formateur->sexe }} </td></tr>
                                             <tr><th> Nom </th><td> {{ $formateur->nom }} </td></tr>
                                             <tr><th>Prénom </th><td> {{ $formateur->prenom }} </td></tr>
                                             <tr><th>Email </th><td> {{ $formateur->email }} </td></tr>
-                                            <tr><th>Téléphone </th><td> {{ $formateur->tel_1 }} </td></tr>
-                                            <tr><th>Cv </th><td> {{ $formateur->CV_pj }} </td></tr>
+                                            <tr><th>Téléphone </th><td> {{ $formateur->tel }} </td></tr>
+                                            <tr><th>Structure </th><td> {{ $formateur->structure }} </td></tr>
 
                                         </tbody>
                                     </table>
