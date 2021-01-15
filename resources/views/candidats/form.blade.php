@@ -64,7 +64,7 @@
 
 
 
-                             @role('superadmin,Resp-Pedagogique')
+                             @role('superadmin')
                              <div>
                                 <label for="filiere">Filière:</label>
                                 <select class="form-control" name="filiere"  id="filiere" >
