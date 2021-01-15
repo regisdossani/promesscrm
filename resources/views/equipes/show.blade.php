@@ -20,7 +20,7 @@
 
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    AFFICHER UN FORMATEUR
+                                    AFFICHER UN MEMBRE PERSONNEL
                                 </div>
                             </header>
 
@@ -50,23 +50,23 @@
                                 <tbody>
 
                                     <tr>
-                                        <th> Nom </th>
-                                        <td> {{ $equipe->nom }} </td>
+                                        <th> Nom & Prénom</th>
+                                        <td> {{ $equipe->nom_prenom }} </td>
                                     </tr>
                                     <tr>
-                                        <th> Prenom </th>
-                                        <td> {{ $equipe->prenom }} </td>
+                                        <th> Référencd </th>
+                                        <td> {{ $equipe->reference }} </td>
                                     </tr>
                                     <tr>
                                         <th> Téléphone </th>
-                                        <td> {{ $equipe->tel_1 }} </td>
+                                        <td> {{ $equipe->tel }} </td>
                                     </tr>
                                     <tr>
-                                        <th>Email</th><td>{{ $equipe->email_1 }}</td>
+                                        <th>Email</th><td>{{ $equipe->email }}</td>
                                     </tr>
                                     <tr>
                                         <th> Photo </th>
-                                        <td><img alt="avatar" src={{url('uploads/equipe/'.$equipe->avatar) }}  width="50" height="50"></td>
+                                        <td><img alt="photo" src={{url('uploads/equipe/'.$equipe->photo) }}  width="50" height="50"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
-    
+
     </section>
 </section>
 @endsection
