@@ -1,9 +1,9 @@
 @extends('inc.master')
 @include('equipes.sidebar')
 
-{{-- @role('superadmin')
+ @role('superadmin')
 @include('admins.sidebar')
-@endrole --}}
+@endrole
 
 @section('content')
 <section id="main-content">
@@ -19,7 +19,7 @@
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    GESTION DE L'EQUIPE PROMESS
+                                    GESTION PERSONNEL ADMINISTRATIF
                                 </div>
                             </header>
                             <div class="panel-body">
@@ -51,12 +51,12 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Nom</th>
-                                                        <th>Prénom</th>
-                                                        <th>Position</th>
+                                                        <th>Nom & Prénom</th>
+                                                        <th>Référence</th>
+                                                        <th>Sexe</th>
+                                                        <th>Tel</th>
+                                                        <th>Email</th>
                                                         <th>Rôle</th>
-
-                                                        <th>Photo</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -64,16 +64,21 @@
                                                 @foreach($equipes as $item)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $item->nom }}</td>
-                                                        <td>{{ $item->prenom }}</td>
-                                                        <td>{{ $item->titre_position }}</td>
+                                                        <td>{{ $item->nom_prenom }}</td>
+                                                        <td>{{ $item->reference }}</td>
+                                                        <td>{{ $item->sexe }}</td>
+                                                        <td>{{ $item->tel }}</td>
+                                                        <td>{{ $item->email }}</td>
                                                         <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td>
 
-                                                        <td><img alt="avatar" src={{url('uploads/equipe/'.$item->avatar) }}  width="50" height="50"></td>
-
+                                                      {{--   <td>
+                                                           @isset($item->photo)
+                                                                <img alt="photo" src={{url('uploads/equipe/'.$item->photo) }}  width="50" height="50">
+                                                           @endisset
+                                                        </td> --}}
                                                         <td>
-                                                            <a href="{{ url('/equipes/' . $item->id) }}" title="Voir ce membre"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                                            <a href="{{ url('/equipes/' . $item->id . '/edit') }}" title="Modifier ce membre"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                                            <a href="{{ url('/equipes/' . $item->id) }}" title="Voir ce membre"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                            <a href="{{ url('/equipes/' . $item->id . '/edit') }}" title="Modifier ce membre"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
                                                             <form method="POST" action="{{ url('/equipes' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                                 {{ method_field('DELETE') }}

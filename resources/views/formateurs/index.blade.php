@@ -70,7 +70,7 @@
                                                 <th>Sexe</th>
                                                 <th>Tél</th>
                                                 <th>Email</th>
-                                                <th>Module</th>
+                                                {{-- <th>Module</th> --}}
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -84,8 +84,8 @@
                                                 <td>{{ $item->sexe }}</td>
                                                 <td>{{ $item->tel }}</td>
                                                 <td>{{ $item->email }}</td>
-                                                <td>{{ $item->modules }}</td>
-
+                                                {{-- <td>{{ $item->modules }}</td> --}}
+                                                <td>
                                                     <a href="{{ url('/formateurs/' . $item->id) }}" title="View formateur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                                     <a href="{{ url('/formateurs/' . $item->id . '/edit') }}" title="Edit formateur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 

@@ -17,8 +17,10 @@ class CreateEquipesTable extends Migration
             $table->id();
             $table->string('nom_prenom')->nullable();
             $table->string('reference')->nullable();
+            $table->string('sexe')->nullable();
+
             $table->string('password');
-            $table->string('tel')->nullable()->default('tel_1');
+            $table->string('tel')->nullable();
             $table->string('email')->nullable()->unique();
              $table->string('role')->nullable();
             $table->time('duty_start')->nullable();
