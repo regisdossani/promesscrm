@@ -1,16 +1,14 @@
 
 
-                                    <div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}} ">
-                                        <label for="nom" class="control-label">{{ 'Nom :' }}</label>
+                                <div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}} ">
+                                        <label for="nom" class="control-label">{{'Nom :'}}</label>
                                         <input class="form-control" name="nom" type="text" id="nom" >
                                         {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
-                                    </div>
-
-
+                                </div>
 
 
                                 <div class="col-md-6  {{ $errors->has('email') ? 'has-error' : ''}}">
-                                    <label for="email" class="control-label">{{ 'Email:' }}</label>
+                                    <label for="email" class="control-label">{{'Email:'}}</label>
                                     <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email_1 : ''}}" >
                                     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                                 </div>

@@ -6,11 +6,9 @@ use DB;
 use App\Stage;
 
 use App\Candidat;
-use App\Professionnel;
-
+use App\filiere;
 use App\Apprenant;
 use App\Chantier;
-use App\Filiere;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -36,9 +34,9 @@ class ApprenantsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $apprenants = Apprenant::with('class')->latest()->paginate($perPage);
+            $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);
         } else {
-            $apprenants = Apprenant::with('class')->latest()->paginate($perPage);
+            $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);
         }
 
         return view('apprenants.index', compact('apprenants'));
@@ -51,7 +49,7 @@ class ApprenantsController extends Controller
      */
     public function create()
     {
-        $classes = Classe::latest()->get();
+        $filieres = filiere::latest()->get();
 
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
@@ -62,7 +60,7 @@ class ApprenantsController extends Controller
         $profs = Professionnel::latest()->get();
 
 
-        return view('apprenants.create',compact('chantiers','classes','candidats','apprenants','stages','formations','profs'));
+        return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','formations','profs'));
     }
 
 
@@ -130,9 +128,9 @@ class ApprenantsController extends Controller
     public function show($id)
     {
         $apprenant = Apprenant::findOrFail($id);
-        $class = Classe::with('modules')->where('id', $apprenant->class_id)->first();
+        $filiere = filiere::with('modules')->where('id', $apprenant->filiere_id)->first();
 
-        return view('apprenants.show', compact('apprenant','class'));
+        return view('apprenants.show', compact('apprenant','filiere'));
     }
 
      public function showprofile()

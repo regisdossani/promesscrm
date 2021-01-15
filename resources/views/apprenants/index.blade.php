@@ -22,7 +22,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-md-10">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -65,11 +65,10 @@
                                                         <th>Référence</th>
                                                         <th>Sexe </th>
                                                         <th>Tel</th>
-                                                        <th>Date de naissance</th>
-                                                        <th>Lieu</th>
+
                                                         <th>Filière</th>
                                                         <th>Promo</th>
-                                                        <th>Année</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -82,17 +81,14 @@
                                                         <td>{{ $item->reference }}</td>
                                                         <td>{{ $item->sexe}}</td>
                                                         <td>{{ $item->tel}}</td>
-                                                        <td>{{ $item->date_naiss}}</td>
-                                                        <td>{{ $item->lieu_naiss}}</td>
                                                         <td>{{ $item->filiere}}</td>
                                                         <td>{{ $item->promo}}</td>
-                                                        <td>{{ $item->annee}}</td>
-                                                        <td>
-                                                            {{-- <ul>
+                                                       {{-- <td>
+                                                             <ul>
                                                                 @foreach($item->stages as $stage)
                                                                 <li>{{ $stage->titre }}</li>
                                                                 @endforeach
-                                                            </ul> --}}
+                                                            </ul> 
                                                         </td>
 
                                                         {{-- <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td> --}}

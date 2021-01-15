@@ -82,20 +82,22 @@
                                             <td>{{ $apprenant->nom }}</td>
                                         </tr>
                                         <tr>
-                                            <th> Username </th>
-                                            <td> {{ $apprenant->username }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th> Nom </th>
-                                            <td> {{ $apprenant->nom }} </td>
-                                        </tr>
-                                        <tr>
                                             <th> Prenom </th>
-                                            <td> {{ $apprenant->prenom }} </td>
+                                            <td> {{ $apprenant->prenom }}
+                                            </td>
+                                        <tr>
+                                        <tr>
+                                                <th> Sexe </th>
+                                                <td> {{ $apprenant->sexe }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Tél </th>
+                                            <td> {{ $apprenant->tel }} </td>
+                                        </tr>
                                         <tr>
                                             <th> Chantiers école</th>
                                             @foreach($apprenant->chantiers as $chantier)
-                                            <td>{{ $chantier->titre }}<td>
+                                                <td>{{ $chantier->titre }} </td>
                                             @endforeach
                                         </tr>
                                     </tbody>
