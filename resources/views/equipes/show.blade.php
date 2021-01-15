@@ -62,6 +62,10 @@
                                         <td> {{ $equipe->tel }} </td>
                                     </tr>
                                     <tr>
+                                        <th>Sexe</th><td>{{ $equipe->sexe }}</td>
+                                    </tr>
+
+                                    <tr>
                                         <th>Email</th><td>{{ $equipe->email }}</td>
                                     </tr>
                                     <tr>
