@@ -88,18 +88,10 @@
             <label for="promo_id" class="control-label">{{ 'Choix de la Promo' }}</label>
             <select class="form-control" name="promo_id"  id="promo_id" >
                 @foreach($promos as $promo)
-                    <option value="{{ $promo->id }}" {{ isset($apprenants->promo_id) && $apprenants->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
+                    <option value="{{ $promo->id }}" {{ isset($apprenants->$promo_id) && $apprenants->$promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
                 @endforeach
             </select>
         </div>
-        {{--  <div class="col-md-6 mb-3 {{ $errors->has('classe_id') ? 'has-error' : ''}}">
-            <label for="class_id" class="control-label">{{ 'Classe' }}</label>
-            <select class="form-control" name="classe_id"  id="classe_id" >
-                @foreach($classes as $classe)
-                <option value="{{ $classe->id }}" {{ isset($apprenants->classe_id) && $apprenants->classe_id === $classe->id ? 'selected' : ''}}>{{ $classe->nom}}</option>
-                @endforeach
-            </select>
-        </div> --}}
 
 
 {{--
