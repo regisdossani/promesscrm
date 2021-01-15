@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Image;
+use App\Filiere;
 use App\Candidat;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -47,7 +48,8 @@ class CandidatsController extends Controller
      */
     public function create()
     {
-        return view('candidats.create');
+        $filieres=Filiere::all();
+        return view('candidats.create',compact('filieres'));
     }
     public function success()
     {
@@ -89,7 +91,7 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
             }
-            
+
 
   Candidat::create($requestData);
 

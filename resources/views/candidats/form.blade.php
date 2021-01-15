@@ -69,7 +69,7 @@
                                 <label for="filiere">Filière:</label>
                                 <select class="form-control" name="filiere"  id="filiere" >
                                         <option>--Choisissez un filiere--</option>
-                                            @foreach ($filiere as $item)
+                                            @foreach ($filieres as $item)
                                                 <option value="$item->nom">{{$item->nom}}</option>
                                             @endforeach
                                 </select>
