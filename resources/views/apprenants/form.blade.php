@@ -25,7 +25,7 @@
         </div>
 
         <div class="col-md-6 mb-3 {{ $errors->has('reference') ? 'has-error' : ''}}">
-            <label for="reference" class="control-label">{{ 'reference' }}</label>
+            <label for="reference" class="control-label">{{ 'Référence' }}</label>
             <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($apprenant->reference) ? $apprenant->reference : ''}}" >
                {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
         </div>
@@ -67,7 +67,7 @@
 
     <div class="row">
       <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
-           <label for="candidat_id" class="control-label">{{ 'candidat référence' }}</label>
+           <label for="candidat_id" class="control-label">{{ 'Candidat Apprenant' }}</label>
             <select class="form-control" name="candidat_id"  id="candidat_id" >
                 @foreach($candidats as $candidat)
                     @if ($candidat->statut=='3')

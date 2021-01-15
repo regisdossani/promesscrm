@@ -119,15 +119,13 @@ $admin1->assignRole('superadmin');
         'nom' => 'FCIG1',
     ]);
 
-    Promo::create([
-        'nom' => 'formation continue',
-    ]);
- /*    Filiere::create([
+   
+    Filiere::create([
         'nom' => 'FI',
     ]);
     Filiere::create([
         'nom' => 'FC',
-    ]); */
+    ]);
 
     }
 }
