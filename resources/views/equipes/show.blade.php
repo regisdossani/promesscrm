@@ -9,16 +9,21 @@
 @section('content')
 <section id="main-content">
 
-    <section class="wrapper">
+<section class="wrapper">
+    <div class="form-w3layouts">
 
-        <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-            <div class="col-md-10">
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Équipe Promess: {{ $equipe->username }}</div>
+                    <div class="col-md-9">
+                        <section  class="panel">
+
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    AFFICHER UN FORMATEUR
+                                </div>
+                            </header>
+
                     <div class="card-body">
                         @if (Auth::guard("equipe")->check())
                         <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -72,8 +77,7 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
+    
     </section>
 </section>
 @endsection
