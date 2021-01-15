@@ -54,10 +54,7 @@ class ApprenantsController extends Controller
         $apprenants = Apprenant::latest()->get();
         $stages= Stage::all();
         $chantiers= Chantier::all();
-
         $promos= Promo::latest()->get();
-        // $profs = Professionnel::latest()->get();
-
 
         return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos'));
     }
