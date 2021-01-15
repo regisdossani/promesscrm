@@ -48,10 +48,10 @@ class EquipesController extends Controller
     public function create()
     {
 
-        $team = Equipe::all();
+        $teams = Equipe::all();
         // $roles = Role::pluck('name','name')->all();
         $roles = Role::get();
-        return view('equipes.create',compact('team','roles'));
+        return view('equipes.create',compact('teams','roles'));
     }
 
     /**
@@ -64,15 +64,14 @@ class EquipesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'username' => 'required',
-            'nom'=> 'required',
-            'prenom'=> 'required',
+            'nom_prenom'=> 'required',
+            'reference'=> 'required',
             'password'=> 'required',
-            'tel_1'=> 'required',
-           'adresse'=> 'required',
+            'tel'=> 'required',
+           'sexe'=> 'required',
 
             'email' => 'required|email|unique:equipes,email_1',
-            'avatar' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
+            'photo' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'cv.*' => 'mimes:doc,docx,pdf,txt',
             'contrat.*' => 'mimes:doc,docx,pdf,txt',
 
@@ -83,9 +82,6 @@ class EquipesController extends Controller
         $requestData = $request->all();
 
         $requestData['password'] = Hash::make($requestData['password']);
-
-
-
 
         if ($request->hasFile('cv')) {
             checkDirectory("equipe");
@@ -100,8 +96,11 @@ class EquipesController extends Controller
             $requestData['contrat'] = $requestData['contrat'] =uploadFile($request, 'contrat', public_path('uploads/equipe'));
         }
       $team=  Equipe::create($requestData);
-      $team->assignRole( $requestData['roles']);
 
+    //   $team->assignRole( $requestData['roles']);
+      $role= new Role();
+      $role->id=$request->role;
+      $team->assignRole( $role->name);
 
         return redirect('equipes')->with('flash_message', 'Membre de l\'équipe crée!');
     }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 
 use App\Stage;
-
+use App\Promo;
 use App\Candidat;
 use App\filiere;
 use App\Apprenant;
@@ -56,11 +56,11 @@ class ApprenantsController extends Controller
         $stages= Stage::all();
         $chantiers= Chantier::all();
 
-        $formations= Formation::latest()->get();
-        $profs = Professionnel::latest()->get();
+        $promos= Promo::latest()->get();
+        // $profs = Professionnel::latest()->get();
 
 
-        return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','formations','profs'));
+        return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos'));
     }
 
 

@@ -22,9 +22,8 @@ class CreateEquipesTable extends Migration
             $table->string('password');
             $table->string('tel')->nullable();
             $table->string('email')->nullable()->unique();
-             $table->string('role')->nullable();
-            $table->time('duty_start')->nullable();
-            $table->time('duty_end')->nullable();
+             $table->unsignedBigInteger('role')->nullable();
+            
             $table->string('cv')->nullable();
             $table->string('contrat')->nullable();
             $table->string('photo')->nullable();

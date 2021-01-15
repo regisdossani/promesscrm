@@ -25,7 +25,7 @@
 </div>
 
 <div class="col-md-6 {{ $errors->has('tel') ? 'has-error' : ''}}">
-    <label for="tel_1" class="control-label">{{ 'Tel' }}</label>
+    <label for="tel_1" class="control-label">{{ 'Téléphone' }}</label>
     <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($equipe->tel) ? $equipe->tel : ''}}" >
     {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 </div>
@@ -55,10 +55,17 @@
  @role('superadmin')
 
 <div class="col-md-6 {{ $errors->has('role') ? 'has-error' : ''}}">
-    <label for="role" class="control-label">{{ 'Role' }}</label>
-    <input class="form-control" name="role" type="text" id="role" value="{{ isset($equipe->role) ? $equipe->role : ''}}" >
-    {!! $errors->first('role', '<p class="help-block">:message</p>') !!}
+    <label for="role" class="control-label">{{ 'Rôle' }}</label>
+    <select class="form-control" name="role" type="text" id="role">
+        <option>-- Choisir un rôle--</option>
+                                @foreach ($roles as $role)
+                                        @if ($role->name!="superadmin")
+                                            <option value="{{$role->id}}" {{ isset($teams->role) && $teams->role=$role->id ? 'selected':''}}> {{  $role->name }}</option>
+                                        @endif
+                                @endforeach
+    </select>
 </div>
+
 @if(isset($equipe->cv) && !empty($equipe->cv))
     <a href="{{ url('uploads/equipe/' . $equipe->cv) }}" ><i class="fa fa-download"></i> {{$equipe->cv}}</a>
 @endif
@@ -92,6 +99,7 @@
 </div>
 
 
-<div class="col-md-12">
-    <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
-</div>
+    <div class="col-md-12 mb-3">
+        <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
+    </div>
+
