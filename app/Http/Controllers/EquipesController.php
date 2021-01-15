@@ -135,7 +135,7 @@ class EquipesController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::findOrFail($id);
-        $roles = Role::only('name');
+        $roles = Role::With('equipes');
         return view('equipes.edit', compact('equipe','roles'));
     }
 

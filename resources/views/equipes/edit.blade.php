@@ -1,17 +1,27 @@
 @extends('inc.master')
 @include('equipes.sidebar')
 
+ @role('superadmin')
+@include('admins.sidebar')
+@endrole
+
 @section('content')
 <section id="main-content">
 
-    <section class="wrapper">
-        <div class="form-w3layouts">
+<section class="wrapper">
+    <div class="form-w3layouts">
 
-            <div class="container">
-                <div class="row">
+        <div class="container">
+            <div class="row">
 
-                    <div class="col-md-10">
-                        <section  class="card">
+                <div class="col-md-10">
+                    <section  class="card">
+                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    MODIFIER PERSONNEL ADMINISTRATIF
+                                </div>
+                            </header>
                                 {{-- <div class="card-header">Modifier  #{{ $equipe->username }}</div> --}}
                             <div class="card-body">
                                 @role('superadmin')
@@ -19,10 +29,12 @@
                                 <br />
                                 <br />
                                 @endrole
-                            <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                            <br />
-                            <br />
 
+                                @if (Auth::guard("equipe")->check())
+                                    <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    <br />
+                                    <br />
+                                @endif
 
 
                                 @if ($errors->any())

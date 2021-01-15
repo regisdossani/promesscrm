@@ -54,7 +54,7 @@
                                         <td> {{ $equipe->nom_prenom }} </td>
                                     </tr>
                                     <tr>
-                                        <th> Référencd </th>
+                                        <th> Référence </th>
                                         <td> {{ $equipe->reference }} </td>
                                     </tr>
                                     <tr>
