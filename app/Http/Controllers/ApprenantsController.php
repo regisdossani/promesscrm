@@ -6,7 +6,7 @@ use DB;
 use App\Stage;
 use App\Promo;
 use App\Candidat;
-use App\filiere;
+use App\Filiere;
 use App\Apprenant;
 use App\Chantier;
 
@@ -50,7 +50,6 @@ class ApprenantsController extends Controller
     public function create()
     {
         $filieres = Filiere::latest()->get();
-
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
         $stages= Stage::all();
