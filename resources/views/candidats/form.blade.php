@@ -21,15 +21,16 @@
 							</div>
 
 
-                        <div>
-                            <label for="orientation">promo:</label>
+                            <div class="col-md-6 {{ $errors->has('promo') ? 'has-error' : ''}} ">
+                                <label for="orientation">promo:</label>
                                 <select class="form-control" name="promo"  id="promo" >
-                                        <option>--Choisissez une orientation--</option>
+                                        <option>--Choisissez une promo--</option>
                                         <option value="Formation initiale">Formation initiale</option>
                                         <option value="Formation initiale">Formation continue</option>
                                 </select>
                                 {!! $errors->first('promo', '<p class="help-block">:message</p>') !!}
                             </div>
+                            <hr class="mb-4">
 
                             <div class="col-md-6 {{ $errors->has('parrain') ? 'has-error' : ''}} ">
                                 <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
@@ -47,6 +48,7 @@
                                 <input class="form-control" name="email_parrain" type="text" id="email_parrain" >
                                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
                             </div>
+                            <hr class="mb-4">
 
                             <div class="col-md-6 {{ $errors->has('provenance') ? 'has-error' : ''}}">
                                 <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
@@ -63,7 +65,7 @@
 
 
                              @role('superadmin')
-                             <div>
+                             <div class="col-md-6 {{ $errors->has('filiere') ? 'has-error' : ''}} ">
                                 <label for="filiere">Filière:</label>
                                 <select class="form-control" name="filiere"  id="filiere" >
                                         <option>--Choisissez un filiere--</option>
@@ -108,9 +110,9 @@
                                             {!! $errors->first('resultat', '<p class="help-block">:message</p>') !!}
                                 </div>
 
-                                <div class="col-md-10   {{ $errors->has('commentaire') ? 'has-error' : ''}}">
-                                    <label class="label" for="commentaire">Commentaire</label>
-                                    <textarea name="commentaire" class="form-control" id="commentaire" cols="10" rows="4" placeholder="commentaire"></textarea>
+                                <div class="col-md-6   {{ $errors->has('commentaire') ? 'has-error' : ''}}">
+                                    <label class="control-label" for="commentaire">{{'Commentaire'}}</label>
+                                    <textarea name="commentaire" class="form-control" id="commentaire" cols="5" rows="4" placeholder="commentaire"></textarea>
                                     {!! $errors->first('commentaire', '<p class="help-block">:message</p>') !!}
 
                                 </div>
@@ -170,7 +172,7 @@
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div> --}}
 
-<div class="col-md-6 ">
+<div class="col-md-12 mb-3">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
 </div>
 

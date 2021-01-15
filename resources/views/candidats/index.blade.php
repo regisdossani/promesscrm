@@ -18,7 +18,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <section  class="card">
                     <header class="panel-heading">
                         <div class="panel-title">
@@ -79,8 +79,8 @@
                                         <td>{{ $item->filiere->nom }}</td>
                                         <td>{{ $item->reception_dossier }}</td>
 
-                                       {{--  <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>
-                                        <td> --}}
+                                       {{--  <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>--}}
+                                        <td>
                                             <a href="{{ url('/candidats/' . $item->id) }}" title="Voir ce candidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                             <a href="{{ url('/candidats/' . $item->id . '/edit') }}" title="Modifier ce candidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
