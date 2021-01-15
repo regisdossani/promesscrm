@@ -127,7 +127,7 @@ class ApprenantsController extends Controller
     public function show($id)
     {
         $apprenant = Apprenant::findOrFail($id);
-        $filiere = filiere::with('modules')->where('id', $apprenant->filiere_id)->first();
+        $filiere = Filiere::with('modules')->where('id', $apprenant->filiere_id)->first();
 
         return view('apprenants.show', compact('apprenant','filiere'));
     }
@@ -151,7 +151,7 @@ class ApprenantsController extends Controller
     {
         $apprenant = Apprenant::findOrFail($id);
         $candidats = Candidat::all();
-        $filieres= Formation::all();
+        $filieres= Filiere::all();
 
         return view('apprenants.edit', compact('apprenant','candidats','filieres'));
     }
