@@ -17,13 +17,13 @@ class CreateMarksTable extends Migration
             $table->id();
             $table->unsignedInteger('apprenant_id')->nullable();
             $table->unsignedInteger('module_id')->nullable();
-            $table->unsignedInteger('formation_id')->nullable();
-            $table->unsignedInteger('class_id')->nullable();
-            $table->double('note_exam')->nullable();
+            $table->unsignedInteger('promo_id')->nullable();
+            $table->unsignedInteger('classe_id')->nullable();
+
+            $table->double('note3')->nullable();
             $table->double('note1')->nullable();
             $table->double('note2')->nullable();
             $table->double('moyenne')->nullable();
-            $table->string('year')->nullable();
 
             $table->timestamps();
         });

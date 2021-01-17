@@ -1,19 +1,19 @@
 
-<div class="col-md-6 mb-3 {{ $errors->has('titre') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 mb-3 {{ $errors->has('titre') ? 'has-error' : ''}}">
     <label for="titre" class="control-label">{{ 'Titre' }}</label>
     <input class="form-control" name="titre" type="text" id="titre" value="{{ isset($stage->titre) ? $stage->titre : ''}}" required>
     {!! $errors->first('titre', '<p class="help-block">:message</p>') !!}
+</div> --}}
+<div class="col-md-6 mb-3 {{ $errors->has('date') ? 'has-error' : ''}}">
+    <label for="date" class="control-label">{{ 'Date' }}</label>
+    <textarea class="form-control"  name="date" type="text" id="date" >{{ isset($stage->date) ? $stage->date : ''}}</text>
+    {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 mb-3 {{ $errors->has('stage_entreprise') ? 'has-error' : ''}}">
-    <label for="stage_entreprise" class="control-label">{{ 'Description du Stage Entreprise' }}</label>
-    <textarea class="form-control" rows="5" name="stage_entreprise" type="textarea" id="stage_entreprise" >{{ isset($stage->stage_entreprise) ? $stage->stage_entreprise : ''}}</textarea>
-    {!! $errors->first('stage_entreprise', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="col-md-6 mb-3 {{ $errors->has('professionel_id') ? 'has-error' : ''}}">
+<div class="col-md-6 mb-3 {{ $errors->has('encadreur_id') ? 'has-error' : ''}}">
     <label for="professionel_id" class="control-label">{{'Nom du Professionel' }}</label>
-    <select class="form-control" name="professionnel_id"  id="professionnel_id" >
+    <select class="form-control" name="encadreur_id"  id="professionnel_id" >
         @foreach($profs as $prof)
-           <option value="{{ $prof->id }}" {{ isset($stages->professionnel_id) && $stages->professionnel_id == $prof->id ? 'selected' : ''}}>{{ $prof->nom}}</option>
+           <option value="{{ $prof->id }}" {{ isset($stages->encadreur_id) && $stages->encadreur_id == $encadreur->id ? 'selected' : ''}}>{{ $encadreur->nom}}</option>
         @endforeach
     </select>
 </div>

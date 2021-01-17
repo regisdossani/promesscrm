@@ -51,6 +51,8 @@ body a:hover{
 #sidebar ul li {
     position: relative;
 }
+
+
 .leftside-navigation,.right-stat-bar{
     height: 100%;
 }
@@ -58,10 +60,15 @@ body a:hover{
     list-style-type: none;
     padding-left: 0;
 }
+
+
+
 /*LEFT NAVIGATION ICON*/
 .dcjq-icon {
     height:17px;
     width:17px;
+
+
     display:inline-block;
     background:url(../images/nav-expand.png) no-repeat top;
     border-radius:3px;

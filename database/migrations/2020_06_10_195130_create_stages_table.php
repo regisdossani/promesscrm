@@ -15,15 +15,12 @@ class CreateStagesTable extends Migration
     {
         Schema::create('stages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titre')->nullable()->default('titre du stage');
-             $table->text('stage_sujet')->nullable();
-            $table->date('stage_debut')->nullable();
-            $table->date('stage_fin')->nullable();
-            $table->smallInteger('stage_nbr_apprenant');
-			// $table->string('stage_encadreur_s', 20);
-            $table->string('pjconvention_stage')->nullable();
-            $table->unsignedBigInteger('professionnel_id');
-
+            $table->date('date')->nullable();
+            $table->string('duree')->nullable();
+            $table->string('referent')->nullable();
+            $table->unsignedBigInteger('encadreur_id');
+            $table->string('entreprise')->nullable();
+            $table->string('rapport')->nullable();
             $table->timestamps();
 
 

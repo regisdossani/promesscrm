@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Stage extends Model
 {
     protected $fillable = [
-        'titre', 'stage_entreprise', 'stage_debut',
-        'stage_fin','pjconvention_stage','professionnel_id',
+        'encadreur_id', 'date',
+        'duree','referent','entreprise','rapport',
     ];
     // public function professionnel()
     // {
@@ -29,4 +29,8 @@ class Stage extends Model
    return $this->belongsToMany(Stagiaires::class,'stage_stagiaire','stagiaire_id','stage_id');
 }
 
+public function apprenants()
+{
+   return $this->belongsToMany(Apprenant::class,'apprenant_stage');
+}
 }

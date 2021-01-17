@@ -27,6 +27,10 @@ class CreateChantiersTable extends Migration
             $table->unsignedBigInteger('teacher_id')->nullable();
             $table->integer('nbre_appt')->nullable();
             $table->longText('descriptif')->nullable();
+            $table->float('note1')->nullable();
+            $table->float('note2')->nullable();
+            $table->float('note3')->nullable();
+
             $table->string('fiche_descriptive')->nullable();
             $table->integer('etat')->nullable();
             $table->longText('obs')->nullable();

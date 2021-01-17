@@ -1,6 +1,6 @@
 
 <!--sidebar start-->
-<aside>
+<aside class="sidebar">
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
 
