@@ -42,7 +42,6 @@ class TestcandidatsController extends Controller
         $filieres=Filiere::all();
         $promos=Promo::all();
 
-
         return view('testcandidats.create',compact('filieres','candidats','promos'));
     }
 

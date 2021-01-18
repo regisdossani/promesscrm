@@ -61,8 +61,10 @@
                                                 <th>Genre</th>
 
                                                 <th>Nom</th>
+                                                <th>Téléphone</th>
                                                 <th>Provenance</th>
                                                 <th>Région</th>
+
                                                 <th>Filière</th>
                                                 <th>Promo</th>
                                                 <th>Actions</th>

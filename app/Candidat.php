@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Candidat extends Model
 {
     protected $fillable = [
-        'provenance',  'nom', 'email', 'tel',
+        'provenance',  'nom', 'email', 'tel','sexe',
        'reception_dossier','pj_depotdossier',
         'region','pj_depotdossier2','promo_id','filiere_id','parrain',
         'tel_parrain','email_parrain'

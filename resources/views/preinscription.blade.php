@@ -72,7 +72,7 @@
                                 </div>
 
                                  <div class="col-md-2 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
-                                    <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
+                                    <label for="sexe" class="control-label">{{ 'Genre :' }}</label>
                                     <select name="sexe" id="sexe">
                                         <option value="M">M</option>
                                         <option value="F" >F</option>
@@ -81,7 +81,7 @@
 
 
 
-                                <div class="col-md-5 mb-3">
+                                <div class="col-md-2 mb-2">
                                     <label for="filiere">Filière:</label>
                                     <div class="select-list">
                                         <select name="filiere_id" id="filiere_id">
@@ -93,7 +93,7 @@
                                         <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                                     </div>
                                 </div>
-                                <div class="col-md-5 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
+                                <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                     <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
                                     <select name="promo_id" id="promo_ud">
                                         <option value="">Choisissez une promo</option>
@@ -190,7 +190,7 @@
 							{!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
                         </div>
 
-
+                    </div>
 
                        {{--  <div class="col-md-6 mb-3 {{ $errors->has('test_pj') ? 'has-error' : ''}}">
                             @if(isset($candidat->test_pj) && !empty($candidat->test_pj))
@@ -212,7 +212,7 @@
                             {!! $errors->first('signature', '<p class="help-block">:message</p>') !!}
                         </div> --}}
 
-                </div>
+
 
            {{--  @if(isset($candidat->avatar) && !empty($candidat->avatar))
                 <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>

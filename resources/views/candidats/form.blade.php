@@ -6,21 +6,22 @@
                                 {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
                             </div>
 
+                    <div class="col-md-6">
                              <div class="col-md-2 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
                                 <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
                                 <select name="sexe" id="sexe">
                                     <option value="M">M</option>
-                                    <option value="F" >F</option>
+                                    <option value="F">F</option>
                                 </select>
                             </div>
 
 
 
-                            <div class="col-md-5 mb-3">
+                            <div class="col-md-2 mb-2  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                                 <label for="filiere">Filière:</label>
                                 <div class="select-list">
                                     <select name="filiere_id" id="filiere_id">
-                                        <option value="">Choisissez une filière</option>
+                                         <option value="">Choisissez une filière</option>
                                             @foreach($filieres as $filiere)
                                                 <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
                                             @endforeach
@@ -28,7 +29,7 @@
                                     <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                                 </div>
                             </div>
-                            <div class="col-md-5 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
+                            <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                 <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
                                 <select name="promo_id" id="promo_ud">
                                     <option value="">Choisissez une promo</option>
@@ -37,7 +38,7 @@
                                         @endforeach
                                 </select>
                             </div>
-
+                    </div>
                             <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
                                 <label for="tel" class="control-label">{{'Téléphone:' }}</label>
                                 <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
@@ -49,12 +50,10 @@
                                 <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email_1) ? $candidat->email_1 : ''}}" >
                                 {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                             </div>
-
                         </div>
 
 
                     <div class="form-row">
-
                         <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                             <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
                             <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
@@ -93,7 +92,7 @@
                         </div>
 
 
-            <div class="form-row">
+    <div class="form-row">
         @role('superadmin')
                 <div class="col-md-2 mb-2 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
                     <label for="reception_dossier" class="control-label">{{ 'Reception ( dossier du candidat)' }}</label>
@@ -169,11 +168,6 @@
                                 <input class="form-control" name="entretien" type="date" id="entretien" value="{{ isset($candidat->entretien) ? $candidat->entretien : ''}}" >
                                 {!! $errors->first('entretien', '<p class="help-block">:message</p>') !!}
                             </div> --}}
-
-
-
-
-                            @endrole
 {{--
  --}}
 
@@ -206,7 +200,7 @@
     </div>
 
 
-       
+
 
 
 {{--

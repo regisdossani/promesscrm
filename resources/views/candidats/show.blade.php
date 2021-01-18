@@ -48,20 +48,24 @@
                                     <tr><th> Nom </th>
                                         <td> {{ $candidat->nom }} </td>
                                     </tr>
-                                    <tr><th> Tél </th>
-                                        <td> {{ $candidat->tel }} </td>
-                                    </tr>
+
                                     <tr><th> Provenance </th>
                                         <td> {{ $candidat->provenance }} </td>
                                     </tr>
                                     <tr><th> Région </th>
                                         <td> {{ $candidat->region }} </td>
                                     </tr>
+
                                     <tr><th> Filière </th>
-                                        <td> {{ $candidat->filiere }} </td>
+                                        <td> {{ $candidat->filiere->nom }} </td>
                                     </tr>
+                                    <tr><th> Téléphone </th>
+                                        <td> {{ $candidat->tel }} </td>
+                                    </tr>
+
+
                                     <tr><th> Promo </th>
-                                        <td> {{ $candidat->promo }} </td>
+                                        <td> {{ $candidat->promo->nom }} </td>
                                     </tr>
                                 </tbody>
                             </table>
