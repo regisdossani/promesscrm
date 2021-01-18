@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Image;
 use App\Filiere;
 use App\Candidat;
+use App\Promo;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -50,11 +51,11 @@ class CandidatsController extends Controller
     {
         $filieres=Filiere::all();
         $promos=Promo::all();
-        $candidats=Promo::all();
-
+        $candidats=Candidat::all();
 
         return view('candidats.create',compact('filieres','promos','candidats'));
     }
+
     public function success()
     {
         return view('welcome')->with('flash_message', 'Votre dossier a été envoyé !');
@@ -130,8 +131,9 @@ class CandidatsController extends Controller
     public function edit($id)
     {
         $candidat = Candidat::findOrFail($id);
-
-        return view('candidats.edit', compact('candidat'));
+        $promos=Promo::all();
+        $filieres=Filiere::all();
+        return view('candidats.edit', compact('candidat','promos','filieres'));
     }
 
     /**
