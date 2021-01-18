@@ -49,7 +49,11 @@ class CandidatsController extends Controller
     public function create()
     {
         $filieres=Filiere::all();
-        return view('candidats.create',compact('filieres'));
+        $promos=Promo::all();
+        $candidats=Promo::all();
+
+
+        return view('candidats.create',compact('filieres','promos','candidats'));
     }
     public function success()
     {
@@ -67,7 +71,6 @@ class CandidatsController extends Controller
         $this->validate($request,[
             'nom' => 'required',
 
-            'test_pj.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
@@ -87,10 +90,10 @@ class CandidatsController extends Controller
 
 
 
-            if ($request->hasFile('test_pj')) {
+          /*   if ($request->hasFile('test_pj')) {
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-            }
+            } */
 
 
   Candidat::create($requestData);
@@ -167,9 +170,7 @@ class CandidatsController extends Controller
     {
         $this->validate($request,[
             'nom' => 'required',
-            'prenom'=> 'required',
             'tel'=> 'required',
-
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
@@ -184,19 +185,16 @@ class CandidatsController extends Controller
                 $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
             }
 
-            if ($request->hasFile('test_pj')) {
+           /*  if ($request->hasFile('test_pj')) {
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-            }
+            } */
 
 
   Candidat::create($requestData);
+return  redirect()->back()->with('flash_message', 'Votre dossier a été envoyé !');
 
-
-
-                    return redirect('candidat')->with('flash_message', 'Votre dossier a été envoyé !');
-
-                }
+}
 
 
 }

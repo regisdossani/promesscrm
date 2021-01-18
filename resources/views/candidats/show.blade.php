@@ -42,13 +42,27 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $candidat->id }}</td>
+                                        <th>Genre</th>
+                                        <td>{{ $candidat->sexe }}</td>
                                     </tr>
-                                    <tr><th> Civilite </th><td> {{ $candidat->civilite }} </td></tr>
-                                    <tr><th> Prenom </th><td> {{ $candidat->prenom }} </td></tr>
-                                    <tr><th> Nom </th><td> {{ $candidat->nom }} </td></tr>
-                                    <tr><th> Choix de formation </th><td> {{ $candidat->choix_formation }} </td></tr>
-
+                                    <tr><th> Nom </th>
+                                        <td> {{ $candidat->nom }} </td>
+                                    </tr>
+                                    <tr><th> Tél </th>
+                                        <td> {{ $candidat->tel }} </td>
+                                    </tr>
+                                    <tr><th> Provenance </th>
+                                        <td> {{ $candidat->provenance }} </td>
+                                    </tr>
+                                    <tr><th> Région </th>
+                                        <td> {{ $candidat->region }} </td>
+                                    </tr>
+                                    <tr><th> Filière </th>
+                                        <td> {{ $candidat->filiere }} </td>
+                                    </tr>
+                                    <tr><th> Promo </th>
+                                        <td> {{ $candidat->promo }} </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

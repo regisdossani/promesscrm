@@ -8,8 +8,8 @@ class Candidat extends Model
 {
     protected $fillable = [
         'provenance',  'nom', 'email', 'tel',
-        'type_formation','reception_dossier','pj_depotdossier','test_ecrit','entretien','test_pj',
-        'region','commentaire','pj_depotdossier2','resultat','promo','filiere','parrain',
+       'reception_dossier','pj_depotdossier',
+        'region','pj_depotdossier2','promo_id','filiere_id','parrain',
         'tel_parrain','email_parrain'
     ];
 
@@ -29,10 +29,10 @@ class Candidat extends Model
      } */
      public function promo()
      {
-             return $this->belongsTo(Promo::class,'promo');
+             return $this->belongsTo(Promo::class,'promo_id');
      }
      public function filiere()
      {
-             return $this->belongsTo(Filiere::class,'filiere');
+             return $this->belongsTo(Filiere::class,'filiere_id');
      }
 }

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\User;
+use App\Filiere;
+use App\Promo;
 use App\Apprenant;
 use App\Candidat;
 use App\Professionnel;
@@ -317,7 +319,10 @@ Route::view('/formateur', 'formateurs.dashboard');*/
 
 /** La page d'inscriprion du candidat dans le frontend*/
 Route::get('/candidat', function () {
-    return view('preinscription');
+        $filieres=Filiere::all();
+        $promos=Promo::all();
+        $candidats=Promo::all();
+    return view('preinscription',compact('promos','candidats','filieres'));
 });
 
 
