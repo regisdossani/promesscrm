@@ -35,4 +35,8 @@ class Candidat extends Model
      {
              return $this->belongsTo(Filiere::class,'filiere_id');
      }
+     public function testcandidat()
+     {
+             return $this->hasOne(Testcandidat::class);
+     }
 }

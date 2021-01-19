@@ -23,12 +23,12 @@ class TestcandidatsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $testcandidat= Testcandidat::latest()->paginate($perPage);
+            $testcandidats= Testcandidat::latest()->paginate($perPage);
         } else {
-            $testcandidat = Testcandidat::latest()->paginate($perPage);
+            $testcandidats = Testcandidat::latest()->paginate($perPage);
         }
 
-        return view('testcandidats.index', compact('testcandudats'));
+        return view('testcandidats.index', compact('testcandidats'));
     }
 
     /**
@@ -56,6 +56,11 @@ class TestcandidatsController extends Controller
     {
 
         $requestData = $request->all();
+        if ($request->hasFile('test_pj')) {
+            checkDirectory("testcandidats");
+            $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/testcandidats'));
+        }
+
 
         Testcandidat::create($requestData);
 

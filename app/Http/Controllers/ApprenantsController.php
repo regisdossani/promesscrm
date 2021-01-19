@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
-
+use App\Testcandidat;
 use App\Stage;
 use App\Promo;
 use App\Candidat;
@@ -30,6 +30,25 @@ class ApprenantsController extends Controller
      */
     public function index(Request $request)
     {
+
+        $apprenant= new Apprenant();
+        $tests=Testcandidat::all();
+        foreach ($tests as $key => $value) {
+                if ($value->resultat=='4') {
+                    $apprenant->candidat_id=$value->candidat_id;
+                    $apprenant->nom=$value->candidat->nom;
+                    $apprenant->tel=$value->candidat->tel;
+                    $apprenant->filiere_id=$value->filiere_id;
+                    $apprenant->promo_id=$value->promo_id;
+                    $apprenant->sexe=$value->candidat->sexe;
+                    $apprenant->email=$value->candidat->email;
+                    $apprenant->save();
+                }
+        }
+
+
+
+
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -49,13 +68,13 @@ class ApprenantsController extends Controller
      */
     public function create()
     {
+
         $filieres = Filiere::latest()->get();
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
         $stages= Stage::all();
         $chantiers= Chantier::all();
         $promos= Promo::latest()->get();
-
         return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos'));
     }
 

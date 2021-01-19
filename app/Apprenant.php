@@ -39,7 +39,7 @@ public function chantiers()
     {
         return $this->hasOne(Candidat::class);
     }
-   
+
 
     public function filieres()
     {

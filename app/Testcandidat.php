@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Testcandidat extends Model
 {
     protected $fillable = [
-        'filiere', 'test_ecrit', 'entretien','test_pj','resultat','signature',
+        'filiere_id', 'test_ecrit', 'entretien','test_pj','resultat','signature',
         'commentaire','candidat_id',
     ];
     public function candidat(){
         return $this->belongsTo(Candidat::class,'candidat_id');
+    }
+    public function filiere(){
+        return $this->belongsTo(Filiere::class,'filiere_id');
     }
 }

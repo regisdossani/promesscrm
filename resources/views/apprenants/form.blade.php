@@ -69,9 +69,9 @@
       <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
            <label for="candidat_id" class="control-label">{{ 'Candidat Apprenant' }}</label>
             <select class="form-control" name="candidat_id"  id="candidat_id" >
-                @foreach($candidats as $candidat)
-                    @if ($candidat->statut=='3')
-                        <option value="{{ $candidat->id }}" {{ isset($apprenants->candidat_id) && $apprenants->candidat_id == $candidat->id ? 'selected' : ''}}>{{ $candidat->nom}}</option>
+                @foreach($tests as $test)
+                    @if ($test->resultat=='4')
+                        <option value="{{ $candidat->id }}" {{ isset($test->candidat_id) && $test->candidat_id == $candidat->id ? 'selected' : ''}}>{{ $candidat->prenom}}{{$candidat->nom}}</option>
                     @endif
                 @endforeach
             </select>

@@ -1,12 +1,17 @@
 <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
     <label for="candidat_id" class="control-label">{{ 'Candidat' }}</label>
-    <input class="form-control" name="candidat_id" type="number" id="candidat_id" value="{{ isset($testcandidat->candidat_id) ? $testcandidat->candidat_id : ''}}" required>
-    {!! $errors->first('candidat_id', '<p class="help-block">:message</p>') !!}
+    <select name="candidat_id" id="candidat_id" class="form-control">
+        <option value="">Choisissez un Candidat</option>
+            @foreach($candidats as $candidat)
+                <option value="{{ $candidat->id }}" {{ isset($tests->candidat_id) && $tests->candidat_id == $candidat->id ? 'selected' : ''}}>{{$candidat->prenom }} {{ $candidat->nom}}</option>
+            @endforeach
+    </select>
 </div>
+
 
 <div class="col-md-6 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
     <label for="filiere_id" class="control-label">{{ 'Filière' }}</label>
-    <select name="filiere" id="filiere">
+    <select name="filiere" id="filiere" class="form-control">
         <option value="">Choisissez une filière</option>
             @foreach($filieres as $filiere)
                 <option value="{{ $filiere->id }}" {{ isset($tests->filiere) && $tests->filiere == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
@@ -52,14 +57,6 @@
     </div>
 
 
-
-
-
-<div class="col-md-6 mb-3 {{ $errors->has('resultat') ? 'has-error' : ''}}">
-    <label for="resultat" class="control-label">{{ 'Resultat' }}</label>
-    <input class="form-control" name="resultat" type="text" id="resultat" value="{{ isset($testcandidat->resultat) ? $testcandidat->resultat : ''}}" >
-    {!! $errors->first('resultat', '<p class="help-block">:message</p>') !!}
-</div>
 <div class="col-md-6 mb-3 {{ $errors->has('signature') ? 'has-error' : ''}}">
     <label for="signature" class="control-label">{{ 'Signature' }}</label>
     <div class="radio">
@@ -70,8 +67,12 @@
 </div>
     {!! $errors->first('signature', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="col-md-6 mb-3 {{ $errors->has('commentaire') ? 'has-error' : ''}}">
+    <label for="commentaire" class="control-label">{{ 'Commentaire' }}</label>
+    <textarea class="form-control" name="commentaire"  col="5" type="text" id="entretien"  ></textarea>
+    {!! $errors->first('commentaire', '<p class="help-block">:message</p>') !!}
+</div>
 
-
-<div class="col-md-6 mb-3">
+<div class="col-md-8 mb-3">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
 </div>
