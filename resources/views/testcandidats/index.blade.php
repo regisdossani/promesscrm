@@ -59,19 +59,35 @@
                                         @foreach($testcandidats as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->candidat_id }}</td>
+                                                <td>{{ $item->candidat->nom }}</td>
                                                 <td>{{ $item->test_ecrit }}</td>
                                                 <td>{{ $item->entretien }}</td>
-                                                <td>{{ $item->resultat }}</td>
 
                                                 <td>
-                                                    <a href="{{ url('/testcandidats/' . $item->id) }}" title="View testcandidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                                    <a href="{{ url('/testcandidats/' . $item->id . '/edit') }}" title="Edit testcandidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                    @if ($item->resultat=='5')
+                                                        Passer tests en FC
+                                                    @endif
+                                                    @if ($item->resultat=='4')
+                                                        Accepté(e) en FI                                                    @endif
+                                                    @if ($item->resultat=='3')
+                                                            Excusé(e)
+                                                    @endif
+                                                    @if ($item->resultat=='2')
+                                                            Absent(e)
+                                                    @endif
+                                                    @if ($item->resultat=='1')
+                                                            Non retenu
+                                                    @endif
+                                                </td>
+
+                                                <td>
+                                                    <a href="{{ url('/testcandidats/' . $item->id) }}" title="View testcandidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/testcandidats/' . $item->id . '/edit') }}" title="Edit testcandidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/testcandidats' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete testcandidat" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete testcandidat" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                     </form>
                                                 </td>
                                             </tr>

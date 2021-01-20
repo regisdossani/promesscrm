@@ -41,6 +41,7 @@ class TestcandidatsController extends Controller
         $candidats=Candidat::all();
         $filieres=Filiere::all();
         $promos=Promo::all();
+        // $tests=Testcandidat::all();
 
         return view('testcandidats.create',compact('filieres','candidats','promos'));
     }
@@ -91,8 +92,10 @@ class TestcandidatsController extends Controller
     public function edit($id)
     {
         $testcandidat = Testcandidat::findOrFail($id);
-
-        return view('.edit', compact('testcandidat'));
+        $candidats=Candidat::all();
+        $filieres=Filiere::all();
+        $promos=Promo::all();
+        return view('testcandidats.edit', compact('testcandidat','filieres','promos','candidats'));
     }
 
     /**

@@ -31,10 +31,27 @@ class ApprenantsController extends Controller
     public function index(Request $request)
     {
 
-        $apprenant= new Apprenant();
-        $tests=Testcandidat::all();
+       $tests=Testcandidat::where('resultat',4);
+
         foreach ($tests as $key => $value) {
-                if ($value->resultat=='4') {
+
+            if(Apprenant::where('candidat_id', $value->candidat_id )->exists()){
+                // your code...
+               }
+               else{
+                $apprenant->candidat_id=$value->candidat->id;
+                $apprenant->nom=$value->candidat->nom;
+                $apprenant->tel=$value->candidat->tel;
+                $apprenant->filiere_id=$value->filiere_id;
+                $apprenant->promo_id=$value->promo_id;
+                $apprenant->sexe=$value->candidat->sexe;
+                $apprenant->email=$value->candidat->email;
+                $apprenant->save();
+
+               }
+
+            }
+       /*  foreach ($tests as $key => $value) {
                     $apprenant->candidat_id=$value->candidat_id;
                     $apprenant->nom=$value->candidat->nom;
                     $apprenant->tel=$value->candidat->tel;
@@ -43,8 +60,8 @@ class ApprenantsController extends Controller
                     $apprenant->sexe=$value->candidat->sexe;
                     $apprenant->email=$value->candidat->email;
                     $apprenant->save();
-                }
-        }
+                } */
+
 
 
 

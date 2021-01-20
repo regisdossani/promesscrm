@@ -78,6 +78,10 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
+                                            <th>Référence</th>
+                                            <td>{{ $apprenant->reference }}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Nom</th>
                                             <td>{{ $apprenant->nom }}</td>
                                         </tr>
@@ -94,12 +98,22 @@
                                             <th> Tél </th>
                                             <td> {{ $apprenant->tel }} </td>
                                         </tr>
+
                                         <tr>
+                                            <th> Filière </th>
+                                            <td> {{ $apprenant->filiere->nom }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Promo </th>
+                                            <td> {{ $apprenant->promo->nom }} </td>
+                                        </tr>
+                                       
+                                       {{--  <tr>
                                             <th> Chantiers école</th>
                                             @foreach($apprenant->chantiers as $chantier)
                                                 <td>{{ $chantier->titre }} </td>
                                             @endforeach
-                                        </tr>
+                                        </tr> --}}
                                     </tbody>
                                 </table>
                             </div>

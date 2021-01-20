@@ -1,7 +1,17 @@
 @extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
 
-@include('admins.sidebar')
-
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 @section('content')
 <section id="main-content">
     <section class="wrapper">
@@ -40,11 +50,10 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Raison social</th>
-                                                        <th>Référence</th>
-                                                        <th>Activité entreprise</th>
-                                                        <th>Responsable</th>
-                                                        <th>Téléphone</th>
+                                                        <th>Type d'organisation</th>
+                                                        <th>Nom du Référent</th>
                                                         <th>Email</th>
+                                                        <th>Téléphone</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -53,11 +62,11 @@
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
                                                                 <td>{{ $item->raison_social }}</td>
-                                                                <td>{{ $item->reference }}</td>
-                                                                <td>{{ $item->activite_entreprise }}</td>
-                                                                <td>{{ $item->responsable }}</td>
-                                                                <td>{{ $item->tel }}</td>
+                                                                <td>{{ $item->type_organisation }}</td>
+                                                                <td>{{ $item->nom_referent }}</td>
                                                                 <td>{{ $item->email }}</td>
+                                                                <td>{{ $item->tel }}</td>
+
 
                                                                 <td>
                                                                     <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

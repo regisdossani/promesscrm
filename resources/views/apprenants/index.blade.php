@@ -60,9 +60,9 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
+                                                        <th>Référence</th>
                                                         <th>Nom</th>
                                                         <th>Prénom</th>
-                                                        <th>Référence</th>
                                                         <th>Sexe </th>
                                                         <th>Tel</th>
 
@@ -76,9 +76,10 @@
                                                 @foreach($apprenants as $item)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $item->reference }}</td>
+
                                                         <td>{{ $item->nom }}</td>
                                                         <td>{{ $item->prenom }}</td>
-                                                        <td>{{ $item->reference }}</td>
                                                         <td>{{ $item->sexe}}</td>
                                                         <td>{{ $item->tel}}</td>
                                                         <td>{{ $item->filiere}}</td>
@@ -88,19 +89,19 @@
                                                                 @foreach($item->stages as $stage)
                                                                 <li>{{ $stage->titre }}</li>
                                                                 @endforeach
-                                                            </ul> 
+                                                            </ul>
                                                         </td>
 
                                                         {{-- <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td> --}}
 
                                                         <td>
-                                                            <a href="{{ url('/apprenants/' . $item->id) }}" title="Voir cet apprenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                                            <a href="{{ url('/apprenants/' . $item->id . '/edit') }}" title="Modifier cet apprenant"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                                            <a href="{{ url('/apprenants/' . $item->id) }}" title="Voir cet apprenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                            <a href="{{ url('/apprenants/' . $item->id . '/edit') }}" title="Modifier cet apprenant"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                             <form method="POST" action="{{ url('/apprenants' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                                 {{ method_field('DELETE') }}
                                                                 {{ csrf_field() }}
-                                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer cet apprenant" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer cet apprenant" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

@@ -30,7 +30,7 @@
                                     </div>
                                 </header>
                                     <div class="card-body">
-                                        <a href="{{ url('/testcandidats') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
+                                        <a href="{{ url('/testcandidats') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                         <br />
                                         <br />
 

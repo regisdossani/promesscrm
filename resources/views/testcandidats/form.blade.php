@@ -37,7 +37,6 @@
     <label for="resultat" class="control-label">{{ 'Résultat' }}</label>
     <select class="form-control" name="resultat"  id="resultat" >
         <option>-- --Choisissez un resultat--</option>
-
             <option value="1">Non retenu</option>
             <option value="2">Absent(e)</option>
             <option value="3">Excusé(e)</option>

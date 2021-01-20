@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
@@ -59,9 +59,9 @@
                                         <th>Tél</th>
                                         <th>Email</th>
                                         <th>Qualite</th>
-                                        <th>Spécialites</th>
-                                        <th>Atelier de juillet_2018</th>
-                                        <th>formation dejanvier_2019</th>
+                                        <th>Spécialité</th>
+                                       {{--  <th>Atelier de juillet_2018</th>
+                                        <th>formation dejanvier_2019</th> --}}
 
                                         <th>Actions</th>
                                     </tr>
@@ -70,15 +70,24 @@
                                 @foreach($pers_ressources as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nom }}</td><td>{{ $item->prenom }}</td><td>{{ $item->email }}</td>
+                                        <td>{{ $item->nom }}</td>
+                                        <td>{{ $item->reference }}</td>
+                                        <td>{{ $item->sexe }}</td>
+                                        <td>{{ $item->tel }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->qualite }}</td>
+                                        <td>{{ $item->specialites }}</td>
+                                       {{--  <td>{{ $item->atelier_de_juillet_2018  }}</td>
+                                        <td>{{ $item->formation_de_janvier_2019 }}</td> --}}
+
                                         <td>
-                                            <a href="{{ url('/persressources/' . $item->id) }}" title="View pers_ressource"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                            <a href="{{ url('/persressources/' . $item->id . '/edit') }}" title="Edit pers_ressource"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                            <a href="{{ url('/pers_ressources/' . $item->id) }}" title="Voir personne_ressource"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ url('/pers_ressources/' . $item->id . '/edit') }}" title="Modifier personne_ressource"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
                                             <form method="POST" action="{{ url('/pers_ressources' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer pers_ressource" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer personne_ressource" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                             </form>
                                         </td>
                                     </tr>

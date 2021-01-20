@@ -41,15 +41,14 @@ public function chantiers()
     }
 
 
-    public function filieres()
-    {
-        return $this->belongsTo(Filiere::class,'filiere_id');
-    }
-
     public function promos()
-    {
-        return $this->belongsTo(Promo::class,'promo_id');
-    }
+     {
+             return $this->belongsTo(Promo::class,'promo_id');
+     }
+     public function filieres()
+     {
+             return $this->belongsTo(Filiere::class,'filiere_id');
+     }
 
 
 }
