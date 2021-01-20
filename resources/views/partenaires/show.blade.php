@@ -47,7 +47,8 @@
                                                 <th>ID</th>
                                                 <td>{{ $partenaire->id }}</td>
                                             </tr> --}}
-                                            <tr><th> Raison social </th>
+                                            <tr>
+                                                <th> Raison social </th>
                                                 <td> {{ $partenaire->raison_social }} </td>
                                             </tr>
                                                 <tr><th> Type d'organisation </th>
@@ -56,14 +57,16 @@
                                                     <tr><th> Nom du Référent </th>
                                                         <td> {{ $partenaire->nom_referent }} </td>
                                                     </tr>
-                                                    <tr><th> Email</th>
-                                                        <td> {{ $partenaire->email }} </td>
-                                                    </tr>
+
                                                     <tr><th> Téléphone</th>
                                                         <td> {{ $partenaire->tel }} </td>
                                                     </tr>
-
-
+                                                    <tr><th> Email</th>
+                                                        <td> {{ $partenaire->email }} </td>
+                                                    </tr>
+                                                    <tr><th> Type de partenariat</th>
+                                                        <td> {{ $partenaire->type_partenariat }} </td>
+                                                    </tr>
                                         </tbody>
                                     </table>
                                 </div>

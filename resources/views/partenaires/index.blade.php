@@ -18,7 +18,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -48,39 +48,210 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>Raison social</th>
-                                                        <th>Type d'organisation</th>
-                                                        <th>Nom du Référent</th>
-                                                        <th>Email</th>
-                                                        <th>Téléphone</th>
-                                                        <th>Actions</th>
+                                                            <th>#</th>
+                                                            <th>Raison social</th>
+                                                            <th>Type d'organisation</th>
+                                                            <th>Nom du Référent</th>
+                                                            <th>Email</th>
+                                                            <th>Téléphone</th>
+                                                            <th>Actions</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                        @foreach($partenaires as $item)
+                                                 <tbody>
+
                                                             <tr>
-                                                                <td>{{ $loop->iteration }}</td>
-                                                                <td>{{ $item->raison_social }}</td>
-                                                                <td>{{ $item->type_organisation }}</td>
-                                                                <td>{{ $item->nom_referent }}</td>
-                                                                <td>{{ $item->email }}</td>
-                                                                <td>{{ $item->tel }}</td>
+
+                                                                    <th colspan="6">PARTENAIRES TECHNIQUES ET FIANCIERS</th>
 
 
-                                                                <td>
-                                                                    <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                                                    <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                                                @foreach($partenaires as $item)
+                                                                    @if ($item->type_partenariat=='PARTENAIRES TECHNIQUES ET FIANCIERS')
+                                                                        <tr>
+                                                                            <td>{{ $loop->iteration }}</td>
 
-                                                                    <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                                        {{ method_field('DELETE') }}
-                                                                        {{ csrf_field() }}
-                                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
-                                                                    </form>
-                                                                </td>
+                                                                            <td>{{ $item->raison_social }}</td>
+
+
+                                                                            <td>{{ $item->type_organisation }}</td>
+
+
+                                                                            <td>{{ $item->nom_referent }}</td>
+
+
+                                                                            <td>{{ $item->email }}</td>
+
+
+                                                                            <td>{{ $item->tel }}</td>
+
+                                                                            <td>
+                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                    {{ method_field('DELETE') }}
+                                                                                    {{ csrf_field() }}
+                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                                </form>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    @endif
+                                                                @endforeach
                                                             </tr>
-                                                        @endforeach
-                                                </tbody>
+
+
+
+                                                                               <tr>
+                                                                <th colspan="6">ENTREPRISES PARTENAIRES</th>
+
+                                                                @if ($item->type_partenariat=="ENTREPRISES PARTENAIRES" )
+                                                                  @foreach($partenaires as $item)
+                                                                            <tr>
+                                                                                <td>{{ $item->raison_social }}</td>
+                                                                            </tr>
+                                                                            {{-- <td>{{ $loop->iteration }}</td> --}}
+                                                                            <tr>
+                                                                                <td>{{ $item->type_organisation }}</td>
+
+                                                                            </tr>
+                                                                            <td>{{ $item->nom_referent }}</td>
+                                                                            <td>{{ $item->email }}</td>
+                                                                            <td>{{ $item->tel }}</td>
+                                                                            <td>
+                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                    {{ method_field('DELETE') }}
+                                                                                    {{ csrf_field() }}
+                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                                </form>
+                                                                            </td>
+                                                                     @endforeach
+                                                                @endif
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th colspan="6">COLLECTIVITES TERRITORIALES</th>
+                                                                    @foreach($partenaires as $item)
+
+                                                                        @if ($item->type_partenariat=="COLLECTIVITES TERRITORIALES" )
+
+                                                                            <td>{{ $loop->iteration }}</td>
+                                                                            <td>{{ $item->raison_social }}</td>
+                                                                            <td>{{ $item->type_organisation }}</td>
+                                                                            <td>{{ $item->nom_referent }}</td>
+                                                                            <td>{{ $item->email }}</td>
+                                                                            <td>{{ $item->tel }}</td>
+
+                                                                            <td>
+                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                    {{ method_field('DELETE') }}
+                                                                                    {{ csrf_field() }}
+                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                                </form>
+                                                                            </td>
+                                                                        @endif
+                                                                    @endforeach
+                                                            </tr>
+                                         
+
+                                                            <tr>
+                                                                <th colspan="6">PARTENAIRES DE MISE EN OEUVRE</th>
+                                                                @foreach($partenaires as $item)
+
+                                                                    @if ($item->type_partenariat=="PARTENAIRES DE MISE EN OEUVRE" )
+
+                                                                        <td>{{ $loop->iteration }}</td>
+                                                                        <td>{{ $item->raison_social }}</td>
+                                                                        <td>{{ $item->type_organisation }}</td>
+                                                                        <td>{{ $item->nom_referent }}</td>
+                                                                        <td>{{ $item->email }}</td>
+                                                                        <td>{{ $item->tel }}</td>
+
+                                                                        <td>
+                                                                            <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                            <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                            <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                {{ method_field('DELETE') }}
+                                                                                {{ csrf_field() }}
+                                                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                            </form>
+                                                                        </td>
+                                                                    @endif
+
+                                                                @endforeach
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <th colspan="6">STRUCTURES DE L'ADMINISTRATION</th>
+                                                                @foreach($partenaires as $item)
+
+                                                                    @if ($item->type_partenariat=='STRUCTURES ADMINISTRATION' )
+
+                                                                            <td>{{ $loop->iteration }}</td>
+                                                                            <td>{{ $item->raison_social }}</td>
+                                                                            <td>{{ $item->type_organisation }}</td>
+                                                                            <td>{{ $item->nom_referent }}</td>
+                                                                            <td>{{ $item->email }}</td>
+                                                                            <td>{{ $item->tel }}</td>
+
+                                                                            <td>
+                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="Voir ce partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Modifier ce partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                    {{ method_field('DELETE') }}
+                                                                                    {{ csrf_field() }}
+                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                                </form>
+                                                                            </td>
+                                                                    @endif
+                                                                @endforeach
+
+                                                            </tr>
+
+
+
+
+
+                                                            <tr>
+                                                                <th colspan="6">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</th>
+
+                                                                @if ($item->type_partenariat=="STRUCTURES ENSEIGNEMENT ET DE FORMATION" )
+                                                                  @foreach($partenaires as $item)
+                                                                            <tr>
+                                                                                <td>{{ $item->raison_social }}</td>
+                                                                            </tr>
+                                                                            {{-- <td>{{ $loop->iteration }}</td> --}}
+                                                                            <tr>
+                                                                                <td>{{ $item->type_organisation }}</td>
+
+                                                                            </tr>
+                                                                            <td>{{ $item->nom_referent }}</td>
+                                                                            <td>{{ $item->email }}</td>
+                                                                            <td>{{ $item->tel }}</td>
+                                                                            <td>
+                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                                    {{ method_field('DELETE') }}
+                                                                                    {{ csrf_field() }}
+                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                                </form>
+                                                                            </td>
+                                                                     @endforeach
+                                                                @endif
+                                                            </tr>
+
+
+                                                 </tbody>
                                             </table>
                                             <div class="pagination-wrapper"> {!! $partenaires->appends(['search' => Request::get('search')])->render() !!} </div>
                                         </div>

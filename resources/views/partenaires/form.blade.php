@@ -16,7 +16,7 @@
 
         <div class="col-md-6 mb-3 {{ $errors->has('nom_referent') ? 'has-error' : ''}}">
             <label for="nom_referent" class="control-label">{{ 'Nom du Référent' }}</label>
-            <input class="form-control" name="nom_referent" type="text" id="nom_referent" value="{{ isset($partenaire->nom_referent) ? $partenaire->nom_referent : ''}}" required>
+            <input class="form-control" name="nom_referent" type="text" id="nom_referent" value="{{ isset($partenaire->nom_referent) ? $partenaire->nom_referent : ''}}">
         </div>
 
         <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
@@ -36,9 +36,9 @@
                 <option value="COLLECTIVITES TERRITORIALES">COLLECTIVITES TERRITORIALES</option>
                 <option value="PARTENAIRES DE MISE EN OEUVRE">PARTENAIRES DE MISE EN OEUVRE</option>
 
-                <option value="STRUCTURES DE L'ADMINISTRATION">STRUCTURES DE L'ADMINISTRATION</option>
+                <option value="STRUCTURES ADMINISTRATION">STRUCTURES DE L'ADMINISTRATION</option>
                 <option value="PARTENAIRES TECHNIQUES ET FIANCIERS">PARTENAIRES TECHNIQUES ET FIANCIERS</option>
-                <option value="STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</option>
+                <option value="STRUCTURES ENSEIGNEMENT ET DE FORMATION">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</option>
             </select>
         </div>
 
