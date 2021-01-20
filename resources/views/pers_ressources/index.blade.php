@@ -31,11 +31,11 @@
                                 </div>
                             </header>
                     <div class="card-body">
-                        <a href="{{ url('/persressources/create') }}" class="btn btn-success btn-sm" title="Ajouter une nouvelle personne ressource">
+                        <a href="{{ url('/pers_ressources/create') }}" class="btn btn-success btn-sm" title="Ajouter une nouvelle personne ressource">
                             <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                         </a>
 
-                        <form method="GET" action="{{ url('/persressources') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                        <form method="GET" action="{{ url('/pers_ressources') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                 <span class="input-group-append">

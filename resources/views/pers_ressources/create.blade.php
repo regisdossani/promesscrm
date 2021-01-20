@@ -33,7 +33,7 @@
                     </header>
                     {{-- <div class="card-header">Créer un pers_ressource</div> --}}
                     <div class="card-body">
-                        <a href="{{ url('/persressources') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                        <a href="{{ url('/pers_ressources') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                         <br />
                         <br />
 
@@ -45,7 +45,7 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/persressources') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/pers_ressources') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             @include ('pers_ressources.form', ['formMode' => 'Créer'])
