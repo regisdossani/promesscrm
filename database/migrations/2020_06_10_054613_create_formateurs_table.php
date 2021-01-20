@@ -27,11 +27,11 @@ class CreateFormateursTable extends Migration
 
             $table->string('formation')->nullable();
             $table->string('password');
-            $table->string('contratcadre_pj')->nullable();
-            $table->string('cv_pj')->nullable();
+           /*  $table->string('contratcadre_pj')->nullable();
+            $table->string('cv_pj')->nullable(); */
             $table->string('structure')->nullable();
             $table->string('fonction')->nullable();
-            //  $table->unsignedBigInteger('module_id')->nullable();
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->string('adresse')->nullable();
 
            /*

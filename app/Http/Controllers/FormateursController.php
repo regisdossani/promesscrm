@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-
+use App\Module;
 use App\Formateur;
 use Illuminate\Http\Request;
 
@@ -30,9 +30,9 @@ class FormateursController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $formateurs = Formateur::latest()->paginate($perPage);
+            $formateurs = Formateur::with('modules')->latest()->paginate($perPage);
         } else {
-            $formateurs = Formateur::latest()->paginate($perPage);
+            $formateurs = Formateur::with('modules')->latest()->paginate($perPage);
         }
 
         return view('formateurs.index', compact('formateurs'));
@@ -45,9 +45,9 @@ class FormateursController extends Controller
      */
     public function create()
     {
-        $formateurs= Formateur::all();
-
-        return view('formateurs.create',compact('formateurs'));
+        $formateurs= Formateur::with('module');
+         $modules=Module::all();
+        return view('formateurs.create',compact('formateurs','modules'));
     }
 
     /**
@@ -114,8 +114,9 @@ class FormateursController extends Controller
      */
     public function edit($id)
     {
+        $modules=Module::all();
         $formateur = Formateur::findOrFail($id);
-        return view('formateurs.edit', compact('formateur'));
+        return view('formateurs.edit', compact('formateur','modules'));
     }
 
     /**

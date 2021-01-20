@@ -23,7 +23,7 @@
                 <div class="row">
                     {{-- @include('admins.sidebar') --}}
 
-                    <div class="col-md-10">
+                    <div class="col-md-12">
 
                         <section  class="panel">
 
@@ -70,7 +70,8 @@
                                                 <th>Sexe</th>
                                                 <th>Tél</th>
                                                 <th>Email</th>
-                                                {{-- <th>Module</th> --}}
+                                                <th>Fonction</th>
+                                                 <th>Module</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -84,15 +85,21 @@
                                                 <td>{{ $item->sexe }}</td>
                                                 <td>{{ $item->tel }}</td>
                                                 <td>{{ $item->email }}</td>
-                                                {{-- <td>{{ $item->modules }}</td> --}}
+                                                <td>{{ $item->fonction }}</td>
+
                                                 <td>
-                                                    <a href="{{ url('/formateurs/' . $item->id) }}" title="View formateur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                                    <a href="{{ url('/formateurs/' . $item->id . '/edit') }}" title="Edit formateur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                                    @foreach($item->modules as $module)
+                                                        {{ $module->nom}}
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url('/formateurs/' . $item->id) }}" title="Voir formateur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/formateurs/' . $item->id . '/edit') }}" title="Modifier formateur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
                                                     <form method="POST" action="{{ url('/formateurs' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete formateur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete formateur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>

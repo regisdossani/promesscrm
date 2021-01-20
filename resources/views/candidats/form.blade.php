@@ -2,7 +2,7 @@
 
                                <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
                                 <label for="nom" class="control-label">{{ 'Nom :' }}</label>
-                                <input class="form-control" name="nom" type="text" id="nom" >
+                                <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
                                 {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
                             </div>
 
@@ -47,7 +47,7 @@
 
                             <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                 <label for="email" class="control-label">{{ 'Email:' }}</label>
-                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email_1) ? $candidat->email_1 : ''}}" >
+                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
                                 {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div>
@@ -185,7 +185,7 @@
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
         @endif
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe1(Depot de dossier)' }}</label>
-        <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  >
+        <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  value="{{ isset($candidat->pj_depotdossier) ? $candidat->pj_depotdossier : ''}}">
         {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
     </div>
 
@@ -195,7 +195,7 @@
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier2}}</a>
         @endif
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe2(Depot de dossier)' }}</label>
-        <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2"  >
+        <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2" value="{{ isset($candidat->pj_depotdossier2) ? $candidat->pj_depotdossier2 : ''}}" >
         {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
     </div>
 

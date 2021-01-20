@@ -59,8 +59,10 @@
                                             <tr><th> Sexe </th><td> {{ $formateur->sexe }} </td></tr>
                                             <tr><th> Nom </th><td> {{ $formateur->nom }} </td></tr>
                                             <tr><th>Prénom </th><td> {{ $formateur->prenom }} </td></tr>
-                                            <tr><th>Email </th><td> {{ $formateur->email }} </td></tr>
+                                            <tr><th>Référence </th><td> {{ $formateur->reference }} </td></tr>
                                             <tr><th>Téléphone </th><td> {{ $formateur->tel }} </td></tr>
+                                            <tr><th>Email </th><td> {{ $formateur->email }} </td></tr>
+                                            <tr><th>Formation </th><td> {{ $formateur->formation }} </td></tr>
                                             <tr><th>Structure </th><td> {{ $formateur->structure }} </td></tr>
 
                                         </tbody>

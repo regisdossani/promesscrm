@@ -15,12 +15,10 @@ class CreateModulesTable extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('nom')->nullable();
             $table->integer('coeff')->nullable();
             $table->timestamps();
         });
-
-
     }
 
     /**
