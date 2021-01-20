@@ -17,6 +17,8 @@ class CreatePartenairesTable extends Migration
             $table->id();
             $table->string('raison_social')->nullable()->default('nom partenaire');
             $table->string('type_organisation')->nullable();
+            $table->string('type_partenariat')->nullable();
+
             $table->string('nom_referent')->nullable();
             $table->string('tel')->nullable();
             $table->string('email')->nullable();

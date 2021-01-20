@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-md-6 mb-3 {{ $errors->has('type_organisation') ? 'has-error' : ''}}">
-            <label for="type_organisation" class="control-label">{{ 'Champ Activité' }}</label>
+            <label for="type_organisation" class="control-label">{{ 'Type d\'Organisation' }}</label>
             <input class="form-control"  name="type_organisation" type="text" id="activite_entreprise"   value="{{ isset($partenaire->type_organisation) ? $partenaire->type_organisation : ''}}" >
             {!! $errors->first('type_organisation', '<p class="help-block">:message</p>') !!}
         </div>
@@ -24,28 +24,36 @@
             <input class="form-control" name="email" type="text" id="email" value="{{ isset($partenaire->email) ? $partenaire->email : ''}}" required>
         </div>
     </div>
-    <div class="row">
 
-        <div class="col-md-6 mb-3 {{ $errors->has('tel') ? 'has-error' : ''}}">
-            <label for="tel" class="control-label">{{ 'Tél' }}</label>
-            <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($partenaire->tel) ? $partenaire->tel : ''}}" required>
+    <div class="col-md-6 mb-3  {{ $errors->has('type_partenariat') ? 'has-error' : ''}}">
+
+            <label for="type_partenariat" class="control-label">{{ 'Type de partenariat' }}</label>
+            {{-- <input class="form-control" name="type_partenariat" type="text" id="type_partenariat"  >
+            {!! $errors->first('type_partenariat', '<p class="help-block">:message</p>') !!} --}}
+            <select name="type_partenariat" id="type_partenariat" class="form-control">
+                <option value="">--Choisir un type partanariat--</option>
+                <option value="ENTREPRISES PARTENAIRES">ENTREPRISES PARTENAIRES</option>
+                <option value="COLLECTIVITES TERRITORIALES">COLLECTIVITES TERRITORIALES</option>
+                <option value="PARTENAIRES DE MISE EN OEUVRE">PARTENAIRES DE MISE EN OEUVRE</option>
+
+                <option value="STRUCTURES DE L'ADMINISTRATION">STRUCTURES DE L'ADMINISTRATION</option>
+                <option value="PARTENAIRES TECHNIQUES ET FIANCIERS">PARTENAIRES TECHNIQUES ET FIANCIERS</option>
+                <option value="STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</option>
+            </select>
         </div>
 
 
 
-       {{--  <div class="col-md-6 mb-3  {{ $errors->has('fiche') ? 'has-error' : ''}}">
-            @if(isset($partenaire->fiche) && !empty($partenaire->fiche))
-                <a href="{{ url('uploads/partenaires/' . $partenaire->fiche) }}" ><i class="fa fa-download"></i> {{$partenaire->fiche}}</a>
-            @endif
-            <label for="fiche" class="control-label">{{ 'Fiche de description du partenariat' }}</label>
-            <input class="form-control" name="fiche" type="file" id="fiche"  >
-            {!! $errors->first('fiche', '<p class="help-block">:message</p>') !!}
-        </div> --}}
+        <div class="col-md-6 mb-3 {{ $errors->has('tel') ? 'has-error' : ''}}">
+            <label for="tel" class="control-label">{{ 'Téléphone' }}</label>
+            <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($partenaire->tel) ? $partenaire->tel : ''}}" required>
+        </div>
 
 
-    </div>
     <hr class="mb-4">
 
+    <br />
+    <br />
     <div class="row">
         <div class="col-md-12 mb-3">
             <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
