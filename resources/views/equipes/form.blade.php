@@ -99,7 +99,10 @@
 </div>
 
 
-    <div class="col-md-12 mb-3">
-        <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
     </div>
+</div>
 

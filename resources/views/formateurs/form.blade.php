@@ -1,12 +1,11 @@
-
+<div class="row">
 <div class="col-md-6 mb-3{{ $errors->has('sexe') ? 'has-error' : ''}}">
     <label for="civilite" class="control-label">{{ 'Genre' }}</label>
     {{-- <input class="form-control" name="civilite" type="text" id="civilite" value="{{ isset($candidat->civilite) ? $candidat->civilite : ''}}" > --}}
     <select name="sexe" id="sexe" class="form-control">
-
+            <option>-- Choisir un sexe --</option>
             <option value="M">M</option>
             <option value="F">F</option>
-
     </select>
     {!! $errors->first('sexe', '<p class="help-block">:message</p>') !!}
 </div>
@@ -85,14 +84,14 @@
                     <option value="{{$module->id}}" {{ isset($formateurs->module_id) && $formateurs->module_id=$module->id ? 'selected':''}}> {{  $module->nom }}</option>
             @endforeach
     </select>
-    {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!} 
+    {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
     <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
     <input class="form-control"  name="adresse" type="text" id="adresse" >{{ isset($formateur->adresse) ? $formateur->adresse : ''}}</input>
     {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
 </div>
-
+</div>
 
 
 
@@ -166,8 +165,11 @@
 </div> --}}
 
 
+<hr class="mb-4">
 
 
-<div class="col-md-12">
-    <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
+    </div>
 </div>

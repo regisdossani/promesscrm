@@ -1,9 +1,10 @@
-<div style="width:75%;margin:auto">
+
     <div class="row">
         <div class="col-md-6  {{ $errors->has('sexe') ? 'has-error' : ''}}">
             <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
             <div class="select-list">
                 <select name="sexe" id="sexe" class="form-control">
+                    <option>-- Choisir un sexe--</option>
                     <option value="M">M</option>
                     <option value="F">F</option>
                 </select>
@@ -69,6 +70,7 @@
       <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
            <label for="candidat_id" class="control-label">{{ 'Candidat Apprenant' }}</label>
             <select class="form-control" name="candidat_id"  id="candidat_id" >
+                <option>-- Choisir un résultat --</option>
                 @foreach($tests as $test)
                     @if ($test->resultat=='4')
                         <option value="{{ $candidat->id }}" {{ isset($test->candidat_id) && $test->candidat_id == $candidat->id ? 'selected' : ''}}>{{ $candidat->prenom}}{{$candidat->nom}}</option>
@@ -79,6 +81,7 @@
          <div class="col-md-6 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
             <label for="filiere_id" class="control-label">{{ 'Choix de la filiere' }}</label>
             <select class="form-control" name="filiere_id"  id="filiere_id" >
+                <option>-- Choisir une filière --</option>
                 @foreach($filieres as $filiere)
                     <option value="{{ $filiere->id }}" {{ isset($apprenants->filiere_id) && $apprenants->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
                 @endforeach
@@ -88,6 +91,7 @@
         <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
             <label for="promo_id" class="control-label">{{ 'Choix de la Promo' }}</label>
             <select class="form-control" name="promo_id"  id="promo_id" >
+                <option>-- Choisir une promo --</option>
                 @foreach($promos as $promo)
                 <option value="{{ $promo->id }}" {{ isset($apprenants->promo_id) && $apprenants->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
                 @endforeach
@@ -134,11 +138,9 @@
 
         </div>
 
-
-
 @endrole
 
-<hr class="mb-4">
+
 
 {{-- <div class="bs-example">
     <!-- Extra Large modal -->
@@ -199,12 +201,10 @@
 </div> --}}
 
 <hr class="mb-4">
-<br><br>
-
 
 <div class="row">
-    <div class="col-md-12 mb-3">
+    <div class="col-md-4 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
     </div>
 </div>
-</div>
+

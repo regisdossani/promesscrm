@@ -75,7 +75,7 @@ class ApprenantsController extends Controller
             $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);
         }
 
-        return view('apprenants.index', compact('apprenants'));
+        return view('apprenants.index', compact('apprenants','tests'));
     }
 
     /**
@@ -85,14 +85,14 @@ class ApprenantsController extends Controller
      */
     public function create()
     {
-
+        $tests=Testcandidat::where('resultat',4);
         $filieres = Filiere::latest()->get();
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
         $stages= Stage::all();
         $chantiers= Chantier::all();
         $promos= Promo::latest()->get();
-        return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos'));
+        return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos','tests'));
     }
 
 

@@ -63,7 +63,6 @@
                                         <td> {{ $candidat->tel }} </td>
                                     </tr>
 
-
                                     <tr><th> Promo </th>
                                         <td> {{ $candidat->promo->nom }} </td>
                                     </tr>

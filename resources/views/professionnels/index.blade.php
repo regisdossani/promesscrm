@@ -29,23 +29,23 @@
                             </header>
                                     {{-- <div class="card-header">Professionnels</div> --}}
                                     <div class="card-body">
+                                        <br/>
                                         <a href="{{ url('/professionnels/create') }}" class="btn btn-success btn-sm" title="Ajouter professionnel">
-                                            <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
+                                            <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                         </a>
+                                        <div class="pull-right" style="margin-right:5px">
+                                                <form method="GET" action="{{ url('/professionnels') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                                        <span class="input-group-append">
+                                                            <button class="btn btn-secondary" type="submit">
+                                                                <i class="fa fa-search"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </form>
 
-                                        <form method="GET" action="{{ url('/professionnels') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
-                                                <span class="input-group-append">
-                                                    <button class="btn btn-secondary" type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </form>
-
-                                        <br/>
-                                        <br/>
+                                        </div>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>

@@ -29,6 +29,7 @@
                     <header class="panel-heading">
                         <div class="panel-title">
                             CRÉER UN APPRENANT
+                        </div>
                     </header>
                     <div class="panel-body">
                         <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
