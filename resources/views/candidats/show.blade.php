@@ -66,6 +66,31 @@
                                     <tr><th> Promo </th>
                                         <td> {{ $candidat->promo->nom }} </td>
                                     </tr>
+
+                                    <tr><th> Parrain </th>
+                                        <td> {{ $candidat->parrain }} </td>
+                                    </tr>
+                                    <tr><th> Tél Parrain </th>
+                                        <td> {{ $candidat->tel_parrain }} </td>
+                                    </tr>
+                                    <tr><th> Email Parrain  </th>
+                                        <td> {{ $candidat->email_parrain }} </td>
+                                    </tr>
+                                    <tr><th> Reception Dossier  </th>
+                                        <td>
+                                            @if ($candidat->reception_dossier=='1')
+                                                    Oui
+                                          @else
+                                                    Non
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr><th> Pj Depot de dossier(1)  </th>
+                                        <td> {{ $candidat->pj_depotdossier }} </td>
+                                    </tr>
+                                    <tr><th> Pj Depot de dossier(2)  </th>
+                                        <td> {{ $candidat->pj_depotdossier }} </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

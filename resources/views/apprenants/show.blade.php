@@ -107,13 +107,26 @@
                                             <th> Promo </th>
                                             <td> {{ $apprenant->promo->nom }} </td>
                                         </tr>
-                                       
-                                       {{--  <tr>
-                                            <th> Chantiers école</th>
-                                            @foreach($apprenant->chantiers as $chantier)
-                                                <td>{{ $chantier->titre }} </td>
-                                            @endforeach
-                                        </tr> --}}
+                                        <tr>
+                                            <th> Date de naissance </th>
+                                            <td> {{ $apprenant->date_naiss }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Lieu de naissance </th>
+                                            <td> {{ $apprenant->lieu_naiss }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Email </th>
+                                            <td> {{ $apprenant->email }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Visite de terrain </th>
+                                            <td> {{ $apprenant->visite_terain }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> Année</th>
+                                            <td> {{ $apprenant->annee }} </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
