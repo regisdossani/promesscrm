@@ -1,7 +1,7 @@
 
 
                                <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
-                                <label for="nom" class="control-label">{{ 'Nom :' }}</label>
+                                <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
                                 <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
                                 {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
                             </div>
@@ -19,19 +19,19 @@
 
                             <div class="col-md-2 mb-2  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                                 <label for="filiere">Filière:</label>
-                                <div class="select-list">
-                                    <select name="filiere_id" id="filiere_id">
+                                <div class="select-list" >
+                                    <select name="filiere_id" id="filiere_id" class="form-control">
                                          <option value=""> Nos filières</option>
                                             @foreach($filieres as $filiere)
                                                 <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
                                             @endforeach
                                     </select>
-                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                    {{-- <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span> --}}
                                 </div>
                             </div>
                             <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                 <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
-                                <select name="promo_id" id="promo_ud">
+                                <select name="promo_id" id="promo_id" class="form-control">
                                     <option value="">Nos promos</option>
                                         @foreach($promos as $promo)
                                             <option value="{{ $promo->id }}" {{ isset($candidats->promo_id) && $candidats->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
@@ -83,7 +83,7 @@
                                 {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
                             </div>
 
-                            <div class="col-md-6 {{ $errors->has('region') ? 'has-error' : ''}}">
+                            <div class="col-md-6 mb-3{{ $errors->has('region') ? 'has-error' : ''}}">
                                 <label for="region" class="control-label">{{'Région:' }}</label>
                                     <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
                                     {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
@@ -213,8 +213,10 @@
     <input class="form-control" name="avatar" type="file" id="avatar" >
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div> --}}
-
-<div class="col-md-12 mb-3">
+<br/>
+<br/>
+<br/>
+<div class="col-md-12">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
 </div>
 

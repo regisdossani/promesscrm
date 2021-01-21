@@ -23,7 +23,8 @@
                                 </div>
                             </header>
 
-                            <div class="panel-body">
+                            <div class="card-body ">
+                                <br />
                                 @role('superadmin')
                                 <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
@@ -36,12 +37,9 @@
                                     <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
                                 </a>
                                 @endrole
-                                <br/>
-                                <br/>
+                               
 
-                                <div class="position-left">
-                                    <div class="row">
-
+                                <div class="pull-right" style="margin-right:5px">
                                         <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                             <div class="form-inline">
                                                 <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
@@ -50,9 +48,9 @@
                                                         <i class="fa fa-search"></i></button>
                                             </div>
                                         </form>
+                                </div>
+                                <br/>
 
-                                <br/>
-                                <br/>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -104,7 +102,7 @@
                                 </div>
 
                             </div>
-                        </div>
+
                     </section>
                 </div>
             </div>

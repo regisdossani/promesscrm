@@ -21,11 +21,17 @@
                 <div class="row">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Candidature</div>
+
+                    <header class="panel-heading">
+                        <div class="panel-title">
+                            ENRÉGISTRER UN CANDIDAT
+                        </div>
+                    </header>
                     <div class="card-body">
+                        <br />
                         <a href="{{ url('/candidats') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                        <br />
-                        <br />
+
+
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
