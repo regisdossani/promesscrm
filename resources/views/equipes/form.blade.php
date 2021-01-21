@@ -3,11 +3,7 @@
     <input class="form-control" name="nom_prenom" type="text" id="nom_prenom" value="{{ isset($equipe->nom) ? $equipe->nom : ''}}" >
     {!! $errors->first('nom_prenom', '<p class="help-block">:message</p>') !!}
 </div>
-{{-- <div class="col-md-6 {{ $errors->has('prenom') ? 'has-error' : ''}}">
-    <label for="prenom" class="control-label">{{ 'Prénom' }}</label>
-    <input class="form-control" name="prenom" type="text" id="prenom" value="{{ isset($equipe->prenom) ? $equipe->prenom : ''}}" >
-    {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
-</div> --}}
+
 <div class="col-md-6 {{ $errors->has('password') ? 'has-error' : ''}}">
     <label for="password" class="control-label">{{ 'Password' }}</label>
     <input class="form-control" name="password" type="password" id="password" value="{{ isset($equipe->password) ? $equipe->password : ''}}" >

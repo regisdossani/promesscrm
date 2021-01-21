@@ -20,11 +20,12 @@
 
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    AFFICHER UN MEMBRE PERSONNEL
+                                    AFFICHER UN MEMBRE DU PERSONNEL
                                 </div>
                             </header>
 
                     <div class="card-body">
+                        <br/>
                         @if (Auth::guard("equipe")->check())
                         <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                         @endif
@@ -68,9 +69,22 @@
                                     <tr>
                                         <th>Email</th><td>{{ $equipe->email }}</td>
                                     </tr>
+
+                                    <tr>
+                                        <th>Email</th><td>{{ $equipe->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Cv </th>
+                                        <td><link  href="{{url('uploads/equipe/'.$equipe->cv) }}" ></td>
+                                    </tr>
+                                    <tr>
+                                        <th> Contrat </th>
+                                        <td><link  href="{{url('uploads/equipe/'.$equipe->contrat) }}" ></td>
+                                    </tr>
+
                                     <tr>
                                         <th> Photo </th>
-                                        <td><img alt="photo" src={{url('uploads/equipe/'.$equipe->photo) }}  width="50" height="50"></td>
+                                        <td><link  href="{{url('uploads/equipe/'.$equipe->photo)}}" width="50" height="60"}} ></td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -52,9 +52,9 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
+                                           {{--  <tr>
                                                 <th>ID</th><td>{{ $formateur->id }}</td>
-                                            </tr>
+                                            </tr> --}}
                                             {{-- <tr><th> Username </th><td> {{ $formateur->username }} </td></tr> --}}
                                             <tr><th> Sexe </th><td> {{ $formateur->sexe }} </td></tr>
                                             <tr><th> Nom </th><td> {{ $formateur->nom }} </td></tr>
@@ -64,6 +64,12 @@
                                             <tr><th>Email </th><td> {{ $formateur->email }} </td></tr>
                                             <tr><th>Formation </th><td> {{ $formateur->formation }} </td></tr>
                                             <tr><th>Structure </th><td> {{ $formateur->structure }} </td></tr>
+                                            <tr><th>Modules </th><td>
+                                                @foreach ($formateur->modules as $module)
+                                                    {{ $module->nom }}
+                                                @endforeach
+                                            </td></tr>
+                                            <tr><th>Adresse </th><td> {{ $formateur->adresse }} </td></tr>
 
                                         </tbody>
                                     </table>
