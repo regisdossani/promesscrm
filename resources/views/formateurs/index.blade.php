@@ -45,10 +45,10 @@
                                     <a href="{{ url('/formateurs') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 @endrole --}}
 
-                                <div class="panel-body">
+                                <div class="pull-right" style="margin-right:5px">
 
                                     <form method="GET" action="{{ url('/formateurs') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                        <div class="input-group">
+                                        <div class="form-group">
                                             <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                             <span class="input-group-append">
                                                 <button class="btn btn-secondary" type="submit">
@@ -58,6 +58,7 @@
                                         </div>
                                     </form>
                                 </div>
+                                <br/> <br/>
 
                                 <div class="table-responsive">
                                     <table class="table">
@@ -99,7 +100,7 @@
                                                     <form method="POST" action="{{ url('/formateurs' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete formateur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer formateur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>
