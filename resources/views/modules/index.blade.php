@@ -27,6 +27,7 @@
                             </header>
                                 <div class="card-body ">
                                     <br/>
+                                    <div class="form-group">
                                         <a href="{{ url('/modules/create') }}" class="btn btn-success btn-sm" title="Nouveau module">
                                             <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                         </a>
@@ -42,8 +43,10 @@
                                                 </div>
                                             </form>
                                         </div>
-
+                                    </div>
+                                       <p></p>
                                     <br/>
+
                                     <div class="table-responsive">
                                         <table style="width: 100%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
                                             <thead>
