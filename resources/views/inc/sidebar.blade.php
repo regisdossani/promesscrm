@@ -1,5 +1,5 @@
 <!--sidebar start-->
-<aside>
+<aside class="navbar navbar-expand-sm" >
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
 

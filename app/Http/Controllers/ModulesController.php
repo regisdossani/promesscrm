@@ -11,31 +11,32 @@ class ModulesController extends Controller
 {
     public function index()
     {
-        $subjects = Module::with('formateur')->latest()->paginate(10);
-        return view('modules.index', compact('subjects'));
+        $modules = Module::with('formateur')->latest()->paginate(10);
+        return view('modules.index', compact('modules'));
 
 
     }
     public function create()
     {
+        $modules = Module::with('formateur')->get();
         $teachers = Formateur::latest()->get();
-        return view('modules.create', compact('teachers'));
+        return view('modules.create', compact('teachers','modules'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'nom'          => 'required|string|max:255|unique:modules',
-            'module_code'  => 'required|numeric',
+           /*  'module_code'  => 'required|numeric',
             'formateur_id'    => 'required|numeric',
-            'description'   => 'required|string|max:255'
+            'description'   => 'required|string|max:255' */
         ]);
 
         Module::create([
-            'nom'          => $request->name,
-            'module_code'  => $request->subject_code,
+            'nom'          => $request->nom,
+            /* 'module_code'  => $request->subject_code,
             'formateur_id'    => $request->teacher_id,
-            'description'   => $request->description
+            'description'   => $request->description */
         ]);
 
         return redirect()->route('modules.index');
@@ -53,17 +54,14 @@ class ModulesController extends Controller
     {
         $request->validate([
             'nom'          => 'required|string|max:255|unique:modules,nom,'.$subject->id,
-            'module'  => 'required|numeric',
-            'formateur_id'    => 'required|numeric',
-            'description'   => 'required|string|max:255'
+            // 'module'  => 'required|numeric',
+            // 'formateur_id'    => 'required|numeric',
+            // 'description'   => 'required|string|max:255'
         ]);
 
         $subject->update([
-            'nom'          => $request->name,
+            'nom'          => $request->nom,
             // 'slug'          => str_slug($request->name),
-            'module_code'  => $request->subject_code,
-            'formateur_id'    => $request->teacher_id,
-            'description'   => $request->description
         ]);
 
         return redirect()->route('modules.index');
