@@ -168,7 +168,7 @@
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Gestion dew Modules</h4>
+                <h4>Gestion des Modules</h4>
             </div>
             </a>
           <div class="clearfix"> </div>

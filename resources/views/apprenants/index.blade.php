@@ -30,6 +30,7 @@
                                 </div>
                             </header>
                             <div class="panel-body">
+                                <br/>
                                 @role('superadmin')
                                     <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
@@ -40,7 +41,7 @@
                                     <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 @endrole
 
-                                <div class="position-center">
+                                <div class="pull-right" style="margin-right:5px">
 
                                         <form method="GET" action="{{ url('/apprenants') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                             <div class="form-inline">
