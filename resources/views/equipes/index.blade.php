@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
@@ -25,27 +25,28 @@
                             <div class="panel-body">
 
                                     <br/>
-                                    <br/>
                                     <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <a href="{{ url('/equipes/create') }}" class="btn btn-success btn-sm" title="Ajouter un nouveau dans l'équipe">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                     </a>
 
-                                    <div class="row">
+                                        <div class="pull-right" style="margin-right:5px">
 
-                                        <form method="GET" action="{{ url('/equipes') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                            <div class="form-inline">
-                                                <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
-                                                {{-- <span class="input-group-append"> --}}
-                                                    <button class="btn btn-secondary" type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                {{-- </span> --}}
-                                            </div>
-                                        </form>
+                                            <form method="GET" action="{{ url('/equipes') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                                    <span class="input-group-append">
+                                                        <button class="btn btn-secondary" type="submit">
+                                                            <i class="fa fa-search"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </form>
+
+                                        </div>
                                         <br/>
                                         <br/>
-
+                                        <br/>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>
@@ -53,8 +54,8 @@
                                                         <th>#</th>
                                                         <th>Nom & Prénom</th>
                                                         <th>Référence</th>
-                                                        {{-- <th>Sexe</th> --}}
-                                                        <th>Tel</th>
+                                                       {{-- <th>Sexe</th> --}}
+                                                        <th>Téléphone</th>
                                                         <th>Email</th>
                                                         <th>Rôle</th>
                                                         <th>Actions</th>
@@ -69,7 +70,13 @@
                                                         {{-- <td>{{ $item->sexe }}</td> --}}
                                                         <td>{{ $item->tel }}</td>
                                                         <td>{{ $item->email }}</td>
-                                                        <td>{{  $item->roles()->pluck('name')->implode(' ') }}</td>
+                                                        <td>
+                                                            @if(!empty($item->getRoleNames()))
+                                                                @foreach($item->getRoleNames() as $v)
+                                                                    <label class="badge badge-success">{{ $v }}</label>
+                                                                @endforeach
+                                                            @endif
+                                                        </td>
 
                                                       {{--   <td>
                                                            @isset($item->photo)
@@ -92,7 +99,7 @@
                                             </table>
                                             <div class="pagination-wrapper"> {!! $equipes->appends(['search' => Request::get('search')])->render() !!} </div>
                                         </div>
-                                    </div>
+
                             </div>
                         </section>
                     </div>

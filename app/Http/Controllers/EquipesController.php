@@ -70,7 +70,7 @@ class EquipesController extends Controller
             'tel'=> 'required',
            'sexe'=> 'required',
 
-            'email' => 'required|email|unique:equipes,email_1',
+            'email' => 'required|email|unique:equipes,email',
             'photo' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'cv.*' => 'mimes:doc,docx,pdf,txt',
             'contrat.*' => 'mimes:doc,docx,pdf,txt',
@@ -91,10 +91,10 @@ class EquipesController extends Controller
             checkDirectory("equipe");
             $requestData['photo'] = $requestData['photo'] =uploadFile($request, 'photo', public_path('uploads/equipe'));
         }
-        if ($request->hasFile('contrat')) {
+      /*   if ($request->hasFile('contrat')) {
             checkDirectory("equipe");
             $requestData['contrat'] = $requestData['contrat'] =uploadFile($request, 'contrat', public_path('uploads/equipe'));
-        }
+        } */
       $team=  Equipe::create($requestData);
 
     //   $team->assignRole( $requestData['roles']);
@@ -135,8 +135,9 @@ class EquipesController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::findOrFail($id);
-        $roles = Role::With('equipes');
-        return view('equipes.edit', compact('equipe','roles'));
+        $roles = Role::pluck('name','name')->all();
+        $equipeRole = $equipe->roles->pluck('name','name')->all();
+        return view('equipes.edit', compact('equipe','roles','equipeRole'));
     }
 
     /**

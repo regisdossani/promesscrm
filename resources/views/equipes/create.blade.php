@@ -24,6 +24,7 @@
                         </header>
 
                         <div class="panel-body">
+                            <br/>
                             <a href="{{ url('/equipes') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />
                             <br />

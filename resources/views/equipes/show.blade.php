@@ -69,17 +69,25 @@
                                     <tr>
                                         <th>Email</th><td>{{ $equipe->email }}</td>
                                     </tr>
-
-                                    <tr>
-                                        <th>Email</th><td>{{ $equipe->email }}</td>
-                                    </tr>
                                     <tr>
                                         <th> Cv </th>
                                         <td><link  href="{{url('uploads/equipe/'.$equipe->cv) }}" ></td>
                                     </tr>
                                     <tr>
+                                        <th> Rôles </th>
+                                        <td>
+                                            @if(!empty($equipe->getRoleNames()))
+                                                @foreach($equipe->getRoleNames() as $v)
+                                                    <label class="badge badge-success">{{ $v }}</label>
+                                                @endforeach
+                                            @endif
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
                                         <th> Contrat </th>
-                                        <td><link  href="{{url('uploads/equipe/'.$equipe->contrat) }}" ></td>
+                                        <td>{{$equipe->contrat }}" </td>
                                     </tr>
 
                                     <tr>

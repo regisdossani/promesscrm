@@ -86,90 +86,23 @@
     </select>
     {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
-    <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
-    <input class="form-control"  name="adresse" type="text" id="adresse" >{{ isset($formateur->adresse) ? $formateur->adresse : ''}}</input>
-    {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
+
+<div class="row">
+    <div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
+        <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
+        <input class="form-control"  name="adresse" type="text" id="adresse" >{{ isset($formateur->adresse) ? $formateur->adresse : ''}}</input>
+        {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
+    </div>
 </div>
-</div>
 
-
-
-
-
-{{-- <div class="col-md-6 mb-3{{ $errors->has('contratcadre') ? 'has-error' : ''}}">
-    <label for="contratcadre" class="control-label">{{ 'Contrat cadre' }}</label>
-    <div class="radio">
-    <label><input name="contratcadre" type="radio" value="1" {{ (isset($formateur) && 1 == $formateur->contratcadre) ? 'checked' : '' }}> Yes</label>
-</div>
-<div class="radio">
-    <label><input name="contratcadre" type="radio" value="0" @if (isset($formateur)) {{ (0 == $formateur->contratcadre) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-</div>
-    {!! $errors->first('contratcadre', '<p class="help-block">:message</p>') !!}
-</div> --}}
-
-{{-- @if(isset($formateur->Contratcadre_pj) && !empty($formateur->Contratcadre_pj))
-    <a href="{{ url('uploads/formateurs/' . $formateur->Contratcadre_pj) }}" ><i class="fa fa-download"></i> {{$formateur->Contratcadre_pj}}</a>
-@endif
-<div class="col-md-6 mb-3{{ $errors->has('Contratcadre_pj') ? 'has-error' : ''}}">
-    <label for="Contratcadre_pj" class="control-label">{{ 'Pj Contrat cadre ' }}</label>
-    <input class="form-control" name="Contratcadre_pj" type="file" id="Contratcadre_pj" value="{{ isset($formateur->Contratcadre_pj) ? $formateur->Contratcadre_pj : ''}}" >
-    {!! $errors->first('Contratcadre_pj', '<p class="help-block">:message</p>') !!}
-</div> --}}
-
-{{-- @if(isset($formateur->cv_pj) && !empty($formateur->cv_pj))
-    <a href="{{ url('uploads/formateurs/' . $formateur->CV_pj) }}" ><i class="fa fa-download"></i> {{$formateur->CV_pj}}</a>
-@endif
-<div class="col-md-6 mb-3{{ $errors->has('cv_pj') ? 'has-error' : ''}}">
-    <label for="cv_pj" class="control-label">{{ 'Le Cv' }}</label>
-    <input class="form-control" name="cv_pj" type="file" id="cv_pj" value="{{ isset($formateur->CV_pj) ? $formateur->CV_pj : ''}}" >
-    {!! $errors->first('cv_pj', '<p class="help-block">:message</p>') !!}
-</div> --}}
-
-
-
-{{-- <div class="col-md-6 mb-3{{ $errors->has('autres_activites') ? 'has-error' : ''}}">
-    <label for="autres_activites" class="control-label">{{ 'Autres Activités' }}</label>
-    <textarea class="form-control" rows="5" name="autres_activites" type="textarea" id="autres_activites" >{{ isset($formateur->autres_activites) ? $formateur->autres_activites : ''}}</textarea>
-    {!! $errors->first('autres_activites', '<p class="help-block">:message</p>') !!}
-</div> --}}
-{{-- <div class="col-md-6 mb-3{{ $errors->has('formation_07_2018') ? 'has-error' : ''}}">
-    <label for="formation_07_2018" class="control-label">{{ 'Formation 07 2018' }}</label>
-    <div class="radio">
-    <label><input name="formation_07_2018" type="radio" value="1" {{ (isset($formateur) && 1 == $formateur->formation_07_2018) ? 'checked' : '' }}> Yes</label>
-</div> --}}
-{{-- <div class="radio">
-    <label><input name="formation_07_2018" type="radio" value="0" @if (isset($formateur)) {{ (0 == $formateur->formation_07_2018) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-</div>
-    {!! $errors->first('formation_07_2018', '<p class="help-block">:message</p>') !!}
-</div> --}}
-{{-- <div class="col-md-6 {{ $errors->has('formation_01_2019_') ? 'has-error' : ''}}">
-    <label for="formation_01_2019_" class="control-label">{{ 'Formation 01 2019 ' }}</label>
-    <div class="radio">
-    <label><input name="formation_01_2019_" type="radio" value="1" {{ (isset($formateur) && 1 == $formateur->formation_01_2019_) ? 'checked' : '' }}> Yes</label>
-</div>
-<div class="radio">
-    <label><input name="formation_01_2019_" type="radio" value="0" @if (isset($formateur)) {{ (0 == $formateur->formation_01_2019_) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-</div>
-    {!! $errors->first('formation_01_2019_', '<p class="help-block">:message</p>') !!}
-</div>
-<div class="col-md-6 {{ $errors->has('formation_securite_06_2019') ? 'has-error' : ''}}">
-    <label for="formation_securite_06_2019" class="control-label">{{ 'Formation Sécurité 06 2019' }}</label>
-    <div class="radio">
-    <label><input name="formation_securite_06_2019" type="radio" value="1" {{ (isset($formateur) && 1 == $formateur->formation_securite_06_2019) ? 'checked' : '' }}> Yes</label>
-</div>
-<div class="radio">
-    <label><input name="formation_securite_06_2019" type="radio" value="0" @if (isset($formateur)) {{ (0 == $formateur->formation_securite_06_2019) ? 'checked' : '' }} @else {{ 'checked' }} @endif> No</label>
-</div>
-    {!! $errors->first('formation_securite_06_2019', '<p class="help-block">:message</p>') !!}
-</div> --}}
-
+<br/>
+<br/>
 
 <hr class="mb-4">
 
 
 <div class="row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
     </div>
 </div>

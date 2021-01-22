@@ -5,8 +5,8 @@
 <meta name="keywords" content="meta content=width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> --}}
+{{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script> --}}
 
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
@@ -20,12 +20,12 @@
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="{{asset('css/font.css')}}" type="text/css"/>
-<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet"> --}}
 <link rel="stylesheet" href="{{asset('css/morris.css')}}" type="text/css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script> --}}
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
@@ -52,7 +52,7 @@
 <!--[if lte IE 8]><script language="javascript')}}" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="{{asset('js/jquery.scrollTo.js')}}"></script>
 <script src="{{asset('js/jquery2.0.3.min.js')}}"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+{{-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> --}}
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -63,8 +63,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+{{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
 <!-- morris JavaScript -->
 <script>
 	$(document).ready(function() {

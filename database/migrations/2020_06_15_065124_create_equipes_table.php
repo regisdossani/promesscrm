@@ -16,14 +16,14 @@ class CreateEquipesTable extends Migration
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
             $table->string('nom_prenom')->nullable();
-            $table->string('reference')->nullable();
+            $table->string('reference')->nullable()->unique();
             $table->string('sexe')->nullable();
 
             $table->string('password');
             $table->string('tel')->nullable();
             $table->string('email')->nullable()->unique();
              $table->unsignedBigInteger('role')->nullable();
-            
+
             $table->string('cv')->nullable();
             $table->string('contrat')->nullable();
             $table->string('photo')->nullable();

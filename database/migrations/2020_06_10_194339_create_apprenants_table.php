@@ -21,7 +21,7 @@ class CreateApprenantsTable extends Migration
 
             $table->string('nom')->nullable()->default('nom');
             $table->string('prenom')->nullable();
-            $table->string('reference')->nullable();
+            $table->string('reference')->nullable()->unique();
             $table->string('sexe')->nullable();
             $table->string('tel')->nullable();
             $table->date('date_naiss')->nullable();

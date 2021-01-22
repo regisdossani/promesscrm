@@ -23,4 +23,8 @@ class Equipe extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /* public function role(){
+            return $this->belongsTo(Equipe::class,'role_id');
+    } */
 }

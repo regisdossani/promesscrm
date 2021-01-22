@@ -11,7 +11,6 @@ use App\Promo;
 use App\Apprenant;
 use App\Module;
 
-
 class CreateAdminUserSeeder extends Seeder
 {
     /**

@@ -47,9 +47,22 @@ class RolesTableSeeder extends Seeder
             'guard_name' => 'web', 'name' => 'Resp-ULDLR'
         ]);
 
+    Role::create([
+            'guard_name' => 'web', 'name' => 'RAF'
+        ]);
 
-
-
+        Role::create([
+            'guard_name' => 'web', 'name' => 'CP'
+        ]);
+        Role::create([
+            'guard_name' => 'web', 'name' => 'Menage'
+        ]);
+        Role::create([
+            'guard_name' => 'web', 'name' => 'Gardien'
+        ]);
+        Role::create([
+            'guard_name' => 'web', 'name' => 'RFL'
+        ]);
 
 
 
