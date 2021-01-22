@@ -37,7 +37,7 @@ class RolesController extends Controller
             $roles = Role::latest()->paginate($perPage);
         }
 
-        return view('pages.roles.index', compact('roles'));
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -49,7 +49,7 @@ class RolesController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('pages.roles.create', compact('permissions'));
+        return view('roles.create', compact('permissions'));
     }
 
 

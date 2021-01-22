@@ -175,21 +175,22 @@
         </div>
     </div>
 
-    {{-- <div class="col-md-3 market-update-gd">
+    <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-7">
-            <a href="{{url('/chantiers')}}">
+            <a href="{{ url('/admin/roles') }}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Chantiers d'école</h4>
+                <h4>Gestion des Rôles</h4>
 
             </div>
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div> --}}
+    </div>
+
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">

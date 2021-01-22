@@ -1,14 +1,23 @@
-@extends('layouts.app')
-{{-- @include('inc.styles') --}}
-
+@extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admins.sidebar')
+<section id="main-content">
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">RÔLE {{ $role->id }}</div>
+    <section class="wrapper">
+
+        <div class="form-w3layouts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <section  class="panel">
+
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    MODIFIER UN RÔLE
+                                </div>
+                            </header>
                     <div class="card-body">
 
                         <a href="{{ url('/admin/roles') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
