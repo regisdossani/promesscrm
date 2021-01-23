@@ -1,60 +1,38 @@
-@extends('inc.master')
-
-@if (Auth::guard("admin")->check())
-    @include('admins.sidebar')
-@endif
-@if (Auth::guard("equipe")->check())
-    @include('equipes.sidebar')
-@endif
-
-@if (Auth::guard("apprenant")->check())
-    @include('apprenants.sidebar')
-@endif
-@if (Auth::guard("formateur")->check())
-    @include('formateurs.sidebar')
-@endif
-
+@extends('layouts.app')
+@include('inc.styles')
 
 @section('content')
-<section id="main-content">
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
 
-    <section class="wrapper">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">Modifier newchantier #{{ $newchantier->id }}</div>
+                    <div class="card-body">
+                        <a href="{{ url('/newchantiers') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <br />
+                        <br />
 
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <section  class="panel">
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                            {{-- <div class="card-header">Modifier newchantier #{{ $newchantier->id }}</div> --}}
-                            <div class="card-body">
-                                <a href="{{ url('/newchantiers') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                                <br />
-                                <br />
+                        <form method="POST" action="{{ url('/newchantiers/' . $newchantier->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
 
-                                @if ($errors->any())
-                                    <ul class="alert alert-danger">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                @endif
+                            @include ('newchantiers.form', ['formMode' => 'edit'])
 
-                                <form method="POST" action="{{ url('/newchantiers/' . $newchantier->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                                    {{ method_field('PATCH') }}
-                                    {{ csrf_field() }}
+                        </form>
 
-                                    @include ('newchantiers.form', ['formMode' => 'edit'])
-
-                                </form>
-
-                            </div>
-                        </section>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
-</section>
-
+    </div>
 @endsection

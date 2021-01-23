@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-10 mb-6">
+                <div class="col-md-10">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
@@ -44,39 +44,40 @@
                                             </form>
                                         </div>
 
-                                      
                                     <br/>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="table-responsive">
+                                            <table style="width: 100%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Nom</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($modules as $item)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $item->nom }}</td>
+                                                        <td>
+                                                            <a href="{{ url('/modules/' . $item->id) }}" title="Voir ce module"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                            <a href="{{ url('/modules/' . $item->id . '/edit') }}" title="Editer ce module"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
-                                    <div class="table-responsive">
-                                        <table style="width: 100%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Nom</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach($modules as $item)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->nom }}</td>
-                                                    <td>
-                                                        <a href="{{ url('/modules/' . $item->id) }}" title="Voir ce module"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                                        <a href="{{ url('/modules/' . $item->id . '/edit') }}" title="Editer ce module"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-
-                                                        <form method="POST" action="{{ url('/modules' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                            {{ method_field('DELETE') }}
-                                                            {{ csrf_field() }}
-                                                            <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce module" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                        <div class="pagination-wrapper"> {!! $modules->appends(['search' => Request::get('search')])->render() !!} </div>
+                                                            <form method="POST" action="{{ url('/modules' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                {{ method_field('DELETE') }}
+                                                                {{ csrf_field() }}
+                                                                <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce module" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination-wrapper"> {!! $modules->appends(['search' => Request::get('search')])->render() !!} </div>
+                                        </div>
                                     </div>
                                 </div>
 

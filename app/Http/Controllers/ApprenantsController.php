@@ -67,7 +67,7 @@ class ApprenantsController extends Controller
 
 
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 5;
 
         if (!empty($keyword)) {
             $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);

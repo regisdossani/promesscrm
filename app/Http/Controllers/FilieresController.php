@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Newchantier;
+use App\Filiere;
 use Illuminate\Http\Request;
 
-class NewchantiersController extends Controller
+class FilieresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +21,12 @@ class NewchantiersController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $newchantiers = Newchantier::latest()->paginate($perPage);
+            $filieres = Filiere::latest()->paginate($perPage);
         } else {
-            $newchantiers = Newchantier::latest()->paginate($perPage);
+            $filieres = Filiere::latest()->paginate($perPage);
         }
 
-        return view('newchantiers.index', compact('newchantiers'));
+        return view('filieres.index', compact('filieres'));
     }
 
     /**
@@ -36,7 +36,7 @@ class NewchantiersController extends Controller
      */
     public function create()
     {
-        return view('newchantiers.create');
+        return view('filieres.create');
     }
 
     /**
@@ -48,12 +48,12 @@ class NewchantiersController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         $requestData = $request->all();
+        
+        Filiere::create($requestData);
 
-        Newchantier::create($requestData);
-
-        return redirect('newchantiers')->with('flash_message', 'Newchantier added!');
+        return redirect('filieres')->with('flash_message', 'Filiere added!');
     }
 
     /**
@@ -65,9 +65,9 @@ class NewchantiersController extends Controller
      */
     public function show($id)
     {
-        $newchantier = Newchantier::findOrFail($id);
+        $filiere = Filiere::findOrFail($id);
 
-        return view('newchantiers.show', compact('newchantier'));
+        return view('filieres.show', compact('filiere'));
     }
 
     /**
@@ -79,9 +79,9 @@ class NewchantiersController extends Controller
      */
     public function edit($id)
     {
-        $newchantier = Newchantier::findOrFail($id);
+        $filiere = Filiere::findOrFail($id);
 
-        return view('newchantiers.edit', compact('newchantier'));
+        return view('filieres.edit', compact('filiere'));
     }
 
     /**
@@ -94,13 +94,13 @@ class NewchantiersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
         $requestData = $request->all();
+        
+        $filiere = Filiere::findOrFail($id);
+        $filiere->update($requestData);
 
-        $newchantier = Newchantier::findOrFail($id);
-        $newchantier->update($requestData);
-
-        return redirect('newchantiers')->with('flash_message', 'Newchantier updated!');
+        return redirect('filieres')->with('flash_message', 'Filiere updated!');
     }
 
     /**
@@ -112,8 +112,8 @@ class NewchantiersController extends Controller
      */
     public function destroy($id)
     {
-        Newchantier::destroy($id);
+        Filiere::destroy($id);
 
-        return redirect('newchantiers')->with('flash_message', 'Newchantier deleted!');
+        return redirect('filieres')->with('flash_message', 'Filiere deleted!');
     }
 }

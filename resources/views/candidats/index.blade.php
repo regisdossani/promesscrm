@@ -37,7 +37,7 @@
                                     <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
                                 </a>
                                 @endrole
-                               
+
 
                                 <div class="pull-right" style="margin-right:5px">
                                         <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -50,7 +50,7 @@
                                         </form>
                                 </div>
                                 <br/>
-
+                                <br/>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>

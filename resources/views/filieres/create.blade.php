@@ -1,4 +1,5 @@
 @extends('inc.master')
+
 @if (Auth::guard("admin")->check())
     @include('admins.sidebar')
 @endif
@@ -12,25 +13,30 @@
 @if (Auth::guard("formateur")->check())
     @include('formateurs.sidebar')
 @endif
+
+
+
 @section('content')
 <section id="main-content">
     <section class="wrapper">
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    ENRÉGISTRER DES NOUVEAUX CHANTIERS ÉCOLE
+                                    CRÉER UNE FILIERE
                                 </div>
                             </header>
-
                             <div class="card-body">
-                                <a href="{{ url('/newchantiers') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
                                 <br />
-                                <br />
+                                <div class="pull-left" style="margin-left:6px">
+                                    <a href="{{ url('/filieres') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                </div>
 
+                                <br />
+                                <br />
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
                                         @foreach ($errors->all() as $error)
@@ -39,10 +45,10 @@
                                     </ul>
                                 @endif
 
-                                <form method="POST" action="{{ url('/newchantiers') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                <form method="POST" action="{{ url('/filieres') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                     {{ csrf_field() }}
 
-                                    @include ('newchantiers.form', ['formMode' => 'Créer'])
+                                    @include ('filieres.form', ['formMode' => 'Créer'])
 
                                 </form>
 

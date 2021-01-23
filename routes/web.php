@@ -102,6 +102,9 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/chantiers', 'ChantiersController');
     Route::resource('/testcandidats', 'TestcandidatsController');
     Route::resource('/modules', 'ModulesController');
+    Route::resource('/filieres', 'FilieresController');
+    Route::resource('/promos', 'PromosController');
+    Route::resource('/newchantiers', 'NewchantiersController');
 
     });
 

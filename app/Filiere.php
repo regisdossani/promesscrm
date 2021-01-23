@@ -10,5 +10,9 @@ class Filiere extends Model
         'nom', 'annee'
     ];
 
-    
+
+    public function apprenant(){
+        return $this->belongsTo(Apprenant::class,'filiere_id');
+    }
+
 }
