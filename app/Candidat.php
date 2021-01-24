@@ -29,11 +29,10 @@ class Candidat extends Model
     ];
 
 
-    /*  public function apprenant()
-     {
-             return $this->belongsTo('App\Apprenant','candidat_id');
-     } */
      public function filiere() {
-        return $this->hasOne(Filiere::class,'filiere_id');
+        return $this->belongsTo(Filiere::class,'filiere_id');
+    }
+    public function promo() {
+        return $this->belongsTo(Promo::class,'promo_id');
     }
 }

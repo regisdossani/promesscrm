@@ -13,13 +13,9 @@
     <input class="form-control" name="structure" type="text" id="structure" value="{{ isset($newchantier->structure) ? $newchantier->structure : ''}}" >
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 mb-3 {{ $errors->has('structure') ? 'has-error' : ''}}">
-    <label for="structure" class="control-label">{{ 'Structure' }}</label>
-    <input class="form-control" name="structure" type="text" id="structure" value="{{ isset($newchantier->structure) ? $newchantier->structure : ''}}" >
-    {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
-</div>
+
 <div class="col-md-6 mb-3 {{ $errors->has('tel') ? 'has-error' : ''}}">
-    <label for="tel" class="control-label">{{ 'Tel' }}</label>
+    <label for="tel" class="control-label">{{ 'Téléphone' }}</label>
     <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($newchantier->tel) ? $newchantier->tel : ''}}" >
     {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 </div>
@@ -30,8 +26,11 @@
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('etat') ? 'has-error' : ''}}">
     <label for="etat" class="control-label">{{ 'Etat' }}</label>
-    <input class="form-control" name="etat" type="text" id="etat" value="{{ isset($newchantier->etat) ? $newchantier->etat : ''}}" >
-    {!! $errors->first('etat', '<p class="help-block">:message</p>') !!}
+    <select class="form-control" name="etat"  id="etat" >
+        <option>-- --Choisissez un état--</option>
+            <option value="1">Réalisé</option>
+            <option value="2">Non Réalisé</option>
+    </select>
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('valeur') ? 'has-error' : ''}}">
     <label for="valeur" class="control-label">{{ 'Valeur' }}</label>

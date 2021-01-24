@@ -58,7 +58,6 @@
                                                         <th>Email</th>
                                                         <th>État</th>
                                                         <th>#</th>
-                                                        <th>Description</th>
 
                                                         <th>Actions</th>
                                                     </tr>
@@ -72,9 +71,16 @@
                                                         <td>{{ $item->structure }}</td>
                                                         <td>{{ $item->tel }}</td>
                                                         <td>{{ $item->email }}</td>
-                                                        <td>{{ $item->etat }}</td>
+                                                        <td>
+                                                            @if ($item->etat==1)
+                                                            Réalisé
+                                                            @endif
+                                                            @if ($item->etat==2)
+                                                            Non Réalisé
+                                                            @endif
+                                                        </td>
                                                         <td>{{ $item->valeur }}</td>
-                                                        <td>{{ $item->description }}</td>
+                                                        {{-- <td>{{ $item->description }}</td> --}}
 
                                                         <td>
                                                             <a href="{{ url('/newchantiers/' . $item->id) }}" title="Voir ce nouveau chantier"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>

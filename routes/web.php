@@ -105,6 +105,12 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/filieres', 'FilieresController');
     Route::resource('/promos', 'PromosController');
     Route::resource('/newchantiers', 'NewchantiersController');
+    Route::get('/filieres',function()
+    {
+        $moncandidat= Filiere::find(1)->candidat;
+    });
+    
+
 
     });
 

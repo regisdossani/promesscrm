@@ -48,10 +48,25 @@
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
-                                                <tr>
+                                               {{--  <tr>
                                                     <th>ID</th><td>{{ $chantier->id }}</td>
-                                                </tr>
-                                                <tr><th> Profess Id </th><td> {{ $chantier->profess_id }} </td></tr><tr><th> Client Id </th><td> {{ $chantier->client_id }} </td></tr><tr><th> Teacher Id </th><td> {{ $chantier->teacher_id }} </td></tr>
+                                                </tr> --}}
+                                                <tr><th> Titre Chantier </th>
+                                                    <td> {{ $chantier->titre }} </td>
+                                                </tr><tr><th> Référence </th>
+                                                    <td> {{ $chantier->reference }} </td>
+                                                </tr><tr><th> Date </th>
+                                                    <td> {{ $chantier->date }} </td></tr>
+                                                </tr><tr><th> Durée(J) </th>
+                                                    <td> {{ $chantier->duree_j }} </td></tr>
+                                                </tr><tr><th> Durée(h)</th>
+                                                    <td> {{ $chantier->duree_h }} </td></tr>
+                                                </tr><tr><th> Maitre d'Oeuvre</th>
+                                                    <td> {{ $chantier->maitre_oeuvre }} </td></tr>
+                                                </tr><tr><th>Formateur</th>
+                                                    <td> {{ $chantier->formateur }} </td></tr>
+                                                </tr><tr><th>Descriptif</th>
+                                                    <td> {{ $chantier->descriptif }} </td></tr>
                                             </tbody>
                                         </table>
                                     </div>

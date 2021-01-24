@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Classe;
+use App\Filiere;
+use App\Promo;
 
 class Apprenant extends Authenticatable
 {
@@ -41,14 +44,12 @@ public function chantiers()
     }
 
 
-    public function promos()
-     {
-             return $this->belongsTo(Promo::class,'promo_id');
-     }
-     public function filieres()
-     {
-             return $this->belongsTo(Filiere::class,'filiere_id');
-     }
+    public function filiere() {
+        return $this->belongsTo(Filiere::class,'filiere_id');
+    }
+    public function promo() {
+        return $this->belongsTo(Promo::class,'promo_id');
+    }
 
 
 }

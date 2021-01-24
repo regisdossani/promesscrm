@@ -8,7 +8,7 @@ use App\Formateur;
 use App\Chantier;
 use App\Client;
 use App\Professionnel;
-
+use App\Newchantier;
 use Illuminate\Http\Request;
 
 class ChantiersController extends Controller
@@ -41,8 +41,9 @@ class ChantiersController extends Controller
     {
         $teachers=Formateur::all();
         $professionnels=Professionnel::all();
+        $newchantiers=Newchantier::all();
 
-        return view('chantiers.create',compact('teachers','professionnels'));
+        return view('chantiers.create',compact('teachers','professionnels','newchantiers'));
     }
 
     /**
@@ -54,7 +55,12 @@ class ChantiersController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nbre_appt' => 'required|numeric|gt:0',
+            'Titre'=> 'required',
+            'fiche_descriptive.*' => 'mimes:doc,docx,pdf,txt'
 
+            ]);
         $requestData = $request->all();
 
         if ($request->hasFile('fiche_descriptive')) {

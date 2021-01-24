@@ -62,19 +62,14 @@
                                     </tr>
 
                                     <tr><th> Filière </th>
-                                        <td>  @foreach ($filieres as $fil)
-                                            @if($candidat->filiere_id==$fil->id)
-                                                   {{$fil->nom}}
-                                           @endif
-                                       @endforeach </td>
+                                        <td>
+                                          {{$candidat->filiere->nom}}
+                                        </td>
                                     </tr>
-e
                                     <tr><th> Promo </th>
-                                        <td> @foreach ($promos as $promo)
-                                            @if($candidat->promo_id==$promo->id)
-                                                   {{$promo->nom}}
-                                           @endif
-                                       @endforeach </td>
+                                        <td>
+                                           {{$candidat->promo->nom}}
+                                          </td>
                                     </tr>
 
                                     <tr><th> Parrain </th>

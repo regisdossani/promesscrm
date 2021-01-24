@@ -248,7 +248,7 @@
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4> Chantiers école</h4>
+                <h4>Nouveaux Chantiers école</h4>
 
             </div>
             </a>

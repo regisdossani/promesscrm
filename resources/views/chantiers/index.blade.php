@@ -28,25 +28,26 @@
 
                         <header class="panel-heading">
                             <div class="panel-title">
-                                CHANTIERS ÉCOLE
+                                CHANTIERS ÉCOLE RÉALISÉS
                         </header>
                             {{-- <div class="card-header">Chantiers</div> --}}
                             <div class="card-body">
+                                <br/>
                                 <a href="{{ url('/chantiers/create') }}" class="btn btn-success btn-sm" title="Add New chantier">
-                                    <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>
-
-                                <form method="GET" action="{{ url('/chantiers') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
-                                        <span class="input-group-append">
-                                            <button class="btn btn-secondary" type="submit">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-
+                                <div class="pull-right" style="margin-right:5px">
+                                    <form method="GET" action="{{ url('/chantiers') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                            <span class="input-group-append">
+                                                <button class="btn btn-secondary" type="submit">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
                                 <br/>
                                 <br/>
                                 <div class="table-responsive">
@@ -74,7 +75,7 @@
                                                 <td>{{ $item->titre }}</td>
                                                 <td>{{ $item->reference }}</td>
                                                 <td>{{ $item->date }}</td>
-                                                <td>{{ $item->date }}</td>
+                                                {{-- <td>{{ $item->date }}</td> --}}
                                                 <td>{{ $item->duree_j }}</td>
                                                 <td>{{ $item->duree_h }}</td>
                                                 <td>{{ $item->maitre_oeuvre }}</td>

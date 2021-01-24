@@ -12,5 +12,8 @@ class Promo extends Model
     public function candidat(){
         return $this->hasOne(Candidat::class);
     }
+   /*  public function apprenants(){
+        return $this->belongsTo(Candidat::class);
+    } */
 
 }

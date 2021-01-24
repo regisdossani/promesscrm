@@ -36,7 +36,8 @@ class NewchantiersController extends Controller
      */
     public function create()
     {
-        return view('newchantiers.create');
+        $newchantiers=Newchantier::all();
+        return view('newchantiers.create',compact('newchantiers'));
     }
 
     /**

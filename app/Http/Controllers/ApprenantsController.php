@@ -31,48 +31,39 @@ class ApprenantsController extends Controller
     public function index(Request $request)
     {
 
-       $tests=Testcandidat::where('resultat',4);
+    //
+       $search = '4';
+       $apprenant=new Apprenant();
+       $tests = Testcandidat::whereHas('candidat', function($q) use($search){
+           $q->where('resultat', '=', $search);
+       })->get();
 
         foreach ($tests as $key => $value) {
 
-            if(Apprenant::where('candidat_id', $value->candidat_id )->exists()){
-                // your code...
-               }
-               else{
-                $apprenant->candidat_id=$value->candidat->id;
-                $apprenant->nom=$value->candidat->nom;
-                $apprenant->tel=$value->candidat->tel;
-                $apprenant->filiere_id=$value->filiere_id;
-                $apprenant->promo_id=$value->promo_id;
-                $apprenant->sexe=$value->candidat->sexe;
-                $apprenant->email=$value->candidat->email;
+            $checker = Apprenant::where('id',$value->candidat_id)->doesntExist();
+            $candidat = Candidat::findOrFail($value->candidat_id);
+
+            if (!$checker){
+                $apprenant->candidat_id=$candidat->id;
+                $apprenant->nom=$candidat->nom;
+                $apprenant->tel=$candidat->tel;
+                $apprenant->sexe=$candidat->sexe;
+                $apprenant->email=$candidat->email;
+                $apprenant->filiere_id=$candidat->filiere_id;
+                $apprenant->promo_id=$candidat->promo_id;
                 $apprenant->save();
-
-               }
-
             }
-       /*  foreach ($tests as $key => $value) {
-                    $apprenant->candidat_id=$value->candidat_id;
-                    $apprenant->nom=$value->candidat->nom;
-                    $apprenant->tel=$value->candidat->tel;
-                    $apprenant->filiere_id=$value->filiere_id;
-                    $apprenant->promo_id=$value->promo_id;
-                    $apprenant->sexe=$value->candidat->sexe;
-                    $apprenant->email=$value->candidat->email;
-                    $apprenant->save();
-                } */
 
-
-
+        }
 
 
         $keyword = $request->get('search');
         $perPage = 5;
 
         if (!empty($keyword)) {
-            $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);
+            $apprenants = Apprenant::latest()->paginate($perPage);
         } else {
-            $apprenants = Apprenant::with('filieres')->latest()->paginate($perPage);
+            $apprenants = Apprenant::latest()->paginate($perPage);
         }
 
         return view('apprenants.index', compact('apprenants','tests'));
