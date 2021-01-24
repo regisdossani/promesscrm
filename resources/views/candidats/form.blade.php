@@ -17,7 +17,7 @@
 
 
 
-                            <div class="col-md-2 mb-2  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+                            <div class="col-md-6 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                                 <label for="filiere">Filière:</label>
                                 <div class="select-list" class="form-group">
                                     <select name="filiere_id" id="filiere_id" class="form-control">
@@ -29,8 +29,8 @@
                                     {{-- <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span> --}}
                                 </div>
                             </div>
-                            
-                            <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
+
+                            <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                 <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
                                 <select name="promo_id" id="promo_id" class="form-control">
                                     <option value="">Nos promos</option>
@@ -54,7 +54,7 @@
                         </div>
 
 
-                    <div class="form-row">
+
                         <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                             <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
                             <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
@@ -74,10 +74,9 @@
                             {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
                         </div>
 
-                    </div>
 
 
-                        <div class=" form-row">
+
                             <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
                                 <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
                                 <input class="form-control" name="provenance" type="text" id="date_naiss" value="{{ isset($candidat->provenance) ? $candidat->provenance : ''}}" >
@@ -90,7 +89,7 @@
                                     {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
                             </div>
 
-                        </div>
+
 
     <div class="form-row">
         @role('superadmin')
