@@ -19,7 +19,7 @@
 
                             <div class="col-md-2 mb-2  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                                 <label for="filiere">Filière:</label>
-                                <div class="select-list" >
+                                <div class="select-list" class="form-group">
                                     <select name="filiere_id" id="filiere_id" class="form-control">
                                          <option value=""> Nos filières</option>
                                             @foreach($filieres as $filiere)
@@ -29,6 +29,7 @@
                                     {{-- <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span> --}}
                                 </div>
                             </div>
+                            
                             <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                 <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
                                 <select name="promo_id" id="promo_id" class="form-control">

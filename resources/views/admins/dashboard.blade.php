@@ -14,7 +14,7 @@
 
 
 
-    <div class="market-updates">
+   {{--  <div class="market-updates">
         <div class="col-md-6 market-update-gd">
             <div class="market-update-block clr-block-1">
                 <a class="btn btn-success open-full-screen" data-toggle="modal" data-target="#exampleModalLong">
@@ -30,7 +30,7 @@
         </div>
 
 
-    <div class="clearfix"> </div>
+    <div class="clearfix"> </div> --}}
 
 </div>
 <!-- //market-->
@@ -309,7 +309,7 @@
 
 
 
-    <div class="col-md-3 market-update-gd">
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
@@ -321,7 +321,7 @@
             </div>
           <div class="clearfix"> </div>
         </div>
-    </div>
+    </div> --}}
 
 
    <div class="clearfix"> </div>
@@ -400,7 +400,7 @@
 
 <div class="market-updates">
 
-    <div class="col-md-3 market-update-gd">
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
             <a href="{{url('/stages')}}">
 
@@ -413,7 +413,7 @@
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-6">
             <a href="{{url('marks')}}">
