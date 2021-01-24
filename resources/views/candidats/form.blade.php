@@ -7,7 +7,7 @@
                             </div>
 
 
-                             <div class="col-md-2 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+                             <div class="col-md-6 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
                                 <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
                                 <select name="sexe" id="sexe" class="form-control">
                                     <option value="M">M</option>
