@@ -41,6 +41,14 @@ Route::get('about', function ()
     {
         return view('frontend.contact');
     });
+    
+    /** La page d'inscriprion du candidat dans le frontend*/
+Route::get('/candidat', function () {
+    $filieres=Filiere::all();
+    $promos=Promo::all();
+    $candidats=Promo::all();
+return view('candidature',compact('promos','candidats','filieres'));
+});
 
 Auth::routes();
 
@@ -58,7 +66,6 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/admins', 'AdminsController');
 
     Route::resource('/professionnels', 'ProfessionnelsController');
-    Route::resource('/pers_ressources', 'Pers_ressourcesController');
 
 
     Route::resource('/typeformations', 'TypeformationsController');
@@ -109,7 +116,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     {
         $moncandidat= Filiere::find(1)->candidat;
     });
-    
+
 
 
     });
@@ -136,7 +143,7 @@ Route::group(['middleware'=>'auth:apprenant'],
 
     Route::group(['middleware'=>['auth:admin,equipe']], function(){
     Route::get('/partenaires', 'PartenairesController@index');
-    Route::get('/persressources', 'Pers_ressourcesController@index');
+    Route::get('/pers_ressources', 'Pers_ressourcesController@index');
 
  //
  Route::get('stock',[
@@ -329,13 +336,7 @@ Route::view('/formateur', 'formateurs.dashboard');*/
 
 
 
-/** La page d'inscriprion du candidat dans le frontend*/
-Route::get('/candidat', function () {
-        $filieres=Filiere::all();
-        $promos=Promo::all();
-        $candidats=Promo::all();
-    return view('preinscription',compact('promos','candidats','filieres'));
-});
+
 
 
 
