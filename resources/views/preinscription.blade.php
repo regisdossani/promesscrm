@@ -111,7 +111,7 @@
 
                                 <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                     <label for="email" class="control-label">{{ 'Email:' }}</label>
-                                    <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email_1) ? $candidat->email_1 : ''}}" >
+                                    <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email: ''}}" >
                                     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                                 </div>
 
