@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/formateur');
         }
 
-        return redirect()->guest(route('login'));
+        return redirect()->guest(route('login/menu'));
 
     }
 
@@ -75,16 +75,25 @@ class Handler extends ExceptionHandler
      *
      * @throws \Throwable
      */
-    /* public function render($request, Throwable $exception)
+    public function render($request, Throwable $exception)
     {
-        return parent::render($request, $exception);
-    } */
-    public function render($request, Exception $e)
-    {
+        if($e instanceof QueryException){
+            $errorCode = $e->errorInfo[1];
+            switch ($errorCode) {
+                case 1062://code dublicate entry
+                    return response([
+                        'errors'=>'Duplicate Entry'
+                    ],Response::HTTP_NOT_FOUND);
+                    break;
+                case 1364:// you can handel any auther error
+                    return response([
+                        'errors'=>$e->getMessage()
+                    ],Response::HTTP_NOT_FOUND);
+                    break;
+            }
+         }
 
-        if($e instanceof PDOException)
-        {
-            return response()->view('errors/404');
-        }
+        return parent::render($request, $exception);
     }
+
 }
