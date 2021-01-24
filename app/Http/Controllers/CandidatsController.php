@@ -38,8 +38,9 @@ class CandidatsController extends Controller
         } else {
             $candidats = Candidat::latest()->paginate($perPage);
         }
-
-        return view('candidats.index', compact('candidats'));
+           $filieres=Filiere::all();
+             $promos=Promo::all();
+        return view('candidats.index', compact('candidats','filieres','promos'));
     }
 
     /**
@@ -117,8 +118,9 @@ class CandidatsController extends Controller
     public function show($id)
     {
         $candidat = Candidat::findOrFail($id);
-
-        return view('candidats.show', compact('candidat'));
+        $filieres=Filiere::all();
+        $promos=Promo::all();
+        return view('candidats.show', compact('candidat','filieres','promos'));
     }
 
     /**

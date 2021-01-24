@@ -15,6 +15,12 @@ class CreateCandidatsTable extends Migration
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('promo_id')->nullable();
+            $table->foreign('promo_id')->references('id')->on('promos')->onDelete('cascade');
+
+            $table->unsignedBigInteger('filiere_id')->nullable();
+            $table->foreign('filiere_id')->references('id')->on('filieres')->onDelete('cascade');
+
             $table->string('nom')->nullable()->default('nom');
             $table->string('tel')->nullable()->default('tel_1');
             $table->string('email')->unique();
@@ -22,8 +28,7 @@ class CreateCandidatsTable extends Migration
 
             $table->string('provenance')->nullable();
             $table->string('region')->nullable();
-            $table->unsignedBigInteger('promo_id')->nullable();
-            $table->unsignedBigInteger('filiere_id')->nullable();
+
             $table->string('parrain')->nullable();
             $table->string('tel_parrain')->nullable();
             $table->string('email_parrain')->nullable();

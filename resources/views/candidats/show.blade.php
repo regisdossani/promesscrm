@@ -56,15 +56,25 @@
                                         <td> {{ $candidat->region }} </td>
                                     </tr>
 
-                                    <tr><th> Filière </th>
-                                        <td> {{ $candidat->filiere->nom }} </td>
-                                    </tr>
+
                                     <tr><th> Téléphone </th>
                                         <td> {{ $candidat->tel }} </td>
                                     </tr>
 
+                                    <tr><th> Filière </th>
+                                        <td>  @foreach ($filieres as $fil)
+                                            @if($candidat->filiere_id==$fil->id)
+                                                   {{$fil->nom}}
+                                           @endif
+                                       @endforeach </td>
+                                    </tr>
+e
                                     <tr><th> Promo </th>
-                                        <td> {{ $candidat->promo->nom }} </td>
+                                        <td> @foreach ($promos as $promo)
+                                            @if($candidat->promo_id==$promo->id)
+                                                   {{$promo->nom}}
+                                           @endif
+                                       @endforeach </td>
                                     </tr>
 
                                     <tr><th> Parrain </th>

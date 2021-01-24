@@ -2,6 +2,10 @@
 
 namespace App;
 
+use App\Classe;
+use App\Filiere;
+use App\Promo;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Candidat extends Model
@@ -12,6 +16,8 @@ class Candidat extends Model
         'region','pj_depotdossier2','promo_id','filiere_id','parrain',
         'tel_parrain','email_parrain'
     ];
+    protected $table = 'candidats';
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,16 +33,7 @@ class Candidat extends Model
      {
              return $this->belongsTo('App\Apprenant','candidat_id');
      } */
-     public function promo()
-     {
-             return $this->belongsTo(Promo::class,'promo_id');
-     }
-     public function filiere()
-     {
-             return $this->belongsTo(Filiere::class,'filiere_id');
-     }
-    /*  public function testcandidat()
-     {
-             return $this->hasOne(Testcandidat::class,'');
-     } */
+     public function filiere() {
+        return $this->hasOne(Filiere::class,'filiere_id');
+    }
 }

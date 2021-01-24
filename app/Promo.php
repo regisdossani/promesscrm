@@ -9,4 +9,8 @@ class Promo extends Model
     protected $fillable = [
         'nom', 'annee'
     ];
+    public function candidat(){
+        return $this->hasOne(Candidat::class);
+    }
+
 }

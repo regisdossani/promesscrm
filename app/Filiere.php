@@ -10,9 +10,9 @@ class Filiere extends Model
         'nom', 'annee'
     ];
 
+ public function candidats(){
+    return $this->hasMany(Candidat::class);
+}
 
-    public function apprenant(){
-        return $this->belongsTo(Apprenant::class,'filiere_id');
-    }
 
 }
