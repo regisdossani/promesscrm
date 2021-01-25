@@ -39,9 +39,28 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <th>ID</th><td>{{ $testcandidat->id }}</td>
+                                                <th>ID</th>
+                                                <td>{{ $testcandidat->id }}</td>
                                             </tr>
-                                            <tr><th> Candidat Id </th><td> {{ $testcandidat->candidat_id }} </td></tr><tr><th> Test Ecrit </th><td> {{ $testcandidat->test_ecrit }} </td></tr><tr><th> Entretien </th><td> {{ $testcandidat->entretien }} </td></tr>
+                                            <tr><th> Candidat </th>
+                                                <td> {{ $testcandidat->candidat->nom }} </td>
+                                            </tr>
+                                                <tr><th> Test Ecrit </th>
+                                                    <td> {{ $testcandidat->test_ecrit }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th> Entretien </th><td> {{ $testcandidat->entretien }} </td>
+                                            </tr>
+                                        </tr>
+                                        <tr><th> Résultat </th><td> {{ $testcandidat->resultat }} </td>
+                                        </tr>
+                                        <tr><th> Filière </th><td> {{ $testcandidat->filiere->nom }} </td>
+                                        </tr>
+                                        <tr><th> Test(Pièce jointe) </th>
+                                            <td> {{ $testcandidat->tes_tpj->nom }} </td>
+                                        </tr>
+                                        <tr><th> Commentaire </th><td> {{ $testcandidat->commentaire }} </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>

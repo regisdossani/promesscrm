@@ -13,5 +13,7 @@ class Testcandidat extends Model
     public function candidat(){
         return $this->belongsTo(Candidat::class,'candidat_id');
     }
-
+    public function filiere(){
+        return $this->belongsTo(Filiere::class,'filiere_id');
+    }
 }
