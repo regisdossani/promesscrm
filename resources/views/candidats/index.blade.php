@@ -15,7 +15,7 @@
     <section class="wrapper">
         <div class="form-w3layouts">
             <div class="container">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -61,7 +61,7 @@
                                                 <th>Nom</th>
                                                 <th>Téléphone</th>
                                                 <th>Provenance</th>
-                                              <th>Région</th> 
+                                              <th>Région</th>
 
                                                 <th>Filière</th>
                                                 <th>Promo</th>
