@@ -55,9 +55,9 @@
                                         <th>#</th>
                                         <th>Nom</th>
                                         <th>Réf</th>
-                                    {{-- <th>Sexe</th> --}}
+                                        <th>Sexe</th>
                                         <th>Tél</th>
-                                        <th>Email</th>
+                                        {{-- <th>Email</th> --}}
                                         <th>Qualité</th>
                                         <th>Spécialité</th>
                                        {{--  <th>Atelier de juillet_2018</th>
@@ -72,9 +72,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->nom }}</td>
                                         <td>{{ $item->reference }}</td>
-                                        {{-- <td>{{ $item->sexe }}</td> --}}
+                                      <td>{{ $item->sexe }}</td>
                                         <td>{{ $item->tel }}</td>
-                                        <td>{{ $item->email }}</td>
+                                        {{-- <td>{{ $item->email }}</td> --}}
                                         <td>{{ $item->qualite }}</td>
                                         <td>{{ $item->specialites }}</td>
                                        {{--  <td>{{ $item->atelier_de_juillet_2018  }}</td>
