@@ -38,22 +38,21 @@
                         </div> --}}
 
                         <form action='{{ url("/admin")}}' method="GET">
-                                @csrf
                             <button  class="ggg ">Directeur Promess</button>
                         </form>
 
                         <form action='{{ url("/equipe")}}' method="GET">
-                            @csrf
+
                             <button  class="ggg">  Équipe Promess</button>
                         </form>
 
                         <form action='{{ url("/apprenant")}}' method="GET">
-                            @csrf
+
                             <button  class="ggg">Apprenant Promess</button>
                         </form>
 
                         <form action='{{ url("/formateur")}}' method="GET">
-                            @csrf
+
                             <button  class="ggg">Formateur Promess</button>
                         </form>
 

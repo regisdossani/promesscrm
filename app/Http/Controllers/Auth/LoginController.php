@@ -34,9 +34,8 @@ class LoginController extends Controller
      * @var string
      */
      protected $redirectTo = RouteServiceProvider::HOME;
-    // protected $redirectTo = '/admin';
-/*     protected $redirectTo = '/home';
- */
+
+
     /**
      * Create a new controller instance.
      *
@@ -54,7 +53,7 @@ class LoginController extends Controller
     public function showAdminLoginForm()
     {
 
-        return view('auth.login', ['url' => 'admin']);
+        return view('auth.login', ['url' => '/login/admin']);
         /* ->with('userCount',$userCount)
         ->with('apprenantCount',$apprenantCount)
         ->with('trainerCount',$trainerCount); */

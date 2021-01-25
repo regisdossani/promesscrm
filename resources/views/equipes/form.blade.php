@@ -56,8 +56,7 @@
                                         @endforeach
             </select> --}}
 
-            {!! Form::select('roles[]', $roles,$equipeRole, array('class' => 'form-control','multiple')) !!}
-        </div>
+            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}        </div>
 
 
         @if(isset($equipe->cv) && !empty($equipe->cv))

@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
@@ -24,14 +24,14 @@
                             </header>
                     {{-- <div class="card-header">module {{ $module->id }}</div> --}}
                             <div class="card-body">
-
-                                <a href="{{ url('/modules') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                                <a href="{{ url('/modules/' . $module->id . '/edit') }}" title="Edit module"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                <br/>
+                                <a href="{{ url('/modules') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                <a href="{{ url('/modules/' . $module->id . '/edit') }}" title="Modifier ce module"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
                                 <form method="POST" action="{{ url('modules' . '/' . $module->id) }}" accept-charset="UTF-8" style="display:inline">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete module" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce module" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
                                 </form>
                                 <br/>
                                 <br/>

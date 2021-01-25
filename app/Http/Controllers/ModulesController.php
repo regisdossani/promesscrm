@@ -41,6 +41,13 @@ class ModulesController extends Controller
 
         return redirect()->route('modules.index');
     }
+    
+    public function show($id)
+    {
+        $module = Module::findOrFail($id);
+
+        return view('modules.show', compact('module'));
+    }
 
     public function edit(Module $subject)
     {

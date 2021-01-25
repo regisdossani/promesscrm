@@ -18,7 +18,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">

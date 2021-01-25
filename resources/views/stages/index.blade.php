@@ -54,18 +54,28 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th><th>Titre</th><th>Stage Entreprise</th><th>Nom Professionel </th><th>Actions</th>
+                                                <th>#</th>
+                                                <th>Date</th>
+                                                <th>Durée</th>
+                                                <th>Référent </th>
+                                                <th>Entreprise </th>
+                                                <th>Encadreur </th>
+                                                <th>Rapport </th>
+
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($stages as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->titre }}</td>
-                                                <td>{{ $item->stage_entreprise }}</td>
-                                                @foreach($profs as $prof)
-                                                <td  {{ isset($item->professionnel_id) && $item->professionnel_id == $prof->id ? 'selected' : ''}}>{{ $prof->nom}}</td>
-                                            @endforeach
+                                                <td>{{ $item->date }}</td>
+                                                <td>{{ $item->duree }}</td>
+                                                <td>{{ $item->referent }}</td>
+                                                <td>{{ $item->entreprise }}</td>
+                                                <td>{{ $item->encadreur }}</td>
+                                                <td>{{ $item->rapport }}</td>
+
                                                 <td>
                                                     <a href="{{ url('/stages/' . $item->id) }}" title="Voir ce stage"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                                     <a href="{{ url('/stages/' . $item->id . '/edit') }}" title="Modifier ce stage"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>

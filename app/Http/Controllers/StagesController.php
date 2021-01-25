@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Professionnel;
+use App\Encadreur;
 
 use App\Stage;
 use Illuminate\Http\Request;
@@ -26,8 +26,8 @@ class StagesController extends Controller
         } else {
             $stages = Stage::latest()->paginate($perPage);
         }
-          $profs=Professionnel::all();
-        return view('stages.index', compact('stages','profs'));
+          $encadreurs=Encadreur::all();
+        return view('stages.index', compact('stages','encadreurs'));
     }
 
     /**
@@ -38,8 +38,8 @@ class StagesController extends Controller
     public function create()
     {
         $stages = Stage::all();
-        $profs = Professionnel::all();
-        return view('stages.create',compact('stages','profs'));
+        $encadreurs = Encadreur::all();
+        return view('stages.create',compact('stages','encadreurs'));
     }
 
     /**
@@ -59,10 +59,9 @@ class StagesController extends Controller
             $requestData['pjconvention_stage'] = uploadFile($request,'pjconvention_stage', public_path('uploads/stages'));
         }
         Stage::create($requestData);
-       /*  $apprenant=Apprenant::first();
-        $stage=Stage::first();
 
-        $apprenant->stages()->attach($stage->id); */
+
+        // $apprenant->stages()->attach($stage->id); */
 
         return redirect('stages')->with('flash_message', 'Stage added!');
     }
@@ -78,9 +77,9 @@ class StagesController extends Controller
     public function show($id)
     {
         $stage = Stage::findOrFail($id);
-        $profs=Professionnel::all();
+        $encadreurs=Encadreur::all();
 
-        return view('stages.show', compact('stage','profs'));
+        return view('stages.show', compact('stage','encadreurs'));
     }
 
     /**
@@ -93,9 +92,9 @@ class StagesController extends Controller
     public function edit($id)
     {
         $stage = Stage::findOrFail($id);
-        $profs = Professionnel::all();
+        $encadreurs = Encadreur::all();
 
-        return view('stages.edit', compact('stage','profs'));
+        return view('stages.edit', compact('stage','encadreurs'));
     }
 
     /**

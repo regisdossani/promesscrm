@@ -23,6 +23,7 @@ use App\Http\Controllers\FullCalendarEventMasterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function()
     {
@@ -52,30 +53,28 @@ Route::get('/candidat', function () {
     $candidats=Candidat::all();
 return view('candidature',compact('promos','candidats','filieres'));
 });
+
 Route::post('/candidat/checkemail', 'CandidatsController@candidatEmailCheck');
 
-Auth::routes();
 
 Route::group(['middleware'=>['auth:web,admin']], function() {
      Route::resource('/partenaires', 'PartenairesController');
      Route::get('partenaires/{id}',function($id){
         return view('partenaires.show');
-
+    });
 
         Route::resource('/encadreurs', 'EncadreursController');
         Route::resource('/clients', 'ClientsController');
         Route::resource('/fiches', 'FichedescriptivesController');
         Route::resource('/suivipostchantiers', 'PostchantiersController');
         // Route::resource('/eqattendances', 'EqattendancesController');
+        Route::resource('/admin/roles', 'RolesController');
 
         Route::resource('/admins', 'AdminsController');
 
         Route::resource('/professionnels', 'ProfessionnelsController');
         Route::resource('/admin/roles','RolesController');
         Route::resource('admin/permissions', 'PermissionsController');
-
-    });
-
 
 
 
@@ -121,6 +120,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::view('date', 'attendances.date');
     Route::resource('/typeformations', 'TypeformationsController');
     Route::resource('/pers_ressources', 'Pers_ressourcesController');
+    Route::resource('/professionnels', 'ProfessionnelsController');
 
 });
 

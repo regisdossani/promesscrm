@@ -17,18 +17,18 @@ class Stage extends Model
     // }
 
 
-    public function encadreurs()
+    public function encadreur()
     {
-        return $this->belongsToMany(Encadreur::class,'encadreur_stage','stage_id','encadreur_id');
+        return $this->belongsTo(Encadreur::class,'encadreur_id');
     }
 
 
 
-    public function stagiaires()
+/*     public function stagiaires()
 {
    return $this->belongsToMany(Stagiaires::class,'stage_stagiaire','stagiaire_id','stage_id');
 }
-
+ */
 public function apprenants()
 {
    return $this->belongsToMany(Apprenant::class,'apprenant_stage');

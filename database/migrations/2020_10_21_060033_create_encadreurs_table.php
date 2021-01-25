@@ -15,8 +15,9 @@ class CreateEncadreursTable extends Migration
     {
         Schema::create('encadreurs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('professionel_id');
-			$table->unsignedBigInteger('formateur_id');
+            // $table->unsignedBigInteger('professionel_id')->nullable();
+			$table->unsignedBigInteger('formateur_id')->nullable();
+            $table->string('noms')->nullable();
             $table->timestamps();
         });
     }

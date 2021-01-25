@@ -29,15 +29,15 @@ class EquipesController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 5;
 
         if (!empty($keyword)) {
-            $equipes = Equipe::latest()->paginate($perPage);
+            $equipes = Equipe::orderBy('id','DESC')->paginate($perPage);
         } else {
-            $equipes = Equipe::latest()->paginate($perPage);
+            $equipes = Equipe::orderBy('id','DESC')->paginate($perPage);
         }
 
-        return view('equipes.index', compact('equipes'));
+        return view('equipes.index', compact('equipes'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -47,10 +47,9 @@ class EquipesController extends Controller
      */
     public function create()
     {
-
+        $roles = Role::get()->pluck('name', 'name');
         $teams = Equipe::all();
-        // $roles = Role::pluck('name','name')->all();
-        $roles = Role::get();
+
         return view('equipes.create',compact('teams','roles'));
     }
 
@@ -97,10 +96,10 @@ class EquipesController extends Controller
         } */
       $team=  Equipe::create($requestData);
 
-    //   $team->assignRole( $requestData['roles']);
-      $role= new Role();
+       $team->assignRole( $requestData['roles']);
+      /* $role= new Role();
       $role->id=$request->role;
-      $team->assignRole( $role->name);
+      $team->assignRole( $role->name); */
 
         return redirect('equipes')->with('flash_message', 'Membre de l\'équipe crée!');
     }
@@ -136,7 +135,7 @@ class EquipesController extends Controller
     {
         $equipe = Equipe::findOrFail($id);
         $roles = Role::pluck('name','name')->all();
-        $equipeRole = $equipe->roles->pluck('name','name')->all();
+         $equipeRole = $equipe->roles->pluck('name','name')->all();
         return view('equipes.edit', compact('equipe','roles','equipeRole'));
     }
 

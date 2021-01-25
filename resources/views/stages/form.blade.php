@@ -1,5 +1,5 @@
 
-<div class="col-md-6 mb-3 {{ $errors->has('apprenant_id') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 mb-3 {{ $errors->has('apprenant_id') ? 'has-error' : ''}}">
     <label for="apprenant_id" class="control-label">{{ 'Titre' }}</label>
     <div class="select-list" class="form-group">
         <select name="apprenant_id" id="apprenant_id" class="form-control">
@@ -8,10 +8,9 @@
                     <option value="{{ $ap->id }}" {{ isset($stages->apprenant_id) && $stages->apprenant_id == $ap->id ? 'selected' : ''}}>{{ $ap->prenom}}{{$ap->nom}}</option>
                 @endforeach
         </select>
-        {{-- <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span> --}}
     </div>
 
-</div>
+</div> --}}
 
 
 
