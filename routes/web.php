@@ -119,7 +119,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('attendances', 'AttendancesController');
     Route::view('date', 'attendances.date');
     Route::resource('/typeformations', 'TypeformationsController');
-    Route::ressource('/pers_ressources', 'Pers_ressourcesController');
+    Route::resource('/pers_ressources', 'Pers_ressourcesController');
 
 });
 
