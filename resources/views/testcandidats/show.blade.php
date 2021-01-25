@@ -56,7 +56,11 @@
                                         </tr>
 
                                         <tr><th> Test(Pièce jointe) </th>
-                                            <td> {{ $testcandidat->tes_tpj}} </td>
+                                            <td>
+                                                 @if(isset($testcandidat->test_pj) && !empty($testcandidat->test_pj))
+                                                <a href="{{ url('uploads/testcandidats/' . $testcandidat->test_pj) }}" ><i class="fa fa-download"></i> {{$testcandidat->test_pj}}</a>
+                                                @endif
+                                            </td>
                                         </tr>
                                         <tr><th> Commentaire </th><td> {{ $testcandidat->commentaire }} </td>
                                         </tr>
