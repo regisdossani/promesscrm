@@ -61,7 +61,7 @@
                                                 <th>Nom</th>
                                                 <th>Téléphone</th>
                                                 <th>Provenance</th>
-                                                {{-- <th>Région</th> --}}
+                                              <th>Région</th> 
 
                                                 <th>Filière</th>
                                                 <th>Promo</th>
@@ -78,9 +78,9 @@
                                                 <td>{{ $item->tel }}</td>
 
                                                 <td>{{ $item->provenance }}</td>
-                                                {{-- <td>{{ $item->region }}</td> --}}
+                                               <td>{{ $item->region }}</td>
                                                 <td>{{ $item->filiere->nom}}</td>
-                                                <td>{{ $item->promo->nom}}</td
+                                                <td>{{ $item->promo->nom}}</td>
 
                                             {{--  <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>--}}
                                                 <td>
