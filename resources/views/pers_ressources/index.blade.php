@@ -54,11 +54,11 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nom</th>
-                                        <th>Réference</th>
+                                        <th>Réf</th>
                                     {{-- <th>Sexe</th> --}}
                                         <th>Tél</th>
                                         <th>Email</th>
-                                        <th>Qualite</th>
+                                        <th>Qualité</th>
                                         <th>Spécialité</th>
                                        {{--  <th>Atelier de juillet_2018</th>
                                         <th>formation dejanvier_2019</th> --}}
