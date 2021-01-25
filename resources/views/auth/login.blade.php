@@ -26,6 +26,7 @@
                     </div>
 
                     <div class="form-group">
+                        @csrf
                         <input type="password" class="ggg form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -34,6 +35,7 @@
                     @enderror
                     </div>
                    <div class="form-group">
+                    @csrf
                       {{-- <span><input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Se souvenir de Moi</span> --}}
                       <input type="submit" value="Se connecter" name="login">
                      {{--  <button type="submit" class="btn btn-primary">
