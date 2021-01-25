@@ -57,6 +57,10 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
      Route::resource('/partenaires', 'PartenairesController');
      Route::get('partenaires/{id}',function($id){
         return view('partenaires.show');
+    Route::get('admin', function()
+        {
+             return view('admins.dashboard');
+        });
 
         Route::resource('/encadreurs', 'EncadreursController');
         Route::resource('/clients', 'ClientsController');
@@ -81,10 +85,7 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
 
 
     Route::view('/home', 'home');
-    Route::get('admin', function()
-    {
-         return view('admins.dashboard');
-    });
+
 });
 
 
@@ -323,6 +324,7 @@ Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::post('/login/apprenant', 'Auth\LoginController@apprenantLogin');
 Route::post('/login/formateur', 'Auth\LoginController@formateurLogin');
 Route::post('/login/equipe', 'Auth\LoginController@equipeLogin');
+
 
 /*
 Route::post('/register/admin', 'Auth\RegisterController@createAdmin');

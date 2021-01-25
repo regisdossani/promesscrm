@@ -33,7 +33,7 @@
 
 <div class="col-md-6 mb-3 {{ $errors->has('qualite') ? 'has-error' : ''}}">
     <label for="qualite" class="control-label">{{ 'Qualité' }}</label>
-    <input class="form-control"  name="qualite" type="text" id="qualite" >{{ isset($pers_ressource->qualite) ? $pers_ressource->qualite : ''}}</textarea>
+    <input class="form-control"  name="qualite" type="text" id="qualite" >{{ isset($pers_ressource->qualite) ? $pers_ressource->qualite : ''}}>
     {!! $errors->first('qualite', '<p class="help-block">:message</p>') !!}
 </div>
 
