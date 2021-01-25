@@ -132,7 +132,7 @@
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
-            <a href="{{url('/persressources')}}">
+            <a href="{{url('/pers_ressources')}}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
