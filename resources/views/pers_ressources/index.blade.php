@@ -55,7 +55,7 @@
                                         <th>#</th>
                                         <th>Nom</th>
                                         <th>Réference</th>
-                                    <th>Sexe</th>
+                                    {{-- <th>Sexe</th> --}}
                                         <th>Tél</th>
                                         <th>Email</th>
                                         <th>Qualite</th>
@@ -72,7 +72,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->nom }}</td>
                                         <td>{{ $item->reference }}</td>
-                                        <td>{{ $item->sexe }}</td>
+                                        {{-- <td>{{ $item->sexe }}</td> --}}
                                         <td>{{ $item->tel }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->qualite }}</td>
