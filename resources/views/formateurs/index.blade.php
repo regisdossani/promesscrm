@@ -23,7 +23,7 @@
                 <div class="row">
                     {{-- @include('admins.sidebar') --}}
 
-                    <div class="col-md-12">
+                    <div class="col-md-10">
 
                         <section  class="panel">
 
@@ -70,7 +70,7 @@
                                                 <th>Référence</th>
                                                 <th>Sexe</th>
                                                 <th>Tél</th>
-                                                <th>Email</th>
+                                                {{-- <th>Email</th> --}}
                                                 <th>Fonction</th>
                                                  <th>Module</th>
                                                 <th>Actions</th>
@@ -85,7 +85,7 @@
                                                 <td>{{ $item->reference }}</td>
                                                 <td>{{ $item->sexe }}</td>
                                                 <td>{{ $item->tel }}</td>
-                                                <td>{{ $item->email }}</td>
+                                                {{-- <td>{{ $item->email }}</td> --}}
                                                 <td>{{ $item->fonction }}</td>
 
                                                 <td>

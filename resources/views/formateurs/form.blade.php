@@ -31,7 +31,7 @@
 
 <div class="col-md-6 mb-3 {{ $errors->has('tel') ? 'has-error' : ''}}">
     <label for="tel" class="control-label">{{ 'Téléphone ' }}</label>
-    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($formateur->tel_1) ? $formateur->tel_1 : ''}}" >
+    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($formateur->tel_1) ? $formateur->tel : ''}}" >
     {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -50,7 +50,7 @@
 
 <div class="col-md-6 mb-3{{ $errors->has('lieu_naiss') ? 'has-error' : ''}}">
     <label for="lieu_naiss" class="control-label">{{ 'Lieu de naissance' }}</label>
-    <input class="form-control" name="lieu_naiss" type="text" id="lieu_naiss" value="{{ isset($formateur->date_naiss) ? $formateur->date_naiss : ''}}" >
+    <input class="form-control" name="lieu_naiss" type="text" id="lieu_naiss" value="{{ isset($formateur->lieu_naiss) ? $formateur->lieu_naiss : ''}}" >
     {!! $errors->first('lieu_naiss', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -66,11 +66,11 @@
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div class="col-md-6 mb-3{{ $errors->has('structure') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 mb-3{{ $errors->has('structure') ? 'has-error' : ''}}">
     <label for="structure" class="control-label">{{ 'Structure' }}</label>
     <input class="form-control" name="structure" type="text" id="structure" value="{{ isset($formateur->structure) ? $formateur->structure : ''}}" >
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
-</div>
+</div> --}}
 <div class="col-md-6 mb-3{{ $errors->has('fonction') ? 'has-error' : ''}}">
     <label for="fonction" class="control-label">{{ 'Fonction' }}</label>
     <input class="form-control" name="fonction" type="text" id="fonction" value="{{ isset($formateur->fonction) ? $formateur->fonction : ''}}" >
@@ -90,7 +90,7 @@
 <div class="row">
     <div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
         <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
-        <input class="form-control"  name="adresse" type="text" id="adresse" >{{ isset($formateur->adresse) ? $formateur->adresse : ''}}</input>
+        <input class="form-control"  name="adresse" type="text" id="adresse" value="{{ isset($formateur->adresse) ? $formateur->adresse : ''}}">
         {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
