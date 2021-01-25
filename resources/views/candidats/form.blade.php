@@ -1,6 +1,6 @@
 
 
-                               <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+                            <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
                                 <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
                                 <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
                                 {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
@@ -26,7 +26,6 @@
                                                 <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
                                             @endforeach
                                     </select>
-                                    {{-- <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span> --}}
                                 </div>
                             </div>
 
@@ -48,10 +47,51 @@
 
                             <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                 <label for="email" class="control-label">{{ 'Email:' }}</label>
-                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
-                                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+
+                                {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                {{-- {!! $errors->first('email', '<p class="help-block">:message</p>') !!} --}}
                             </div>
-                        </div>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" type="text/javascript"></script>
+                            <script>
+                                var email =  $("#email").val();
+                                $('#registration').validate({
+                                    rules: {
+                                        email: {
+                                            required: true,
+                                            email: true,
+                                            remote: {
+                                                url: '{{url('candidat/checkemail')}}',
+                                                type: "post",
+                                                data: {
+                                                    email:$(email).val(),
+                                                    _token:"{{ csrf_token() }}"
+                                                    },
+                                                dataFilter: function (data) {
+                                                    var json = JSON.parse(data);
+                                                    if (json.msg == "true") {
+                                                        return "\"" + "Email déjà utilisé" + "\"";
+                                                    } else {
+                                                        return 'true';
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    messages: {
+                                        email: {
+                                            required: "Email is required!",
+                                            email: "Entrer un EMail valide!",
+                                            remote: "Email  déjà utilisé!"
+                                        }
+                                    }
+                                });
+                            </script>
 
 
 
@@ -104,7 +144,7 @@
                     {!! $errors->first('reception_dossier', '<p class="help-block">:message</p>') !!}
                 </div>
         @endrole
-
+    </div>
               {{--   @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
                     <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
                 @endif
@@ -145,7 +185,7 @@
                         {!! $errors->first('signature', '<p class="help-block">:message</p>') !!}
                     </div> --}}
 
-            </div>
+
 
        {{--  @if(isset($candidat->avatar) && !empty($candidat->avatar))
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
@@ -213,6 +253,7 @@
     <input class="form-control" name="avatar" type="file" id="avatar" >
     {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
 </div> --}}
+<br/>
 <br/>
 <br/>
 

@@ -67,7 +67,6 @@
                                                 <td>{{ $loop->iteration }}</td>
 
                                                 @foreach($equipes as $eq)
-
                                                     @if( $item->employee_id == $eq->id)
                                                         <td>{{$eq->nom }}</td>
                                                     @endif

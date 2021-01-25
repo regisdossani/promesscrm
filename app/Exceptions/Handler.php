@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/formateur');
         }
 
-        return redirect()->guest(route('login/menu'));
+        return redirect()->guest(route('candidature'));
 
     }
 
@@ -75,7 +75,7 @@ class Handler extends ExceptionHandler
      *
      * @throws \Throwable
      */
-    public function render($request, Throwable $exception)
+  /*   public function render($request, Throwable $exception)
     {
         if($e instanceof QueryException){
             $errorCode = $e->errorInfo[1];
@@ -94,6 +94,6 @@ class Handler extends ExceptionHandler
          }
 
         return parent::render($request, $exception);
-    }
+    } */
 
 }

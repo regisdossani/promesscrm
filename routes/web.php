@@ -41,14 +41,15 @@ Route::get('about', function ()
     {
         return view('frontend.contact');
     });
-    
+
     /** La page d'inscriprion du candidat dans le frontend*/
 Route::get('/candidat', function () {
     $filieres=Filiere::all();
     $promos=Promo::all();
-    $candidats=Promo::all();
+    $candidats=Candidat::all();
 return view('candidature',compact('promos','candidats','filieres'));
 });
+Route::post('/candidat/checkemail', 'CandidatsController@candidatEmailCheck');
 
 Auth::routes();
 
@@ -56,31 +57,28 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
      Route::resource('/partenaires', 'PartenairesController');
      Route::get('partenaires/{id}',function($id){
         return view('partenaires.show');
+
+        Route::resource('/encadreurs', 'EncadreursController');
+        Route::resource('/clients', 'ClientsController');
+        Route::resource('/fiches', 'FichedescriptivesController');
+        Route::resource('/suivipostchantiers', 'PostchantiersController');
+        // Route::resource('/eqattendances', 'EqattendancesController');
+
+        Route::resource('/admins', 'AdminsController');
+
+        Route::resource('/professionnels', 'ProfessionnelsController');
+        Route::resource('/admin/roles','RolesController');
+        Route::resource('admin/permissions', 'PermissionsController');
+
     });
-    Route::resource('/encadreurs', 'EncadreursController');
-    Route::resource('/clients', 'ClientsController');
-    Route::resource('/fiches', 'FichedescriptivesController');
-    Route::resource('/suivipostchantiers', 'PostchantiersController');
-    // Route::resource('/eqattendances', 'EqattendancesController');
-
-    Route::resource('/admins', 'AdminsController');
-
-    Route::resource('/professionnels', 'ProfessionnelsController');
 
 
-    Route::resource('/typeformations', 'TypeformationsController');
-    Route::resource('/admin/roles','RolesController');
-    Route::resource('admin/permissions', 'PermissionsController');
-
-    Route::resource('attendances', 'AttendancesController');
-    Route::view('date', 'attendances.date');
 
 
-    Route::resource('classe', 'ClassesController');
-    Route::resource('subject', 'ModulesController');
-     Route::get('attendance', 'AttendancesController@index')->name('attendance.index');
-    Route::get('assign-subject-to-class/{id}', 'ClassesController@assignSubject')->name('class.assign.subject');
-    Route::post('assign-subject-to-class/{id}', 'ClassesController@storeAssignedSubject')->name('store.class.assign.subject');
+
+
+
+
 
     Route::view('/home', 'home');
     Route::get('admin', function()
@@ -112,14 +110,17 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/filieres', 'FilieresController');
     Route::resource('/promos', 'PromosController');
     Route::resource('/newchantiers', 'NewchantiersController');
-    Route::get('/filieres',function()
-    {
-        $moncandidat= Filiere::find(1)->candidat;
-    });
+    Route::resource('classe', 'ClassesController');
+    Route::resource('subject', 'ModulesController');
+     Route::get('attendance', 'AttendancesController@index')->name('attendance.index');
+    Route::get('assign-subject-to-class/{id}', 'ClassesController@assignSubject')->name('class.assign.subject');
+    Route::post('assign-subject-to-class/{id}', 'ClassesController@storeAssignedSubject')->name('store.class.assign.subject');
 
+    Route::resource('attendances', 'AttendancesController');
+    Route::view('date', 'attendances.date');
+    Route::resource('/typeformations', 'TypeformationsController');
 
-
-    });
+});
 
 
 
@@ -304,7 +305,7 @@ Route::group(['prefix' => 'formateur'], function () {
 });
 
 
-Route::view('/menu', 'auth.menu');
+Route::view('/menu', 'auth.menu')->name('dashboard.menu');
 Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
 Route::get('/login/apprenant', 'Auth\LoginController@showApprenantLoginForm');
 Route::get('/login/formateur', 'Auth\LoginController@showFormateurLoginForm');

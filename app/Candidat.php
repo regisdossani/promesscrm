@@ -13,7 +13,7 @@ class Candidat extends Model
     protected $fillable = [
         'provenance',  'nom', 'email', 'tel','sexe',
        'reception_dossier','pj_depotdossier',
-        'region','pj_depotdossier2','promo_id','filiere_id','parrain',
+        'region','pj_depotdossier2','filiere_id','promo_id','parrain',
         'tel_parrain','email_parrain'
     ];
     protected $table = 'candidats';
@@ -29,10 +29,11 @@ class Candidat extends Model
     ];
 
 
-     public function filiere() {
+    public function filiere() {
         return $this->belongsTo(Filiere::class,'filiere_id');
     }
     public function promo() {
         return $this->belongsTo(Promo::class,'promo_id');
     }
+
 }

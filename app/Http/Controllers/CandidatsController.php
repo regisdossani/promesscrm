@@ -10,7 +10,7 @@ use App\Candidat;
 use App\Promo;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use Response;
 
 class CandidatsController extends Controller
 {
@@ -72,24 +72,30 @@ class CandidatsController extends Controller
     {
         $this->validate($request,[
             'nom' => 'required',
-
+            'email'=>'unique:candidats,email',
             'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
-            $requestData = $request->all();
+            $requestData = $request->all();// This will get all the request data.
 
+        if ($request->hasFile('pj_depotdossier2')) {
+            checkDirectory("candidats");
+            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
+        }
 
-            if ($request->hasFile('pj_depotdossier2')) {
-                checkDirectory("candidats");
-                $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
-            }
+        if ($request->hasFile('pj_depotdossier')) {
+            checkDirectory("candidats");
+            $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
+        }
 
-            if ($request->hasFile('pj_depotdossier')) {
-                checkDirectory("candidats");
-                $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
-            }
-
+        $candidatCount = Candidat::where('email', $requestData['email']);
+        if ($candidatCount->count()) {
+            return Response::json(array('msg' => 'true'));
+        } else {
+            Candidat::create($requestData);
+            return Response::json(array('msg' => 'false'));
+        }
 
 
           /*   if ($request->hasFile('test_pj')) {
@@ -98,15 +104,12 @@ class CandidatsController extends Controller
             } */
 
 
-  Candidat::create($requestData);
+    return redirect()->to('/candidats')->with('flash_message', 'Votre dossier a été envoyé !');
 
 
         // session()->flash('msg', 'Successfully done the operation. ');
         // return url()->previous();
-                  return redirect()->to('/candidats')->with('flash_message', 'Votre dossier a été envoyé !');
-                    // return redirect()->route('/');
-
-                }
+    }
 
     /**
      * Display the specified resource.
@@ -122,6 +125,52 @@ class CandidatsController extends Controller
         $promos=Promo::all();
         return view('candidats.show', compact('candidat','filieres','promos'));
     }
+
+
+    public function candidatEmailCheck(Request $request)
+    {
+        $this->validate($request,[
+            'nom' => 'required',
+            'email'=>'unique:candidats,email',
+            'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
+            'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
+
+            ]);
+            $requestData = $request->all();// This will get all the request data.
+
+        if ($request->hasFile('pj_depotdossier2')) {
+            checkDirectory("candidats");
+            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
+        }
+
+        if ($request->hasFile('pj_depotdossier')) {
+            checkDirectory("candidats");
+            $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
+        }
+
+
+        $candidatCount = Candidat::where('email', $requestData['email']);
+        if ($candidatCount->count()) {
+            return Response::json(array('msg' => 'true'));
+        } else {
+            Candidat::create($requestData);
+            // return Response::json(array('msg' => 'false'));
+          /*  $filieres=Filiere::all();
+            $promos=Promo::all();
+            $candidats=Candidat::all(); */
+            return redirect('candidat')->with('msg', 'Candidature envoyé!');
+
+        }
+
+    }
+
+
+
+
+
+
+
+
 
     /**
      * Show the form for editing the specified resource.

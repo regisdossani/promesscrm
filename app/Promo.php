@@ -9,11 +9,10 @@ class Promo extends Model
     protected $fillable = [
         'nom', 'annee'
     ];
-    public function candidat(){
-        return $this->hasOne(Candidat::class);
+
+    public function candidats() {
+        return $this->hasMany('App\Candidat','promo_id');
+
     }
-   /*  public function apprenants(){
-        return $this->belongsTo(Candidat::class);
-    } */
 
 }
