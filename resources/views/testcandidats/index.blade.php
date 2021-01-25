@@ -29,7 +29,7 @@
                                 <a href="{{ url('/testcandidats/create') }}" class="btn btn-success btn-sm" title="Add New testcandidat">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>
-                               
+
                                 <div class="pull-right" style="margin-right:5px">
                                     <form method="GET" action="{{ url('/testcandidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-inline">
@@ -83,13 +83,13 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="{{ url('/testcandidats/' . $item->id) }}" title="View testcandidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
-                                                    <a href="{{ url('/testcandidats/' . $item->id . '/edit') }}" title="Edit testcandidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/testcandidats/' . $item->id) }}" title="Voir test candidat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/testcandidats/' . $item->id . '/edit') }}" title="Modifier test candidat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/testcandidats' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete testcandidat" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer testcandidat" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                     </form>
                                                 </td>
                                             </tr>
