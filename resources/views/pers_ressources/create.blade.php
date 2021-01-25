@@ -46,8 +46,7 @@
                                     <div class="panel-body">
 
                                         <form method="POST" action="{{ url('/pers_ressources') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                                            {{ csrf_field() }}
-
+                                            {{ csrf_field() }} @csrf
                                             @include ('pers_ressources.form', ['formMode' => 'Créer'])
 
                                         </form>
