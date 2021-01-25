@@ -38,10 +38,10 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
+                                           {{--  <tr>
                                                 <th>ID</th>
                                                 <td>{{ $testcandidat->id }}</td>
-                                            </tr>
+                                            </tr> --}}
                                             <tr><th> Candidat </th>
                                                 <td> {{ $testcandidat->candidat->nom }} </td>
                                             </tr>
@@ -54,10 +54,9 @@
                                         </tr>
                                         <tr><th> Résultat </th><td> {{ $testcandidat->resultat }} </td>
                                         </tr>
-                                        <tr><th> Filière </th><td> {{ $testcandidat->filiere->nom }} </td>
-                                        </tr>
+
                                         <tr><th> Test(Pièce jointe) </th>
-                                            <td> {{ $testcandidat->tes_tpj->nom }} </td>
+                                            <td> {{ $testcandidat->tes_tpj}} </td>
                                         </tr>
                                         <tr><th> Commentaire </th><td> {{ $testcandidat->commentaire }} </td>
                                         </tr>
