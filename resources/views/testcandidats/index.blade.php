@@ -25,9 +25,12 @@
 
                             {{-- <div class="card-header">Testcandidats</div> --}}
                             <div class="card-body">
+                                <br/>
                                 <a href="{{ url('/testcandidats/create') }}" class="btn btn-success btn-sm" title="Add New testcandidat">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>
+                                <br/>
+                                <br/>
                                 <div class="pull-right" style="margin-right:5px">
                                     <form method="GET" action="{{ url('/testcandidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-inline">

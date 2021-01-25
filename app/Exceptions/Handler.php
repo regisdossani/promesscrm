@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/formateur');
         }
 
-        return redirect()->guest(route('candidature'));
+        return redirect()->guest(route('frontend.index'));
 
     }
 
