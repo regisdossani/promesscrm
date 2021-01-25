@@ -83,7 +83,7 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::view('/home', 'home');
     Route::get('admin', function()
     {
-         return view('admins.dashboard')->name('admins.dashboard');
+         return view('admins.dashboard');
     });
 });
 
