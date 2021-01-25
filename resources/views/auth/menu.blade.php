@@ -38,7 +38,7 @@
                         </div> --}}
 
                         <form action='{{ url("/admin")}}' method="GET">
-                            @csrf
+                                @csrf
                             <button  class="ggg ">Directeur Promess</button>
                         </form>
 

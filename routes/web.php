@@ -41,7 +41,10 @@ Route::get('about', function ()
     {
         return view('frontend.contact');
     });
-
+    Route::get('admin', function()
+    {
+         return view('admins.dashboard');
+    });
     /** La page d'inscriprion du candidat dans le frontend*/
 Route::get('/candidat', function () {
     $filieres=Filiere::all();
@@ -57,10 +60,7 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
      Route::resource('/partenaires', 'PartenairesController');
      Route::get('partenaires/{id}',function($id){
         return view('partenaires.show');
-    Route::get('admin', function()
-        {
-             return view('admins.dashboard');
-        });
+
 
         Route::resource('/encadreurs', 'EncadreursController');
         Route::resource('/clients', 'ClientsController');

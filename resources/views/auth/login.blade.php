@@ -12,7 +12,7 @@
                     @csrf
                 {{-- <form method="POST" action="{{ route('login') }}"> --}}
                     @else
-                    <form method="POST" action="{{ route('login') }}" >
+                    <form method="POST" action="{{ route('frontend.index') }}" >
                         @csrf
                     @endisset
 
