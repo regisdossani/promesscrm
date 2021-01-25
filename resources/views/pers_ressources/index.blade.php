@@ -21,7 +21,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
@@ -55,7 +55,7 @@
                                         <th>#</th>
                                         <th>Nom</th>
                                         <th>Réference</th>
-                                        <th>Sexe</th>
+                                    <th>Sexe</th>
                                         <th>Tél</th>
                                         <th>Email</th>
                                         <th>Qualite</th>
