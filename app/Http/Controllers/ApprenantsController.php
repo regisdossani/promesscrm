@@ -76,11 +76,13 @@ class ApprenantsController extends Controller
      */
     public function create()
     {
-        $tests=Testcandidat::where('resultat',4);
+        $tests =Testcandidat::where('resultat',4);
         $filieres = Filiere::latest()->get();
         $candidats = Candidat::latest()->get();
         $apprenants = Apprenant::latest()->get();
-        $stages= Stage::all();
+        // $stages= Stage::all();
+        $stages = Stage::get()->pluck('referent', 'referent');
+
         $chantiers= Chantier::all();
         $promos= Promo::latest()->get();
         return view('apprenants.create',compact('chantiers','filieres','candidats','apprenants','stages','promos','tests'));
@@ -100,39 +102,32 @@ class ApprenantsController extends Controller
         $this->validator($request->all())->validate();
          $requestData = $request->all();
 
-
-        $requestData['password'] = Hash::make($request->password);
-        Apprenant::create($requestData);
-
-        if (!empty($_POST)) {
-            if(!empty($_POST['stage'])) {
-                foreach($_POST['stage'] as $value){
-                    $stage=$value;
-                    $apprennant = Apprenant::first();
-                    $apprennant->stages()->attach($stage);
-                }
-            }
-        }
+        // $requestData['password'] = Hash::make($request->password);
 
 
-/*
-      $apprenant= Apprenant::create([
-            'username' => $request->username,
-            'class_id' => $request->classe_id,
+      $student= Apprenant::create([
+            // 'class_id' => $request->classe_id,
+            'candidat_id'=>$request->candidat_id,
+            'filiere_id'=>$request->filiere_id,
+            'promo_id'=>$request->promocandidat_id,
+
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'email' => $request->email,
-            'note_1' => $request->note_1,
-            'note_2' => $request->note_2,
-            'note_3' => $request->note_3,
-            'visite_terain' => $request->visite_terain,
-
+            'reference' => $request->reference,
+            'sexe' => $request->sexe,
+            'tel' => $request->tel,
+            'date_naiss'=>$request->date_naiss,
+            'candidat_id'=>$request->candidat_id,
+            'lieu_naiss' => $request->lieu_naiss,
+            'annee'=>$request->annee,
             'password' =>  Hash::make($request->password),
-            'candidat_id' => $request->candidat_id,
 
         ]);
- */
 
+        $idStage=$request->stage_id;
+        // $student = Apprenant::find(1);
+        $student->stages()->attach($idStage);
 
 
 
@@ -178,8 +173,13 @@ class ApprenantsController extends Controller
         $candidats = Candidat::all();
         $filieres= Filiere::all();
         $promos= Promo::all();
+        $stages = Stage::get()->pluck('referent', 'referent');
+        $search = '4';
+        $tests = Testcandidat::whereHas('candidat', function($q) use($search){
+            $q->where('resultat', '=', $search);
+        })->get();
 
-        return view('apprenants.edit', compact('promos','apprenant','candidats','filieres'));
+        return view('apprenants.edit', compact('promos','apprenant','candidats','filieres','tests','stages'));
     }
 
     /**
@@ -221,7 +221,7 @@ class ApprenantsController extends Controller
 
         $apprennant = Apprenant::findorfail($id);
         Apprenant::destroy($id);
-
+        $apprennant->stages()->detach();
         return redirect('apprenants')->with('flash_message', 'Apprenant deleted!');
     }
 
@@ -240,14 +240,7 @@ class ApprenantsController extends Controller
         ]);
     }
 
-    public function removeStage(Apprenant $apprenant)
-{
-        $stageid = Stage::find(3);
 
-        $apprenant->stages()->detach($stageid);
-
-        return 'Success';
-}
 
 
 

@@ -240,7 +240,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                          {{ __('Déconnexion') }}
                      </a>
                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
+                    
                     </form>
                     </li>
                 </ul>

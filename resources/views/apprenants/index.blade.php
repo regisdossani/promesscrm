@@ -83,8 +83,18 @@
                                                         <td>{{ $item->prenom }}</td>
                                                         <td>{{ $item->sexe}}</td>
                                                         <td>{{ $item->tel}}</td>
-                                                        <td>{{ $item->filiere->nom}}</td>
-                                                        <td>{{ $item->promo->nom}}</td>
+
+                                                        <td>
+                                                         
+                                                            {{ $item->filiere->nom}}
+
+                                                        </td>
+
+                                                        <td>
+                                                            @if ($item->promo)
+                                                            {{ $item->promo->nom}}
+                                                             @endif
+                                                        </td>
                                                        {{-- <td>
                                                              <ul>
                                                                 @foreach($item->stages as $stage)

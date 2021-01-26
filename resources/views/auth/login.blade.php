@@ -8,11 +8,11 @@
             <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}}{{ __('Connexion') }}</div>
             <div class="card-body">
                 @isset($url)
-                <form method="POST" action='{{ url("login/$url") }}' >
-                {{-- <form method="POST" action="{{ route('login') }}"> --}}
+                <form method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
                     @else
-                    <form method="POST" action="{{ route('frontend.index') }}" >
-                    @endisset
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                        @endisset
+                    @csrf
 
                     <div class="form-group">
                             <input type="email" class="ggg form-control @error('email') is-invalid @enderror" id="email" name="email"  placeholde="Votre email "value="{{ old('email') }}" required autocomplete="email" autofocus>

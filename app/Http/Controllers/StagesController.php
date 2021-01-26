@@ -37,9 +37,12 @@ class StagesController extends Controller
      */
     public function create()
     {
-        $stages = Stage::all();
+         $stages = Stage::all();
+        $apprenants = Apprenant::get()->pluck('nom', 'nom');
         $encadreurs = Encadreur::all();
-        return view('stages.create',compact('stages','encadreurs'));
+        // $students = Apprenant::whereHas('stages','>',2)->get();
+
+        return view('stages.create',compact('stages','encadreurs','apprenants'));
     }
 
     /**

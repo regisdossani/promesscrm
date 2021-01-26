@@ -44,6 +44,9 @@
     {!! $errors->first('entreprise', '<p class="help-block">:message</p>') !!}
 </div>
 
+@if(isset($stage->rapport) && !empty($stage->rapport))
+<a href="{{ url('uploads/stage/' . $stage->rapport) }}" ><i class="fa fa-download"></i> {{$stage->rapport}}</a>
+@endif
 <div class="col-md-6 mb-3 {{ $errors->has('rapport') ? 'has-error' : ''}}">
     <label for="rapport" class="control-label">{{ 'Rapport' }}</label>
     <input class="form-control" name="rapport" type="file" id="rapport" value="{{ isset($stage->rapport) ? $stage->rapport : ''}}" >

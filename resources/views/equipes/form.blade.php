@@ -47,17 +47,9 @@
 
         <div class="col-md-6 mb-3{{ $errors->has('role') ? 'has-error' : ''}}">
             <label for="role" class="control-label">{{ 'Rôle' }}</label>
-           {{--  <select class="form-control" name="role" type="text" id="role">
-                <option>-- Choisir un rôle--</option>
-                                        @foreach ($equipeRole as $role)
-                                                @if ($e->name!="superadmin")
-                                                    <option value="{{$role->id}}" {{ isset($teams->role) && $teams->role=$role->id ? 'selected':''}}> {{  $role->name }}</option>
-                                                @endif
-                                        @endforeach
-            </select> --}}
-
-            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}        </div>
-
+            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+              </div>
+        </div>
 
         @if(isset($equipe->cv) && !empty($equipe->cv))
             <a href="{{ url('uploads/equipe/' . $equipe->cv) }}" ><i class="fa fa-download"></i> {{$equipe->cv}}</a>

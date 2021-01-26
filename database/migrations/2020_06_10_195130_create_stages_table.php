@@ -21,7 +21,7 @@ class CreateStagesTable extends Migration
             $table->string('referent')->nullable();
             $table->unsignedBigInteger('encadreur_id');
             $table->string('entreprise')->nullable();
-            $table->string('rapport')->nullable();
+            // $table->string('rapport')->nullable();
             $table->timestamps();
 
 

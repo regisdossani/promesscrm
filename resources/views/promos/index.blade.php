@@ -30,7 +30,6 @@
                                 <a href="{{ url('/promos/create') }}" class="btn btn-success btn-sm" title="Add New promo">
                                     <i class="fa fa-plus" aria-hidden="true"></i>Nouveau
                                 </a>
-                                <div class="pull-right" style="margin-right:5px">
 
                                     <form method="GET" action="{{ url('/promos') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-group">

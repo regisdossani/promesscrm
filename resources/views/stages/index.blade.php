@@ -36,18 +36,19 @@
                                 <a href="{{ url('/stages/create') }}" class="btn btn-success btn-sm" title="Add New stage">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>
+                                <div class="pull-right" style="margin-right:5px">
 
-                                <form method="GET" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
-                                        <span class="input-group-append">
-                                            <button class="btn btn-secondary" type="submit">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </form>
-
+                                    <form method="GET" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                            <span class="input-group-append">
+                                                <button class="btn btn-secondary" type="submit">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
                                 <br/>
                                 <br/>
                                 <div class="table-responsive">
@@ -60,7 +61,7 @@
                                                 <th>Référent </th>
                                                 <th>Entreprise </th>
                                                 <th>Encadreur </th>
-                                                <th>Rapport </th>
+                                             {{-- <th>Rapport </th> --}}
 
                                                 <th>Actions</th>
                                             </tr>
@@ -74,7 +75,7 @@
                                                 <td>{{ $item->referent }}</td>
                                                 <td>{{ $item->entreprise }}</td>
                                                 <td>{{ $item->encadreur }}</td>
-                                                <td>{{ $item->rapport }}</td>
+                                                {{-- <td>{{ $item->rapport }}</td> --}}
 
                                                 <td>
                                                     <a href="{{ url('/stages/' . $item->id) }}" title="Voir ce stage"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>

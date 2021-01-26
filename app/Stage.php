@@ -31,6 +31,6 @@ class Stage extends Model
  */
 public function apprenants()
 {
-   return $this->belongsToMany(Apprenant::class,'apprenant_stage');
+   return $this->belongsToMany(Apprenant::class,'apprenant_stage','stage_id','apprenant_id');
 }
 }

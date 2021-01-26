@@ -12,10 +12,12 @@ use App\Promo;
 class Apprenant extends Authenticatable
 {
     use Notifiable,      HasRoles;
-    protected $guard_name = 'web';
+    // protected $guard_name = 'web';
+    protected $guard = 'apprenant';
 
     protected $table = 'apprenants';
 
+    
     protected $fillable = [
          'email', 'password','annee','visite_terain','lieu_naiss','date_naiss'
        ,'prenom','nom','candidat_id','filiere_id','tel','promo_id','reference','sexe','annee'
@@ -40,7 +42,7 @@ public function chantiers()
 
     public function candidat()
     {
-        return $this->hasOne(Candidat::class);
+        return $this->belongsTo(Candidat::class);
     }
 
 

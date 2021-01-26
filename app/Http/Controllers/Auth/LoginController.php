@@ -34,8 +34,9 @@ class LoginController extends Controller
      * @var string
      */
      protected $redirectTo = RouteServiceProvider::HOME;
-
-
+    // protected $redirectTo = '/admin';
+/*     protected $redirectTo = '/home';
+ */
     /**
      * Create a new controller instance.
      *
@@ -53,11 +54,10 @@ class LoginController extends Controller
     public function showAdminLoginForm()
     {
 
-        return view('auth.login', ['url' => '/login/admin']);
-        /* ->with('userCount',$userCount)
-        ->with('apprenantCount',$apprenantCount)
-        ->with('trainerCount',$trainerCount); */
+        return view('auth.login', ['url' => 'admin']);
+
     }
+
     public function adminLogin(Request $request)
     {
         $this->validate($request, [
@@ -67,7 +67,7 @@ class LoginController extends Controller
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('admins.dashboard');
+            return redirect()->intended('/admin');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
@@ -86,7 +86,7 @@ class LoginController extends Controller
 
         if (Auth::guard('apprenant')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('apprenants.dashbord');
+            return redirect()->intended('/apprenant');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
@@ -105,7 +105,7 @@ class LoginController extends Controller
 
         if (Auth::guard('formateur')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('formateurs.dashbord');
+            return redirect()->intended('/formateur');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
@@ -131,11 +131,8 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('equipe')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            return redirect()->intended('equipes.dashbord');
+            return redirect()->intended('/equipe');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
-
-
-
 }

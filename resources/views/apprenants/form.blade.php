@@ -1,5 +1,5 @@
 
-    <div class="row">
+
         <div class="col-md-6  {{ $errors->has('sexe') ? 'has-error' : ''}}">
             <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
             <div class="select-list">
@@ -61,12 +61,12 @@
             {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
         </div>
 
-    </div>
+
 
 
 @role('superadmin')
 
-    <div class="row">
+
       <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
            <label for="candidat_id" class="control-label">{{ 'Candidat Apprenant' }}</label>
             <select class="form-control" name="candidat_id"  id="candidat_id" >
@@ -97,6 +97,10 @@
                 @endforeach
             </select>
         </div>
+        <div class="col-md-6 mb-3{{ $errors->has('stage') ? 'has-error' : ''}}">
+            <label for="role" class="control-label">{{ 'Stage' }}</label>
+            {!! Form::select('stages[]', $stages,[], array('class' => 'form-control','multiple')) !!}
+        </div>
 
 
 {{--
@@ -116,9 +120,9 @@
             {!! $errors->first('note_3', '<p class="help-block">:message</p>') !!}
         </div> --}}
 
-    </div>
 
-        <div class="row">
+
+
             <div class="col-md-6 mb-3 {{ $errors->has('visite_terain') ? 'has-error' : ''}}">
                 <label for="visite_terain" class="control-label">{{ 'Visite Terain ' }}</label>
                 <input class="form-control" name="tel" type="text" id="visite_terain" value="{{ isset($apprenant->visite_terain) ? $apprenant->visite_terain : ''}}" >
@@ -133,11 +137,6 @@
                 <input class="form-control" name="annee" type="text" id="annee" value="{{ isset($apprenant->annee) ? $apprenant->annee : ''}}" >
                 {!! $errors->first('annee', '<p class="help-block">:message</p>') !!}
             </div>
-
-        </div>
-
-        </div>
-
 @endrole
 
 

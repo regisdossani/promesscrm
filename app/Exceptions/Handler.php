@@ -7,7 +7,8 @@ use Throwable;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Auth;
-
+use Response;
+use Request;
 
 class Handler extends ExceptionHandler
 {
@@ -30,7 +31,26 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/formateur');
         }
 
-        return redirect()->guest(route('dashboard.menu'));
+       return redirect()->guest(route('login/menu'));
+       /* if ($guard == "admin" && Auth::guard($guard)->check()) {
+        return redirect('/admin');
+    }
+    if ($guard == "apprenant" && Auth::guard($guard)->check()) {
+        return redirect('/apprenant');
+    }
+
+    if ($guard == "formateur" && Auth::guard($guard)->check()) {
+        return redirect('/formateur');
+    }
+    if ($guard == "equipe" && Auth::guard($guard)->check()) {
+        return redirect('/equipe');
+    }
+
+    if (Auth::guard($guard)->check()) {
+        return redirect('/home');
+    }
+
+    return $next($request); */
 
     }
 
@@ -75,25 +95,9 @@ class Handler extends ExceptionHandler
      *
      * @throws \Throwable
      */
-  /*   public function render($request, Throwable $exception)
+    public function render($request, Throwable $exception)
     {
-        if($e instanceof QueryException){
-            $errorCode = $e->errorInfo[1];
-            switch ($errorCode) {
-                case 1062://code dublicate entry
-                    return response([
-                        'errors'=>'Duplicate Entry'
-                    ],Response::HTTP_NOT_FOUND);
-                    break;
-                case 1364:// you can handel any auther error
-                    return response([
-                        'errors'=>$e->getMessage()
-                    ],Response::HTTP_NOT_FOUND);
-                    break;
-            }
-         }
-
+       
         return parent::render($request, $exception);
-    } */
-
+    }
 }
