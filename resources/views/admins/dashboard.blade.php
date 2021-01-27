@@ -373,7 +373,7 @@
             <div class="clearfix"> </div>
         </div>
     </div>
-    <div class="col-md-3 market-update-gd">
+    {{-- <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <a href="{{url('/stagiaires')}}">
 
@@ -388,7 +388,7 @@
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div>
+    </div> --}}
 
 
    <div class="clearfix"> </div>
@@ -489,7 +489,7 @@
         </div>
     </div> --}}
 
-   <div class="clearfix"> </div>
+   {{-- <div class="clearfix"> </div> --}}
 
 </div>
 
