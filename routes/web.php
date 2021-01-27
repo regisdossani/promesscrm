@@ -127,6 +127,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::get('/partenaires','PartenairesController@index');
     Route::resource('/equipes', 'EquipesController');
     Route::resource('/filieres', 'FilieresController');
+    Route::resource('/testcandidats', 'TestcandidatsController');
 
     });
 

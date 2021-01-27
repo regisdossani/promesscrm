@@ -54,7 +54,7 @@ $admin1->assignRole('superadmin');
         'email' => 'apprenant1@email.com',
     ]); */
 
-    $apprenant->assignRole('Apprenant');
+    // $apprenant->assignRole('Apprenant');
 
 
     $formateur=  Formateur::create([
