@@ -36,7 +36,7 @@ class Candidat extends Model
         return $this->belongsTo(Promo::class,'promo_id');
     }
 
-    public function assignedTest() {
+    public function testcandidat() {
         return $this->hasOne(Testcandidat::class, 'candidat_id', 'id');
     }
 }

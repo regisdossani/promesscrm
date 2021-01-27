@@ -33,9 +33,9 @@
                                 <br/>
                                 @role('superadmin')
                                     <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                   {{--  <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
+                                    <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
-                                    </a> --}}
+                                    </a>
                                 @endrole
                                 @role('Resp-pedagogique')
                                     <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>

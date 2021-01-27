@@ -1,6 +1,6 @@
 
 
-        <div class="col-md-6  {{ $errors->has('sexe') ? 'has-error' : ''}}">
+        <div class="col-md-2  {{ $errors->has('sexe') ? 'has-error' : ''}}">
             <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
             <div class="select-list">
                 <select name="sexe" id="sexe" class="form-control">
@@ -12,14 +12,14 @@
             </div>
     </div>
 
-        <div class="col-md-6 mb-3 {{ $errors->has('prenom') ? 'has-error' : ''}}">
+        <div class="col-md-5 mb-3 {{ $errors->has('prenom') ? 'has-error' : ''}}">
             <label for="prenom" class="control-label">{{ 'Prénom' }}</label>
                 <input class="form-control" name="prenom" type="text" id="prenom"  value="{{ isset($apprenant->prenom) ? $apprenant->prenom : ''}}" >
                 {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
         </div>
 
 
-        <div class="col-md-6 mb-3 {{ $errors->has('nom') ? 'has-error' : ''}}">
+        <div class="col-md-5 mb-3 {{ $errors->has('nom') ? 'has-error' : ''}}">
             <label for="nom" class="control-label">{{ 'Nom' }}</label>
             <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($apprenant->nom) ? $apprenant->nom : ''}}" >
                {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
@@ -64,21 +64,19 @@
 
 
 
-@role('superadmin')
+    @hasanyrole('Resp-Pedagogique|superadmin')
 
 
       <div class="col-md-6 mb-3 {{ $errors->has('candidat_id') ? 'has-error' : ''}}">
            <label for="candidat_id" class="control-label">{{ 'Candidat Apprenant' }}</label>
             <select class="form-control" name="candidat_id"  id="candidat_id" >
-                <option>-- Choisir un résultat --</option>
-                @foreach($tests as $test)
-                    @if ($test->resultat=='4')
-                        <option value="{{ $candidat->id }}" {{ isset($test->candidat_id) && $test->candidat_id == $candidat->id ? 'selected' : ''}}>{{ $candidat->prenom}}{{$candidat->nom}}</option>
-                    @endif
+                <option>-- Choisir un Candidat --</option>
+                @foreach($candidats as $candidat)
+                        <option value="{{ $candidat->id }}" {{ isset($apprenants->candidat_id) && $apprenants->candidat_id == $candidat->id ? 'selected' : ''}}>{{ $candidat->prenom}}{{$candidat->nom}}</option>
                 @endforeach
             </select>
          </div>
-         <div class="col-md-6 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+         <div class="col-md-3 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
             <label for="filiere_id" class="control-label">{{ 'Choix de la filiere' }}</label>
             <select class="form-control" name="filiere_id"  id="filiere_id" >
                 <option>-- Choisir une filière --</option>
@@ -88,7 +86,7 @@
             </select>
         </div>
 
-        <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
+        <div class="col-md-3 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
             <label for="promo_id" class="control-label">{{ 'Choix de la Promo' }}</label>
             <select class="form-control" name="promo_id"  id="promo_id" >
                 <option>-- Choisir une promo --</option>
@@ -128,9 +126,7 @@
                 <input class="form-control" name="tel" type="text" id="visite_terain" value="{{ isset($apprenant->visite_terain) ? $apprenant->visite_terain : ''}}" >
                 {!! $errors->first('visite_terain', '<p class="help-block">:message</p>') !!}
 
-                {{--  <label><input name="visite_terain[]" type="checkbox" value="Visite Terain 1" > Visite Terain 1</label>
-                    <label><input name="visite_terain[]" type="checkbox" value="Visite Terain 2" > Visite Terain 2</label>
-                    <label><input name="visite_terain[]" type="checkbox" value="Visite Terain 3" > Visite Terain 3</label> --}}
+
             </div>
             <div class="col-md-6 mb-3 {{ $errors->has('annee') ? 'has-error' : ''}}">
                 <label for="annee" class="control-label">{{ 'Année ' }}</label>
