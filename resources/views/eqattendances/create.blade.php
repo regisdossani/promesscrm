@@ -30,7 +30,7 @@
                                 </div>
                             </header>
                             <div class="panel-body">
-                                <a href="{{ url('/eqattendances') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                <a href="{{ url('/eqattendance') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 <br />
                                 <br />
 
