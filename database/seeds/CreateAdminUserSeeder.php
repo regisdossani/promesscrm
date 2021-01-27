@@ -46,13 +46,13 @@ $admin1->assignRole('superadmin');
     ]);
 
     $directeur->assignRole('superadmin');
-
+/*
     $apprenant=  Apprenant::create([
         'nom' => 'apprenant1',
         'password' => bcrypt('passer'),
         'candidat_id'=> 1,
         'email' => 'apprenant1@email.com',
-    ]);
+    ]); */
 
     $apprenant->assignRole('Apprenant');
 

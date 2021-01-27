@@ -8,7 +8,7 @@ class Stage extends Model
 {
     protected $fillable = [
         'encadreur_id', 'date',
-        'duree','referent','entreprise','rapport',
+        'duree','referent','entreprise'
     ];
     // public function professionnel()
     // {

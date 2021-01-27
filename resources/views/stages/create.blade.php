@@ -21,7 +21,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                             <section class="panel">
                                 {{-- <div class="card-header">Créer un stage</div> --}}
                                 <header class="panel-heading">
@@ -46,9 +46,7 @@
                                         {{ csrf_field() }}
 
                                         @include ('stages.form', ['formMode' => 'Créer'])
-
                                     </form>
-
                                 </div>
                             </section>
                     </div>

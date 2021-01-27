@@ -21,6 +21,11 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="card">
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    AFFICHER UN STAGE
+                                </div>
+                            </header>
                             <div class="card-header">stage {{ $stage->id }}</div>
                             <div class="card-body">
 
@@ -38,14 +43,25 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
-                                                <th>ID</th><td>{{ $stage->id }}</td>
+                                            {{-- <tr>
+                                                <th>ID</th>
+                                                <td>{{ $stage->id }}</td>
+                                            </tr> --}}
+                                            <tr><th> Date </th>
+                                                <td> {{ $stage->date }} </td>
                                             </tr>
-                                            <tr><th> Titre </th><td> {{ $stage->titre }} </td></tr><tr><th> Stage Entreprise </th><td> {{ $stage->stage_entreprise }} </td></tr>
-                                            <tr><th> Professionel Id </th>
-                                                @foreach($profs as $prof)
-                                                <td  {{ isset($stage->professionnel_id) && $stage->professionnel_id == $prof->id ? 'selected' : ''}}>{{ $prof->nom}}</td>
-                                            @endforeach
+                                            <tr><th> Durée(J) </th>
+                                                <td> {{ $stage->duree }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>  Entreprise </th>
+                                                <td> {{ $stage->entreprise }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th> Encadreur  </th>
+                                                @if ($stage->encadreur)
+                                                <td>{{$stage->encadreur->noms}}</td>
+                                                @endif
                                             </tr>
                                         </tbody>
                                     </table>

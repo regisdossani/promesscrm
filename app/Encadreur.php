@@ -9,16 +9,12 @@ class Encadreur extends Model
     protected $table = 'encadreurs';
 
     protected $fillable = [
-        'professionnel_id',
-        'formateur_id'
+        'formateur_id','noms'
     ];
 
     public $timestamps = true;
 
-    public function professionnel()
-    {
-        return $this->belongsTo(Professionnel::class,'professionnel_id');
-    }
+    
     public function formateur()
     {
         return $this->belongsTo(Formateur::class,'formateur_id');

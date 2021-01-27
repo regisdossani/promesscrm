@@ -85,9 +85,9 @@
                                                         <td>{{ $item->tel}}</td>
 
                                                         <td>
-                                                         
+                                                            @if ($item->filiere)
                                                             {{ $item->filiere->nom}}
-
+                                                            @endif
                                                         </td>
 
                                                         <td>

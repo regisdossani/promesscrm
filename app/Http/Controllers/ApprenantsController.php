@@ -61,9 +61,9 @@ class ApprenantsController extends Controller
         $perPage = 5;
 
         if (!empty($keyword)) {
-            $apprenants = Apprenant::latest()->paginate($perPage);
+            $apprenants = Apprenant::with('filiere')->latest()->paginate($perPage);
         } else {
-            $apprenants = Apprenant::latest()->paginate($perPage);
+            $apprenants = Apprenant::with('filiere')->latest()->paginate($perPage);
         }
 
         return view('apprenants.index', compact('apprenants','tests'));
@@ -230,6 +230,7 @@ class ApprenantsController extends Controller
     {
         return Validator::make($data,
         [
+            'candidat_id' => ['required', 'unsignedBigInteger', 'max:255'],
 
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],

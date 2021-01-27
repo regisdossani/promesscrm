@@ -91,24 +91,15 @@ class CandidatsController extends Controller
 
         $candidatCount = Candidat::where('email', $requestData['email']);
         if ($candidatCount->count()) {
-            return Response::json(array('msg' => 'true'));
+            // return Response::json(array('msg' => 'true'));
         } else {
             Candidat::create($requestData);
-            return Response::json(array('msg' => 'false'));
+            // return Response::json(array('msg' => 'false'));
         }
-
-
-          /*   if ($request->hasFile('test_pj')) {
-                checkDirectory("candidats");
-                $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-            } */
 
 
     return redirect()->to('/candidats')->with('flash_message', 'Votre dossier a été envoyé !');
 
-
-        // session()->flash('msg', 'Successfully done the operation. ');
-        // return url()->previous();
     }
 
     /**

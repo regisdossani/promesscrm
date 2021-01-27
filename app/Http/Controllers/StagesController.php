@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Encadreur;
-
+use App\Apprenant;
 use App\Stage;
 use Illuminate\Http\Request;
 
@@ -37,8 +37,8 @@ class StagesController extends Controller
      */
     public function create()
     {
-         $stages = Stage::all();
-        $apprenants = Apprenant::get()->pluck('nom', 'nom');
+         $stages = Stage::with('encadreur');
+        $apprenants = Apprenant::all();
         $encadreurs = Encadreur::all();
         // $students = Apprenant::whereHas('stages','>',2)->get();
 

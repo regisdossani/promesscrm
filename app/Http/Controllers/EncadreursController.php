@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-
+use App\Formateur;
 use App\Encadreur;
 use Illuminate\Http\Request;
 
@@ -18,7 +18,7 @@ class EncadreursController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 5;
 
         if (!empty($keyword)) {
             $encadreur = Encadreur::latest()->paginate($perPage);
@@ -36,7 +36,10 @@ class EncadreursController extends Controller
      */
     public function create()
     {
-        return view('encadreurs.create');
+        $encadreurs=Encadreur::all();
+        $teachers=Formateur::all();
+
+        return view('encadreurs.create',compact('encadreurs','teachers'));
     }
 
     /**
@@ -80,8 +83,9 @@ class EncadreursController extends Controller
     public function edit($id)
     {
         $encadreur = Encadreur::findOrFail($id);
+        $teachers=Formateur::all();
 
-        return view('encadreurs.edit', compact('encadreur'));
+        return view('encadreurs.edit', compact('encadreur','teachers'));
     }
 
     /**

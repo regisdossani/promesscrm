@@ -44,7 +44,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Professionel</th>
+                                                <th>Noms</th>
                                                 <th>Formateur</th>
                                                 <th>Actions</th>
                                             </tr>
@@ -53,15 +53,19 @@
                                         @foreach($encadreurs as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->professionel_id }}</td><td>{{ $item->formateur_id }}</td>
+                                                <td>{{ $item->noms }}</td>
+                                                <td>@if ($item->formateur)
+                                                    {{ $item->formateur->nom }}
+                                                    @endif
+                                                </td>
                                                 <td>
-                                                    <a href="{{ url('/encadreurs/' . $item->id) }}" title="View encadreur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                                    <a href="{{ url('/encadreurs/' . $item->id . '/edit') }}" title="Edit encadreur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                    <a href="{{ url('/encadreurs/' . $item->id) }}" title="Voir cet encadreur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                    <a href="{{ url('/encadreurs/' . $item->id . '/edit') }}" title="Modifier cet encadreur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/encadreurs' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete encadreur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer cet encadreur" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                     </form>
                                                 </td>
                                             </tr>
