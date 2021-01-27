@@ -31,7 +31,7 @@ class Handler extends ExceptionHandler
             return redirect()->guest('/login/formateur');
         }
 
-       return redirect()->guest(route('login/menu'));
+       return redirect()->guest(route('auth.menu'));
        /* if ($guard == "admin" && Auth::guard($guard)->check()) {
         return redirect('/admin');
     }
@@ -97,7 +97,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-       
+
         return parent::render($request, $exception);
     }
 }

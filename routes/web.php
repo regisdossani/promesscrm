@@ -40,11 +40,11 @@ Route::get('about', function ()
     {
         return view('frontend.contact');
     });
-
+    Route::view('/menu', 'auth.menu')->name('auth.menu');
 Auth::routes();
 
 
-Route::view('/menu', 'auth.menu');
+
 Route::get('/login/admin', [LoginController::class, 'showAdminLoginForm']);
 Route::get('/login/apprenant', [LoginController::class,'showApprenantLoginForm']);
 Route::get('/login/formateur', [LoginController::class,'showFormateurLoginForm']);

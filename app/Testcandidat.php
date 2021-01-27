@@ -11,9 +11,7 @@ class Testcandidat extends Model
         'commentaire','candidat_id'
     ];
     public function candidat(){
-        return $this->belongsTo(Candidat::class,'candidat_id');
+        return $this->belongsTo(Candidat::class,'candidat_id','id');
     }
-    public function filiere(){
-        return $this->belongsTo(Filiere::class,'filiere_id');
-    }
+
 }

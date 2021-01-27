@@ -34,30 +34,36 @@ class ApprenantsController extends Controller
     //
        $search = '4';
        $apprenant=new Apprenant();
-       $tests = Testcandidat::whereHas('candidat', function($q) use($search){
+       /* $tests = Testcandidat::whereHas('candidat', function($q) use($search){
            $q->where('resultat', '=', $search);
-       })->get();
+       })->get(); */
 
-        foreach ($tests as $key => $value) {
+       $tests = Testcandidat::select('id', 'resultat', 'candidat_id')
+       ->where('resultat','=', '4')
+       ->first();
 
-            $checker = Apprenant::where('id',$value->candidat_id)->doesntExist();
-            $candidat = Candidat::findOrFail($value->candidat_id);
+            if($tests){
+                    foreach ($tests as $key => $value) {
 
-            if (!$checker){
-                $apprenant->candidat_id=$candidat->id;
-                $apprenant->nom=$candidat->nom;
-                $apprenant->tel=$candidat->tel;
-                $apprenant->sexe=$candidat->sexe;
-                $apprenant->email=$candidat->email;
-                $apprenant->filiere_id=$candidat->filiere_id;
-                $apprenant->promo_id=$candidat->promo_id;
-                $apprenant->save();
-            }
+                            // $checker = Apprenant::where('id','=',$value->candidat_id)->doesntExist();
+                            // $candidat = Candidat::find($value->candidat_id);
+                                $apprenant->candidat_id=$value->candidat->id;
+                                $apprenant->nom=$value->candidat->nom;
+                                $apprenant->tel=$value->candidat->tel;
+                                $apprenant->sexe=$value->candidat->sexe;
+                                $apprenant->email=$value->candidat->email;
+                                $apprenant->filiere_id=$value->candidat->filiere_id;
+                                $apprenant->promo_id=$value->candidat->promo_id;
+                                $apprenant->save();
 
-        }
+                        }
+                    }
 
 
-        $keyword = $request->get('search');
+
+
+
+                        $keyword = $request->get('search');
         $perPage = 5;
 
         if (!empty($keyword)) {
@@ -66,7 +72,7 @@ class ApprenantsController extends Controller
             $apprenants = Apprenant::with('filiere')->latest()->paginate($perPage);
         }
 
-        return view('apprenants.index', compact('apprenants','tests'));
+        return view('apprenants.index', compact('apprenants'));
     }
 
     /**
