@@ -36,7 +36,6 @@
                             </a>
 
                             <div class="pull-right" style="margin-right:5px">
-
                                 <form method="GET" action="{{ url('/attendances') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
@@ -47,7 +46,7 @@
                                         </span>
                                     </div>
                                 </form>
-
+                            </div>
                                 <br />
                                 <br />
                                 <div class="table-responsive">
