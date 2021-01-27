@@ -54,7 +54,7 @@
 
 
 
-                                                    <form method="POST" action="{{ url('/admin/apprenants' . '/' . $apprenant->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                    <form method="POST" action="{{ url('/apprenants' . '/' . $apprenant->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         @if (Auth::guard("admin")->check())

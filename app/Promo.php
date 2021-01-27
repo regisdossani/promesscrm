@@ -10,9 +10,12 @@ class Promo extends Model
         'nom', 'annee'
     ];
 
-    public function candidats() {
-        return $this->hasMany('App\Candidat','promo_id');
-
+    public function candidats()
+    {
+        return $this->hasMany('App\Candidat','filiere_id','id');
     }
-
+    public function apprenants()
+    {
+        return $this->hasMany('App\Apprenant','filiere_id','id');
+    }
 }

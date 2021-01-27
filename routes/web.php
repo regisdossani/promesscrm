@@ -129,6 +129,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/filieres', 'FilieresController');
     Route::resource('/testcandidats', 'TestcandidatsController');
     Route::resource('/promos', 'PromosController');
+    Route::resource('/apprenants', 'ApprenantsController');
 
     });
 
@@ -136,7 +137,6 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
 Route::group(['middleware'=>'auth:apprenant,admin'],
 function() {
     Route::get('candidats/{id}', [ 'as'=>'candidat.edit', 'uses' => 'CandidatsController@edit']);
-    Route::resource('/apprenants', 'ApprenantsController');
 
 });
 

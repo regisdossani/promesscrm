@@ -10,10 +10,14 @@ class Filiere extends Model
         'nom', 'annee'
     ];
 
-/*
+
  public function candidats()
 {
-    return $this->hasMany('App\Candidat');
-} */
+    return $this->hasMany('App\Candidat','filiere_id','id');
+}
+public function apprenants()
+{
+    return $this->hasMany('App\Apprenant','filiere_id','id');
+}
 
 }
