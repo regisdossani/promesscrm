@@ -16,11 +16,11 @@ class CreateEntreprisesTable extends Migration
         Schema::create('entreprises', function (Blueprint $table) {
             $table->id();
             $table->string('raison_sociale')->nullable();
-            $table->string('reference')->nullable();
+            $table->string('reference')->unique()->nullable();
             $table->string('activite_entreprise')->nullable();
             $table->string('responsable')->nullable();
             $table->string('contact_tel')->nullable();
-            $table->string('contact_email')->nullable();
+            $table->string('contact_email')->unique()->nullable();
 
             $table->timestamps();
         });

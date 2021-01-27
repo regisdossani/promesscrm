@@ -475,21 +475,21 @@
           <div class="clearfix"> </div>
         </div>
     </div>
-    {{-- <div class="col-md-3 market-update-gd">
+     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <a href='{{ url('generation') }}' >
-                    <span>Séquences</span>
+                <a href='{{ url('entreprises') }}' >
+                    <span>Entreprises Partenaires</span>
                 </a>
             </div>
           <div class="clearfix"> </div>
         </div>
-    </div> --}}
+    </div>
 
-   {{-- <div class="clearfix"> </div> --}}
+    <div class="clearfix"> </div>
 
 </div>
 

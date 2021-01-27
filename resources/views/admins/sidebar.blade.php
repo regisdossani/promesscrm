@@ -51,7 +51,7 @@
         <ul class="sub">
             <li><a href="{{ url('/equipes') }}">Gestion des membres</a></li>
 
-            <li><a href="{{ url('/eqattendances') }}">Suivis horaires</a></li>
+            <li><a href="{{ url('/eqattendance') }}">Suivis horaires</a></li>
         </ul>
     </li>
 

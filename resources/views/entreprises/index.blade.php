@@ -32,15 +32,14 @@
                         </header>
                         <div class="card-header">Liste des Entreprises</div>
                         <div class="panel-body">
-                            <br/>
 
                             <a href="{{ url('/entreprises/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                             </a>
                             <div class="pull-right" style="margin-right:5px">
 
                                 <form method="GET" action="{{ url('/entreprises') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                    <div class="input-group">
+                                    <div class="form-group">
                                         <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                         <span class="form-group-append">
                                             <button class="btn btn-secondary" type="submit">
@@ -65,13 +64,13 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->raison_sociale }}</td><td>{{ $item->reference }}</td><td>{{ $item->activite_entreprise }}</td>
                                                 <td>
-                                                    <a href="{{ url('/entreprises/' . $item->id) }}" title="View entreprise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                                    <a href="{{ url('/entreprises/' . $item->id . '/edit') }}" title="Edit entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                    <a href="{{ url('/entreprises/' . $item->id) }}" title="Voir cette entreprise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/entreprises/' . $item->id . '/edit') }}" title="Modufier cette entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/entreprises' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete entreprise" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer cette entreprise" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>

@@ -26,10 +26,10 @@
                             </header>
                             <div class="card-header">Enrégistrer une Entreprise</div>
                             <div class="panel-body">
-                                <br/>
-                                    <a href="{{ url('/entreprises') }}" title="Précé"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
+                              
+                                    <a href="{{ url('/entreprises') }}" title="Précé"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <br />
-                                    <br />
+
 
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
