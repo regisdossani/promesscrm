@@ -32,6 +32,7 @@
                                     <a href="{{ url('/stagiaires/create') }}" class="btn btn-success btn-sm" title="Add New stagiaire">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Add New
                                     </a>
+                                    <div class="pull-right" style="margin-right:5px">
 
                                     <form method="GET" action="{{ url('/stagiaires') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="input-group">
@@ -43,7 +44,7 @@
                                             </span>
                                         </div>
                                     </form>
-
+                                    </div>
                                     <br/>
                                     <br/>
                                     <div class="table-responsive">

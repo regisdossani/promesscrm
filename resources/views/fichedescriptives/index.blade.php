@@ -12,6 +12,7 @@
                         <a href="{{ url('/fiches/create') }}" class="btn btn-success btn-sm" title="Add New fichedescriptive">
                             <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
                         </a>
+                        <div class="pull-right" style="margin-right:5px">
 
                         <form method="GET" action="{{ url('/fiches') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
