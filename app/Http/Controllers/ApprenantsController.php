@@ -32,36 +32,11 @@ class ApprenantsController extends Controller
     {
 
     //
-       $search = '4';
        $apprenant=new Apprenant();
        $candidats=Candidat::with(['testcandidat' => function($testcandidat) {
         $testcandidat->where('resultat','=','4');
         }])->get();
 
-      /*  $tests = Testcandidat::select('id', 'resultat', 'candidat_id')
-       ->where('resultat','=', '4')
-       ->first(); */
-
-            /*  if($tests){
-                    foreach ($tests as $key => $value) {
-                       $candidat= $value;
-
-                                    // $checker = Apprenant::where('id','=',$value->candidat_id)->doesntExist();
-                                    // $candidat = Candidat::find($value->candidat_id);
-                                        $apprenant->candidat_id=$candidat['candidat_id'];
-                                        $apprenant->nom=$candidat['nom'];
-                                        $apprenant->tel=$candidat->tel;
-                                        $apprenant->sexe=$candidat->sexe;
-                                        $apprenant->email=$candidat->email;
-                                        $apprenant->filiere_id=$candidat->filiere_id;
-                                        $apprenant->promo_id=$candidat->promo_id;
-                                        $apprenant->save();
-
-
-                    }
-                    }
-
- */
 
 
 
@@ -69,9 +44,9 @@ class ApprenantsController extends Controller
         $perPage = 5;
 
         if (!empty($keyword)) {
-            $apprenants = Apprenant::with('filiere')->latest()->paginate($perPage);
+            $apprenants = Apprenant::latest()->paginate($perPage);
         } else {
-            $apprenants = Apprenant::with('filiere')->latest()->paginate($perPage);
+            $apprenants = Apprenant::latest()->paginate($perPage);
         }
 
         return view('apprenants.index', compact('apprenants','candidats'));
@@ -137,9 +112,6 @@ class ApprenantsController extends Controller
         // $student = Apprenant::find(1);
         $student->stages()->attach($idStage);
 
-
-
-
          return redirect('apprenants')->with('flash_message', 'Apprenant crée avec succès');
     }
 
@@ -178,16 +150,14 @@ class ApprenantsController extends Controller
     public function edit($id)
     {
         $apprenant = Apprenant::findOrFail($id);
-        $candidats = Candidat::all();
         $filieres= Filiere::all();
         $promos= Promo::all();
         $stages = Stage::get()->pluck('referent', 'referent');
-        $search = '4';
-        $tests = Testcandidat::whereHas('candidat', function($q) use($search){
-            $q->where('resultat', '=', $search);
-        })->get();
+        $candidats=Candidat::with(['testcandidat' => function($testcandidat) {
+            $testcandidat->where('resultat','=','4');
+            }])->get();
 
-        return view('apprenants.edit', compact('promos','apprenant','candidats','filieres','tests','stages'));
+        return view('apprenants.edit', compact('promos','apprenant','candidats','filieres','stages'));
     }
 
     /**
@@ -211,9 +181,6 @@ class ApprenantsController extends Controller
 
         $apprenant = Apprenant::findOrFail($id);
         $apprenant->update($requestData);
-
-
-
         return redirect('apprenants')->with('flash_message', 'Apprenant mis à jour!');
     }
 
@@ -239,7 +206,6 @@ class ApprenantsController extends Controller
         return Validator::make($data,
         [
             'candidat_id' => ['required', 'Integer', 'max:255'],
-
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
             'tel' => ['required', 'string', 'max:255'],
@@ -248,9 +214,5 @@ class ApprenantsController extends Controller
 
         ]);
     }
-
-
-
-
 
 }

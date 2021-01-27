@@ -114,11 +114,32 @@ $admin1->assignRole('superadmin');
     ]);
     $membre6->assignRole('Resp-Fond-PVSYST');
 
-
-     Promo::create([
-        'nom' => 'FCIG1',
+    Promo::create([
+        'nom' => 'FIG1',
+        'annee'=>'2018-19',
     ]);
 
+
+     Promo::create([
+        'nom' => 'FCG1',
+        'annee'=>'2019',
+    ]);
+
+    Promo::create([
+        'nom' => 'FIG2',
+        'annee'=>'2019-20'
+    ]);
+
+    Promo::create([
+        'nom' => 'FIG3',
+        'annee'=>'2020'
+    ]);
+
+
+    Promo::create([
+        'nom' => 'FCIG1',
+        'annee'=>'2020'
+    ]);
 
     Filiere::create([
         'nom' => 'FI',
