@@ -194,12 +194,13 @@
                                                     </tr>
 
 
-                                                            <tr>
-                                                                <th colspan="6">STRUCTURES DE L'ADMINISTRATION</th>
-                                                                @foreach($partenaires as $item)
-
-                                                                    @if ($item->type_partenariat=='STRUCTURES ADMINISTRATION' )
-
+                                                    <tr>
+                                                        <th colspan="6">STRUCTURES DE L'ADMINISTRATION</th>
+                                                        @foreach($partenaires as $item)
+                                                                
+                                                                
+                                                                @if ($item->type_partenariat=='STRUCTURES ADMINISTRATION' )
+                                                                    <tr>
                                                                             <td>{{ $loop->iteration }}</td>
                                                                             <td>{{ $item->raison_social }}</td>
                                                                             <td>{{ $item->type_organisation }}</td>
@@ -217,25 +218,25 @@
                                                                                     <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                                                 </form>
                                                                             </td>
-                                                                    @endif
-                                                                @endforeach
+                                                                    </tr>
+                                                                @endif
+                                                        @endforeach
 
-                                                            </tr>
+                                                    </tr>
 
 
-                                                            <tr>
-                                                                <th colspan="6">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</th>
-                                                                    @foreach($partenaires as $item)
+                                                    <tr>
+                                                        <th colspan="6">STRUCTURES  D’ENSEIGNEMENT  ET DE FORMATION</th>
+                                                            @foreach($partenaires as $item)
 
-                                                                        @if ($item->type_partenariat=="STRUCTURES ENSEIGNEMENT ET DE FORMATION" )
-                                                                            <tr>
-                                                                                <td>{{ $item->raison_social }}</td>
-                                                                            </tr>
-                                                                            {{-- <td>{{ $loop->iteration }}</td> --}}
-                                                                            <tr>
-                                                                                <td>{{ $item->type_organisation }}</td>
+                                                                @if ($item->type_partenariat=="STRUCTURES ENSEIGNEMENT ET DE FORMATION" )
+                                                                     <tr>
+                                                                            <td>{{ $item->raison_social }}</td>
+                                                                            
+                                                                          
+                                                                            <td>{{ $item->type_organisation }}</td>
 
-                                                                            </tr>
+                                                                            
                                                                             <td>{{ $item->nom_referent }}</td>
                                                                             <td>{{ $item->email }}</td>
                                                                             <td>{{ $item->tel }}</td>
@@ -249,11 +250,11 @@
                                                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                                                 </form>
                                                                             </td>
-
-                                                                        @endif
-                                                                    @endforeach
-                                                            </tr>
-                                                    </tbody>
+                                                                     </tr>
+                                                                @endif
+                                                            @endforeach
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                             <div class="pagination-wrapper"> {!! $partenaires->appends(['search' => Request::get('search')])->render() !!} </div>
                                         </div>
