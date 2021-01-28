@@ -27,8 +27,8 @@
 <div class="col-md-6 mb-3 {{ $errors->has('etat') ? 'has-error' : ''}}">
     <label for="etat" class="control-label">{{ 'Etat' }}</label>
     <select class="form-control" name="etat"  id="etat" >
-        <option>-- --Choisissez un état--</option>
-            <option value="1">A</option>
+        <option value="">-- --Choisissez un état--</option>
+        <option value="1">A</option>
     </select>
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('valeur') ? 'has-error' : ''}}">
