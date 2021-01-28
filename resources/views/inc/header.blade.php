@@ -106,11 +106,12 @@
                     <a data-toggle="dropdown" >
                         {{-- <img alt="" src="{{Auth::guard('equipe')->user()->avatar}}"> --}}
                         <span class="username">
-                                {{Auth::guard('equipe')->user()->username}}
+                                {{Auth::guard('equipe')->user()->nom_prenom}}
                         </span>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="{{ url('/equipes' . '/' . Auth::guard('equipe')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="{{ url('/equipes' . '/' . Auth::guard('equipe')->user()->id) }}">
+                            <i class=" fa fa-suitcase"></i>Profile</a></li>
                         {{-- <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li> --}}
 
                         <li>
@@ -133,14 +134,14 @@
                 <li>
 
                     <a data-toggle="dropdown" >
-                        <img alt="" src="{{Auth::guard('formateur')->user()->avatar}}">
+                        {{-- <img alt="" src="{{Auth::guard('formateur')->user()->avatar}}"> --}}
                         <span class="username">
-                                {{Auth::guard('formateur')->user()->username}}
+                                {{Auth::guard('formateur')->user()->nom}}
                         </span>
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <li><a href="{{ url('/formateurs' . '/' . Auth::guard('formateur')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+                        {{-- <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li> --}}
 
                         <li>
                                     <a class="fa fa-key" href="{{ route('logout') }}"
