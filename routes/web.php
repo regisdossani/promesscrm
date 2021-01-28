@@ -2,12 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\User;
 use App\Apprenant;
 use App\Candidat;
 use App\Professionnel;
 use App\Formateur;
 use App\Pers_ressource;
+use App\Filiere;
+use App\Promo;
 use App\Http\Controllers\FullCalendarEventMasterController;
 
 
@@ -41,6 +45,19 @@ Route::get('about', function ()
         return view('frontend.contact');
     });
     Route::view('/menu', 'auth.menu')->name('auth.menu');
+/** La page d'inscriprion du candidat dans le frontend*/
+Route::get('/candidat', function () {
+    $filieres=Filiere::all();
+    $promos=Promo::all();
+    $candidats=Candidat::all();
+    return view('preinscription',compact('filieres','promos','candidats'));
+});
+
+
+
+
+
+
 Auth::routes();
 
 
@@ -324,10 +341,6 @@ Route::view('/formateur', 'formateurs.dashboard');*/
 
 
 
-/** La page d'inscriprion du candidat dans le frontend*/
-Route::get('/candidat', function () {
-    return view('preinscription');
-});
 
 
 
