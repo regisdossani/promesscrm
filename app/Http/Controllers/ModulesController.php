@@ -74,9 +74,10 @@ class ModulesController extends Controller
         return redirect()->route('modules.index');
     }
 
-    public function destroy(Module $subject)
+    public function destroy($id)
     {
-        $subject->delete();
+        // $subject->delete();
+        Module::destroy($id);
 
         return back();
     }
