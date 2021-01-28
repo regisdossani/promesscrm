@@ -18,7 +18,7 @@ class CreateChantiersTable extends Migration
             $table->unsignedBigInteger('newchantier_id');
 
             $table->string('titre')->nullable();
-            $table->string('reference')->nullable()->unique();
+            $table->unsignedBigInteger('reference_id')->nullable();
             $table->date('date')->nullable();
 
             $table->integer('duree_j')->nullable();

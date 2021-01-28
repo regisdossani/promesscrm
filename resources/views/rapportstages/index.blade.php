@@ -17,28 +17,23 @@
 
 @section('content')
 <section id="main-content">
-
-<section class="wrapper">
-    <div class="form-w3layouts">
-
         <div class="container">
-            <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <section  class="panel">
                         <header class="panel-heading">
                             <div class="panel-title">
-                                GESTION DES STAGES
+                             RAPPORTS DES STAGES
                             </div>
                         </header>
                         <div class="panel-body">
 
-                                <a href="{{ url('/stages/create') }}" class="btn btn-success btn-sm" title="Add New stage">
+                               {{--  <a href="{{ url('/rapportstages/create') }}" class="btn btn-success btn-sm" title="Add New stage">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
-                                </a>
+                                </a> --}}
                                 <div class="pull-right" style="margin-right:5px">
 
-                                    <form method="GET" action="{{ url('/stages') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                    <form method="GET" action="{{ url('/rapportstages') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                             <span class="input-group-append">
@@ -50,18 +45,23 @@
                                     </form>
                                 </div>
                                 <br/>
-                               
+                                <br/>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Date</th>
-                                                <th>Durée</th>
+                                                <th>Prénom</th>
+                                                <th>Nom</th>
+                                                <th>Date de naissance </th>
+                                                <th>Lieu dd naissance </th>
+                                               {{--  <th>Filière </th>
+                                                <th>Promo </th>
+                                                <th>Année </th> --}}
+                                                <th>Date </th>
+                                                <th>Durée </th>
                                                 <th>Référent </th>
-                                                <th>Entreprise </th>
                                                 <th>Encadreur </th>
-                                             {{-- <th>Rapport </th> --}}
 
                                                 <th>Actions</th>
                                             </tr>
@@ -70,19 +70,32 @@
                                         @foreach($stages as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td>@if ($item->apprenants)
+                                                    {{ $item->apprenants->prenom }}
+                                                    @endif
+                                                </td>
+                                                <td>@if ($item->apprenants)
+                                                    {{ $item->apprenants->nom }}
+                                                </td>
+                                                <td>{{ $item->apprenants->date_naiss }}</td>
+                                                <td>{{ $item->apprenants->lieu_naiss }}</td>
+
+                                             {{--    <td>{{ $item->filiere }}</td>
+                                                <td>{{ $item->promo }}</td>
+                                                <td>{{ $item->annee }}</td> --}}
+
                                                 <td>{{ $item->date }}</td>
                                                 <td>{{ $item->duree }}</td>
                                                 <td>{{ $item->referent }}</td>
-                                                <td>{{ $item->entreprise }}</td>
-                                                <td>@if ($item->encadreur)
-                                                        {{ $item->encadreur->noms }}
-                                                    @endif
-                                                </td>
+                                                <td>{{ $item->encadreur }}</td>
+
+
+
                                                 {{-- <td>{{ $item->rapport }}</td> --}}
 
                                                 <td>
-                                                    <a href="{{ url('/stages/' . $item->id) }}" title="Voir ce stage"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                                    <a href="{{ url('/stages/' . $item->id . '/edit') }}" title="Modifier ce stage"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/rapportstages/' . $item->id) }}" title="Voir ce stage"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                    <a href="{{ url('/rapportstages/' . $item->id . '/edit') }}" title="Modifier ce stage"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/stages' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
@@ -94,15 +107,14 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $stages->appends(['search' => Request::get('search')])->render() !!} </div>
+                                    <div class="pagination-wrapper"> {!! $rapportstages->appends(['search' => Request::get('search')])->render() !!} </div>
                                 </div>
 
                         </div>
                     </section>
                 </div>
-            </div>
-        </div>
+
     </div>
-</section>
+
 </section>
 @endsection

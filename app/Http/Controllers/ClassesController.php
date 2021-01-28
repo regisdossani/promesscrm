@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Classe;
 use App\Module;
 use App\Formateur;
-use App\Formation;
+use App\Filiere;
 class ClassesController extends Controller
 {
     public function index()
@@ -19,23 +19,21 @@ class ClassesController extends Controller
     public function create()
     {
         $teachers = Formateur::latest()->get();
-        $formations = Formation::latest()->get();
+        $filieres = Filiere::latest()->get();
 
-        return view('classe.create', compact('teachers','formations'));
+        return view('classe.create', compact('teachers','filieres'));
     }
     public function store(Request $request)
     {
         $request->validate([
             'name'        => 'required|string|max:255|unique:classes',
-            'class_numeric'     => 'required|numeric',
-            'formation_id'        => 'required|numeric',
+            'filiere_id'        => 'required|numeric',
             'class_description' => 'required|string|max:255'
         ]);
 
         Classe::create([
             'name'        => $request->name,
-            'class_numeric'     => $request->class_numeric,
-            'formation_id'        => $request->formation_id,
+            'filiere_id'        => $request->formation_id,
             'class_description' => $request->class_description
         ]);
 
@@ -59,18 +57,17 @@ class ClassesController extends Controller
     public function edit($id)
     {
         $teachers = Formateur::latest()->get();
-        $formations = Formation::latest()->get();
+        $filieres = Filiere::latest()->get();
         $classe = Classe::findOrFail($id);
 
-        return view('classe.edit', compact('classe','teachers','formations'));
+        return view('classe.edit', compact('classe','teachers','filieres'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             'name'        => 'required|string|max:255|unique:classes,name,'.$id,
-            'class_numeric'     => 'required|numeric',
-            'formation_id'        => 'required|numeric',
+            'filiere_id'        => 'required|numeric',
             'class_description' => 'required|string|max:255'
         ]);
 
@@ -78,8 +75,7 @@ class ClassesController extends Controller
 
         $class->update([
             'name'        => $request->name,
-            'class_numeric'     => $request->class_numeric,
-            'formation_id'        => $request->formation_id,
+            'filiere_id'        => $request->formation_id,
             'class_description' => $request->class_description
         ]);
 
@@ -88,10 +84,10 @@ class ClassesController extends Controller
 
     public function destroy($id)
     {
-        $class = Classe::findOrFail($id);
+        $classe = Classe::findOrFail($id);
 
-        $class->modules()->detach();
-        $class->delete();
+        $classe->modules()->detach();
+        $classe->delete();
 
         //return back();
         return redirect()->route('classe.index');

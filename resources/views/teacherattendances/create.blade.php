@@ -18,6 +18,7 @@
                         </header>
                     {{-- <div class="card-header">Créer un teacherattendance</div> --}}
                         <div class="card-body">
+                            <br/>
                             <a href="{{ url('/teacherattendances') }}" title="Précédente"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédente</button></a>
                             <br />
                             <br />
@@ -40,9 +41,9 @@
                         </div>
                     </section>
                 </div>
-            </div> 
+            </div>
         </div>
-        </div> {{--
+        </div>
     </section>
 </section>
 @endsection

@@ -16,10 +16,7 @@ class CreateReferencesTable extends Migration
         Schema::create('references', function (Blueprint $table) {
             $table->id();
             $table->string('format')->nullable();
-            $table->string('categorie')->nullable();
-            $table->unsignedBigInteger('formateur_id');
-            $table->string('matiere')->nullable();
-            $table->string('reference')->nullable();
+            $table->unsignedBigInteger('categorie_id');
             $table->timestamps();
         });
     }

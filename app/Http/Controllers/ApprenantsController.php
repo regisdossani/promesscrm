@@ -195,8 +195,9 @@ class ApprenantsController extends Controller
     {
 
         $apprennant = Apprenant::findorfail($id);
-        Apprenant::destroy($id);
         $apprennant->stages()->detach();
+        Apprenant::destroy($id);
+
         return redirect('apprenants')->with('flash_message', 'Apprenant deleted!');
     }
 

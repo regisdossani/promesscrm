@@ -5,19 +5,19 @@
         {!! $errors->first('class_name', '<p class="help-block">:message</p>') !!}
     </div>
 
-    <div class="form-group {{ $errors->has('class_numeric') ? 'has-error' : ''}}">
+    {{-- <div class="form-group {{ $errors->has('class_numeric') ? 'has-error' : ''}}">
         <label for="class_numeric" class="control-label">{{ 'Class Numeric' }}</label>
         <input class="form-control" name="class_numeric" type="number" id="class_numeric" value="{{ isset($classe->class_numeric) ? $classe->class_numeric : ''}}" >
         {!! $errors->first('class_numeric', '<p class="help-block">:message</p>') !!}
-    </div>
+    </div> --}}
 
-    <div class="form-group {{ $errors->has('formation_id') ? 'has-error' : ''}}">
-        <label for="formation_id" class="control-label">{{ 'Assigner une Formation' }}</label>
+    <div class="form-group {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+        <label for="filiere_id" class="control-label">{{ 'Assigner une Filière' }}</label>
 
-        <select name="formation_id" class="form-control" id="grid-state">
-            <option value="">--Selectionnez Formation--</option>
-            @foreach ($formations as $formation)
-            <option value="{{ $formation->id }}" {{ isset($classe->formation_id) && $classe->formation_id == $formation->id ? 'selected' : ''}}>{{ $formation->nom }}</option>
+        <select name="filiere_id" class="form-control" id="grid-state">
+            <option value="">--Selectionnez Filière--</option>
+            @foreach ($filieres as $filiere)
+            <option value="{{ $filiere->id }}" {{ isset($classe->filiere_id) && $classe->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom }}</option>
             @endforeach
         </select>
     </div>

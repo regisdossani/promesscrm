@@ -1,6 +1,18 @@
 @extends('inc.master')
-@include('admins.sidebar')
 
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 @section('content')
 <section id="main-content">
@@ -21,7 +33,7 @@
                                 <div class="pull-right" style="margin-right:5px">
 
                                     <form method="GET" action="{{ url('/classe') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                        <div class="input-group">
+                                        <div class="form-group">
                                             <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                             <span class="input-group-append">
                                                 <button class="btn btn-secondary" type="submit">
@@ -32,15 +44,13 @@
                                     </form>
                                 </div>
                                     <br />
-                                    <br />
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Nom</th>
-                                                    <th>Class Numeric</th>
-                                                    <th>Formation</th>
+                                                    <th>Filière</th>
                                                     <th>Description</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -50,9 +60,9 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->name }}</td>
-                                                    <td>{{ $item->class_numeric }}</td>
+                                                    {{-- <td>{{ $item->class_numeric }}</td> --}}
 
-                                                    <td>{{ $item->formation->nom }}</td>
+                                                    <td>{{ $item->filiere->nom }}</td>
                                                     <td>{{ $item->class_description }}</td>
 
                                                     <td>

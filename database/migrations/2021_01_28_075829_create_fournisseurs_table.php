@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntpartenairesTable extends Migration
+class CreateFournisseursTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateEntpartenairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('entpartenaires', function (Blueprint $table) {
+        Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('reference_id')->nullable();
-
-            $table->string('raison_sociale')->nullable();
-            $table->string('activite_entreprise')->nullable();
+            $table->string('raison_social')->nullable()->default('nom partenaire');
+            $table->string('type_organisation')->nullable();
+            $table->string('nom_referent')->nullable();
             $table->string('tel')->nullable();
             $table->string('email')->nullable();
-
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateEntpartenairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entpartenaires');
+        Schema::dropIfExists('fournisseurs');
     }
 }

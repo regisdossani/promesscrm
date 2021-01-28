@@ -3,32 +3,14 @@
 <aside class="sidebar">
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
-
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-
-            @if (Auth::guard('equipe')->check())
-            <li>
-                <a class="active" href="{{ url('/equipe') }}">
-                    <i class="fa fa-dashboard"></i>
-                    <span>TABLEAU DE BOARD EQUIPE</span>
-                </a>
-            </li>
-            @endif
-
-
-            @if (Auth::guard('admin')->check())
-                      <li>
+                <li>
                     <a class="active" href="{{ url('/admin') }}">
-                        <i class="fa fa-home"></i>
+                        <i class="fa fa-dashboard"></i>
                         <span>TABLEAU DE BOARD ADMIN</span>
                     </a>
                 </li>
-            @endif
-    @role('superadmin')
-
-
-
     <li class="sub-menu">
         <a href="javascript:;">
             <i class="fa fa-cog"></i>
@@ -38,8 +20,7 @@
             <li><a href="{{ url('/admin/roles') }}">Gestion des rôles</a></li>
             <li><a href="{{ url('/admin/permissions') }}">Gestion des permissions</a></li>
             <li><a href="{{ url('/classe') }}">Gestion des classes</a></li>
-            <li><a href="{{ url('/typeformations') }}"><span>Les types de Formations</span></a> </li>
-            <li><a href="{{ url('/formations') }}"><span>Gestion les Formations</span></a></li>
+            <li><a href="{{ url('/filieres') }}"><span>Gestion des filières </span></a></li>
         </ul>
     </li>
 
@@ -79,8 +60,6 @@
                                 <span>ressources </span>
                         </a>
                 </li>
-
-@endrole
 
 @hasanyrole('Resp-Pedagogique|superadmin')
 

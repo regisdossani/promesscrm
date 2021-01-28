@@ -18,6 +18,7 @@ class CreateApprenantsTable extends Migration
             $table->unsignedBigInteger('candidat_id')->nullable();
             $table->unsignedBigInteger('filiere_id')->nullable();
             $table->unsignedBigInteger('promo_id')->nullable();
+            $table->unsignedBigInteger('reference_id')->nullable();
 
             $table->string('nom')->nullable()->default('nom');
             $table->string('prenom')->nullable();

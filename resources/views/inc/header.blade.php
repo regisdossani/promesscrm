@@ -1,5 +1,10 @@
+{{-- <section id="container"> --}}
 <!--header start-->
 <header class="header fixed-top clearfix">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+
     <!--logo start-->
     <div class="brand">
         @if (Auth::guard("admin")->check())
@@ -155,26 +160,3 @@
         <!--search & user info end-->
     </div>
     </header>
-    <!--header end-->
-
-
-
-
-
-
-        <!-- Modal -->
-        {{-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Paramètres du CRM</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <a href="{{ url("/typeformations")}}">Créer un type de formation</a><br/>
-                    <a href="{{ url("/formations")}}">Créer une formation</a><br/>
-                    <a href="{{ url("/classe")}}">Créer une Classe</a><br/>
-                </div> --}}
-

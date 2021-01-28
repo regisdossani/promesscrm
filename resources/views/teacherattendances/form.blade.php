@@ -49,7 +49,7 @@
 
     <div class="row">
         <div class="col-md-12 mb-3 {{ $errors->has('attendence_status') ? 'has-error' : ''}}">
-            <label for="attendence_status" class="control-label">{{ ' Status' }}</label>
+            <label for="attendence_status" class="control-label">{{ ' Statut' }}</label>
             <div class="radio">
                 <label><input name="attendence_status" type="radio" value="1" {{ (isset($attendance) && 1 == $attendance->attendence_status) ? 'checked' : '' }}> Présent(e)</label>
             </div>
