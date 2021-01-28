@@ -85,7 +85,7 @@ class ApprenantsController extends Controller
         $this->validator($request->all())->validate();
          $requestData = $request->all();
 
-        // $requestData['password'] = Hash::make($request->password);
+        $requestData['password'] = Hash::make($request->password);
 
 
       $student= Apprenant::create([

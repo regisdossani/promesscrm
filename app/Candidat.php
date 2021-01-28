@@ -14,7 +14,7 @@ class Candidat extends Model
         'provenance',  'nom', 'email', 'tel','sexe',
        'reception_dossier','pj_depotdossier','password',
         'region','pj_depotdossier2','filiere_id','promo_id','parrain',
-        'tel_parrain','email_parrain'
+        'tel_parrain','email_parrain','role'
     ];
     protected $table = 'candidats';
 
