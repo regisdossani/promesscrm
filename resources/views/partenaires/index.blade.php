@@ -18,7 +18,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -65,8 +65,9 @@
                                                 <tr>
                                                     <th colspan="6">PARTENAIRES TECHNIQUES ET FIANCIERS</th>
                                                     <br/>
+                                                    <br/>
                                                         @foreach($partenaires as $item)
-                                                        <br/>
+                                                    
                                                             @if ($item->type_partenariat=='PARTENAIRES TECHNIQUES ET FIANCIERS')
                                                                 <tr>
                                                                     <td>{{ $loop->iteration }}</td>
