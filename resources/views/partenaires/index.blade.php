@@ -64,6 +64,7 @@
 
                                                 <tr>
                                                     <th colspan="6">PARTENAIRES TECHNIQUES ET FIANCIERS</th>
+                                                    <br/>
                                                         @foreach($partenaires as $item)
                                                             @if ($item->type_partenariat=='PARTENAIRES TECHNIQUES ET FIANCIERS')
                                                                 <tr>
