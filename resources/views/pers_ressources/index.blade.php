@@ -50,7 +50,7 @@
                             <br/>
                             <br/>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table style="width: 100%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
                                     <thead>
                                         <tr>
                                             <th>#</th>
