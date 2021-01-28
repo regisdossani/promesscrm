@@ -22,7 +22,7 @@ class CreateClassesTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('filiere_id')->references('id')->on('formations')
+            $table->foreign('filiere_id')->references('id')->on('filieres')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
