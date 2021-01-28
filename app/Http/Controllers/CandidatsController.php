@@ -214,8 +214,9 @@ class CandidatsController extends Controller
     {
         $this->validate($request,[
             'nom' => 'required',
-            'tel'=> 'required',
-            'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt'
+            'email'=>'unique:candidats,email',
+            'pj_depotdossier.*' => 'mimes:doc,docx,pdf,txt',
+            'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
             $requestData = $request->all();

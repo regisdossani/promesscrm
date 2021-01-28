@@ -49,7 +49,7 @@ class ModulesController extends Controller
         return view('modules.show', compact('module'));
     }
 
-    public function edit(Module $subject)
+    public function edit($id)
     {
         $teachers = Formateur::latest()->get();
 
@@ -57,7 +57,7 @@ class ModulesController extends Controller
     }
 
 
-    public function update(Request $request, Module $subject)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nom'          => 'required|string|max:255|unique:modules,nom,'.$subject->id,

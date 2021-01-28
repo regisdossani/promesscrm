@@ -40,14 +40,9 @@
                             <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                 <label for="email" class="control-label">{{ 'Email:' }}</label>
 
+                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > 
                                 {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}"  required autocomplete="email">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                {{-- {!! $errors->first('email', '<p class="help-block">:message</p>') !!} --}}
+                                {!! $errors->first('email', '<p class="help-block">:message</p>') !!} 
                             </div>
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" type="text/javascript"></script>
                             <script>
@@ -77,7 +72,7 @@
                                     },
                                     messages: {
                                         email: {
-                                            required: "Email is required!",
+                                            required: "Email is obligatoire!",
                                             email: "Entrer un EMail valide!",
                                             remote: "Email  déjà utilisé!"
                                         }
