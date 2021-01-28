@@ -102,6 +102,7 @@
 
                                                 <tr>
                                                     <th colspan="6">ENTREPRISES PARTENAIRES</th>
+                                                    <br/>
                                                         @foreach($partenaires as $item)
                                                             @if ($item->type_partenariat=="ENTREPRISES PARTENAIRES" )
                                                                 <tr>
