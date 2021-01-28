@@ -57,18 +57,18 @@
 </li>
 
 <li>
-    <a href="{{ url('/formations') }}"
+    <a href="{{ url('/filieres') }}"
         <i class="fa fa-th"></i>
-        <span>Gestion des Formations</span>
+        <span>Gestion des Filieres</span>
     </a>
 </li>
 
-    <li>
+   {{--  <li>
         <a href="{{ url('/typeformations') }}">
             <i class="fa fa-tasks"></i>
             <span>Gestion des types de Formations</span>
         </a>
-    </li>
+    </li> --}}
 
 
 <li>
