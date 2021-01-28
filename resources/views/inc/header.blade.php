@@ -82,17 +82,17 @@
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <li><a href="{{ url('/apprenants' . '/' . Auth::guard('apprenant')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+                        {{-- <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li> --}}
 
                         <li>
-                                    <a class="fa fa-key" href="{{ route('logout') }}"
+                            <a  href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                    {{ __('Déconnexion') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                    document.getElementById('logout-form').submit();">
+                               <i class="fa fa-key">Déconnexion</i>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
 
@@ -104,24 +104,24 @@
                 <li>
 
                     <a data-toggle="dropdown" >
-                        <img alt="" src="{{Auth::guard('equipe')->user()->avatar}}">
+                        {{-- <img alt="" src="{{Auth::guard('equipe')->user()->avatar}}"> --}}
                         <span class="username">
                                 {{Auth::guard('equipe')->user()->username}}
                         </span>
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <li><a href="{{ url('/equipes' . '/' . Auth::guard('equipe')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+                        {{-- <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li> --}}
 
                         <li>
-                                    <a class="fa fa-key" href="{{ route('logout') }}"
+                            <a  href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                    {{ __('Déconnexion') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                    document.getElementById('logout-form').submit();">
+                               <i class="fa fa-key">Déconnexion</i>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
 
