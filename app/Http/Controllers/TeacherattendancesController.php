@@ -122,4 +122,10 @@ class TeacherattendancesController extends Controller
 
         return redirect('teacherattendances')->with('flash_message', 'Teacherattendance deleted!');
     }
+
+   
+
+
+
+
 }

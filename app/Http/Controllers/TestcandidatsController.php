@@ -55,6 +55,7 @@ class TestcandidatsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validator($request->all())->validate();
 
         $requestData = $request->all();
         if ($request->hasFile('test_pj')) {
@@ -130,4 +131,15 @@ class TestcandidatsController extends Controller
 
         return redirect('testcandidats')->with('flash_message', 'Testcandidat deleted!');
     }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data,
+        [
+            'candidat_id' => ['required', 'Integer', 'max:255'],
+            'resultat' => ['required', 'string', 'max:255']
+            
+        ]);
+    }
+   
 }

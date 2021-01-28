@@ -73,9 +73,11 @@
                 <li>
 
                     <a data-toggle="dropdown" >
-                        <img alt="" src="{{Auth::guard('apprenant')->user()->avatar}}">
+                        {{-- @if (Auth::guard('apprenant')->user()->photo})
+                        <img alt="" src="{{Auth::guard('apprenant')->user()->photo}}">
+                        @endif --}}
                         <span class="username">
-                                {{Auth::guard('apprenant')->user()->username}}
+                                {{Auth::guard('apprenant')->user()->nom}}
                         </span>
                     </a>
                     <ul class="dropdown-menu extended logout">

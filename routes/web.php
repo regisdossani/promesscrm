@@ -74,6 +74,7 @@ Route::post('/login/apprenant',[LoginController::class,'apprenantLogin']);
 Route::post('/login/formateur', [LoginController::class,'formateurLogin']);
 Route::post('/login/equipe', [LoginController::class,'equipeLogin']);
 
+// Route::get('logout', 'LoginController@logout');
 
 
 Route::group(['middleware'=>['auth:web,admin']], function() {
