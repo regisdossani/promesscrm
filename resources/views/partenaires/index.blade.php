@@ -18,7 +18,7 @@
         <div class="form-w3layouts">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -62,64 +62,61 @@
                                                 </thead>
                                                  <tbody>
 
-                                                            <tr>
+                                                <tr>
+                                                    <th colspan="6">PARTENAIRES TECHNIQUES ET FIANCIERS</th>
+                                                        @foreach($partenaires as $item)
+                                                            @if ($item->type_partenariat=='PARTENAIRES TECHNIQUES ET FIANCIERS')
+                                                                <tr>
+                                                                    <td>{{ $loop->iteration }}</td>
 
-                                                                    <th colspan="6">PARTENAIRES TECHNIQUES ET FIANCIERS</th>
-
-
-                                                                @foreach($partenaires as $item)
-                                                                    @if ($item->type_partenariat=='PARTENAIRES TECHNIQUES ET FIANCIERS')
-                                                                        <tr>
-                                                                            <td>{{ $loop->iteration }}</td>
-
-                                                                            <td>{{ $item->raison_social }}</td>
+                                                                    <td>{{ $item->raison_social }}</td>
 
 
-                                                                            <td>{{ $item->type_organisation }}</td>
+                                                                    <td>{{ $item->type_organisation }}</td>
 
 
-                                                                            <td>{{ $item->nom_referent }}</td>
+                                                                    <td>{{ $item->nom_referent }}</td>
 
 
-                                                                            <td>{{ $item->email }}</td>
+                                                                    <td>{{ $item->email }}</td>
 
 
-                                                                            <td>{{ $item->tel }}</td>
+                                                                    <td>{{ $item->tel }}</td>
 
-                                                                            <td>
-                                                                                <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                                                                <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                                    <td>
+                                                                        <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                                                        <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
-                                                                                <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                                                    {{ method_field('DELETE') }}
-                                                                                    {{ csrf_field() }}
-                                                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                                                </form>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                    @endif
-                                                                @endforeach
-                                                            </tr>
+                                                                        <form method="POST" action="{{ url('/partenaires' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                                            {{ method_field('DELETE') }}
+                                                                            {{ csrf_field() }}
+                                                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                        </form>
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                        @endforeach
+                                                </tr>
 
 
 
-                                                            <tr>
-                                                                <th colspan="6">ENTREPRISES PARTENAIRES</th>
-                                                                    @foreach($partenaires as $item)
-                                                                        @if ($item->type_partenariat=="ENTREPRISES PARTENAIRES" )
-
-                                                                            <tr>
-                                                                                <td>{{ $item->raison_social }}</td>
-                                                                            </tr>
+                                                <tr>
+                                                    <th colspan="6">ENTREPRISES PARTENAIRES</th>
+                                                        @foreach($partenaires as $item)
+                                                            @if ($item->type_partenariat=="ENTREPRISES PARTENAIRES" )
+                                                                <tr>
+                                                                          
+                                                                    <td>{{ $item->raison_social }}</td>
+                                                                            
                                                                             {{-- <td>{{ $loop->iteration }}</td> --}}
-                                                                            <tr>
-                                                                                <td>{{ $item->type_organisation }}</td>
+                                                                           
+                                                                    <td>{{ $item->type_organisation }}</td>
 
-                                                                            </tr>
-                                                                            <td>{{ $item->nom_referent }}</td>
-                                                                            <td>{{ $item->email }}</td>
-                                                                            <td>{{ $item->tel }}</td>
+                                                                
+                                                                            
+                                                                        <td>{{ $item->nom_referent }}</td>
+                                                                        <td>{{ $item->email }}</td>
+                                                                        <td>{{ $item->tel }}</td>
                                                                             <td>
                                                                                 <a href="{{ url('/partenaires/' . $item->id) }}" title="View partenaire"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                                                                 <a href="{{ url('/partenaires/' . $item->id . '/edit') }}" title="Edit partenaire"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
@@ -130,16 +127,17 @@
                                                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                                                 </form>
                                                                             </td>
-                                                                    @endif
-                                                                @endforeach
-                                                            </tr>
+                                                                </tr>
+                                                            @endif
+                                                        @endforeach
+                                                </tr>
 
-                                                            <tr>
-                                                                <th colspan="6">COLLECTIVITES TERRITORIALES</th>
-                                                                    @foreach($partenaires as $item)
+                                                <tr>
+                                                    <th colspan="6">COLLECTIVITES TERRITORIALES</th>
+                                                        @foreach($partenaires as $item)
 
-                                                                        @if ($item->type_partenariat=="COLLECTIVITES TERRITORIALES" )
-
+                                                            @if ($item->type_partenariat=="COLLECTIVITES TERRITORIALES" )
+                                                                <tr>
                                                                             <td>{{ $loop->iteration }}</td>
                                                                             <td>{{ $item->raison_social }}</td>
                                                                             <td>{{ $item->type_organisation }}</td>
@@ -156,13 +154,13 @@
                                                                                     {{ csrf_field() }}
                                                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                                                 </form>
-                                                                            </td>
-                                                                        @endif
-                                                                    @endforeach
-                                                            </tr>
+                                                                    </tr>  </td>
+                                                            @endif
+                                                    @endforeach
+                                                </tr>
 
 
-                                                            <tr>
+                                                    <tr>
                                                                 <th colspan="6">PARTENAIRES DE MISE EN OEUVRE</th>
                                                                 @foreach($partenaires as $item)
 
