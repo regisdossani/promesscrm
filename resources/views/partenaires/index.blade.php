@@ -27,9 +27,11 @@
                             </header>
                             {{-- <div class="card-header">Partenaires</div> --}}
                             <div class="panel-body">
-                                <a href="{{ url('/partenaires/create') }}" class="btn btn-success btn-sm" title="Ajouter un partenaire">
-                                        <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
-                                </a>
+                                @if (Auth::guard("admin")->check())
+                                    <a href="{{ url('/partenaires/create') }}" class="btn btn-success btn-sm" title="Ajouter un partenaire">
+                                            <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
+                                    </a>
+                                @endif
                                 <div class="pull-right" style="margin-right:5px">
 
                                         <form method="GET" action="{{ url('/partenaires') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
