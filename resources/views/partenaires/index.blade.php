@@ -160,12 +160,12 @@
                                                 </tr>
 
 
-                                                    <tr>
-                                                                <th colspan="6">PARTENAIRES DE MISE EN OEUVRE</th>
-                                                                @foreach($partenaires as $item)
-
-                                                                    @if ($item->type_partenariat=="PARTENAIRES DE MISE EN OEUVRE" )
-
+                                                <tr>
+                                                    <th colspan="6">PARTENAIRES DE MISE EN OEUVRE</th>
+                                                        @foreach($partenaires as $item)
+                                                            
+                                                            @if ($item->type_partenariat=="PARTENAIRES DE MISE EN OEUVRE" )
+                                                                <tr>
                                                                         <td>{{ $loop->iteration }}</td>
                                                                         <td>{{ $item->raison_social }}</td>
                                                                         <td>{{ $item->type_organisation }}</td>
@@ -182,11 +182,12 @@
                                                                                 {{ csrf_field() }}
                                                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete partenaire" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                                             </form>
-                                                                        </td>
-                                                                    @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
 
-                                                                @endforeach
-                                                            </tr>
+                                                        @endforeach
+                                                    </tr>
 
 
                                                             <tr>
