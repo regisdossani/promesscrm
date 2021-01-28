@@ -15,7 +15,7 @@ class CreateFournisseursTable extends Migration
     {
         Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('reference_id')->nullable();
+            $table->string('reference')->nullable();
             $table->string('raison_social')->nullable()->default('nom partenaire');
             $table->string('type_organisation')->nullable();
             $table->string('nom_referent')->nullable();

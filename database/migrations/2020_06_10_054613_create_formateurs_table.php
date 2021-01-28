@@ -17,7 +17,7 @@ class CreateFormateursTable extends Migration
             $table->id();
             $table->string('prenom')->nullable();
             $table->string('nom')->nullable();
-            $table->unsignedBigInteger('reference_id')->nullable();
+            $table->string('reference')->nullable();
 
             $table->string('sexe')->nullable();
             $table->string('tel')->nullable();

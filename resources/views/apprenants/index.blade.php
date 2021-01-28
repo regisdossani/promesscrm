@@ -31,7 +31,7 @@
                             </header>
                             <div class="panel-body">
                                 <br/>
-                                @role('superadmin')
+                                @hasanyrole('superadmin')
                                     <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
@@ -39,7 +39,10 @@
                                 @endrole
                                 @role('Resp-pedagogique')
                                     <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                @endrole
+                                    <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
+                                        <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
+                                    </a>
+                                 @endrole
 
                                 <div class="pull-right" style="margin-right:5px">
 
