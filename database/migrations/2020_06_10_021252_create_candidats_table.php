@@ -17,7 +17,8 @@ class CreateCandidatsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('filiere_id')->nullable();
             $table->unsignedBigInteger('promo_id')->nullable();
-            $table->string('reference')->nullable();
+          $table->string('reference')->nullable()->unique();
+;
 
             $table->string('nom')->nullable()->default('nom');
             $table->string('tel')->nullable()->default('tel_1');
