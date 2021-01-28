@@ -42,7 +42,7 @@
                         </form>
 
                         <form action='{{ url("/equipe")}}' method="GET">
-                            <button  class="ggg">  Équipe Promess</button>
+                            <button  class="ggg">  Personnel Administratif Promess</button>
                         </form>
 
                         <form action='{{ url("/apprenant")}}' method="GET">
