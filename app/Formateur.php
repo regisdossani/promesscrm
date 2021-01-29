@@ -15,7 +15,7 @@ class Formateur extends Authenticatable
 
 
     protected $fillable = [
-        'email', 'prenom','nom','formation','structure','fonction',
+        'email', 'prenom','nom','formation','structure','fonction','password',
         'adresse','sexe','lieu_naiss','date_naiss','reference','tel','formation','module_id'
     ];
 
@@ -33,7 +33,7 @@ class Formateur extends Authenticatable
        return $this->hasMany(Matieres::class);
     }
 
-   
+
 
      public function classes()
     {
