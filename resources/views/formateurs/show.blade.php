@@ -64,11 +64,11 @@
                                             <tr><th>Email </th><td> {{ $formateur->email }} </td></tr>
                                             <tr><th>Formation </th><td> {{ $formateur->formation }} </td></tr>
                                             <tr><th>Structure </th><td> {{ $formateur->structure }} </td></tr>
-                                            <tr><th>Modules </th><td>
+                                            {{-- <tr><th>Modules </th><td>
                                                 @foreach ($formateur->modules as $module)
                                                     {{ $module->nom }}
                                                 @endforeach
-                                            </td></tr>
+                                            </td></tr> --}}
                                             <tr><th>Adresse </th><td> {{ $formateur->adresse }} </td></tr>
 
                                         </tbody>

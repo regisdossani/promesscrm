@@ -76,7 +76,7 @@
     <input class="form-control" name="fonction" type="text" id="fonction" value="{{ isset($formateur->fonction) ? $formateur->fonction : ''}}" >
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 mb-3{{ $errors->has('module_id') ? 'has-error' : ''}}">
+{{-- <div class="col-md-6 mb-3{{ $errors->has('module_id') ? 'has-error' : ''}}">
     <label for="module_id" class="control-label">{{ 'Module' }}</label>
     <select name="module_id" id="module_id" class="form-control">
         <option>-- Choisir un module--</option>
@@ -85,7 +85,7 @@
             @endforeach
     </select>
     {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!}
-</div>
+</div> --}}
 
 <div class="row">
     <div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">

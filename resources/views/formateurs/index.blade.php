@@ -72,7 +72,7 @@
                                                 <th>Tél</th>
                                                 {{-- <th>Email</th> --}}
                                                 <th>Fonction</th>
-                                                 <th>Module</th>
+                                                 {{-- <th>Module</th> --}}
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -88,11 +88,11 @@
                                                 {{-- <td>{{ $item->email }}</td> --}}
                                                 <td>{{ $item->fonction }}</td>
 
-                                                <td>
+                                   {{--              <td>
                                                     @foreach($item->modules as $module)
                                                         {{ $module->nom}}
                                                     @endforeach
-                                                </td>
+                                                </td> --}}
                                                 <td>
                                                     <a href="{{ url('/formateurs/' . $item->id) }}" title="Voir formateur"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
                                                     <a href="{{ url('/formateurs/' . $item->id . '/edit') }}" title="Modifier formateur"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
