@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use Illuminate\Support\Facades\Validator;
 
 use App\Entpartenaire;
 use Illuminate\Http\Request;
 
-class EntreprisesController extends Controller
+class EntpartenairesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,18 +18,15 @@ class EntreprisesController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 5;
+        $perPage = 25;
 
         if (!empty($keyword)) {
-            $entreprises = Entpartenaire::latest()->paginate($perPage);
-
+            $entpartenaires = Entpartenaire::latest()->paginate($perPage);
         } else {
-            $entreprises = Entpartenaire::latest()->paginate($perPage);
+            $entpartenaires = Entpartenaire::latest()->paginate($perPage);
         }
-        
 
-
-        return view('entpartenaires.index', compact('entreprises'));
+        return view('entpartenaires.index', compact('entpartenaires'));
     }
 
     /**
@@ -40,10 +36,7 @@ class EntreprisesController extends Controller
      */
     public function create()
     {
-     
-         $entreprises=Entpartenaire::all();
-
-        return view('entpartenaires.create',compact('entreprises'));
+        return view('entpartenaires.create');
     }
 
     /**
@@ -55,12 +48,12 @@ class EntreprisesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validator($request->all())->validate();
+        
         $requestData = $request->all();
+        
+        Entpartenaire::create($requestData);
 
-        Entreprise::create($requestData);
-
-        return redirect('entpartenaires')->with('flash_message', 'Entreprise added!');
+        return redirect('entpartenaires')->with('flash_message', 'Entpartenaire added!');
     }
 
     /**
@@ -72,9 +65,9 @@ class EntreprisesController extends Controller
      */
     public function show($id)
     {
-        $entreprise = Entpartenaire::findOrFail($id);
+        $entpartenaire = Entpartenaire::findOrFail($id);
 
-        return view('entpartenaires.show', compact('entreprise'));
+        return view('entpartenaires.show', compact('entpartenaire'));
     }
 
     /**
@@ -86,9 +79,9 @@ class EntreprisesController extends Controller
      */
     public function edit($id)
     {
-        $entreprise = Entpartenaire::findOrFail($id);
+        $entpartenaire = Entpartenaire::findOrFail($id);
 
-        return view('entpartenaires.edit', compact('entreprise'));
+        return view('entpartenaires.edit', compact('entpartenaire'));
     }
 
     /**
@@ -101,13 +94,13 @@ class EntreprisesController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
         $requestData = $request->all();
+        
+        $entpartenaire = Entpartenaire::findOrFail($id);
+        $entpartenaire->update($requestData);
 
-        $entreprise = Entpartenaire::findOrFail($id);
-        $entreprise->update($requestData);
-
-        return redirect('entpartenaires')->with('flash_message', 'Entreprise updated!');
+        return redirect('entpartenaires')->with('flash_message', 'Entpartenaire updated!');
     }
 
     /**
@@ -119,19 +112,8 @@ class EntreprisesController extends Controller
      */
     public function destroy($id)
     {
-        Entreprise::destroy($id);
+        Entpartenaire::destroy($id);
 
-        return redirect('entpartenaires')->with('flash_message', 'Entreprise deleted!');
-}
-
-protected function validator(array $data)
-    {
-        return Validator::make($data,
-        [
-            'raison_sociale' => ['required', 'Integer', 'max:255'],
-            'reference' => ['required', 'string', 'max:255','unique:entreprise,reference'],
-            'contact_tel' => ['required', 'string', 'max:255'],
-
-        ]);
+        return redirect('entpartenaires')->with('flash_message', 'Entpartenaire deleted!');
     }
 }

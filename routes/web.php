@@ -80,7 +80,7 @@ Route::post('/login/equipe', [LoginController::class,'equipeLogin']);
 Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::view('admin', 'admins.dashboard');
 
-    Route::resource('/entreprises', 'EntreprisesController');
+    Route::resource('/entpartenaires', 'EntpartenairesController');
 
      Route::resource('/partenaires', 'PartenairesController');
      Route::get('partenaires/{id}',function($id){

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntreprisesTable extends Migration
+class CreateEntpartenairesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEntreprisesTable extends Migration
      */
     public function up()
     {
-        Schema::create('entreprises', function (Blueprint $table) {
+        Schema::create('entpartenaires', function (Blueprint $table) {
             $table->id();
             $table->string('raison_sociale')->nullable();
             $table->string('reference')->unique()->nullable();
@@ -25,6 +25,7 @@ class CreateEntreprisesTable extends Migration
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -32,6 +33,6 @@ class CreateEntreprisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entreprises');
+        Schema::dropIfExists('entpartenaires');
     }
 }

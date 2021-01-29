@@ -6,11 +6,8 @@
 
 <div class="col-md-6 mb-3 {{ $errors->has('reference') ? 'has-error' : ''}}">
     <label for="reference" class="control-label">{{ 'Reference' }}</label>
-    @if(isset($candidat->reference) && !empty($candidat->reference))
-    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($entreprise->reference) ? $entreprise->reference : ''}}" readonly>
-    @else
-        <input class="form-control" name="reference" type="text" id="reference" value="{{$count}}" readonlyp>
-    @endif
+    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($entreprise->reference) ? $entreprise->reference : ''}}">
+ 
     {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('activite_entreprise') ? 'has-error' : ''}}">

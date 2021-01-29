@@ -19,6 +19,7 @@ class CreateMatieresTable extends Migration
             $table->string('reference')->unique();
             $table->unsignedBigInteger('module_id');
             $table->unsignedBigInteger('formateur_id');
+            $table->integer('coef')->unsigned()->nullable();
             $table->timestamps();
         });
     }
