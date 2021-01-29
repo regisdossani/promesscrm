@@ -117,7 +117,7 @@
 					<div class="col-md-4 market-update-right">
                         <i class="fas  fa-user" style="font-size:36px;color:white"></i>                    </div>
                         <div class="col-md-8 market-update-left">
-						<h4>Gestion du Personnel </h4>
+						<h4>Gestion du Personnel Administrative</h4>
                     </div>
                     </a>
 				  <div class="clearfix"> </div>
