@@ -13,7 +13,7 @@
     <select class="form-control" name="formateur_id"  id="formateur_id" >
         <option>-- Choisir un Formateur --</option>
         @foreach($formateurs as $formateur)
-                <option value="{{ $formateur->id }}" {{ isset($matieres->formateur_id) && $matieres->formateur_id == $formateur->id ? 'selected' : ''}}>{{ $formateur->nom}}</option>
+                <option value="{{ $formateur->id }}" {{ isset($matieres->formateur_id) && $matieres->formateur_id == $formateur->id ? 'selected' : ''}}>{{ $formateur->prenom}{{ $formateur->nom}}</option>
         @endforeach
     </select>
 

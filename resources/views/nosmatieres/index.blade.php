@@ -22,12 +22,12 @@
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    GESTION DES MODULES
+                                    GESTION DES PARAMÈTRES(MATIÈRE)
                                 </div>
                             </header>
 
                                 <div class="card-body ">
-                                        <div class="card-header">Nosmatieres</div>
+                                        <div class="card-header">Nos matieres</div>
                                         <a href="{{ url('/nosmatieres/create') }}" class="btn btn-success btn-sm" title="Add New nosmatiere">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>Nouveau
                                         </a>
