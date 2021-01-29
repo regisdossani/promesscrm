@@ -30,9 +30,9 @@ class FormateursController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $formateurs = Formateur::with('modules')->latest()->paginate($perPage);
+            $formateurs = Formateur::latest()->paginate($perPage);
         } else {
-            $formateurs = Formateur::with('modules')->latest()->paginate($perPage);
+            $formateurs = Formateur::latest()->paginate($perPage);
         }
 
         return view('formateurs.index', compact('formateurs'));
@@ -45,7 +45,7 @@ class FormateursController extends Controller
      */
     public function create()
     {
-        $formateurs= Formateur::with('module');
+        $formateurs= Formateur::all();
          $modules=Module::all();
         return view('formateurs.create',compact('formateurs','modules'));
     }

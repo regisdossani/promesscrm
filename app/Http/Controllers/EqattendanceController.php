@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Equipe;
 use App\Eqattendance;
 use Illuminate\Http\Request;
+use App\Http\Helpers\AppHelper;
+
 
 class EqattendanceController extends Controller
 {
