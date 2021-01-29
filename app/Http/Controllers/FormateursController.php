@@ -62,12 +62,15 @@ class FormateursController extends Controller
         $this->validate($request,[
             'nom' => 'required',
             'prenom'=> 'required',
-            'sexe'=> 'required',
-            'tel'=> 'required'
+            'password'=> 'required',
+            'tel'=> 'required',
+            'reference'=>'required'
         ]);
 
         $requestData = $request->all();
-        if($request->hasFile('Contratcadre_pj'))
+        $requestData['password'] = Hash::make($requestData['password']);
+
+        /* if($request->hasFile('Contratcadre_pj'))
          {
             checkDirectory("formateurs");
                 $requestData['Contratcadre_pj'] =uploadFile($request,'Contratcadre_pj',public_path('uploads/formateurs'));
@@ -79,7 +82,7 @@ class FormateursController extends Controller
         }
 
 
-
+ */
         Formateur::create($requestData);
 
         return redirect('formateurs')->with('flash_message', 'Formateur added!');

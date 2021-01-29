@@ -66,11 +66,11 @@
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
 </div>
 
-{{-- <div class="col-md-6 mb-3{{ $errors->has('structure') ? 'has-error' : ''}}">
-    <label for="structure" class="control-label">{{ 'Structure' }}</label>
-    <input class="form-control" name="structure" type="text" id="structure" value="{{ isset($formateur->structure) ? $formateur->structure : ''}}" >
-    {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
-</div> --}}
+ <div class="col-md-6 mb-3{{ $errors->has('password') ? 'has-error' : ''}}">
+    <label for="password" class="control-label">{{ 'Mot de passe' }}</label>
+    <input class="form-control" name="password" type="password" id="password" value="" >
+    {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
+</div>
 <div class="col-md-6 mb-3{{ $errors->has('fonction') ? 'has-error' : ''}}">
     <label for="fonction" class="control-label">{{ 'Fonction' }}</label>
     <input class="form-control" name="fonction" type="text" id="fonction" value="{{ isset($formateur->fonction) ? $formateur->fonction : ''}}" >
