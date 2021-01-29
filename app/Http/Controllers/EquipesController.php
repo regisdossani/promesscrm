@@ -101,7 +101,11 @@ class EquipesController extends Controller
 
        $team->assignRole( $requestData['roles']);
 
-        $directeur=Role::whereName('Directeur-Promess')->first()->equipes;
+        $directeur=Equipe::whereName('Directeur-Promess')->first()->equipes;
+      /*   User::whereHas('roles', function($q) {
+            $q->whereName('insert_name_of_role');
+        })->get(); */
+
         if(isset($directeur) && !empty($directeur))
          {
                 $admin=Admin::create([
