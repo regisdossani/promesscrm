@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Module;
 use App\Formateur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class FormateursController extends Controller
 {
