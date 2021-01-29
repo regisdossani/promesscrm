@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use DB;
+use App\Admin;
 use App\Equipe;
 use Illuminate\Http\Request;
 
@@ -101,20 +102,28 @@ class EquipesController extends Controller
 
        $team->assignRole( $requestData['roles']);
 
-        $directeur=Equipe::whereName('Directeur-Promess')->first()->equipes;
-      /*   User::whereHas('roles', function($q) {
-            $q->whereName('insert_name_of_role');
-        })->get(); */
+        $directeurs=Equipe::whereHas('roles', function($q) {
+            $q->whereName('Directeur-Promess');
+        })->get();
 
-        if(isset($directeur) && !empty($directeur))
-         {
-                $admin=Admin::create([
-                    'username' => $request->nom_prenom,
-                    'password' => bcrypt($request->password),
-                    'email' => $request->email,
-                ]);
-                $admin->assignRole('superadmin');
-            }
+        $admindirecteurs=Admin::whereHas('roles', function($q) {
+            $q->whereName('Directeur-Promess');
+        })->get();
+
+
+    if(empty($admindirecteurs) && !empty($directeurs)){
+
+        foreach($directeurs as $directeur){
+            {
+                    $admin=Admin::create([
+                        'username' => $directeur->nom_prenom,
+                        'password' => bcrypt($directeur->password),
+                        'email' => $directeur->email,
+                    ]);
+                    $admin->assignRole('superadmin');
+                }
+        }
+    }
 
         return redirect('equipes')->with('flash_message', 'Membre de l\'équipe crée!');
     }
