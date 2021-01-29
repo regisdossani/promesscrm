@@ -74,10 +74,10 @@
                                                             <td>{{ $item->email }}</td>
                                                             <td>
                                                                 @if ($item->etat==1)
-                                                                Réalisé
+                                                                A
                                                                 @endif
                                                                 @if ($item->etat==2)
-                                                                Non Réalisé
+                                                               
                                                                 @endif
                                                             </td>
                                                             <td>{{ $item->valeur }}</td>
