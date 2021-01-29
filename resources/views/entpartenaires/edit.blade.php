@@ -30,9 +30,9 @@
                             <div class="panel-title">
                              MODIFIER UNE ENTREPRISE PARTENAIRE
                         </header>
-                        <div class="card-header">Modifier entreprise #{{ $entreprise->id }}</div>
+                        <div class="card-header">Modifier entreprise #{{ $entpartenaires->id }}</div>
                         <div class="card-body">
-                            <a href="{{ url('/entreprises') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                            <a href="{{ url('/entpartenaires') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />
 
                             @if ($errors->any())
@@ -43,11 +43,11 @@
                                 </ul>
                             @endif
 
-                            <form method="POST" action="{{ url('/entreprises/' . $entreprise->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                            <form method="POST" action="{{ url('/entpartenaires/' . $entreprise->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                 {{ method_field('PATCH') }}
                                 {{ csrf_field() }}
 
-                                @include ('entreprises.form', ['formMode' => 'edit'])
+                                @include ('entpartenaires.form', ['formMode' => 'edit'])
 
                             </form>
 

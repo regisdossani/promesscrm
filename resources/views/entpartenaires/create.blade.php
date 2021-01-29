@@ -26,8 +26,8 @@
                             </header>
                             <div class="card-header">Enrégistrer une Entreprise</div>
                             <div class="panel-body">
-                              
-                                    <a href="{{ url('/entreprises') }}" title="Précé"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+
+                                    <a href="{{ url('/entpartenaires') }}" title="Précé"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <br />
 
 
@@ -39,10 +39,10 @@
                                     </ul>
                                 @endif
 
-                                <form method="POST" action="{{ url('/entreprises') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                                <form method="POST" action="{{ url('/entpartenaires') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                     {{ csrf_field() }}
 
-                                    @include ('entreprises.form', ['formMode' => 'Créer'])
+                                    @include ('entpartenaires.form', ['formMode' => 'Créer'])
 
                                 </form>
 
