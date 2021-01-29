@@ -16,10 +16,12 @@ class CreateMatieresTable extends Migration
         Schema::create('matieres', function (Blueprint $table) {
             $table->id();
             $table->string('nom')->nullable();
-            $table->string('reference');
+            $table->string('reference')->unique();
             $table->unsignedBigInteger('module_id');
             $table->unsignedBigInteger('formateur_id');
             $table->timestamps();
+            $table->integer('coef')->unsigned()->nullable();
+
         });
     }
 

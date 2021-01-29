@@ -28,19 +28,16 @@ class Formateur extends Authenticatable
        return $this->hasMany(Chantier::class,'chantier_id');
     }
 
-    public function modules()
+    public function matieres()
     {
-       return $this->hasMany(Module::class,'id','module_id');
+       return $this->hasMany(Matieres::class);
     }
 
-   /*  public function Modules()
-    {
-        return $this->hasMany(Module::class);
-    } */
+   
 
      public function classes()
     {
-        return $this->hasMany(Classe::class);
+        return $this->belongsToMany(Classe::class,'classe_formateur');
     }
 
     public function apprenants()

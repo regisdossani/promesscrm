@@ -40,6 +40,7 @@ public function chantiers()
 }
 
 
+
     public function candidat()
     {
         return $this->belongsTo(Candidat::class,'candidat_id');
@@ -53,5 +54,8 @@ public function chantiers()
         return $this->belongsTo(Promo::class,'promo_id');
     }
 
+    public function classe() {
+        return $this->belongsTo(Classe::class,'classe_id');
+    }
 
 }

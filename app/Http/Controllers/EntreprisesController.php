@@ -48,7 +48,7 @@ class EntreprisesController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validator($request->all())->validate();
         $requestData = $request->all();
 
         Entreprise::create($requestData);
@@ -115,5 +115,16 @@ class EntreprisesController extends Controller
         Entreprise::destroy($id);
 
         return redirect('entreprises')->with('flash_message', 'Entreprise deleted!');
+}
+
+protected function validator(array $data)
+    {
+        return Validator::make($data,
+        [
+            'raison_sociale' => ['required', 'Integer', 'max:255'],
+            'reference' => ['required', 'string', 'max:255','unique:entreprise,reference'],
+            'contact_tel' => ['required', 'string', 'max:255'],
+
+        ]);
     }
 }
