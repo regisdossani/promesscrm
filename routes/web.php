@@ -155,7 +155,8 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/teacherattendances', 'TeacherattendancesController');
     Route::resource('/attendances', 'AttendancesController');
     Route::resource('/eqattendance', 'EqattendancesController');
-    Route::resource('/entreprises', 'EntreprisesController');
+    Route::resource('/entpartenaires', 'EntpartenairesController');
+    Route::resource('/nosmatieres', 'NosmatieresController');
 
     });
 
