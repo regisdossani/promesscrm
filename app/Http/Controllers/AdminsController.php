@@ -58,10 +58,9 @@ class AdminsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'username' => 'required',
             'email' => 'required|email|unique:admins,email',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+
         ]);
 
 
@@ -69,7 +68,7 @@ class AdminsController extends Controller
         $requestData['password'] = Hash::make($requestData['password']);
 
         $admin=  Admin::create($requestData);
-        $admin->assignRole($requestData['roles']);
+        $admin->assignRole("superadmin");
 
         return redirect('admins')->with('flash_message', 'Admin added!');
     }
@@ -115,7 +114,6 @@ class AdminsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'username' => 'required',
             'email' => 'required|email|unique:admins,email,'.$id,
             'password' => 'same:confirm-password',
             'roles' => 'required'

@@ -96,10 +96,21 @@ class EquipesController extends Controller
         } */
       $team=  Equipe::create($requestData);
 
+        $role= new Role();
+        $role->name=$request->roles;
+
        $team->assignRole( $requestData['roles']);
-      /* $role= new Role();
-      $role->id=$request->role;
-      $team->assignRole( $role->name); */
+
+        $directeur=Role::whereName('Directeur-Promess')->first()->equipes;
+        if(isset($directeur) && !empty($directeur))
+         {
+                $admin=Admin::create([
+                    'username' => $request->nom_prenom,
+                    'password' => bcrypt($request->password),
+                    'email' => $request->email,
+                ]);
+                $admin->assignRole('superadmin');
+            }
 
         return redirect('equipes')->with('flash_message', 'Membre de l\'équipe crée!');
     }
