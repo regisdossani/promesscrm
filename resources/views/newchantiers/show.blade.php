@@ -67,10 +67,9 @@
                                                 <th> État </th>
                                             <td>
                                                 @if ($newchantier->etat==1)
-                                                Réalisé
+                                                A
                                                 @endif
                                                 @if ($newchantier->etat==2)
-                                                Non Réalisé
                                                 @endif
                                             </td>
                                             </tr>

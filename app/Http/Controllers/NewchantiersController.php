@@ -49,7 +49,7 @@ class NewchantiersController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validator($request->all())->validate();
         $requestData = $request->all();
 
         Newchantier::create($requestData);
@@ -117,4 +117,15 @@ class NewchantiersController extends Controller
 
         return redirect('newchantiers')->with('flash_message', 'Newchantier deleted!');
     }
+    protected function validator(array $data)
+    {
+        return Validator::make($data,
+        [
+            'nom' => 'required', 'string', 'max:255',
+            'tel' => 'required', 'string', 'max:255',
+            'email'=>'unique:newchantiers,email'
+
+        ]);
+    }
+
 }
