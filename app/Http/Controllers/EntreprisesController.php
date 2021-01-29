@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 
 use App\Entreprise;
 use Illuminate\Http\Request;
@@ -22,11 +23,17 @@ class EntreprisesController extends Controller
 
         if (!empty($keyword)) {
             $entreprises = Entreprise::latest()->paginate($perPage);
+            $count=Entreprise::count();
+
         } else {
             $entreprises = Entreprise::latest()->paginate($perPage);
+            $count=Entreprise::count();
         }
+        $count=Entreprise::count()+1;
+        $count = sprintf('ENTP'.'%04d',$count);
 
-        return view('entreprises.index', compact('entreprises'));
+
+        return view('entreprises.index', compact('entreprises','count'));
     }
 
     /**
@@ -36,7 +43,11 @@ class EntreprisesController extends Controller
      */
     public function create()
     {
-        return view('entreprises.create');
+        $count=Entreprise::count()+1;
+        // $count = str_pad('ENT'.$count, 4, '0', STR_PAD_LEFT);
+        $count = sprintf('ENTP'.'%04d',$count);
+
+        return view('entreprises.create',compact('count'));
     }
 
     /**

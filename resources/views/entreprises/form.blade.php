@@ -3,9 +3,14 @@
     <input class="form-control" name="raison_sociale" type="text" id="raison_sociale" value="{{ isset($entreprise->raison_sociale) ? $entreprise->raison_sociale : ''}}" >
     {!! $errors->first('raison_sociale', '<p class="help-block">:message</p>') !!}
 </div>
+
 <div class="col-md-6 mb-3 {{ $errors->has('reference') ? 'has-error' : ''}}">
     <label for="reference" class="control-label">{{ 'Reference' }}</label>
-    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($entreprise->reference) ? $entreprise->reference : ''}}" >
+    @if(isset($candidat->reference) && !empty($candidat->reference))
+    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($entreprise->reference) ? $entreprise->reference : ''}}" readonly>
+    @else
+        <input class="form-control" name="reference" type="text" id="reference" value="{{$count}}" readonlyp>
+    @endif
     {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('activite_entreprise') ? 'has-error' : ''}}">
