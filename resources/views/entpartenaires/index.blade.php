@@ -1,36 +1,26 @@
 @extends('inc.master')
-
-@if (Auth::guard("admin")->check())
-    @include('admins.sidebar')
-@endif
-@if (Auth::guard("equipe")->check())
-    @include('equipes.sidebar')
-@endif
-
-@if (Auth::guard("apprenant")->check())
-    @include('apprenants.sidebar')
-@endif
-@if (Auth::guard("formateur")->check())
-    @include('formateurs.sidebar')
-@endif
+@role('apprenant')
+@include('apprenants.sidebar')
+@endrole
+@role('superadmin')
+@include('admins.sidebar')
+@endrole
+@role('Resp-Pedagogique')
+@include('equipes.sidebar')
+@endrole
 
 
 @section('content')
 <section id="main-content">
-
-<section class="wrapper">
-
-    <div class="form-w3layouts">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10">
-                    <section  class="panel">
-
-                        <header class="panel-heading">
-                            <div class="panel-title">
-                             GESTION DES ENTREPRISES PARTENAIRES
-                        </header>
-                        {{-- <div class="card-header">Liste des Entreprises partenaires</div> --}}
+    <section class="wrapper">
+        <div class="form-w3layouts">
+            <div class="container">
+                    <div class="col-md-10">
+                        <section  class="panel">
+                            <header class="panel-heading">
+                                <div class="panel-title">
+                                    GESTION DES ENTREPRISES PARTENAIRES
+                                </div>
                         <div class="card-body ">
                             <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
