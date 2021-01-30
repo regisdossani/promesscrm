@@ -2445,7 +2445,7 @@ input.ggg{
 button.ggg{
     width: 100%;
     padding: 15px 0px 15px 15px;
-    border: 1px solid rgb(20, 20, 20);
+    border: 1px solid #fff;
     outline: none;
     font-size: 14px;
     color: #FFF;
