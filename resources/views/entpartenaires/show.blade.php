@@ -69,11 +69,11 @@
 
                                         <tr>
                                             <th> Téléphone </th>
-                                            <td> {{ $entpartenaire->contact_tel }} </td>
+                                            <td> {{ $entpartenaire->tel }} </td>
                                         </tr>
 
                                     <tr><th>  Email </th>
-                                    <td> {{ $entpartenaire->contact_email }} </td>
+                                    <td> {{ $entpartenaire->email }} </td>
                                     </tr>
 
                                     </tbody>

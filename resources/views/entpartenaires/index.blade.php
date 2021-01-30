@@ -15,7 +15,7 @@
     <section class="wrapper">
         <div class="form-w3layouts">
              <div class="container">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10">
                         <section  class="panel">
                             <div class="card">
                                 <div class="card-title">
