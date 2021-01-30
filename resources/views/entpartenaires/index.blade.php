@@ -17,7 +17,7 @@
             <div class="container">
                     <div class="col-md-10">
                         <section  class="panel">
-                            <div class="panel-heading">
+                            <div class="card">
                                 <div class="card-title">
                                     GESTION DES ENTREPRISES PARTENAIRES
                                 </div>
