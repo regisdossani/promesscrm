@@ -30,9 +30,8 @@
                             <div class="panel-title">
                              GESTION DES ENTREPRISES PARTENAIRES
                         </header>
-                        <div class="card-header">Liste des Entreprises partenaires</div>
-                        <div class="panel-body">
-
+                        {{-- <div class="card-header">Liste des Entreprises partenaires</div> --}}
+                        <div class="card-body ">
                             <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                             </a>
