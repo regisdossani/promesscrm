@@ -52,7 +52,7 @@
                                             <td>{{ $entreprise->id }}</td>
                                         </tr> --}}
                                         <tr><th> Raison Sociale </th>
-                                            <td> {{ $entpartenaires->raison_sociale }} </td>
+                                            <td> {{ $entpartenaire->raison_sociale }} </td>
                                         </tr>
                                         <tr><th> Reference </th>
                                             <td> {{ $entpartenaire->reference }} </td>
