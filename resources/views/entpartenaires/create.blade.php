@@ -20,9 +20,10 @@
                     <div class="col-md-10">
                         <section  class="panel">
 
-                            <header class="panel-heading">
-                                <div class="panel-title">
+                            <header class="card-heading">
+                                <div class="card-title">
                                  ENRÉGISTRER UNE ENTREPRISE PARTENAIRE
+                                </div>
                             </header>
                             <div class="card-body ">
 
