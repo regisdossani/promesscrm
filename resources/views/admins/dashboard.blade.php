@@ -387,7 +387,7 @@
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                    <span>Entreprises Partenaires</span>
+                    <h4>Entreprises Partenaires</h4>
             </div>
             </a>
           <div class="clearfix"> </div>

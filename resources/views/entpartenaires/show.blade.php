@@ -31,7 +31,7 @@
                              AFFICHER UNE ENTREPRISE PARTENAIRE
                         </header>
                         <div class="card-body">
-
+                            <br/>
                             <a href="{{ url('/entpartenaires') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <a href="{{ url('/entpartenaires/' . $entpartenaire->id . '/edit') }}" title="Modifier cette entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 

@@ -17,10 +17,11 @@
             <div class="container">
                     <div class="col-md-10">
                         <section  class="panel">
-                            <header class="panel-heading">
-                                <div class="panel-title">
+                            <div class="card">
+                                <div class="card-title">
                                     GESTION DES ENTREPRISES PARTENAIRES
                                 </div>
+                            </div>
                         <div class="card-body ">
                             <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
