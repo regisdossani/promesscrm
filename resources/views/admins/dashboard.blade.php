@@ -324,9 +324,27 @@
 <div class="clearfix"> </div>
 
 </div>
+<div class="col-md-3 market-update-gd">
+    <div class="market-update-block clr-block-8">
+        <a href="{{url('/partenaires')}}">
+
+                <div class="col-md-4 market-update-right">
+                    <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
+                </div>
+                <div class="col-md-8 market-update-left">
+                    <h4>Partenaires</h4>
+                </div>
+        </a>
+        <div class="clearfix"> </div>
+    </div>
+</div>
 
 <div class="clearfix"> </div>
 </div>
+
+
+
+
 
 
 <div class="col-md-3 market-update-gd">
@@ -400,20 +418,6 @@
 
 
 
-    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-7">
-            <a href="{{url('/partenaires')}}">
-
-                    <div class="col-md-4 market-update-right">
-                        <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
-                    </div>
-                    <div class="col-md-8 market-update-left">
-                        <h4>Partenaires</h4>
-                    </div>
-            </a>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
 
 
 
