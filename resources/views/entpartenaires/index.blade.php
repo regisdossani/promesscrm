@@ -64,7 +64,7 @@
                                                 <td>{{ $item->reference }}</td>
                                                 <td>{{ $item->activite_entreprise }}</td>
                                                 <td>{{ $item->responsable }}</td>
-                                                <td>{{ $item->tel }}</td>
+                                                <td>{{ $item->contact_tel }}</td>
 
                                                 <td>
                                                     <a href="{{ url('/entpartenaires/' . $item->id) }}" title="Voir cette entreprise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
