@@ -34,9 +34,9 @@
                         <div class="card-body">
 
                             <a href="{{ url('/entpartenaires') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                            <a href="{{ url('/entpartenaires/' . $entreprise->id . '/edit') }}" title="Edit entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                            <a href="{{ url('/entpartenaires/' . $entpartenaire->id . '/edit') }}" title="Modifier cette entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
-                            <form method="POST" action="{{ url('entpartenaires' . '/' . $entreprise->id) }}" accept-charset="UTF-8" style="display:inline">
+                            <form method="POST" action="{{ url('entpartenaires' . '/' . $entpartenaire->id) }}" accept-charset="UTF-8" style="display:inline">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete entreprise" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
