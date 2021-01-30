@@ -30,7 +30,7 @@
                             <div class="panel-title">
                              GESTION DES ENTREPRISES PARTENAIRES
                         </header>
-                        <div class="card-header">Liste des Entreprises</div>
+                        <div class="card-header">Liste des Entreprises partenaires</div>
                         <div class="panel-body">
 
                             <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
@@ -59,7 +59,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($entreprises as $item)
+                                        @foreach($entpartenaires as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->raison_sociale }}</td><td>{{ $item->reference }}</td><td>{{ $item->activite_entreprise }}</td>
@@ -77,7 +77,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="pagination-wrapper"> {!! $entreprises->appends(['search' => Request::get('search')])->render() !!} </div>
+                                    <div class="pagination-wrapper"> {!! $entpartenaires->appends(['search' => Request::get('search')])->render() !!} </div>
                                 </div>
 
                         </div>
