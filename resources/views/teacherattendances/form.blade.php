@@ -22,7 +22,7 @@
     </div>
 
 <div class="row">
-    <div class="col-md-6 mb-3 {{ $errors->has('date') ? 'has-error' : ''}}" id='datetimepicker1'>
+    <div class="col-md-6 mb-3 {{ $errors->has('attendence_date') ? 'has-error' : ''}}" id='datetimepicker1'>
         <label for="attendence_date" class="control-label">{{ ' Date' }}</label>
         <input class="form-control datetimepicker" name="date" type="text" id="attendence_date" value="{{ isset($attendance->date) ? $attendance->date : ''}}" required data-date-format="YYYY-MM-DD HH:mm:ss"/>
         {!! $errors->first('attendence_date', '<p class="help-block">:message</p>') !!}
@@ -41,7 +41,13 @@
                 close: 'fa fa-remove'
             }
         });
+
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+
 </div>
 
 

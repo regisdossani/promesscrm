@@ -1,5 +1,6 @@
 @extends('inc.master')
 @include('admins.sidebar')
+@include('inc.styles')
 
 @section('content')
 <section id="main-content">
