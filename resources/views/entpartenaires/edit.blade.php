@@ -29,6 +29,7 @@
                         <header class="panel-heading">
                             <div class="panel-title">
                              MODIFIER UNE ENTREPRISE PARTENAIRE
+                            </div>
                         </header>
                         <div class="card-body">
                             <a href="{{ url('/entpartenaires') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>

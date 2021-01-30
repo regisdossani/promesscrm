@@ -17,12 +17,13 @@
             <div class="container">
                     <div class="col-md-10">
                         <section  class="panel">
-                            <div class="card">
+                            <div class="panel-heading">
                                 <div class="card-title">
                                     GESTION DES ENTREPRISES PARTENAIRES
                                 </div>
                             </div>
                         <div class="card-body ">
+                            <br/>
                             <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                             </a>
@@ -45,14 +46,26 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th><th>Raison Sociale</th><th>Reference</th><th>Activite Entreprise</th><th>Actions</th>
+                                                <th>#</th>
+                                                <th>Raison Sociale</th>
+                                                <th>Référence</th>
+                                                <th>Activité Entreprise</th>
+                                                <th>Responsable</th>
+                                                <th>Téléphone</th>
+
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($entpartenaires as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->raison_sociale }}</td><td>{{ $item->reference }}</td><td>{{ $item->activite_entreprise }}</td>
+                                                <td>{{ $item->raison_sociale }}</td>
+                                                <td>{{ $item->reference }}</td>
+                                                <td>{{ $item->activite_entreprise }}</td>
+                                                <td>{{ $item->responsable }}</td>
+                                                <td>{{ $item->telephone }}</td>
+
                                                 <td>
                                                     <a href="{{ url('/entpartenaires/' . $item->id) }}" title="Voir cette entreprise"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
                                                     <a href="{{ url('/entpartenaires/' . $item->id . '/edit') }}" title="Modufier cette entreprise"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
