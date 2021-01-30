@@ -1,9 +1,17 @@
 @extends('inc.master')
-@include('equipes.sidebar')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
 
- @role('superadmin')
-@include('admins.sidebar')
-@endrole
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 @section('content')
 
@@ -20,8 +28,8 @@
                 <div class="col-md-10">
                     <section  class="card">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
-                            <header class="panel-heading">
-                                <div class="panel-title">
+                            <header class="card-heading">
+                                <div class="card-title">
                                     GESTION DES MODULES
                                 </div>
                             </header>

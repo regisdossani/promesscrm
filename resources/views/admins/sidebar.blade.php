@@ -43,11 +43,10 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-tasks"></i>
-                        <span>Gestion Équipe Promess</span>
+                        <span>Personnel Admini </span>
                     </a>
                     <ul class="sub">
                         <li><a href="{{ url('/equipes') }}">Gestion des membres</a></li>
-
                         <li><a href="{{ url('/eqattendance') }}">Suivis horaires</a></li>
                     </ul>
                 </li>

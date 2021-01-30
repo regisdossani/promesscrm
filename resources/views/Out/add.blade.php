@@ -1,14 +1,30 @@
-@extends('layouts.app')
+@extends('inc.master')
+@include('equipes.sidebar')
 
-@section('title')
-  Ajouter Sorties
-@endsection
+ @role('superadmin')
+@include('admins.sidebar')
+@endrole
+
 @section('content')
-<div class="container">
-    <div class="row">
-        @include('admins.sidebar')
 
-        <div class="col-md-9">
+
+
+<section id="main-content">
+
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
+                    <section  class="card">
+                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+                            <header class="card-heading">
+                                <div class="card-title">
+                                    AJOUTER UNE SORTIE
+                                </div>
+                            </header>
 
 						<div class="widget">
 							<div class="widget-header transparent">
@@ -18,64 +34,68 @@
 							<div class="widget-content padding">
 								<div id="basic-form">
 									<form action="{{ route('add.sorties') }}" method="POST" role="form">
-                    <div class="form-group @if($errors->has('type_id')) has-error @endif">
+                            <div class="form-group @if($errors->has('type_id')) has-error @endif">
 										<label for="type_id">Types</label>
 									<select class="form-control" name="type_id">
-                    @foreach($types as $type)
+                                    @foreach($types as $type)
 									  <option value="{{ $type->id }}">{{ $type->name }}</option>
-                  @endforeach
+                                    @endforeach
 									</select>
-                  </div>
-                  <div class="form-group @if($errors->has('date')) has-error @endif">
-                  <label for="date">Date</label>
-                  <input type="text" class="form-control datepicker-input"  name="date" data-mask="9999-99-99">
-                    @if($errors->has('date')) <div class="help-block">
-                       {{ $errors->first('date') }}
-                    </div>
-                  @endif
-                </div>
-                    <div class="form-group @if($errors->has('nfacture')) has-error @endif">
-										<label for="nfacture">N°Facture</label>
-										<input type="text" class="form-control" name ="nfacture">
-                    @if($errors->has('nfacture')) <div class="help-block">
-                       {{ $errors->first('nfacture') }}
-                    </div>
-                  @endif
-                    </div>
-                    <div class="form-group @if($errors->has('quantite')) has-error @endif">
-                    <label for="quantite">Quantité</label>
-                    <input type="text" class="form-control" name="quantite" data-mask="999999" placeholder="999999">
-                    @if($errors->has('quantite')) <div class="help-block">
-                       {{ $errors->first('quantite') }}
-                    </div>
-                  @endif
-                  </div>
-                  <div class="form-group @if($errors->has('prix_uni')) has-error @endif">
-                  <label for="prix_uni">Prix Unitaire</label>
-                  <input type="text" class="form-control" name="prix_uni" data-mask="999999" placeholder="999999">
-                  @if($errors->has('prix_uni')) <div class="help-block">
-                     {{ $errors->first('prix_uni') }}
-                  </div>
-                @endif
-                </div>
-                <div class="form-group @if($errors->has('fourni')) has-error @endif">
-                <label for="fourni">Fournisseur</label>
-                <input type="text" class="form-control" name ="fourni">
-                @if($errors->has('fourni')) <div class="help-block">
-                   {{ $errors->first('fourni') }}
-                </div>
-              @endif
-                </div>
-                <input type="hidden" name="_token" value="{{ Session::token() }}">
-									  <button type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+                                    <div class="form-group @if($errors->has('date')) has-error @endif">
+                                    <label for="date">Date</label>
+                                    <input type="text" class="form-control datepicker-input"  name="date" data-mask="9999-99-99">
+                                        @if($errors->has('date')) <div class="help-block">
+                                        {{ $errors->first('date') }}
+                                        </div>
+                                    @endif
+                                    </div>
+                                    <div class="form-group @if($errors->has('nfacture')) has-error @endif">
+                                                             <label for="nfacture">N°Facture</label>
+                                                                <input type="text" class="form-control" name ="nfacture">
+                                            @if($errors->has('nfacture')) <div class="help-block">
+                                            {{ $errors->first('nfacture') }}
+                                            </div>
+                                        @endif
+                                            </div>
+                                    <div class="form-group @if($errors->has('quantite')) has-error @endif">
+                                    <label for="quantite">Quantité</label>
+                                    <input type="text" class="form-control" name="quantite" data-mask="999999" placeholder="999999">
+                                    @if($errors->has('quantite')) <div class="help-block">
+                                    {{ $errors->first('quantite') }}
+                                    </div>
+                                @endif
+                                </div>
+                                <div class="form-group @if($errors->has('prix_uni')) has-error @endif">
+                                <label for="prix_uni">Prix Unitaire</label>
+                                <input type="text" class="form-control" name="prix_uni" data-mask="999999" placeholder="999999">
+                                @if($errors->has('prix_uni')) <div class="help-block">
+                                    {{ $errors->first('prix_uni') }}
+                                </div>
+                                @endif
+                                </div>
+                                <div class="form-group @if($errors->has('fourni')) has-error @endif">
+                                <label for="fourni">Fournisseur</label>
+                                <input type="text" class="form-control" name ="fourni">
+                                @if($errors->has('fourni')) <div class="help-block">
+                                {{ $errors->first('fourni') }}
+                                </div>
+                            @endif
+                                </div>
+                                <input type="hidden" name="_token" value="{{ Session::token() }}">
+                                                    <button type="submit" class="btn btn-default">Submit</button>
 									</form>
 								</div>
 							</div>
 						</div>
 
-					</div>
-      </div>
-</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
 @endsection
 @section('scripts')
   <script src="{{ URL::to('assets/libs/d3/d3.v3.js')}}"></script>

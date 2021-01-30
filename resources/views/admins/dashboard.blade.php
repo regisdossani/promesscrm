@@ -200,9 +200,6 @@
 
 
 <div class="market-updates">
-
-
-
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-5">
             <a href="{{url('/promos')}}">
@@ -271,6 +268,7 @@
     </div>
 
 
+    <div class="market-updates">
 
     <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
@@ -298,7 +296,7 @@
             <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
         <div class="col-md-8 market-update-left">
-            <h4> Chantiers école</h4>
+            <h4>Gestion des Chantiers école</h4>
 
         </div>
         </a>
@@ -321,9 +319,7 @@
       <div class="clearfix"> </div>
     </div>
 </div>
-<div class="clearfix"> </div>
 
-</div>
 <div class="col-md-3 market-update-gd">
     <div class="market-update-block clr-block-8">
         <a href="{{url('/partenaires')}}">
@@ -332,19 +328,22 @@
                     <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
                 </div>
                 <div class="col-md-8 market-update-left">
-                    <h4>Partenaires</h4>
+                    <h4>Gestion des Partenaires</h4>
                 </div>
         </a>
         <div class="clearfix"> </div>
     </div>
 </div>
-
 <div class="clearfix"> </div>
+
 </div>
 
 
 
 
+
+
+<div class="market-updates">
 
 
 <div class="col-md-3 market-update-gd">
@@ -367,7 +366,7 @@
 
 
 <div class="col-md-3 market-update-gd">
-    <div class="market-update-block clr-block-8">
+    <div class="market-update-block clr-block-10">
         <a href="{{url('/attendances')}}">
         <div class="col-md-4 market-update-right">
             <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
@@ -381,7 +380,7 @@
 </div>
 
 <div class="col-md-3 market-update-gd">
-    <div class="market-update-block clr-block-6">
+    <div class="market-update-block clr-block-10">
         <a href="{{url('/eqattendance')}}">
         <div class="col-md-4 market-update-right">
             <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
@@ -393,26 +392,25 @@
       <div class="clearfix"> </div>
     </div>
 </div>
+<div class="col-md-3 market-update-gd">
+    <div class="market-update-block clr-block-10">
+        <a href="{{url('/pers_ressources')}}">
 
-
-    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-8">
-            <div class="col-md-4 market-update-right">
-                <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
-            </div>
-            <div class="col-md-8 market-update-left">
-                <a href='{{ url('generation') }}' >
-                    <h4>Gestion des Stocks</h4>
-                </a>
-            </div>
-          <div class="clearfix"> </div>
+        <div class="col-md-4 market-update-right">
+            <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
+        <div class="col-md-8 market-update-left">
+            <h4>Gestion des Personnes ress.</h4>
+        </div>
+        </a>
+      <div class="clearfix"> </div>
     </div>
+</div>
    <div class="clearfix"> </div>
 </div>
 
 
-<div class="market-updates">
+
 
 
 
@@ -493,6 +491,7 @@
 
 </div>
 
+<div class="market-updates">
 <div class="col-md-3 market-update-gd">
     <div class="market-update-block clr-block-7">
         <a href="{{url('/clients')}}">
@@ -509,21 +508,20 @@
     </div>
 </div>
 
-<div class="col-md-3 market-update-gd">
-    <div class="market-update-block clr-block-6">
-        <a href="{{url('/pers_ressources')}}">
 
+<div class="col-md-3 market-update-gd">
+    <div class="market-update-block clr-block-8">
         <div class="col-md-4 market-update-right">
-            <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
+            <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
         <div class="col-md-8 market-update-left">
-            <h4>Gestion des Personnes ress.</h4>
+            <a href='{{ url('sorties') }}' >
+                <h4>Gestion des Stocks</h4>
+            </a>
         </div>
-        </a>
       <div class="clearfix"> </div>
     </div>
 </div>
-
 
 
 

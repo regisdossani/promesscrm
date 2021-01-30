@@ -18,6 +18,8 @@ class ClassesController extends Controller
 
     public function create()
     {
+
+
         $teachers = Formateur::latest()->get();
         $filieres = Filiere::latest()->get();
 
@@ -33,7 +35,7 @@ class ClassesController extends Controller
 
         Classe::create([
             'name'        => $request->name,
-            'filiere_id'        => $request->formation_id,
+            'filiere_id'        => $request->filiere_id,
             'class_description' => $request->class_description
         ]);
 

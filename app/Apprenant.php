@@ -19,7 +19,7 @@ class Apprenant extends Authenticatable
 
 
     protected $fillable = [
-         'email', 'password','annee','visite_terain','lieu_naiss','date_naiss'
+         'email', 'password','annee','visite_terain','lieu_naiss','date_naiss','classe_id'
        ,'prenom','nom','candidat_id','filiere_id','tel','promo_id','reference','sexe','annee'
     ];
 

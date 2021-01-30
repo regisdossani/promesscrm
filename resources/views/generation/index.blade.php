@@ -1,28 +1,24 @@
 @extends('inc.master')
+@include('equipes.sidebar')
 
-@if (Auth::guard("admin")->check())
-    @include('admins.sidebar')
-@endif
-@if (Auth::guard("equipe")->check())
-    @include('equipes.sidebar')
-@endif
+ @role('superadmin')
+@include('admins.sidebar')
+@endrole
 
-
-
-{{-- @section('styles')
-<link rel="stylesheet" href="assets/css/main.css" charset="utf-8">
-@endsection --}}
 @section('content')
-
 <section id="main-content">
-    <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <header class="panel-heading">
-                                <div class="panel-title">
-                                    GESTION DES STOCK
+<section class="wrapper">
+    <div class="form-w3layouts">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-10">
+                    <section  class="card">
+                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+                            <header class="card-heading">
+                                <div class="card-title">
+                                    GESTION DES MODULES
                                 </div>
                             </header>
 
@@ -42,7 +38,7 @@
                                                     <th>Types</th>
                                                     <th>Date</th>
                                                     <th>N°=Facture</th>
-                                                    <th>Quantite</th>
+                                                    <th>Quantité</th>
                                                     <th>Prix Unitaire</th>
                                                     <th>Fournisseur</th>
                                                 </tr>
@@ -69,7 +65,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                    </section>
 
                         <div class="col-md-12">
                             <div class="widget">
@@ -115,9 +111,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </section>
 </section>
 @endsection

@@ -14,7 +14,7 @@
     <div class="form-group {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
         <label for="filiere_id" class="control-label">{{ 'Assigner une Filière' }}</label>
 
-        <select name="filiere_id" class="form-control" id="grid-state">
+        <select name="filiere_id" class="form-control" id="filiere_id">
             <option value="">--Selectionnez Filière--</option>
             @foreach ($filieres as $filiere)
             <option value="{{ $filiere->id }}" {{ isset($classe->filiere_id) && $classe->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom }}</option>

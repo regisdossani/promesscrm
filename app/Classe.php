@@ -12,15 +12,20 @@ class Classe extends Model
         'class_description'
     ];
 
-    public function apprenants()
-    {
-        return $this->hasMany(Apprenant::class,'class_id');
-    }
+
 
     public function modules()
     {
         return $this->belongsToMany(Module::class);
     }
+
+
+    public function apprenants()
+    {
+        return $this->hasMany(Apprenant::class);
+    }
+
+
 
     public function formateur()
     {

@@ -18,14 +18,14 @@
 <section id="main-content">
     <section class="wrapper">
         <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-
-                   {{--  <div class="col-md-3">
-                    </div> --}}
-                    <div class="col-md-10">
-                        <div class="card">
-                            <div class="card-header">Classe</div>
+             <div class="container">
+                    <div class="col-sm-10">
+                        <section  class="panel">
+                            <div class="card">
+                                <div class="card-title">
+                                    GESTION DES CLASSES 
+                                </div>
+                            </div>
                             <div class="card-body">
                                 <a href="{{ url('/classe/create') }}" class="btn btn-success btn-sm" title="Add New classe">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
@@ -91,7 +91,7 @@
                                     </div>
 
                             </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
