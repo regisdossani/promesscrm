@@ -26,9 +26,10 @@
                 <div class="col-md-8">
                     <section  class="panel">
 
-                        <header class="panel-heading">
-                            <div class="panel-title">
+                        <header class="card-heading">
+                            <div class="card-title">
                              AFFICHER UNE ENTREPRISE PARTENAIRE
+                            </div>
                         </header>
                         <div class="card-body">
                             <br/>

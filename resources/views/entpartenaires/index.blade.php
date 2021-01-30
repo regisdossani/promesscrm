@@ -14,8 +14,8 @@
 <section id="main-content">
     <section class="wrapper">
         <div class="form-w3layouts">
-            <div class="container">
-                    <div class="col-md-10">
+             <div class="container">
+                    <div class="col-sm-12">
                         <section  class="panel">
                             <div class="card">
                                 <div class="card-title">
@@ -24,8 +24,8 @@
                             </div>
                         <div class="card-body ">
                             <br/>
-                            <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Add New entreprise">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
+                            <a href="{{ url('/entpartenaires/create') }}" class="btn btn-success btn-sm" title="Nouvelle  entreprise">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Nouvelle
                             </a>
                             <div class="pull-right" style="margin-right:5px">
 
