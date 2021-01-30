@@ -55,25 +55,25 @@
                                             <td> {{ $entpartenaires->raison_sociale }} </td>
                                         </tr>
                                         <tr><th> Reference </th>
-                                            <td> {{ $entpartenaires->reference }} </td>
+                                            <td> {{ $entpartenaire->reference }} </td>
                                         </tr>
                                             <tr>
                                                 <th> Activite Entreprise </th>
-                                                        <td> {{ $entpartenaires->activite_entreprise }} </td>
+                                                        <td> {{ $entpartenaire->activite_entreprise }} </td>
                                             </tr>
 
                                             <tr>
                                                 <th>  Responsable </th>
-                                                <td> {{ $entpartenaires->responsable }} </td>
+                                                <td> {{ $entpartenaire->responsable }} </td>
                                             </tr>
 
                                         <tr>
                                             <th> Téléphone </th>
-                                            <td> {{ $entpartenaires->contact_tel }} </td>
+                                            <td> {{ $entpartenaire->contact_tel }} </td>
                                         </tr>
 
                                     <tr><th>  Email </th>
-                                    <td> {{ $entpartenaires->contact_email }} </td>
+                                    <td> {{ $entpartenaire->contact_email }} </td>
                                     </tr>
 
                                     </tbody>
