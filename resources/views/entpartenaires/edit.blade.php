@@ -30,7 +30,6 @@
                             <div class="panel-title">
                              MODIFIER UNE ENTREPRISE PARTENAIRE
                         </header>
-                        <div class="card-header">Modifier entreprise #{{ $entpartenaires->id }}</div>
                         <div class="card-body">
                             <a href="{{ url('/entpartenaires') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />

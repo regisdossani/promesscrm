@@ -24,10 +24,9 @@
                                 <div class="panel-title">
                                  ENRÉGISTRER UNE ENTREPRISE PARTENAIRE
                             </header>
-                            <div class="card-header">Enrégistrer une Entreprise</div>
-                            <div class="panel-body">
+                            <div class="card-body ">
 
-                                    <a href="{{ url('/entpartenaires') }}" title="Précé"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    <a href="{{ url('/entpartenaires') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <br />
 
 

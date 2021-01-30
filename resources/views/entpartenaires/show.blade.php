@@ -30,7 +30,6 @@
                             <div class="panel-title">
                              AFFICHER UNE ENTREPRISE PARTENAIRE
                         </header>
-                        <div class="card-header">Entreprise {{ $entpartenaire->id }}</div>
                         <div class="card-body">
 
                             <a href="{{ url('/entpartenaires') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
