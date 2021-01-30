@@ -5,9 +5,9 @@
 </div>
 
 <div class="col-md-6 mb-3 {{ $errors->has('reference') ? 'has-error' : ''}}">
-    <label for="reference" class="control-label">{{ 'Reference' }}</label>
+    <label for="reference" class="control-label">{{ 'Référence' }}</label>
     <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($entreprise->reference) ? $entreprise->reference : ''}}">
- 
+
     {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('activite_entreprise') ? 'has-error' : ''}}">
