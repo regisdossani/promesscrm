@@ -11,6 +11,7 @@ use App\Template;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use App\AttendanceFileQueue;
+use App\Http\Helpers\AppHelper;
 
 
 class EqattendancesController extends Controller

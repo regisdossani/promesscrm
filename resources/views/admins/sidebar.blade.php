@@ -1,9 +1,7 @@
 
-<!--sidebar start-->
-<aside>
-    <div id="sidebar" class="collapse navbar-collapse">
+  <aside>
+    <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
-
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
 
@@ -26,6 +24,12 @@
                 @endif
 
                 @role('superadmin')
+
+
+
+
+
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-cog"></i>
@@ -35,18 +39,25 @@
                         <li><a href="{{ url('/admin/roles') }}">Gestion des rôles</a></li>
                         <li><a href="{{ url('/admin/permissions') }}">Gestion des permissions</a></li>
                         <li><a href="{{ url('/classe') }}">Gestion des classes</a></li>
-                        <li><a href="{{ url('/typeformations') }}"><span>Les types de Formations</span></a> </li>
-                        <li><a href="{{ url('/formations') }}"><span>Gestion les Formations</span></a></li>
+                        <li><a href="{{ url('/filieres') }}"><span>Gestion les Filieres</span></a></li>
+                        <li><a href="{{ url('/promos') }}"><span>Gestion les Promos</span></a></li>
+                        <li><a href="{{ url('/modules') }}"><span>Gestion les Modules</span></a></li>
+
                     </ul>
                 </li>
+
+
+
+
+
 
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-tasks"></i>
-                        <span>Personnel Admini </span>
+                        <span>Gestion du Personnel  </span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{ url('/equipes') }}">Gestion des membres</a></li>
+                        <li><a href="{{ url('/equipes') }}">Personnel Adm.</a></li>
                         <li><a href="{{ url('/eqattendance') }}">Suivis horaires</a></li>
                     </ul>
                 </li>
@@ -58,29 +69,24 @@
                     </a>
                 </li>
 
-                <li>
+               {{--  <li>
                     <a href="{{ url('/professionnels') }}">
                         <i class="fa fa-th"></i>
                         <span>Gestion des professionnels </span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
-                    <a href="{{ url('/persressources') }}">
+                    <a href="{{ url('/pers_ressources') }}">
                         <i class="fa fa-bullhorn"></i>
-                        <span>Gestion des personnes </span>
+                        <span>Personnes </span>
                         <span>ressources </span>
                     </a>
                 </li>
                 @endrole
 
                 @hasanyrole('Resp-Pedagogique|superadmin')
-                <li>
-                    <a href="{{ url('/candidats') }}">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Gestion des candidats </span>
-                    </a>
-                </li>
+
 
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -88,6 +94,12 @@
                         <span>Gestion des Apprenants</span>
                     </a>
                     <ul class="sub">
+                        <li>
+                            <a href="{{ url('/candidats') }}">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>Gestion des candidats </span>
+                            </a>
+                        </li>
 
                         <li>
                             <a href="{{ url('/apprenants') }}">
@@ -96,20 +108,60 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('/testcandidats') }}">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>Tests des candidats </span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="{{ url('/newchantiers') }}">
+                                <i class="fa fa-tasks"></i>
+                                <span>Nouveaux Chantiers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/chantiers') }}">
+                                <i class="fa fa-tasks"></i>
+                                <span> Chantiers réalisés</span>
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="{{ url('/stages') }}">
                                 <i class="fa fa-tasks"></i>
                                 <span>Gestion des Stages</span>
                             </a>
                         </li>
 
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-th"></i>
+                        <span>Gestion des Formateurs</span>
+                    </a>
+                    <ul class="sub">
                         <li>
-                            <a href="{{ url('/stagiaires') }}">
+                            <a href="{{ url('/candidats') }}">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>
+                            Formateurs </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/teacherattendances') }}">
                                 <i class="fa fa-tasks"></i>
-                                <span>Gestion des Stagiaires</span>
+                                <span>Suivi des Formateurs</span>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+
 
                 <li class="nav-item">
                     <a href="{{ url('/calendrier') }}">
@@ -123,3 +175,6 @@
         </div>
     </div>
 </aside>
+
+
+</section>

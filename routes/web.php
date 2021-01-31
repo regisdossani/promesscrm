@@ -90,9 +90,6 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/clients', 'ClientsController');
     Route::resource('/fiches', 'FichedescriptivesController');
     Route::resource('/suivipostchantiers', 'PostchantiersController');
-    // Route::resource('/eqattendances', 'EqattendancesController');
-
-    Route::resource('/eqattendance', 'EqattendanceController');
 
     Route::resource('/encadreurs', 'EncadreursController');
     Route::resource('/pers_ressources', 'Pers_ressourcesController');
@@ -154,7 +151,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/chantiers', 'ChantiersController');
     Route::resource('/teacherattendances', 'TeacherattendancesController');
     Route::resource('/attendances', 'AttendancesController');
-    Route::resource('/eqattendance', 'EqattendancesController');
+    Route::resource('/eqattendance', 'EqattendanceController');
     Route::resource('/entpartenaires', 'EntpartenairesController');
     Route::resource('/nosmatieres', 'NosmatieresController');
 
