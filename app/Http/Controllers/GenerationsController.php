@@ -367,11 +367,11 @@ class GenerationsController extends Controller
         } else {
             $generations = Generation::latest()->paginate($perPage);
         }
-
+            $types= Type::all();
             $entres = Generation::where('mode', 1)->take(10)->get();
             $sorties = Generation::where('mode', 2)->take(10)->get();
             // return view('dashboard.home')->with('entres',$entres)->with('sorties',$sorties);
-        return view('generation.index', compact('generations','sorties','entres'));
+        return view('generation.index', compact('generations','sorties','entres','types'));
     }
 
 }

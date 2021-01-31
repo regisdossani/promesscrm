@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                    </section>
+
 
                         <div class="col-md-12">
                             <div class="widget">
@@ -112,6 +112,59 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <br/>
+
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="widget-header transparent">
+                                    <h2 class="text-center"><strong>Types des objets</strong></h2>
+                                    <div class="additional-btn">
+                                        <a href="{{ route('type.home') }}" class="infos-dashboard">Plus d'options ...</a>
+                                    </div>
+                                </div>
+                                <div class="widget-content">
+                                        <div class="table-responsive">
+                                            <table data-sortable class="table table-hover table-striped">
+                                            <thead>
+                                                <thead>
+                                                    <tr>
+                                                      <th>N°</th>
+                                                     <th>Nom</th>
+                                                      <th>Crée à</th>
+                                                      <th>modifié à</th>
+                                                    </tr>
+                                                  </thead>
+                                            </thead>
+
+                                            <tbody>
+                                                @foreach($types as $type)
+                                                <tr>
+                                                  <td>
+                                                    {{ $type->id }}
+                                                  </td>
+
+
+                                                  <td>
+                                                    <a href="{{ route('single.type',$type->id) }}">{{ $type->name }}</a>
+                                                  </td>
+                                                  <td>
+                                                    {{ date('d/m/Y H:i',strtotime($type->created_at)) }}
+                                                  </td>
+                                                  <td>
+                                                    {{ date('d/m/Y H:i',strtotime($type->updated_at)) }}
+                                                  </td>
+                                                </tr>
+                                              @endforeach
+                                              </tbody>
+                                              </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
                 </div>
             </div>
         </div>
