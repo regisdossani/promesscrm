@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Generation;
 use Session;
-use App\type;
+use App\Type;
 use App\Client;
 
 class GenerationsController extends Controller
@@ -26,7 +26,7 @@ class GenerationsController extends Controller
    public function get_edit_generation($id)
    {
       $generation = Generation::find($id);
-       $types = type::all();
+       $types = Type::all();
       $modifier = array();
       foreach($types as $type)
       {
@@ -90,7 +90,7 @@ class GenerationsController extends Controller
     }
     public function get_add_entres()
     {
-      $types = type::all();
+      $types = Type::all();
       return view('In.add')->with('types',$types);
     }
     public function post_add_entres(Request $request)
@@ -123,7 +123,7 @@ class GenerationsController extends Controller
     public function get_edit_entres($id)
     {
       $entres = Generation::find($id);
-      $types = type::all();
+      $types = Type::all();
       $typo = [];
       foreach($types as $type)
       {
@@ -181,7 +181,7 @@ class GenerationsController extends Controller
     }
     public function get_add_sorties()
     {
-      $types = type::all();
+      $types = Type::all();
       return view('Out.add')->with('types',$types);
     }
     public function post_add_sorties(Request $request)
@@ -214,7 +214,7 @@ class GenerationsController extends Controller
     public function get_edit_sorties($id)
     {
       $sorties = Generation::find($id);
-      $types = type::all();
+      $types = Type::all();
       $typo = [];
       foreach($types as $type)
       {
@@ -264,7 +264,7 @@ class GenerationsController extends Controller
 
     public function index_types()
     {
-      $types = type::all();
+      $types = Type::all();
       return view('type.home')->with('types',$types);
     }
     public function post_types(Request $request)
@@ -272,7 +272,7 @@ class GenerationsController extends Controller
       $this->validate($request,[
         'name' => 'required'
       ]);
-      $types = new type;
+      $types = new Type;
       $types->name = $request->name;
       $types->save();
 
@@ -282,7 +282,7 @@ class GenerationsController extends Controller
     public function single_type($id)
     {
       $types = Generation::where('type_id',$id)->get();
-      $name = type::find($id);
+      $name = Type::find($id);
       return view('type.page')->with('types',$types)->with('name',$name);
     }
     public function get_edit_page_types($id)
