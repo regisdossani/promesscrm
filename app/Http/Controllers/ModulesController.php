@@ -41,7 +41,7 @@ class ModulesController extends Controller
 
         return redirect()->route('modules.index');
     }
-    
+
     public function show($id)
     {
         $module = Module::findOrFail($id);
@@ -52,6 +52,7 @@ class ModulesController extends Controller
     public function edit($id)
     {
         $teachers = Formateur::latest()->get();
+        $subject = Module::findOrFail($id);
 
         return view('modules.edit', compact('subject','teachers'));
     }
