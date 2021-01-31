@@ -56,6 +56,12 @@ class NosmatieresController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request,[
+            'module_id' => 'required',
+            'reference'=>'unique:nosmatieres',
+            
+            ]);
+
         $requestData = $request->all();
 
         Nosmatiere::create($requestData);

@@ -6,27 +6,20 @@
 @endrole
 
 @section('content')
-
-
-
 <section id="main-content">
-
-<section class="wrapper">
-    <div class="form-w3layouts">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="card">
+    <section class="wrapper">
+        <div class="form-w3layouts">
+            <div class="container">
+                    <div class="col-md-10">
+                        <section  class="panel">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
-                            <header class="panel-heading">
-                                <div class="panel-title">
-                                    GESTION DES PARAMÈTRES(MATIÈRE)
-                                </div>
-                            </header>
+                                <header class="panel-heading">
+                                    <div class="panel-title">
+                                        GESTION DES PARAMÈTRES(MATIÈRE)
+                                    </div>
+                                </header>
 
-                                <div class="card-body ">
+                                 <div class="card-body ">
                                         <div class="card-header">Nos matieres</div>
                                         <a href="{{ url('/nosmatieres/create') }}" class="btn btn-success btn-sm" title="Add New nosmatiere">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>Nouveau
@@ -93,8 +86,11 @@
                                             </div>
 
                                         </div>
+                        </section>
                 </div>
             </div>
         </div>
     </div>
+</section>
+</section>
 @endsection
