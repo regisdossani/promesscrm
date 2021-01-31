@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <section  class="panel">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="card-heading">
@@ -56,7 +56,7 @@
                                     <br/>
                                     <div class="row">
                                         <div class="table-responsive">
-                                            <table style="width: 100%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
+                                            <table style="width: 90%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
