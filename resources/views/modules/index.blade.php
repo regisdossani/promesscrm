@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <section  class="panel">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="card-heading">
