@@ -55,7 +55,7 @@
                                     <br/>
                                     <br/>
                                     <div class="row">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive center">
                                             <table style="width: 90%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
                                                 <thead>
                                                     <tr>
