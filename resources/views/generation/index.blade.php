@@ -1,5 +1,5 @@
 @extends('inc.master')
-@include('equipes.sidebar')
+
 
  @role('superadmin')
 @include('admins.sidebar')
@@ -8,29 +8,30 @@
 @section('content')
 <section id="main-content">
 <section class="wrapper">
-    <div class="form-w3layouts">
+    {{-- <div class="form-w3layouts"> --}}
 
         <div class="container">
             <div class="row">
 
                 <div class="col-md-10">
                     <section  class="card">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="card-heading">
                                 <div class="card-title">
-                                    GESTION DES MODULES
+
+                                <h1 class="text-center"><strong>  GESTION DES STOCK</strong></h1>
+
                                 </div>
                             </header>
-
-                            <div class="widget">
-                                <div class="widget-header transparent">
-                                <h2 class="text-center"><strong>Entres</strong></h2>
+                                <br/>
+                                <div class="panel-body">
+                                    <div class="widget-header transparent">
+                                <h2 class="text-center"><strong>Entrées</strong></h2>
                                 <div class="additional-btn">
                                     <a href="{{ route('show.entres') }}" class="infos-dashboard">Plus d'options ...</a>
                                 </div>
                                 </div>
-                                <div class="widget-content">
-                                <div class="table-responsive">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
                                     <table data-sortable class="table table-hover table-striped">
                                     <thead>
                                             <thead>
@@ -114,7 +115,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
     </section>
 </section>
 @endsection

@@ -277,7 +277,7 @@ class GenerationsController extends Controller
       $types->save();
 
       Session::flash('success','Vous Avez bien Ajouter votre Type');
-      return redirect()->route('home.types');
+      return redirect()->route('type.home');
     }
     public function single_type($id)
     {

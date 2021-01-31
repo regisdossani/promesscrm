@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.app')
 @section('title')
 Entres
 @endsection
@@ -13,7 +13,7 @@ Entres
             <h2 class="text-center"><strong>{{ $name->name }}</strong></h2>
 
             <div class="additional-btn">
-           <a href="{{ route('home.types') }}"><button class="btn btn-success pull-right">Ajouter</button></a>
+           <a href="{{ route('type.home') }}"><button class="btn btn-success pull-right">Ajouter</button></a>
             </div>
           </div>
           <div class="widget-content">

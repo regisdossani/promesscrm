@@ -1,25 +1,41 @@
-@extends('layouts.app')
-@section('title')
-Entres
-@endsection
+@extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 
 @section('content')
-<div class="container">
-    <div class="row">
-        @include('admins.sidebar')
+<section id="main-content">
 
-        <div class="col-md-9">
+    <section class="wrapper">
+
+            <div class="container">
+                <div class="row">
+
+        <div class="col-md-10">
         <div class="widget">
           <div class="widget-header">
             <h2 class="text-center"><strong>Entrées</strong></h2>
 
             <div class="additional-btn">
+        <a href="{{ route('index.generation') }}"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+
            <a href="{{ route('get_add_entres') }}"><button class="btn btn-success pull-right">Ajouter</button></a>
             </div>
           </div>
           <div class="widget-content">
-          <br>
+            <br/>
+            <br/>
             <div class="table-responsive">
               <form class='form-horizontal' role='form'>
               <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -46,8 +62,9 @@ Entres
                               <td>{{ $entre->nfacture }}</td>
                               <td>{{ $entre->quantite}}</td>
                               <td>{{ $entre->prix_uni}}</td>
+                              {{-- <td><a href="{{ url('client/{id}',$entre->id)}}">{{ $entre->fourni }}</a></td> --}}
 
-                              <td><a href="{{ url('client/{id}',$entre->id)}}">{{ $entre->fourni }}</a></td>
+                              <td>{{ $entre->fourni }}</td>
                               <td>{!! $entre->solde = $entre->quantite * $entre->prix_uni !!}</td>
                               <td>
                           <div class="btn-group btn-group-xs">
@@ -69,6 +86,9 @@ Entres
       </div>
     </div>
 </div>
+
+    </section>
+</section>
 
 @endsection
 @section('scripts')

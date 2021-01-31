@@ -515,13 +515,41 @@
             <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
         <div class="col-md-8 market-update-left">
-            <a href='{{ url('sorties') }}' >
-                <h4>Gestion des Stocks</h4>
+            <a href='{{ url('types') }}' >
+                <h4>Gestion des types (Stock)</h4>
             </a>
         </div>
       <div class="clearfix"> </div>
     </div>
 </div>
+
+<div class="col-md-3 market-update-gd">
+    <div class="market-update-block clr-block-8">
+        <div class="col-md-4 market-update-right">
+            <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
+        </div>
+        <div class="col-md-8 market-update-left">
+            <a href='{{ url('stock') }}' >
+                <h4>Gestion des Stock</h4>
+            </a>
+        </div>
+      <div class="clearfix"> </div>
+    </div>
+</div>
+
+{{-- <div class="col-md-3 market-update-gd">
+    <div class="market-update-block clr-block-8">
+        <div class="col-md-4 market-update-right">
+            <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
+        </div>
+        <div class="col-md-8 market-update-left">
+            <a href='{{ url('sorties') }}' >
+                <h4>Gestion des sorties Stock</h4>
+            </a>
+        </div>
+      <div class="clearfix"> </div>
+    </div>
+</div> --}}
 
 
 

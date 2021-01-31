@@ -20,27 +20,25 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
 
         <div class="container">
             <div class="row">
 
                 <div class="col-md-10">
                     <section  class="card">
-                            <header class="card-heading">
-                                <div class="card-title">
-                                    AJOUTER UNE ENTRÉES
-                                </div>
-                            </header>
+
 						<div class="widget">
 							<div class="widget-header transparent">
-								<h2><strong>Ajouter</strong> une Entrées</h2>
+								<h2><strong>AJOUTER</strong> UNE ENTRÉES</h2>
 
-							</div>
+                            </div>
+                            <br/><br/>
+                            <a href="{{ route('show.entres') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+
 							<div class="widget-content padding">
 								<div id="basic-form">
 									<form action="{{ route('add.entres') }}" method="POST" role="form">
-                                        <div class="form-group @if($errors->has('type_id')) has-error @endif">
+                                        <div class="col-md-6 mb-3 @if($errors->has('type_id')) has-error @endif">
                                             <label for="type_id">Types</label>
                                                 <select class="form-control" name="type_id">
                                                     @foreach($types as $type)
@@ -48,7 +46,7 @@
                                                     @endforeach
                                                 </select>
                                         </div>
-                                        <div class="form-group @if($errors->has('date')) has-error @endif">
+                                        <div class="col-md-6 mb-3 @if($errors->has('date')) has-error @endif">
                                             <label for="date">Date</label>
                                             <input type="text" class="form-control datepicker-input"  name="date" data-mask="9999-99-99">
                                                     @if($errors->has('date')) <div class="help-block">
@@ -56,7 +54,7 @@
                                                     </div>
                                                 @endif
                                         </div>
-                                        <div class="form-group @if($errors->has('nfacture')) has-error @endif">
+                                        <div class="col-md-6 mb-3 @if($errors->has('nfacture')) has-error @endif">
                                             <label for="nfacture">N°Facture</label>
                                             <input type="text" class="form-control" name ="nfacture">
                                                 @if($errors->has('nfacture')) <div class="help-block">
@@ -64,7 +62,7 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <div class="form-group @if($errors->has('quantite')) has-error @endif">
+                                        <div class="col-md-6 mb-3 @if($errors->has('quantite')) has-error @endif">
                                             <label for="quantite">Quantité</label>
                                             <input type="text" class="form-control" name="quantite" data-mask="999999" placeholder="999999">
                                             @if($errors->has('quantite')) <div class="help-block">
@@ -73,7 +71,7 @@
                                             @endif
                                         </div>
 
-                                        <div class="form-group @if($errors->has('prix_uni')) has-error @endif">
+                                        <div class="col-md-6 mb-3 @if($errors->has('prix_uni')) has-error @endif">
                                         <label for="prix_uni">Prix Unitaire</label>
                                         <input type="text" class="form-control" name="prix_uni" data-mask="999999" placeholder="999999">
                                         @if($errors->has('prix_uni')) <div class="help-block">
@@ -81,7 +79,7 @@
                                         </div>
                                         @endif
                             </div>
-                            <div class="form-group @if($errors->has('fourni')) has-error @endif">
+                            <div class="col-md-6 mb-3 @if($errors->has('fourni')) has-error @endif">
                                 <label for="fourni">Fournisseur</label>
                                 <input type="text" class="form-control" name ="fourni">
                                 @if($errors->has('fourni')) <div class="help-block">
@@ -90,15 +88,19 @@
                                  @endif
                             </div>
                             <input type="hidden" name="_token" value="{{ Session::token() }}">
-									  <button type="submit" class="btn btn-default">Submit</button>
+									  <button type="submit" class="btn btn-default">Ajouter</button>
 									</form>
 								</div>
 							</div>
 						</div>
 
-					</div>
+                    </div>
+            </div>
+
       </div>
-    </div>
+
+</section>
+</section>
 @endsection
 @section('scripts')
   <script src="{{ URL::to('assets/libs/d3/d3.v3.js')}}"></script>

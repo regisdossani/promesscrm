@@ -12,7 +12,7 @@
         <div class="col-md-9">
 						<div class="widget">
 							<div class="widget-header transparent">
-								<h2><strong>Ajouter</strong> sorties</h2>
+								<h2><strong>AJOUTER</strong>DES SORTIES</h2>
 							</div>
 							<div class="widget-content padding">
 								<div id="basic-form">
