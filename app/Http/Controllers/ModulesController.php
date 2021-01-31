@@ -52,9 +52,9 @@ class ModulesController extends Controller
     public function edit($id)
     {
         $teachers = Formateur::latest()->get();
-        $subject = Module::findOrFail($id);
+        $module = Module::findOrFail($id);
 
-        return view('modules.edit', compact('subject','teachers'));
+        return view('modules.edit', compact('module','teachers'));
     }
 
 
