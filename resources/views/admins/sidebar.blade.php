@@ -175,6 +175,3 @@
         </div>
     </div>
 </aside>
-
-
-</section>
