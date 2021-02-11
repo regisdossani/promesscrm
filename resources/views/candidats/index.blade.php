@@ -24,33 +24,38 @@
 
                             <div class="row w3-res-tb">
                                 <br />
-                                @role('superadmin')
-                                <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
-                                    <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
-                                </a>
-                                @endrole
-                                @role('Resp-Pedagogique')
-                                <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
-                                    <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
-                                </a>
-                                @endrole
-
-
-                                <div class="pull-right" style="margin-right:5px">
-                                        <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                            <div class="form-inline">
-                                                <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
-                                                    <button class="btn btn-secondary" type="submit">
-                                                        <i class="fa fa-search"></i></button>
-                                            </div>
-                                        </form>
+                                <div class="col-sm-5 m-b-xs">
+                                    @role('superadmin')
+                                        <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                        <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
+                                            <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
+                                        </a>
+                                    @endrole
+                                    @role('Resp-Pedagogique')
+                                        <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                        <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
+                                            <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
+                                        </a>
+                                    @endrole
                                 </div>
+                                <div class="col-sm-4">
+                                </div>
+                                    {{-- <div class="pull-right" style="margin-right:5px"> --}}
+                                <div class="col-sm-3">
+
+                                            <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                                <div class="form-inline">
+                                                    <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                                        <button class="btn btn-secondary" type="submit">
+                                                            <i class="fa fa-search"></i></button>
+                                                </div>
+                                            </form>
+                                </div>
+                                    {{-- </div> --}}
                             </div>
-                                <br/>
-                                <br/>
-                                <div class="table-responsive">
+
+                            <br/>
+                            <div class="table-responsive">
                                     <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
