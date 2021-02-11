@@ -15,15 +15,17 @@
     <section class="wrapper">
         <div class="form-w3layouts">
             <div class="container">
-                    <div class="col-md-12">
-                        <section  class="panel">
+                <div class="col-lg-12">
+
+                    <section  class="panel">
                             <header class="panel-heading">
-                                <div class="panel-title">
+
                                     GESTION DES CANDIDATS
-                                </div>
+
                             </header>
 
-                            <div class="card-body ">
+                        <div class="panel-body ">
+                            <div class="row">
                                 <br />
                                 @role('superadmin')
                                 <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -31,7 +33,7 @@
                                     <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
                                 </a>
                                 @endrole
-                            @role('Resp-Pedagogique')
+                                @role('Resp-Pedagogique')
                                 <a href="{{ url('/equipe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 <a href="{{ url('/candidats/create') }}" class="btn btn-success btn-sm" title="Nouveau candidat">
                                     <i class="fa fa-plus" aria-hidden="true"></i> PréInscription
@@ -56,12 +58,10 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Genre</th>
-
                                                 <th>Nom</th>
                                                 <th>Téléphone</th>
                                                 <th>Provenance</th>
-                                              <th>Région</th>
-
+                                                <th>Région</th>
                                                 <th>Filière</th>
                                                 <th>Promo</th>
                                                 <th>Actions</th>
@@ -109,6 +109,7 @@
                                 </div>
 
                             </div>
+                        </div>
 
                     </section>
                 </div>
