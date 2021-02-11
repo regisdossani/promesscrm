@@ -1,5 +1,5 @@
 @extends('inc.master')
-@include('admins.sidebar')
+{{-- @include('admins.sidebar') --}}
 
 
 @section('content')
