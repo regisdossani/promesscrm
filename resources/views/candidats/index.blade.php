@@ -15,7 +15,7 @@
     <section class="wrapper">
         <div class="form-w3layouts">
             <div class="container">
-                    <div class="col-md-11">
+                    <div class="col-md-12">
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
