@@ -97,7 +97,8 @@
                         <span>Login Page</span>
                     </a>
                 </li>
-            </ul>            </div>
+            </ul>
+        </div>
         <!-- sidebar menu end-->
     </div>
 </aside>
