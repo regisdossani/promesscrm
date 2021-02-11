@@ -13,19 +13,16 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="col-lg-12">
+		<div class="table-agile-info">
+            <div class="panel panel-default">
+                {{-- <div class="col-lg-12"> --}}
 
-                    <section  class="panel">
+                    {{-- <section  class="panel"> --}}
                             <header class="panel-heading">
-
                                     GESTION DES CANDIDATS
-
                             </header>
 
-                        <div class="panel-body ">
-                            <div class="row">
+                            <div class="row w3-res-tb">
                                 <br />
                                 @role('superadmin')
                                 <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -50,10 +47,11 @@
                                             </div>
                                         </form>
                                 </div>
+                            </div>
                                 <br/>
                                 <br/>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -111,8 +109,8 @@
                             </div>
                         </div>
 
-                    </section>
-                </div>
+                    {{-- </section> --}}
+                {{-- </div> --}}
             </div>
 
     </div>
