@@ -209,7 +209,7 @@ ul.sidebar-menu li a.active i {
     transition:all .3s ease-in-out;
 }
 .footer {
-    background: #d19a98;
+    background:#1A1A37;
     padding: 20px;
 }
 .footer p {
@@ -246,7 +246,7 @@ ul.sidebar-menu li a.active i {
     width:100%;
 }
 .brand {
-    background:#F0AD4E;
+    background:#FFA000;
     float:left;
     width:240px;
     height:80px;
@@ -624,7 +624,7 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     color:#fff;
 }
 .sidebar-toggle-box:hover {
-    background:#fa9fa4;
+    background:#F0AD4E;
 }
 .hide-left-bar {
     margin-left:-240px !important;

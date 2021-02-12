@@ -16,18 +16,15 @@
 
     <section class="wrapper">
 
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-            <div class="col-md-10">
+		<div class="table-agile-info">
+
+            <div class="panel panel-default">
                 <div class="card">
 
                     <header class="panel-heading">
-                        <div class="panel-title">
                             ENRÉGISTRER UN CANDIDAT
-                        </div>
                     </header>
-                    <div class="card-body">
+                    <div class="row w3-res-tb">
                         <br />
                         <a href="{{ url('/candidats') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
 
@@ -51,8 +48,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
         </div>
     </section>
 </section>

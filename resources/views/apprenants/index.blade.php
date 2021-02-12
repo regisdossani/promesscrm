@@ -19,50 +19,56 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <section  class="panel">
+		<div class="table-agile-info">
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     GESTION DES APPRENANTS
-                                </div>
                             </header>
-                            <div class="panel-body">
-                                <br/>
-                                @hasanyrole('superadmin')
-                                    <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                    <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
-                                        <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
-                                    </a>
-                                @endrole
-                                @role('Resp-pedagogique')
-                                    <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                    <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
-                                        <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
-                                    </a>
-                                 @endrole
+                            <div class="row w3-res-tb">
+                                <div class="col-sm-5 m-b-xs">
 
+                                        @hasanyrole('superadmin')
+                                            <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                            <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
+                                                <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
+                                            </a>
+                                        @endrole
+                                        @role('Resp-pedagogique')
+                                            <a href="{{ url('/apprenants') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                            <a href="{{ url('/apprenants/create') }}" class="btn btn-success btn-sm " title="Add New apprenant">
+                                                <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
+                                            </a>
+                                        @endrole
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
                                 <div class="pull-right" style="margin-right:5px">
 
-                                        <form method="GET" action="{{ url('/apprenants') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                            <div class="form-inline">
-                                                <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
+                                                <form method="GET" action="{{ url('/apprenants') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                                                    <div class="form-inline">
+                                                        <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
 
-                                                    <button class="btn btn-secondary" type="submit">
-                                                      <i class="fa fa-search"></i>
-                                                    </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                                            <button class="btn btn-secondary" type="submit">
+                                                            <i class="fa fa-search"></i>
+                                                            </button>
+                                                    </div>
+                                                </form>
                                 </div>
-                                 <br/>
-                                            <br/>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
+                            </div>
+                                <br/>
+                                <div>
+                                    <table class="table" ui-jq="footable" ui-options='{
+                                        "paging": {
+                                          "enabled": true
+                                        },
+                                        "filtering": {
+                                          "enabled": true
+                                        },
+                                        "sorting": {
+                                          "enabled": true
+                                        }}'>
+                                         <thead>
+                                            <tr>
                                                         <th>#</th>
                                                         <th>Référence</th>
                                                         <th>Nom</th>
@@ -74,9 +80,9 @@
                                                         <th>Promo</th>
 
                                                         <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                                 @foreach($apprenants as $item)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
@@ -124,14 +130,10 @@
                                             </table>
                                             <div class="pagination-wrapper"> {!! $apprenants->appends(['search' => Request::get('search')])->render() !!} </div>
                                         </div>
-                                    </section>
-                                </div>
-                                </div>
+
                             </div>
-
-
                     </div>
-                </div>
+            </div>
             </div>
         </div>
     </section>

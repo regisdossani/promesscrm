@@ -1,14 +1,21 @@
+
 <!--sidebar start-->
-<aside>
+ <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a href="index.html">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
+            
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-cog"></i>
+                        <span>Paramètres</span>
                     </a>
+                    <ul class="sub">
+						<li><a href="#">Promos</a></li>
+						<li><a href="#">Filières</a></li>
+                        <li><a href="#">Paramètres</a></li>
+                    </ul>
                 </li>
 
                 <li class="sub-menu">
@@ -102,4 +109,7 @@
         <!-- sidebar menu end-->
     </div>
 </aside>
-<!--sidebar end--
+<!--sidebar end-->
+
+
+

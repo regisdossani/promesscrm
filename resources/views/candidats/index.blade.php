@@ -23,7 +23,6 @@
                             </header>
 
                             <div class="row w3-res-tb">
-                                <br />
                                 <div class="col-sm-5 m-b-xs">
                                     @role('superadmin')
                                         <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -40,22 +39,19 @@
                                 </div>
                                 <div class="col-sm-4">
                                 </div>
-                                    {{-- <div class="pull-right" style="margin-right:5px"> --}}
-                                <div class="col-sm-3">
+                             <div class="pull-right" style="margin-right:5px">
 
                                             <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                                                <div class="form-inline">
+                                                <div class="form-group">
                                                     <input type="text" class="form-control" name="search" placeholder="Rechercher..." value="{{ request('search') }}">
                                                         <button class="btn btn-secondary" type="submit">
                                                             <i class="fa fa-search"></i></button>
                                                 </div>
                                             </form>
-                                </div>
-                                    {{-- </div> --}}
                             </div>
-
+                        </div>
                             <br/>
-                            <div class="table-responsive">
+                        <div class="table-responsive">
                                     <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
@@ -71,7 +67,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($candidats as $item)
+                                            @foreach($candidats as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->sexe }}</td>
