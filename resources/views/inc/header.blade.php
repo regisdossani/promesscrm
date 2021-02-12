@@ -6,11 +6,12 @@
         {{-- <meta name="keywords"  /> --}}
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
+ {{-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" > --}}
 
         <!-- Custom CSS -->
-        <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
         <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet"/>
 
         <!-- font CSS -->
@@ -21,6 +22,7 @@
        <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
 
        <script src="{{asset('js/jquery2.0.3.min.js')}}"></script>
+       <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
 
   </head>
 <body>

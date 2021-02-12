@@ -51,18 +51,7 @@
                             </div>
                         </div>
                             <br/>
-                        <div>
-                            <table class="table" ui-jq="footable" ui-options='{
-                                "paging": {
-                                  "enabled": true
-                                },
-                                "filtering": {
-                                  "enabled": true
-                                },
-                                "sorting": {
-                                  "enabled": true
-                                }}'>
-                                        <thead>
+                        <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>Genre</th>
