@@ -96,7 +96,7 @@
 
     .hr-top-nav {
         display: inline-block;
-        float: right;
+        /* float: right; */
         margin: 10px 0;
     }
 
@@ -280,7 +280,7 @@
 
     .hr-top-nav {
         display: inline-block;
-        float: right;
+        /* float: right; */
         margin: 10px 0;
     }
     .horizontal-menu {

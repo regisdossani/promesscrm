@@ -1,12 +1,10 @@
-
-<!--sidebar start-->
- <aside>
-    <div id="sidebar" class="nav-collapse">
+<aside>
+    <div id="sidebar" class="nav-collapse" hide-left-bar>
         <!-- sidebar menu start-->
-        <div class="leftside-navigation">
+        <div class="leftside-navigation" style="overflow:hidden;outline:none">
             <ul class="sidebar-menu" id="nav-accordion">
-            
-                <li class="sub-menu">
+
+                <li class="sub-menu dcjq-parent-li">
                     <a href="javascript:;">
                         <i class="fa fa-cog"></i>
                         <span>Paramètres</span>
