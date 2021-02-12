@@ -51,7 +51,9 @@
                             </div>
                         </div>
                             <br/>
-                        <thead>
+                        <div class="table-responsive">
+                                    <table class="table table-striped b-t b-light">
+                                        <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>Genre</th>
