@@ -17,35 +17,27 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
+    <div class="table-agile-info">
 
-            <div class="container">
-                <div class="row">
-                    {{-- @include('admins.sidebar') --}}
-
-                    <div class="col-md-10">
-
-                        <section  class="panel">
-
-                            <header class="panel-heading">
-                                <div class="panel-title">
+        <div class="panel panel-default">
+                        <header class="panel-heading">
                                     GESTION DES FORMATEURS
-                                </div>
+                        </header>
 
-                            </header>
+                        <div class="row w3-res-tb">
+                            <div class="col-sm-5 m-b-xs">
 
-                            <div class="panel-body">
                                 @role('superadmin')
                                     <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                     <a href="{{ url('/formateurs/create') }}" class="btn btn-success btn-sm" title="Ajouter un formateur">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                     </a>
                                 @endrole
-                                {{-- @role('Resp-pedagogique')
-                                    <a href="{{ url('/formateurs') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                @endrole --}}
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
 
-                                <div class="pull-right" style="margin-right:5px">
+                            <div class="pull-right" style="margin-right:5px">
 
                                     <form method="GET" action="{{ url('/formateurs') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-group">
@@ -57,13 +49,13 @@
                                             </span>
                                         </div>
                                     </form>
-                                </div>
-                                <br/> <br/>
-
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
+                            </div>
+                            <br/>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped b-t b-light">
+                                <thead>
+                                    <tr>
                                                 <th>#</th>
                                                 <th>Prénom</th>
                                                 <th>Nom</th>
@@ -111,11 +103,7 @@
                                 </div>
 
                             </div>
-                        </section>
                     </div>
-                </div>
-            </div>
-
 
     </div>
 </section>
