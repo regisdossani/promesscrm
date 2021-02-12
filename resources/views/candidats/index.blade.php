@@ -51,8 +51,17 @@
                             </div>
                         </div>
                             <br/>
-                        <div class="table-responsive">
-                                    <table class="table table-striped b-t b-light">
+                        <div>
+                            <table class="table" ui-jq="footable" ui-options='{
+                                "paging": {
+                                  "enabled": true
+                                },
+                                "filtering": {
+                                  "enabled": true
+                                },
+                                "sorting": {
+                                  "enabled": true
+                                }}'>
                                         <thead>
                                             <tr>
                                                 <th>#</th>
