@@ -25,10 +25,11 @@ class TestcandidatsController extends Controller
 
         if (!empty($keyword)) {
             $testcandidats= Testcandidat::latest()->paginate($perPage);
-        } else {
+        }
+        else
+        {
             $testcandidats = Testcandidat::latest()->paginate($perPage);
         }
-
         return view('testcandidats.index', compact('testcandidats'));
     }
 
@@ -43,7 +44,6 @@ class TestcandidatsController extends Controller
         $filieres=Filiere::all('candidat');
         $promos=Promo::with('candidat');
         // $tests=Testcandidat::all();
-
         return view('testcandidats.create',compact('filieres','candidats','promos'));
     }
 
@@ -101,7 +101,6 @@ class TestcandidatsController extends Controller
     public function show($id)
     {
         $testcandidat = Testcandidat::findOrFail($id);
-
         return view('testcandidats.show', compact('testcandidat'));
     }
 
@@ -133,10 +132,8 @@ class TestcandidatsController extends Controller
     {
 
         $requestData = $request->all();
-
         $testcandidat= Testcandidat::findOrFail($id);
         $testcandidat->update($requestData);
-
         return redirect('testcandidats')->with('flash_message', 'Testcandidat updated!');
     }
 
@@ -150,7 +147,6 @@ class TestcandidatsController extends Controller
     public function destroy($id)
     {
         Testcandidat::destroy($id);
-
         return redirect('testcandidats')->with('flash_message', 'Testcandidat deleted!');
     }
 
@@ -158,9 +154,8 @@ class TestcandidatsController extends Controller
     {
         return Validator::make($data,
         [
-            'candidat_id' => ['required', 'Integer', 'max:255'],
+            'candidat_id' => ['required','Integer','max:255'],
             'resultat' => ['required', 'string', 'max:255']
-
         ]);
     }
 
