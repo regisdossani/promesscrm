@@ -121,7 +121,7 @@ class FormateursController extends Controller
      */
     public function edit($id)
     {
-        $matieres=Nosmatieres::all();
+        $matieres=Nosmatiere::all();
         $formateur = Formateur::findOrFail($id);
         return view('formateurs.edit', compact('formateur','matieres'));
     }
