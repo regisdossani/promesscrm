@@ -1,15 +1,16 @@
-<div class="row">
-<div class="col-md-6 mb-3{{ $errors->has('sexe') ? 'has-error' : ''}}">
+<div class="col-md-3 mb-3{{ $errors->has('sexe') ? 'has-error' : ''}}">
     <label for="civilite" class="control-label">{{ 'Genre' }}</label>
     {{-- <input class="form-control" name="civilite" type="text" id="civilite" value="{{ isset($candidat->civilite) ? $candidat->civilite : ''}}" > --}}
     <select name="sexe" id="sexe" class="form-control">
-            <option>-- Choisir un sexe --</option>
+            <option value="">-- Choisir un genre --</option>
             <option value="M">M</option>
             <option value="F">F</option>
     </select>
     {!! $errors->first('sexe', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 {{ $errors->has('nom') ? 'has-error' : ''}}">
+
+
+<div class="col-md-6 mb-3{{ $errors->has('nom') ? 'has-error' : ''}}">
     <label for="nom" class="control-label">{{ 'Nom' }}</label>
     <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($formateur->nom) ? $formateur->nom : ''}}" >
     {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
@@ -23,15 +24,21 @@
 </div>
 
 
-<div class="col-md-6 {{ $errors->has('reference') ? 'has-error' : ''}}">
+<div class="col-md-3 mb-3{{ $errors->has('reference') ? 'has-error' : ''}}">
     <label for="reference" class="control-label">{{ 'Référence' }}</label>
     <input class="form-control" name="reference" type="text" id="reference"  value="{{ isset($formateur->reference) ? $formateur->reference : ''}}" >
     {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
 
+<div class="col-md-3 mb-3{{ $errors->has('date_naiss') ? 'has-error' : ''}}">
+    <label for="date_naiss" class="control-label">{{ 'Date de naissance' }}</label>
+    <input class="form-control" name="date_naiss" type="date" id="date_naiss" value="{{ isset($formateur->date_naiss) ? $formateur->date_naiss : ''}}" >
+    {!! $errors->first('date_naiss', '<p class="help-block">:message</p>') !!}
+</div>
+
 <div class="col-md-6 mb-3 {{ $errors->has('tel') ? 'has-error' : ''}}">
     <label for="tel" class="control-label">{{ 'Téléphone ' }}</label>
-    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($formateur->tel_1) ? $formateur->tel : ''}}" >
+    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($formateur->tel) ? $formateur->tel : ''}}" >
     {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -42,11 +49,7 @@
 </div>
 
 
-<div class="col-md-6 mb-3{{ $errors->has('date_naiss') ? 'has-error' : ''}}">
-    <label for="date_naiss" class="control-label">{{ 'Date de naissance' }}</label>
-    <input class="form-control" name="date_naiss" type="date" id="date_naiss" value="{{ isset($formateur->date_naiss) ? $formateur->date_naiss : ''}}" >
-    {!! $errors->first('date_naiss', '<p class="help-block">:message</p>') !!}
-</div>
+
 
 <div class="col-md-6 mb-3{{ $errors->has('lieu_naiss') ? 'has-error' : ''}}">
     <label for="lieu_naiss" class="control-label">{{ 'Lieu de naissance' }}</label>
@@ -76,31 +79,26 @@
     <input class="form-control" name="fonction" type="text" id="fonction" value="{{ isset($formateur->fonction) ? $formateur->fonction : ''}}" >
     {!! $errors->first('structure', '<p class="help-block">:message</p>') !!}
 </div>
-{{-- <div class="col-md-6 mb-3{{ $errors->has('module_id') ? 'has-error' : ''}}">
-    <label for="module_id" class="control-label">{{ 'Module' }}</label>
-    <select name="module_id" id="module_id" class="form-control">
-        <option>-- Choisir un module--</option>
-            @foreach ($modules as $module)
-                    <option value="{{$module->id}}" {{ isset($formateurs->module_id) && $formateurs->module_id=$module->id ? 'selected':''}}> {{  $module->nom }}</option>
-            @endforeach
-    </select>
-    {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!}
-</div> --}}
 
-<div class="row">
-    <div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
-        <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
-        <input class="form-control"  name="adresse" type="text" id="adresse" value="{{ isset($formateur->adresse) ? $formateur->adresse : ''}}">
-        {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
-    </div>
+<div class="col-md-6 mb-3{{ $errors->has('adresse') ? 'has-error' : ''}}">
+    <label for="adresse" class="control-label">{{ 'Adresse' }}</label>
+    <input class="form-control"  name="adresse" type="text" id="adresse" value="{{ isset($formateur->adresse) ? $formateur->adresse : ''}}">
+    {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
 </div>
 
-<br/>
+<div class="col-md-6 mb-3{{ $errors->has('matieres') ? 'has-error' : ''}}">
+    <label for="matieres" class="control-label">{{ 'Matières' }}</label>
+    {!! Form::select('matieres[]', $matieres,[], array('class' => 'form-control','multiple')) !!}
+</div>
+
+
+
+
 <hr class="mb-4">
-
-
+<div class="row"></div>
+<br/>
 <div class="row">
-    <div class="col-md-3 mb-3">
+    <div class="col-md-6 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
     </div>
 </div>

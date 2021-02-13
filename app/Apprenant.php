@@ -26,7 +26,9 @@ class Apprenant extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    protected $casts = [
+        'date_naiss' => 'date:d-m-Y',
+    ];
 
 
  public function stages()

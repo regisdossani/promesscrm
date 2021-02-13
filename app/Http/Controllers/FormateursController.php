@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-use App\Module;
+use App\Nosmatiere;
 use App\Formateur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +37,9 @@ class FormateursController extends Controller
             $formateurs = Formateur::latest()->paginate($perPage);
         }
 
-        return view('formateurs.index', compact('formateurs'));
+        $matieres=Nosmatiere::all();
+
+        return view('formateurs.index', compact('formateurs','matieres'));
     }
 
     /**
@@ -47,9 +49,9 @@ class FormateursController extends Controller
      */
     public function create()
     {
-        $formateurs= Formateur::all();
-         $modules=Module::all();
-        return view('formateurs.create',compact('formateurs','modules'));
+        $formateurs=Formateur::all();
+         $matieres=Nosmatiere::all();
+        return view('formateurs.create',compact('formateurs','matieres'));
     }
 
     /**
@@ -119,9 +121,9 @@ class FormateursController extends Controller
      */
     public function edit($id)
     {
-        $modules=Module::all();
+        $matieres=Nosmatieres::all();
         $formateur = Formateur::findOrFail($id);
-        return view('formateurs.edit', compact('formateur','modules'));
+        return view('formateurs.edit', compact('formateur','matieres'));
     }
 
     /**

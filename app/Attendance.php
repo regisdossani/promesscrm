@@ -18,6 +18,13 @@ class Attendance extends Model
         'attendence_status'
     ];
 
+    protected $casts = [
+        'date' => 'date:d-m-Y',
+    ];
+
+
+
+
     public function apprenant() {
         return $this->belongsTo(Apprenant::class);
     }

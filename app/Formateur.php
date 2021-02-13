@@ -11,8 +11,7 @@ class Formateur extends Authenticatable
     use Notifiable, HasRoles;
 
     protected $guard_name = 'web';
-
-
+    protected $with = [];
 
     protected $fillable = [
         'email', 'prenom','nom','formation','structure','fonction','password',
@@ -22,6 +21,14 @@ class Formateur extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $casts = [
+        'date_naiss' => 'date:d-m-Y',
+    ];
+
+
+
+
+
 
     public function chantiers()
     {
@@ -30,7 +37,7 @@ class Formateur extends Authenticatable
 
     public function matieres()
     {
-       return $this->hasMany(Matieres::class);
+       return $this->hasMany(Nosmatiere::class);
     }
 
 

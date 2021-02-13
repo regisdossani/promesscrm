@@ -1,5 +1,4 @@
 
-
                             <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
                                 <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
                                 <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
@@ -40,47 +39,10 @@
                             <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                 <label for="email" class="control-label">{{ 'Email:' }}</label>
 
-                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > 
+                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
                                 {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
-                                {!! $errors->first('email', '<p class="help-block">:message</p>') !!} 
-                            </div>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" type="text/javascript"></script>
-                            <script>
-                                var email =  $("#email").val();
-                                $('#registration').validate({
-                                    rules: {
-                                        email: {
-                                            required: true,
-                                            email: true,
-                                            remote: {
-                                                url: '{{url('candidat/checkemail')}}',
-                                                type: "post",
-                                                data: {
-                                                    email:$(email).val(),
-                                                    _token:"{{ csrf_token() }}"
-                                                    },
-                                                dataFilter: function (data) {
-                                                    var json = JSON.parse(data);
-                                                    if (json.msg == "true") {
-                                                        return "\"" + "Email déjà utilisé" + "\"";
-                                                    } else {
-                                                        return 'true';
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    messages: {
-                                        email: {
-                                            required: "Email is obligatoire!",
-                                            email: "Entrer un EMail valide!",
-                                            remote: "Email  déjà utilisé!"
-                                        }
-                                    }
-                                });
-                            </script>
-
-
+                                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+                        
 
                         <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                             <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>

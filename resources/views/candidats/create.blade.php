@@ -20,7 +20,6 @@
 
             <div class="panel panel-default">
                 <div class="card">
-
                     <header class="panel-heading">
                             ENRÉGISTRER UN CANDIDAT
                     </header>

@@ -14,7 +14,9 @@ class Chantier extends Model
         'maitre_oeuvre','nbre_appt','descriptif','fiche_descriptive','etat','obs'
     ];
 
-
+    protected $casts = [
+        'date' => 'date:d-m-Y',
+    ];
 
     public function apprenants()
     {

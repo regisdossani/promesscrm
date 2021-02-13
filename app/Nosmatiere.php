@@ -14,7 +14,7 @@ class Nosmatiere extends Model
         return $this->belongsTo(Module::class);
     }
     public function formateur(){
-        return $this->hasOne(Formateur::class);
+        return $this->belongsTo(Formateur::class);
     }
 
 }
