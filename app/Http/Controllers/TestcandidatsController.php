@@ -40,8 +40,8 @@ class TestcandidatsController extends Controller
     public function create()
     {
         $candidats=Candidat::all();
-        $filieres=Filiere::all();
-        $promos=Promo::all();
+        $filieres=Filiere::all('candidat');
+        $promos=Promo::with('candidat');
         // $tests=Testcandidat::all();
 
         return view('testcandidats.create',compact('filieres','candidats','promos'));
@@ -66,6 +66,27 @@ class TestcandidatsController extends Controller
 
 
         Testcandidat::create($requestData);
+       /*  'provenance',  'nom', 'email', 'tel','sexe',
+        'reception_dossier','pj_depotdossier',
+         'region','pj_depotdossier2','filiere_id','promo_id','parrain',
+         'tel_parrain','email_parrain','role'
+ */
+/* 'email', 'password','annee','visite_terain','lieu_naiss','date_naiss','classe_id'
+,'prenom','nom','candidat_id','filiere_id','tel','promo_id','reference','sexe','annee'
+ */
+        if ($request->resultat=="4")
+        {
+            Apprenant::create([
+                'nom' => $request->nom,
+                'sexe' => $request->sexe,
+                'filiere_id' => $request->filiere_id,
+                'email' => $request->email,
+                'tel' => $request->tel,
+
+              ]);
+        }
+
+        //   $apprenant->candidat()->save($apprenant);
 
         return redirect('testcandidats')->with('flash_message', 'Testcandidat added!');
     }
@@ -139,8 +160,8 @@ class TestcandidatsController extends Controller
         [
             'candidat_id' => ['required', 'Integer', 'max:255'],
             'resultat' => ['required', 'string', 'max:255']
-            
+
         ]);
     }
-   
+
 }

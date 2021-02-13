@@ -85,7 +85,7 @@
                                                 </td>
                                                 <td>
                                                     @if ($item->promo)
-                                                            {{ $item->promo->nom}}
+                                                            {{ $item->promo['nom']}}
                                                     @endif
                                                 </td>
 
