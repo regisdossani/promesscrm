@@ -3,4 +3,5 @@
 @yield('content')
 
 
+</section>
 @include('inc.footer')

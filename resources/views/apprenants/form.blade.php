@@ -1,6 +1,6 @@
 
 
-        <div class="col-md-2  {{ $errors->has('sexe') ? 'has-error' : ''}}">
+        <div class="col-md-4  {{ $errors->has('sexe') ? 'has-error' : ''}}">
             <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
             <div class="select-list">
                 <select name="sexe" id="sexe" class="form-control">
@@ -12,14 +12,14 @@
             </div>
     </div>
 
-        <div class="col-md-5 mb-3 {{ $errors->has('prenom') ? 'has-error' : ''}}">
+        <div class="col-md-4 mb-3 {{ $errors->has('prenom') ? 'has-error' : ''}}">
             <label for="prenom" class="control-label">{{ 'Prénom' }}</label>
                 <input class="form-control" name="prenom" type="text" id="prenom"  value="{{ isset($apprenant->prenom) ? $apprenant->prenom : ''}}" >
                 {!! $errors->first('prenom', '<p class="help-block">:message</p>') !!}
         </div>
 
 
-        <div class="col-md-5 mb-3 {{ $errors->has('nom') ? 'has-error' : ''}}">
+        <div class="col-md-4 mb-3 {{ $errors->has('nom') ? 'has-error' : ''}}">
             <label for="nom" class="control-label">{{ 'Nom' }}</label>
             <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($apprenant->nom) ? $apprenant->nom : ''}}" >
                {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}

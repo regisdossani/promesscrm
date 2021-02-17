@@ -16,33 +16,28 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
+        <div class="table-agile-info">
 
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-10">
-                        <section  class="panel">
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     MODIFIER UN FORMATEUR
-                                </div>
                             </header>
 
 
-                            <div class="panel-body">
+                            <div class="row w3-res-tb">
+                                <div class="col-sm-5 m-b-xs">
 
-                                @role('superadmin')
-                                <a href="{{ url('/formateurs') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                                @else
-                                    <a href="{{ url('/formateur/profile') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    @role('superadmin')
+                                    <a href="{{ url('/formateurs') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                                    @else
+                                        <a href="{{ url('/formateur/profile') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
 
-                                @endrole
+                                    @endrole
 
-
+                                </div>
                                 <br />
-                                <br />
-
+                                <div class="col-sm-4">
+                                </div>
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
                                         @foreach ($errors->all() as $error)
@@ -51,7 +46,6 @@
                                     </ul>
                                 @endif
 
-                                <div class="panel-body">
 
                                     <form method="POST" action="{{ url('/formateurs/' . $formateur->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                         {{ method_field('PATCH') }}
@@ -62,8 +56,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

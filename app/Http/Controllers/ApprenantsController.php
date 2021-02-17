@@ -34,22 +34,22 @@ class ApprenantsController extends Controller
     //
        $apprenant=new Apprenant();
        $candidats=Candidat::with(['testcandidat' => function($testcandidat) {
-        $testcandidat->where('resultat','=','4');
+        $testcandidat->where('resultat','4');
         }])->get();
 
+        $testpassers=DB::table('testcandidats')->where('resultat','4');
 
 
-
-    $keyword = $request->get('search');
-        $perPage = 5;
+        $keyword = $request->get('search');
+        $perPage = 6;
 
         if (!empty($keyword)) {
-            $apprenants = Apprenant::latest()->paginate($perPage);
+            $apprenants = Apprenant::orderBy('id','DESC')->paginate($perPage);
         } else {
-            $apprenants = Apprenant::latest()->paginate($perPage);
+            $apprenants = Apprenant::orderBy('id','DESC')->paginate($perPage);
         }
 
-        return view('apprenants.index', compact('apprenants','candidats'));
+        return view('apprenants.index', compact('apprenants','candidats'))->with('i', ($request->input('page', 1) - 1) * 6);
     }
 
     /**

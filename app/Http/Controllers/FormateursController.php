@@ -50,7 +50,9 @@ class FormateursController extends Controller
     public function create()
     {
         $formateurs=Formateur::all();
-         $matieres=Nosmatiere::all();
+        //  $matieres=Nosmatiere::all();
+         $matieres = Nosmatiere::get()->pluck('nom');
+
         return view('formateurs.create',compact('formateurs','matieres'));
     }
 

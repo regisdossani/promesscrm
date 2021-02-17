@@ -13,12 +13,6 @@
                     </a>
                 </li>
 
-
-
-
-
-
-@role('superadmin')
                 <li>
                     <a href="{{ url('/clients') }}">
                             <i class="fa fa-user"></i>
@@ -27,16 +21,9 @@
                 </li>
 
 
-                <li  >
-                    <a href="{{ url('fullcalendar') }}">
-                            <i class="fa fa-bullhorn"></i>
-                            <span>Calendrier</span>
-                    </a>
-                </li>
 
 
 
-@endrole
 
 
 @role('Resp-Pedagogique')
@@ -69,7 +56,12 @@
             <span>Gestion des types de Formations</span>
         </a>
     </li> --}}
-
+    <li>
+        <a href="{{ url('fullcalendar') }}">
+                <i class="fa fa-bullhorn"></i>
+                <span>Calendrier</span>
+        </a>
+    </li>
 
 <li>
     <a  class="active"  href="{{ url('/formateurs') }}">

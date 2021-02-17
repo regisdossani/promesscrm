@@ -86,7 +86,7 @@
     {!! $errors->first('adresse', '<p class="help-block">:message</p>') !!}
 </div>
 
-<div class="col-md-6 mb-3{{ $errors->has('matieres') ? 'has-error' : ''}}">
+ <div class="col-md-6 mb-3{{ $errors->has('matiere') ? 'has-error' : ''}}">
     <label for="matieres" class="control-label">{{ 'Matières' }}</label>
     {!! Form::select('matieres[]', $matieres,[], array('class' => 'form-control','multiple')) !!}
 </div>

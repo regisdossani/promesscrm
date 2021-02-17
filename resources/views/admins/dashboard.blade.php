@@ -1,13 +1,9 @@
-
 @extends('inc.master')
- {{-- @include('inc.header') --}}
 
 @section('content')
-
 <!--main content start-->
 <section id="main-content">
-
-<section class="wrapper">
+    <section class="wrapper">
 
 <!-- //market-->
 
@@ -741,7 +737,7 @@
 </section>
 <!--main content end-->
 </section>
-
+{{-- </section> --}}
 <!-- morris JavaScript -->
 <script>
     $(document).ready(function() {
@@ -831,7 +827,7 @@
     });
     </script>
 <!-- calendar -->
-<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript" src="{{ asset('js/monthly.js')}}"></script>
 <script type="text/javascript">
     $(window).load( function() {
 
@@ -862,8 +858,4 @@
     });
 </script>
 <!-- //calendar -->
-
-
-
-
  @endsection

@@ -1,29 +1,38 @@
 @extends('inc.master')
-@include('equipes.sidebar')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
 
- @role('superadmin')
-@include('admins.sidebar')
-@endrole
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                    <div class="col-md-10">
-                        <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                                 <header class="panel-heading">
-                                    <div class="panel-title">
                                         GESTION DES PARAMÈTRES(MATIÈRE)
-                                    </div>
                                 </header>
 
-                                 <div class="card-body ">
-                                        <div class="card-header">Nos matieres</div>
+                                <div class="row w3-res-tb">
+                                    <div class="col-sm-5 m-b-xs">
+
                                         <a href="{{ url('/nosmatieres/create') }}" class="btn btn-success btn-sm" title="Add New nosmatiere">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>Nouveau
                                         </a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    </div>
                                         <div class="pull-right" style="margin-right:5px">
 
                                             <form method="GET" action="{{ url('/nosmatieres') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -38,6 +47,7 @@
                                             </form>
                                         </div>
                                             <br/>
+                                </div>
                                             <div class="table-responsive">
                                                 <table class="table">
                                                     <thead>
@@ -46,9 +56,9 @@
                                                             <th>Nom</th>
                                                             <th>Référence</th>
                                                             <th>Formateur</th>
-                                                            <th>Ref</th>
-                                                            <th>Coef</th>
+                                                            <th>Réf. Formateur</th>
 
+                                                            <th>Coef</th>
                                                             <th>Actions</th>
                                                         </tr>
                                                     </thead>
@@ -86,11 +96,10 @@
                                             </div>
 
                                         </div>
-                        </section>
-                </div>
+
+
             </div>
-        </div>
-    </div>
+
 </section>
 </section>
 @endsection

@@ -1,8 +1,6 @@
 @extends('inc.master')
 
-@if (Auth::guard("admin")->check())
-    @include('admins.sidebar')
-@endif
+{{--
 @if (Auth::guard("equipe")->check())
     @include('equipes.sidebar')
 @endif
@@ -13,7 +11,7 @@
 @if (Auth::guard("formateur")->check())
     @include('formateurs.sidebar')
 @endif
-
+ --}}
 
 
 @section('content')
@@ -58,7 +56,7 @@
                                 <br/>
                                 <div class="table-responsive">
                                     <table class="table table-striped b-t b-light">
-                                        
+
                                          <thead>
                                             <tr>
                                                         <th>#</th>
