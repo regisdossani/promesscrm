@@ -44,7 +44,6 @@
                                 @endrole
 
                                 <br />
-                                <br />
 
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
