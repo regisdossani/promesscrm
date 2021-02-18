@@ -1,43 +1,53 @@
+<div class="row">
+    <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+        <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
+        <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
+        {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+    </div>
 
-            <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
-                <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
-                <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
-                {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
-            </div>
+    <div class="col-md-3 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+        <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
+            <select name="sexe" id="sexe" class="form-control">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+    </div>
+    <div class="col-md-3 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+        <label for="filiere">Filière:</label>
+                <select name="filiere_id" id="filiere_id" class="form-control">
+                    <option value=""> Nos filières</option>
+                        @foreach($filieres as $filiere)
+                            <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
+                        @endforeach
+                </select>
+     </div>
+     <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
+        <label for="tel" class="control-label">{{'Téléphone:' }}</label>
+        <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
+        {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
+    </div>
+
+    <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
+        <label for="email" class="control-label">{{ 'Email:' }}</label>
+        <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
+        {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+    </div>
+
+    <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
+        <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
+        <input class="form-control" name="provenance" type="text" id="date_naiss" value="{{ isset($candidat->provenance) ? $candidat->provenance : ''}}" >
+        {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
+    </div>
+
+    <div class="col-md-6 mb-3{{ $errors->has('region') ? 'has-error' : ''}}">
+        <label for="region" class="control-label">{{'Région:' }}</label>
+        <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
+        {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
 
 
-            <div class="col-md-3 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
-                <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
-                    <select name="sexe" id="sexe" class="form-control">
-                        <option value="M">M</option>
-                        <option value="F">F</option>
-                    </select>
-            </div>
 
-            <div class="col-md-3 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
-                <label for="filiere">Filière:</label>
-                        <select name="filiere_id" id="filiere_id" class="form-control">
-                            <option value=""> Nos filières</option>
-                                @foreach($filieres as $filiere)
-                                    <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
-                                @endforeach
-                        </select>
-             </div>
-
-
-
-            <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
-                    <label for="tel" class="control-label">{{'Téléphone:' }}</label>
-                    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
-                    {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
-            </div>
-
-            <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
-                <label for="email" class="control-label">{{ 'Email:' }}</label>
-
-                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
-                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
-            </div>
 
             <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                 <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
@@ -57,17 +67,6 @@
                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
             </div>
 
-            <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
-                <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
-                <input class="form-control" name="provenance" type="text" id="date_naiss" value="{{ isset($candidat->provenance) ? $candidat->provenance : ''}}" >
-                {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
-            </div>
-
-            <div class="col-md-6 mb-3{{ $errors->has('region') ? 'has-error' : ''}}">
-                <label for="region" class="control-label">{{'Région:' }}</label>
-                <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
-                {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
-            </div>
 
 
 
@@ -97,11 +96,11 @@
         @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
         @endif
-    <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
-        <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe1(Depot de dossier)' }}</label>
-        <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  value="{{ isset($candidat->pj_depotdossier) ? $candidat->pj_depotdossier : ''}}">
-        {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
-    </div>
+        <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
+            <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe1(Depot de dossier)' }}</label>
+            <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  value="{{ isset($candidat->pj_depotdossier) ? $candidat->pj_depotdossier : ''}}">
+            {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
+        </div>
 
     <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
 
@@ -109,11 +108,13 @@
         <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2" value="{{ isset($candidat->pj_depotdossier2) ? $candidat->pj_depotdossier2 : ''}}" >
         {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
     </div>
-<br/>
+
+
 <div class="row"></div>
-<br />
+<br/>
+
 <div class="row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
     </div>
 </div>

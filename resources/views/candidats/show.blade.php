@@ -12,17 +12,13 @@
 
 @section('content')
 <section id="main-content">
-
-<section class="wrapper">
-    <div class="table-agile-info">
-
-        <div class="panel panel-default">
+    <section class="wrapper">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                     <header class="panel-heading">
                             AFFICHER LE CANDIDAT
-
-                        </header>
-
-                        <div class="row w3-res-tb">
+                    </header>
+                    <div class="row w3-res-tb">
                             <div class="col-sm-5 m-b-xs">
 
                                 <a href="{{ url('/candidats') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -104,9 +100,8 @@
                             </table>
                         </div>
 
-                </div>
-    </div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 </section>
 @endsection
