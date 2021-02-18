@@ -62,7 +62,7 @@
                                                 <th>Provenance</th>
                                                 <th>Région</th>
                                                 <th>Filière</th>
-                                                <th>Promo</th>
+                                                {{-- <th>Promo</th> --}}
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -83,11 +83,11 @@
                                                     {{ $item->filiere->nom}}
                                                     @endif
                                                 </td>
-                                                <td>
+                                               {{--  <td>
                                                     @if ($item->promo)
                                                             {{ $item->promo['nom']}}
                                                     @endif
-                                                </td>
+                                                </td> --}}
 
                                             {{--  <td><img alt="avatar" src={{url('uploads/candidats/'.$item->avatar) }}  width="50" height="50"></td>--}}
                                                 <td>
