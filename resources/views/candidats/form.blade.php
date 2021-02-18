@@ -57,17 +57,17 @@
                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
             </div>
 
-                            <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
-                                <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
-                                <input class="form-control" name="provenance" type="text" id="date_naiss" value="{{ isset($candidat->provenance) ? $candidat->provenance : ''}}" >
-                                {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
-                            </div>
+            <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
+                <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
+                <input class="form-control" name="provenance" type="text" id="date_naiss" value="{{ isset($candidat->provenance) ? $candidat->provenance : ''}}" >
+                {!! $errors->first('provenance', '<p class="help-block">:message</p>') !!}
+            </div>
 
-                            <div class="col-md-6 mb-3{{ $errors->has('region') ? 'has-error' : ''}}">
-                                <label for="region" class="control-label">{{'Région:' }}</label>
-                                    <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
-                                    {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
-                            </div>
+            <div class="col-md-6 mb-3{{ $errors->has('region') ? 'has-error' : ''}}">
+                <label for="region" class="control-label">{{'Région:' }}</label>
+                <input class="form-control" name="region" type="text" id="region" value="{{ isset($candidat->region) ? $candidat->region : ''}}" >
+                {!! $errors->first('region', '<p class="help-block">:message</p>') !!}
+            </div>
 
 
 
@@ -82,15 +82,14 @@
                 </select>
             </div>
 
-
-                <div class="col-md-6 mb-3 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
-                    <label for="reception_dossier" class="control-label">{{ 'Reception ( dossier du candidat)' }}</label>
-                    <div class="radio">
+            <div class="col-md-6 mb-3 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
+                <label for="reception_dossier" class="control-label">{{ 'Reception ( dossier du candidat)' }}</label>
+                <div class="radio">
                         <label><input name="reception_dossier" type="radio" value="1" {{ (isset($candidat) && 1 == $candidat->reception_dossier) ? 'checked' : '' }}> Oui</label>
-                    </div>
-                    <div class="radio">
+                </div>
+                <div class="radio">
                         <label><input name="reception_dossier" type="radio" value="0" @if (isset($candidat)) {{ (0 == $candidat->reception_dossier) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Non</label>
-                    </div>
+                </div>
                     {!! $errors->first('reception_dossier', '<p class="help-block">:message</p>') !!}
                 </div>
         @endrole
