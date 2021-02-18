@@ -16,53 +16,46 @@
 
             <div class="col-md-6 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                 <label for="filiere">Filière:</label>
-                    <div class="select-list" class="form-group">
                         <select name="filiere_id" id="filiere_id" class="form-control">
                             <option value=""> Nos filières</option>
                                 @foreach($filieres as $filiere)
                                     <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
                                 @endforeach
                         </select>
-                    </div>
              </div>
 
 
 
-                            <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
-                                <label for="tel" class="control-label">{{'Téléphone:' }}</label>
-                                <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
-                                {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
-                            </div>
+            <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
+                    <label for="tel" class="control-label">{{'Téléphone:' }}</label>
+                    <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
+                    {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
+            </div>
 
-                            <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
-                                <label for="email" class="control-label">{{ 'Email:' }}</label>
+            <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
+                <label for="email" class="control-label">{{ 'Email:' }}</label>
 
-                                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
-                                {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
-                                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
-                            </div>
+                <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
+                {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
+            </div>
 
-                        <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
-                            <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
-                            <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
-                            {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
-                        </div>
+            <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
+                <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
+                <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
+                {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
+            </div>
 
-                        <div class="col-md-6 mb-3  {{ $errors->has('tel_parrain') ? 'has-error' : ''}}">
-                            <label for="tel_parrain" class="control-label">{{ 'Tél. Parrain :' }}</label>
-                            <input class="form-control" name="tel_parrain" type="text" id="tel_parrain" value="{{ isset($candidat->tel_parrain) ? $candidat->tel_parrain : ''}}" >
-                            {!! $errors->first('tel_parrain', '<p class="help-block">:message</p>') !!}
-                        </div>
+            <div class="col-md-6 mb-3  {{ $errors->has('tel_parrain') ? 'has-error' : ''}}">
+                <label for="tel_parrain" class="control-label">{{ 'Tél. Parrain :' }}</label>
+                <input class="form-control" name="tel_parrain" type="text" id="tel_parrain" value="{{ isset($candidat->tel_parrain) ? $candidat->tel_parrain : ''}}" >
+                {!! $errors->first('tel_parrain', '<p class="help-block">:message</p>') !!}
+            </div>
 
-
-                        <div class="col-md-6 mb-3  {{ $errors->has('email_parrain') ? 'has-error' : ''}}">
-                            <label for="email_parrain" class="control-label">{{ 'Email Parrain :' }}</label>
-                            <input class="form-control" name="email_parrain" type="text" id="email_parrain" value="{{ isset($candidat->email_parrain) ? $candidat->email_parrain : ''}}" >
-                            {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
-                        </div>
-
-
-
+            <div class="col-md-6 mb-3  {{ $errors->has('email_parrain') ? 'has-error' : ''}}">
+                <label for="email_parrain" class="control-label">{{ 'Email Parrain :' }}</label>
+                <input class="form-control" name="email_parrain" type="text" id="email_parrain" value="{{ isset($candidat->email_parrain) ? $candidat->email_parrain : ''}}" >
+                {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
+            </div>
 
                             <div class=" col-md-6 mb-3  {{ $errors->has('provenance') ? 'has-error' : ''}}">
                                 <label for="provenance" class="control-label">{{ 'Provenance :' }}</label>
@@ -121,9 +114,7 @@
         {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
     </div>
 <br/>
-<br/>
-<br/>
-
+<div class="row"></div>
 <div class="row">
     <div class="col-md-4 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
