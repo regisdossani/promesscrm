@@ -63,13 +63,17 @@
 
                                     <tr><th> Filière </th>
                                         <td>
-                                          {{$candidat->filiere->nom}}
+                                            @if ($item->filiere)
+                                            {{ $item->filiere->nom}}
+                                            @endif
                                         </td>
                                     </tr>
                                     <tr><th> Promo </th>
                                         <td>
-                                           {{$candidat->promo->nom}}
-                                          </td>
+                                            @if ($item->promo)
+                                            {{ $item->promo->nom}}
+                                             @endif
+                                        </td>
                                     </tr>
 
                                     <tr><th> Parrain </th>
