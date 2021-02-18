@@ -42,7 +42,7 @@
                                 <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
                                 {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
                                 {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
-                        
+
 
                         <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                             <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
@@ -105,79 +105,6 @@
                 </div>
         @endrole
     </div>
-               @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
-                    <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
-                @endif
-                <div class="col-md-5 mb-3  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
-                    <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe 1 (Depot de dossier)' }}</label>
-                    <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  >
-                    {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
-                </div>
-
-              
-			  @if(isset($candidat->pj_depotdossier2) && !empty($candidat->pj_depotdossier2))
-                        <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier2}}</a>
-                    @endif
-                    <div class="col-md-5 mb-3 {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">
-                        <label for="pj_depotdossier2" class="control-label">{{ 'Pièce jointe 2 (Depot de dossier)' }}</label>
-                        <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2"  >
-                        {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
-                    </div> 
-
-
-
-                   {{--  <div class="col-md-6 mb-3 {{ $errors->has('test_pj') ? 'has-error' : ''}}">
-                        @if(isset($candidat->test_pj) && !empty($candidat->test_pj))
-                            <a href="{{ url('uploads/candidats/' . $candidat->test_pj) }}" ><i class="fa fa-download"></i> {{$candidat->test_pj}}</a>
-                        @endif
-                        <label for="test_pj" class="control-label">{{ 'Test pièce jointe' }}</label>
-                        <input class="form-control" name="test_pj" type="file" id="test_pj"  >
-                        {!! $errors->first('test_pj', '<p class="help-block">:message</p>') !!}
-                    </div> --}}
-
-                  {{--   <div class="col-md-6 mb-3 {{ $errors->has('signature') ? 'has-error' : ''}}">
-                        <label for="signature" class="control-label">{{ 'Signature candidat' }}</label>
-                        <div class="radio">
-                            <label><input name="signature" type="radio" value="1" {{ (isset($candidat) && 1 == $candidat->reception_dossier) ? 'checked' : '' }}> Présent(e)</label>
-                        </div>
-                        <div class="radio">
-                            <label><input name="signature" type="radio" value="0" @if (isset($candidat)) {{ (0 == $candidat->reception_dossier) ? 'checked' : '' }} @else {{ 'checked' }} @endif> Absent(e)</label>
-                        </div>
-                        {!! $errors->first('signature', '<p class="help-block">:message</p>') !!}
-                    </div> --}}
-
-
-
-       {{--  @if(isset($candidat->avatar) && !empty($candidat->avatar))
-            <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
-        @endif
-        <div class="col-md-6 form-group {{ $errors->has('avatar') ? 'has-error' : ''}}">
-            <label for="avatar" class="control-label">{{ 'Photo' }}</label>
-            <input class="form-control" name="avatar" type="file" id="avatar"  >
-            {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
-        </div> --}}
-
-{{--
-                             <div class="col-md-2  {{ $errors->has('test_ecrit') ? 'has-error' : ''}}">
-                                <label for="test_ecrit" class="control-label">{{ 'Test Ecrit' }}</label>
-                                <input class="form-control" name="test_ecrit" type="date" id="test_ecrit" value="{{ isset($candidat->test_ecrit) ? $candidat->test_ecrit : ''}}" >
-                                {!! $errors->first('test_ecrit', '<p class="help-block">:message</p>') !!}
-                            </div>
-                            <div class="col-md-2  {{ $errors->has('entretien') ? 'has-error' : ''}}">
-                                <label for="entretien" class="control-label">{{ 'Entretien' }}</label>
-                                <input class="form-control" name="entretien" type="date" id="entretien" value="{{ isset($candidat->entretien) ? $candidat->entretien : ''}}" >
-                                {!! $errors->first('entretien', '<p class="help-block">:message</p>') !!}
-                            </div> --}}
-{{--
- --}}
-
-
-{{-- <div class="col-md-6  {{ $errors->has('parrain') ? 'has-error' : ''}}">
-    <label for="parrain" class="control-label">{{ 'Parrain' }}</label>
-    <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
-    {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
-</div>
- --}}
 
 
     <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
@@ -198,22 +125,6 @@
         <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2" value="{{ isset($candidat->pj_depotdossier2) ? $candidat->pj_depotdossier2 : ''}}" >
         {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
     </div>
-
-
-
-
-
-{{--
-
-<div class="col-md-8 form-group {{ $errors->has('avatar') ? 'has-error' : ''}}">
-    @if(isset($candidat->avatar) && !empty($candidat->avatar))
-        <img src="{{url('/uploads/candidats/' . $candidat->avatar) }}" width="100" height="100"/>
-    @endif
-
-    <label for="avatar" class="control-label">{{ 'Photo' }}</label>
-    <input class="form-control" name="avatar" type="file" id="avatar" >
-    {!! $errors->first('avatar', '<p class="help-block">:message</p>') !!}
-</div> --}}
 <br/>
 <br/>
 <br/>
