@@ -1,32 +1,30 @@
 
-                            <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
-                                <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
-                                <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
-                                {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
-                            </div>
+            <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+                <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
+                <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
+                {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+            </div>
 
 
-                             <div class="col-md-6 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
-                                <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
-                                <select name="sexe" id="sexe" class="form-control">
-                                    <option value="M">M</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
+            <div class="col-md-6 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+                <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
+                    <select name="sexe" id="sexe" class="form-control">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+            </div>
 
-
-
-                            <div class="col-md-6 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
-                                <label for="filiere">Filière:</label>
-                                <div class="select-list" class="form-group">
-                                    <select name="filiere_id" id="filiere_id" class="form-control">
-                                         <option value=""> Nos filières</option>
-                                            @foreach($filieres as $filiere)
-                                                <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
-                                            @endforeach
-                                    </select>
-                                </div>
-                            </div>
+            <div class="col-md-6 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+                <label for="filiere">Filière:</label>
+                    <div class="select-list" class="form-group">
+                        <select name="filiere_id" id="filiere_id" class="form-control">
+                            <option value=""> Nos filières</option>
+                                @foreach($filieres as $filiere)
+                                    <option value="{{ $filiere->id }}" {{ isset($candidats->filiere_id) && $candidats->filiere_id == $filiere->id ? 'selected' : ''}}>{{ $filiere->nom}}</option>
+                                @endforeach
+                        </select>
+                    </div>
+             </div>
 
 
 
@@ -42,7 +40,7 @@
                                 <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
                                 {{-- <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" > --}}
                                 {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
-
+                            </div>
 
                         <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                             <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
@@ -80,17 +78,16 @@
 
 
 
-    <div class="form-row">
         @hasanyrole('Resp-Pedagogique|superadmin')
-        <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
-            <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
-            <select name="promo_id" id="promo_id" class="form-control">
-                <option value="">Nos promos</option>
-                    @foreach($promos as $promo)
-                        <option value="{{ $promo->id }}" {{ isset($candidats->promo_id) && $candidats->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
-                    @endforeach
-            </select>
-        </div>
+            <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
+                <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
+                <select name="promo_id" id="promo_id" class="form-control">
+                    <option value="">Nos promos</option>
+                        @foreach($promos as $promo)
+                            <option value="{{ $promo->id }}" {{ isset($candidats->promo_id) && $candidats->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
+                        @endforeach
+                </select>
+            </div>
 
 
                 <div class="col-md-3 mb-3 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
@@ -104,8 +101,6 @@
                     {!! $errors->first('reception_dossier', '<p class="help-block">:message</p>') !!}
                 </div>
         @endrole
-    </div>
-
 
     <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
         @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
