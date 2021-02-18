@@ -94,10 +94,10 @@
                 </div>
         @endrole
 
-    <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
         @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
             <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
         @endif
+    <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe1(Depot de dossier)' }}</label>
         <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  value="{{ isset($candidat->pj_depotdossier) ? $candidat->pj_depotdossier : ''}}">
         {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
@@ -105,15 +105,13 @@
 
     <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
 
-        @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
-            <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier2}}</a>
-        @endif
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe2(Depot de dossier)' }}</label>
         <input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2" value="{{ isset($candidat->pj_depotdossier2) ? $candidat->pj_depotdossier2 : ''}}" >
         {!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}
     </div>
 <br/>
 <div class="row"></div>
+<br />
 <div class="row">
     <div class="col-md-4 mb-3">
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="{{ $formMode === 'Editer' ? 'Modifier' : 'Créer' }}">
