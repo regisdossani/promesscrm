@@ -78,16 +78,18 @@ class CandidatsController extends Controller
 
             ]);
             $requestData = $request->all();// This will get all the request data.
-
-        if ($request->hasFile('pj_depotdossier2')) {
-            checkDirectory("candidats");
-            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
-        }
+      
 
         if ($request->hasFile('pj_depotdossier')) {
             checkDirectory("candidats");
             $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
         }
+		
+		  if ($request->hasFile('pj_depotdossier2')) {
+            checkDirectory("candidats");
+            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
+        }
+		
 
         $candidatCount = Candidat::where('email', $requestData['email']);
         if ($candidatCount->count()) {
