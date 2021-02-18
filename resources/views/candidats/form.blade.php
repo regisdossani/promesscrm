@@ -6,7 +6,7 @@
             </div>
 
 
-            <div class="col-md-6 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+            <div class="col-md-3 mb-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
                 <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
                     <select name="sexe" id="sexe" class="form-control">
                         <option value="M">M</option>
@@ -14,7 +14,7 @@
                     </select>
             </div>
 
-            <div class="col-md-6 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
+            <div class="col-md-3 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
                 <label for="filiere">Filière:</label>
                         <select name="filiere_id" id="filiere_id" class="form-control">
                             <option value=""> Nos filières</option>
