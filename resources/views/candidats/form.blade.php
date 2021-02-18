@@ -90,7 +90,7 @@
             </div>
 
 
-                <div class="col-md-3 mb-3 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
+                <div class="col-md-6 mb-3 {{ $errors->has('reception_dossier') ? 'has-error' : ''}}">
                     <label for="reception_dossier" class="control-label">{{ 'Reception ( dossier du candidat)' }}</label>
                     <div class="radio">
                         <label><input name="reception_dossier" type="radio" value="1" {{ (isset($candidat) && 1 == $candidat->reception_dossier) ? 'checked' : '' }}> Oui</label>
