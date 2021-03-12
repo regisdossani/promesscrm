@@ -13,7 +13,7 @@
     <select class="form-control" name="candidat_id"  id="candidat_id" >
         @foreach($formateurs as $formateur)
 
-                <option value="{{ $formateur->id }}" {{ isset($references->formateur_id) && $eferences->formateur_id == $formateur->id ? 'selected' : ''}}>{{ $formateur->nom}}</option>
+                <option value="{{ $formateur->id }}" {{ isset($references->formateur_id) && $references->formateur_id == $formateur->id ? 'selected' : ''}}>{{ $formateur->nom}}</option>
 
         @endforeach
     </select>

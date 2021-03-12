@@ -101,22 +101,6 @@
         </div>
 
 
-{{--
-        <div class="col-md-6 mb-3 {{ $errors->has('note_1') ? 'has-error' : ''}}">
-            <label for="note_1" class="control-label">{{ 'Note 1' }}</label>
-            <input class="form-control" name="note_1" type="number" id="note_1" value="{{ isset($apprenant->note_1) ? $apprenant->note_1 : ''}}" >
-            {!! $errors->first('note_1', '<p class="help-block">:message</p>') !!}
-        </div>
-        <div class="col-md-6 mb-3 {{ $errors->has('note_2') ? 'has-error' : ''}}">
-            <label for="note_2" class="control-label">{{ 'Note 2' }}</label>
-            <input class="form-control" name="note_2" type="number" id="note_2" value="{{ isset($apprenant->note_2) ? $apprenant->note_2 : ''}}" >
-            {!! $errors->first('note_2', '<p class="help-block">:message</p>') !!}
-        </div>
-        <div class="col-md-6 mb-3 {{ $errors->has('note_3') ? 'has-error' : ''}}">
-            <label for="note_3" class="control-label">{{ 'Note 3' }}</label>
-            <input class="form-control" name="note_3" type="number" id="note_3" value="{{ isset($apprenant->note_3) ? $apprenant->note_3 : ''}}" >
-            {!! $errors->first('note_3', '<p class="help-block">:message</p>') !!}
-        </div> --}}
 
 
 

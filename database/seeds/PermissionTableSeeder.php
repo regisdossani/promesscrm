@@ -15,7 +15,6 @@ class PermissionTableSeeder extends Seeder
 
 
         $permissions = [
-            'role-lister',
             'role-creer',
             'role-modifier',
             'role-supprimer',

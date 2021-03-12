@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Formation extends Model
 {
     protected $fillable = [
-        'nom', 'annee', 'type'
+        'nom', 'annee', 'type','duree'
     ];
 
     public function typeformation(){

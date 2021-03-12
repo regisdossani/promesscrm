@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-
+use App\Nosmatiere;
 use App\Mark;
+use App\Apprenant;
+use App\Module;
+use App\Filiere;
+use App\Classe;
 use Illuminate\Http\Request;
 
 class MarksController extends Controller
@@ -25,8 +29,9 @@ class MarksController extends Controller
         } else {
             $mark = Mark::latest()->paginate($perPage);
         } */
+        $classes=Classe::all();
         $data=Mark::all();
-        return view('marks.index', compact('data'));
+        return view('marks.index', compact('data','classes'));
     }
 
     /**
@@ -83,6 +88,19 @@ class MarksController extends Controller
 
         return view('.edit', compact(''));
     } */
+
+
+    public function releve()
+        {
+            $apprenants=Apprenant::all();
+            $filieres=Filiere::all();
+            $matieres=Nosmatiere::all();
+            $modules=Module::all();
+            return view('releves.individuel.create', compact('filieres','apprenants','matieres','modules'));
+        }
+
+
+
 
     /**
      * Update the specified resource in storage.

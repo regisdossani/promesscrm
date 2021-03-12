@@ -17,6 +17,7 @@ class CreateFilieresTable extends Migration
             $table->id();
             $table->string('nom')->nullable();
             $table->string('annee')->nullable();
+            $table->string('duree')->nullable();
              $table->timestamps();
         });
     }

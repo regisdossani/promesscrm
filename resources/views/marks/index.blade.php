@@ -18,36 +18,26 @@
 <section id="main-content">
 
     <section class="wrapper">
-        <div class="form-w3layouts">
-
-            <div class="container">
-
-                    <div class="col-md-10">
-                        <div class="card">
-                            <div class="card-header">LES NOTES DES APPRENANTS</div>
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                <header class="panel-heading">
+                    LES NOTES DES APPRENANTS
+                </header>
                             <form method="GET" accept-charset="UTF-8" >
                                 <div class="col-md-6 {{ $errors->has('class_id') ? 'has-error' : ''}}">
                                     <label for="class_id" class="control-label">{{ 'Classe :' }}</label>
-
                                         <select name="class_id" id="class_id" class="form-control">
-                                            <option value="">--Choisissez und classe--</option>
-                                            <option value="C1">classe1</option>
-                                            <option value="C2">classe2</option>
-                                            <option value="C3">classe3</option>
+                                            @foreach ($classes as $item)
+                                                <option value="">--Choisissez und classe--</option>
+                                                <option value="item">{{$item}}</option>
+                                            @endforeach
                                         </select>
                                         {!! $errors->first('class_id', '<p class="help-block">:message</p>') !!}
                                 </div>
                             </form>
-
                                 <br/>
-                                <br/> 
+                                <br/>
                             <div class="card-body">
-
-                                {{-- <a href="{{ url('/marks/create') }}" class="btn btn-success btn-sm" title="Add New mark">
-                                    <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                                </a> --}}
-
-
 
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped table-condensed">
@@ -55,8 +45,8 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Apprenant </th>
-                                               {{--  <th>Module </th>
-                                                <th>Classe </th> --}}
+                                                <th>Matière </th>
+                                                {{-- <th>Classe </th> --}}
                                                 <th>Note1 </th>
                                                 <th>Note2 </th>
                                                 <th>Note Examen </th>
@@ -73,12 +63,13 @@
                                                     {{ $row->apprenant->nom }}{{ $row->apprenant->prenom }}</a>
                                                 </td>
 
-                                               {{--  <td><a href="#" class="xedit"
+                                                 <td><a href="#" class="xedit"
                                                     data-pk="{{$row->id}}"
-                                                    data-name="module_id ">
-                                                    {{ $row->module->nom }}</a>
+                                                    data-name="matiere_id ">
+                                                    {{ $row->matiere->nom }}</a>
                                                 </td>
 
+                                                {{--
                                                 <td><a href="#" class="xedit"
                                                     data-pk="{{$row->id}}"
                                                     data-name="classe_id ">
@@ -128,8 +119,6 @@
                                 </div>
 
                             </div>
-                        </div>
-
                         <script>
                                 $(document).ready(function(){
                                     $.ajaxSetup({

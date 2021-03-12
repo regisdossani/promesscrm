@@ -15,6 +15,8 @@ class AddClasseIdToApprenants extends Migration
     {
         Schema::table('apprenants', function (Blueprint $table) {
             $table->unsignedBigInteger('classe_id')->nullable();
+            $table->unsignedBigInteger('apprenant_id')->nullable();
+
         });
     }
 

@@ -20,10 +20,11 @@ class CreateMarksTable extends Migration
             $table->unsignedInteger('promo_id')->nullable();
             $table->unsignedInteger('classe_id')->nullable();
 
+            $table->tinyInteger('coef');
             $table->double('note3')->nullable();
             $table->double('note1')->nullable();
             $table->double('note2')->nullable();
-            $table->double('moyenne')->nullable();
+            $table->string('moyenne')->nullable();
 
             $table->timestamps();
         });

@@ -1,21 +1,28 @@
 @extends('inc.master')
-@include('equipes.sidebar')
 
- @role('superadmin')
-@include('admins.sidebar')
-@endrole
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 @section('content')
 <section id="main-content">
+
 <section class="wrapper">
     <div class="table-agile-info">
         <div class="panel panel-default">
 
             <header class="panel-heading">
-                ENRÉGISTRER DES NOTES
+                COMPLETER SES INFORMATIONS POUR CRÉER UN RELEVÉ DES NOTES
              </header>
                         <div class="card-body">
-                            <a href="{{ url('/marks') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
+                            <a href="{{ url('/marks') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />
                             <br />
 
@@ -27,18 +34,16 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/marks') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/releve_individuel') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('marks.form', ['formMode' => 'Créer'])
+                            @include ('releves.individuel.form', ['formMode' => 'Créer'])
 
                         </form>
 
                     </div>
-
-
+                </section>
+            </div>
         </div>
     </div>
-    </section>
-</section>
 @endsection

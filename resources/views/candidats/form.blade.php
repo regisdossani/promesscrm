@@ -87,7 +87,7 @@
             <div class="col-md-6 mb-3 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                 <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
                 <select name="promo_id" id="promo_id" class="form-control">
-                    <option value="">Nos promos</option>
+                    <option value="">Nos promotions</option>
                         @foreach($promos as $promo)
                             <option value="{{ $promo->id }}" {{ isset($candidats->promo_id) && $candidats->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
                         @endforeach

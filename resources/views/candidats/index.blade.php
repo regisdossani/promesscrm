@@ -15,9 +15,7 @@
     <section class="wrapper">
 		<div class="table-agile-info">
             <div class="panel panel-default">
-                {{-- <div class="col-lg-12"> --}}
-
-                    {{-- <section  class="panel"> --}}
+               
                             <header class="panel-heading">
                                     GESTION DES CANDIDATS
                             </header>

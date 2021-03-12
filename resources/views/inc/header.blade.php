@@ -199,7 +199,9 @@
 
 
 <!--sidebar start-->
- <aside>
+
+<!--sidebar start-->
+<aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">

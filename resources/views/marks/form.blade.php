@@ -8,7 +8,7 @@
     <input class="form-control" name="module_id" type="number" id="module_id" value="{{ isset($mark->module_id) ? $mark->module_id : ''}}" >
     {!! $errors->first('module_id', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="col-md-6 mb-3 {{ $errors->has('formation_id') ? 'has-error' : ''}}">
+<div class="col-md-6 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
     <label for="formation_id" class="control-label">{{ 'Formation Id' }}</label>
     <input class="form-control" name="formation_id" type="number" id="formation_id" value="{{ isset($mark->formation_id) ? $mark->formation_id : ''}}" >
     {!! $errors->first('formation_id', '<p class="help-block">:message</p>') !!}
@@ -38,11 +38,20 @@
     <input class="form-control" name="moyenne" type="number" id="moyenne" value="{{ isset($mark->moyenne) ? $mark->moyenne : ''}}" >
     {!! $errors->first('moyenne', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="col-md-6 mb-3 {{ $errors->has('coef') ? 'has-error' : ''}}">
+    <label for="coef" class="control-label">{{ 'Coef' }}</label>
+    <input class="form-control" name="year" type="text" id="coef" value="{{ isset($mark->coef) ? $mark->coef : ''}}" >
+    {!! $errors->first('coef', '<p class="help-block">:message</p>') !!}
+</div>
+
 <div class="col-md-6 mb-3 {{ $errors->has('year') ? 'has-error' : ''}}">
     <label for="year" class="control-label">{{ 'Year' }}</label>
     <input class="form-control" name="year" type="text" id="year" value="{{ isset($mark->year) ? $mark->year : ''}}" >
     {!! $errors->first('year', '<p class="help-block">:message</p>') !!}
 </div>
+
+
+
 
 
 <div class="form-group">

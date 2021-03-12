@@ -368,7 +368,7 @@
             <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
         <div class="col-md-8 market-update-left">
-            <h4>Gestion des Personnes ress.</h4>
+            <h4>Personnes ressource</h4>
         </div>
         </a>
       <div class="clearfix"> </div>
@@ -408,52 +408,52 @@
           <div class="clearfix"> </div>
         </div>
     </div>
-    {{-- <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-6">
+     <div class="col-md-3 market-update-gd">
+        <div class="market-update-block clr-block-7">
             <a href="{{url('marks')}}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Notes apprenant</h4>
+                <h4>Gestion des Notes </h4>
             </div>
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div> --}}
+    </div>
 
 
 
 
- {{--    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-10">
-            <a href="{{url('/encadreurs')}}">
+    <div class="col-md-3 market-update-gd">
+        <div class="market-update-block clr-block-7">
+            <a href="{{url('/releve')}}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Encadreurs stages</h4>
+                <h4>Créer un Relevé</h4>
             </div>
             </a>
           <div class="clearfix"> </div>
         </div>
-    </div> --}}
+    </div>
 
-    {{--  <div class="col-md-3 market-update-gd">
+    <div class="col-md-3 market-update-gd">
         <div class="market-update-block clr-block-8">
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <a href='{{ url('entreprises') }}' >
-                    <span>Entreprises Partenaires</span>
+                <a href='{{ url('releve_note') }}' >
+                    <span>Voir releve des notes</span>
                 </a>
             </div>
           <div class="clearfix"> </div>
         </div>
-    </div> --}}
+    </div>
 
     <div class="clearfix"> </div>
 
@@ -461,14 +461,14 @@
 
 <div class="market-updates">
 <div class="col-md-3 market-update-gd">
-    <div class="market-update-block clr-block-7">
+    <div class="market-update-block clr-block-8">
         <a href="{{url('/clients')}}">
 
             <div class="col-md-4 market-update-right">
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Clients</h4>
+                <h4>Gestion des Clients</h4>
 
             </div>
         </a>
