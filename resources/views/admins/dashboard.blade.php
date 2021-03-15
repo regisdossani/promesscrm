@@ -434,7 +434,7 @@
                 <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Créer un Relevé</h4>
+                <h4>Créer un Relevé Individuel</h4>
             </div>
             </a>
           <div class="clearfix"> </div>
@@ -447,8 +447,8 @@
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <a href='{{ url('releve') }}' >
-                    <span>Voir releve des notes</span>
+                <a href='{{ url('relevefinal') }}' >
+                    <span>Créer un Relevé final</span>
                 </a>
             </div>
           <div class="clearfix"> </div>

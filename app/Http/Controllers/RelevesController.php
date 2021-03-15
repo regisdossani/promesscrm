@@ -11,7 +11,7 @@ use App\Filiere;
 use App\Module;
 use App\Classe;
 use App\Nosmatiere;
-
+use App\ReleveFinal;
 use Illuminate\Http\Request;
 
 class RelevesController extends Controller
@@ -51,6 +51,43 @@ class RelevesController extends Controller
         return view('releves.individuel.create',compact('apprenants','filieres','modules','matieres','classes'));
     }
 
+    public function create_final()
+    {
+        $apprenants=Apprenant::all();
+        $filieres=Filiere::all();
+        $modules=Module::all();
+        $matieres=Nosmatiere::all();
+        $classes=Classe::all();
+
+        return view('releves.final.create',compact('apprenants','filieres','modules','matieres','classes'));
+    }
+
+    public function store_final()
+    {
+        $request->validate([
+            'classe_id'  => 'required|numeric',
+            'apprenant_id'    => 'required|numeric',
+            'nom_directeur'   => 'required|string|max:255',
+            'pdt_jury'   => 'required|string|max:255',
+        ]);
+
+        $requestData = $request->all();
+        ReleveFinal::create($requestData);
+        $apprenant_id=$request->apprenant_id;
+
+
+        $apprenant = Apprenant::where('id', $apprenant_id)
+        ->select('nom', 'prenom','tel','filiere_id',
+        'sexe','reference',)
+        ->orderBy('nom', 'asc')
+        ->get();
+
+        return view('releve_final',compact('apprenants','filieres','modules','matieres','classes'));
+    }
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -72,10 +109,10 @@ class RelevesController extends Controller
         // $apprenant= Apprenant::where('id', $apprenant_id)->first();
         // $classe=Classe::where('id',$request->classe_id);
         $classe_id=$request->class_id;
-        $classe = Classe::where('id', $classe_id)
+        /* $classe = Classe::where('id', $classe_id)
         ->select('name', 'filiere_id')
         ->orderBy('name', 'asc')
-        ->get();
+        ->get(); */
 
 
        $apprenant = Apprenant::where('id', $apprenant_id)

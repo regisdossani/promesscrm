@@ -155,8 +155,7 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::resource('/entpartenaires', 'EntpartenairesController');
     Route::resource('/nosmatieres', 'NosmatieresController');
     Route::get('/releve', 'RelevesController@create');
-    // Route::view('/releve_note', 'releves.releve_individuel');
-
+    Route::get('/relevefinal', 'RelevesController@create_final');
     Route::resource('/marks', 'MarksController');
 
     });
