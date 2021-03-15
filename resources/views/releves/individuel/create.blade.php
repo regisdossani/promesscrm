@@ -22,7 +22,7 @@
                 COMPLETER SES INFORMATIONS POUR CRÉER UN RELEVÉ DES NOTES
              </header>
                         <div class="card-body">
-                            <a href="{{ url('/marks') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                            <a href="{{ url('/admin') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                             <br />
                             <br />
 

@@ -447,7 +447,7 @@
                 <i class="fa  fa-table" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <a href='{{ url('releve_note') }}' >
+                <a href='{{ url('releve') }}' >
                     <span>Voir releve des notes</span>
                 </a>
             </div>
