@@ -15,8 +15,8 @@ class CreateReleveFinalsTable extends Migration
     {
         Schema::create('releve_finals', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('apprenant_id', 100)->nullable();
-            $table->unsignedBigInteger('classe_id', 100)->nullable();
+            $table->unsignedBigInteger('apprenant_id')->nullable();
+            $table->unsignedBigInteger('classe_id')->nullable();
             $table->string('tel', 100)->nullable();
 
             $table->$table->tinyInteger('nbre_candidat')->nullable();
