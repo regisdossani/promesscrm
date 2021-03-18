@@ -18,9 +18,7 @@ class CreateReleveFinalsTable extends Migration
             $table->unsignedBigInteger('apprenant_id')->nullable();
             $table->unsignedBigInteger('classe_id')->nullable();
             $table->string('tel')->nullable();
-
-            $table->$table->tinyInteger('nbre_candidat')->nullable();
-
+            $table->$table->tinyInteger('nbre_candidat');
             $table->float('moyenne_generale')->nullable();
             $table->string('mention')->nullable();
             $table->string('pdt_jury')->nullable();
