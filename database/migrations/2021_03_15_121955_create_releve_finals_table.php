@@ -13,12 +13,13 @@ class CreateReleveFinalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('releve_finals', function (Blueprint $table) {
+        Schema::create('releve_finals', function (Blueprint $table)
+        {
             $table->id();
             $table->unsignedBigInteger('apprenant_id')->nullable();
             $table->unsignedBigInteger('classe_id')->nullable();
             $table->string('tel')->nullable();
-            $table->$table->Integer('nbre_candidat');
+            $table->Integer('nbre_candidat')->nullable();
             $table->float('moyenne_generale')->nullable();
             $table->string('mention')->nullable();
             $table->string('pdt_jury')->nullable();
