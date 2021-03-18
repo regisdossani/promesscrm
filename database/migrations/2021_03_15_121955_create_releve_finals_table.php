@@ -17,14 +17,14 @@ class CreateReleveFinalsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('apprenant_id')->nullable();
             $table->unsignedBigInteger('classe_id')->nullable();
-            $table->string('tel', 100)->nullable();
+            $table->string('tel')->nullable();
 
             $table->$table->tinyInteger('nbre_candidat')->nullable();
 
-            $table->float('moyenne_generale', 100)->nullable();
-            $table->string('mention', 100)->nullable();
-            $table->string('pdt_jury', 100)->nullable();
-            $table->string('nom_directeur', 100)->nullable();
+            $table->float('moyenne_generale')->nullable();
+            $table->string('mention')->nullable();
+            $table->string('pdt_jury')->nullable();
+            $table->string('nom_directeur')->nullable();
             $table->timestamps();
         });
     }
