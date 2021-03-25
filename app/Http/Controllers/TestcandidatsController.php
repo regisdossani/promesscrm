@@ -41,8 +41,8 @@ class TestcandidatsController extends Controller
     public function create()
     {
         $candidats=Candidat::all();
-        $filieres=Filiere::all('candidat');
-        $promos=Promo::with('candidat');
+        $filieres=Filiere::all();
+        $promos=Promo::all();
         // $tests=Testcandidat::all();
         return view('testcandidats.create',compact('filieres','candidats','promos'));
     }
