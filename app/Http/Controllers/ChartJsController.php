@@ -19,7 +19,7 @@ class ChartJsController extends Controller
 
         $apprenant = [];
         foreach ($year as $key => $value) {
-            $apprenant[] = Apprenant::where(DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
+            $apprenant[] = Apprenant::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),$value)->count();
         }
 
     	return view('chartjs')->with('year',json_encode($year,JSON_NUMERIC_CHECK))->with('apprenant',json_encode($apprenant,JSON_NUMERIC_CHECK));
