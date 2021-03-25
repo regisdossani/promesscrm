@@ -9,6 +9,7 @@ use App\Candidat;
 use App\Promo ;
 use App\Filiere;
 use App\Testcandidat;
+use App\Apprenant;
 use Illuminate\Http\Request;
 
 class TestcandidatsController extends Controller
