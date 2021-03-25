@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 
 use App\Entpartenaire;
 use Illuminate\Http\Request;
@@ -48,9 +49,11 @@ class EntpartenairesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
+            'reference' => 'required|reference|unique:entpartenaires,reference',
+            ]);
         $requestData = $request->all();
-        
+
         Entpartenaire::create($requestData);
 
         return redirect('entpartenaires')->with('flash_message', 'Entpartenaire added!');
@@ -94,9 +97,9 @@ class EntpartenairesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $requestData = $request->all();
-        
+
         $entpartenaire = Entpartenaire::findOrFail($id);
         $entpartenaire->update($requestData);
 

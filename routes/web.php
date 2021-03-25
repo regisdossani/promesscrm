@@ -13,7 +13,7 @@ use App\Pers_ressource;
 use App\Filiere;
 use App\Promo;
 use App\Http\Controllers\FullCalendarEventMasterController;
-
+use App\Http\Controllers\ChartJsController;
 
 
 /*
@@ -79,6 +79,10 @@ Route::post('/login/equipe', [LoginController::class,'equipeLogin']);
 
 Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::view('admin', 'admins.dashboard');
+    Route::resource('admins', 'AdminsController');
+
+
+
 
     Route::resource('/entpartenaires', 'EntpartenairesController');
 
@@ -91,7 +95,6 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/fiches', 'FichedescriptivesController');
     Route::resource('/suivipostchantiers', 'PostchantiersController');
 
-    Route::resource('/encadreurs', 'EncadreursController');
     Route::resource('/pers_ressources', 'Pers_ressourcesController');
 
     Route::resource('/formations', 'FormationsController');
@@ -106,9 +109,6 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
 
     Route::resource('classe', 'ClassesController');
     Route::resource('subject', 'ModulesController');
-     Route::get('attendance', 'AttendancesController@index')->name('attendance.index');
-    Route::get('assign-subject-to-class/{id}', 'ClassesController@assignSubject')->name('class.assign.subject');
-    Route::post('assign-subject-to-class/{id}', 'ClassesController@storeAssignedSubject')->name('store.class.assign.subject');
 
     Route::view('/home', 'home');
 
@@ -157,6 +157,12 @@ Route::group(['middleware'=>['auth:equipe,admin']], function() {
     Route::get('/releve', 'RelevesController@create');
     Route::get('/relevefinal', 'RelevesController@create_final');
     Route::resource('/marks', 'MarksController');
+    Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
+
+    Route::resource('/encadreurs', 'EncadreursController');
+    Route::get('attendance', 'AttendancesController@index')->name('attendance.index');
+    Route::get('assign-subject-to-class/{id}', 'ClassesController@assignSubject')->name('class.assign.subject');
+    Route::post('assign-subject-to-class/{id}', 'ClassesController@storeAssignedSubject')->name('store.class.assign.subject');
 
     });
 

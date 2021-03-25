@@ -79,7 +79,9 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="{{ url('/admins/'. Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                           <li><a href="{{ url('/admins/'. Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li> 
+                           {{-- <li><a href="{{ url('/admins')}}"><i class=" fa fa-suitcase"></i>Profile</a></li> --}}
+
                             <li>
                                 <a href="#">
                                     <i class="fa fa-cog">

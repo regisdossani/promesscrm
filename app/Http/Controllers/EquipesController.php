@@ -65,7 +65,7 @@ class EquipesController extends Controller
     {
         $this->validate($request,[
             'nom_prenom'=> 'required',
-            'reference'=> 'required',
+            'reference' => 'required|reference|unique:equipes,reference',
             'password'=> 'required',
             'tel'=> 'required',
            'sexe'=> 'required',

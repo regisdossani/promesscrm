@@ -26,7 +26,7 @@
 
 <div class="col-md-3 mb-3{{ $errors->has('reference') ? 'has-error' : ''}}">
     <label for="reference" class="control-label">{{ 'Référence' }}</label>
-    <input class="form-control" name="reference" type="text" id="reference"  value="{{ isset($formateur->reference) ? $formateur->reference : ''}}" >
+    <input class="form-control" name="reference" type="text" id="reference"     value="{{ isset($formateur->reference) ? $formateur->reference : ''}}" >
     {!! $errors->first('reference', '<p class="help-block">:message</p>') !!}
 </div>
 

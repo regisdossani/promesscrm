@@ -70,7 +70,8 @@ class FormateursController extends Controller
             'prenom'=> 'required',
             'password'=> 'required',
             'tel'=> 'required',
-            'reference'=>'required'
+            'reference' => ['required', 'string', 'reference', 'max:255', 'unique:formateurs']
+
         ]);
 
         $requestData = $request->all();

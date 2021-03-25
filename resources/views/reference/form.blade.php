@@ -27,7 +27,7 @@
 </div>
 <div class="form-group {{ $errors->has('reference') ? 'has-error' : ''}}">
     <label for="reference" class="control-label">{{ 'Réference' }}</label>
-    <input class="form-control" name="reference" type="text" id="sreference" value="{{ isset($reference->sreference) ? $reference->sreference : ''}}" >
+    <input class="form-control" name="reference" type="text" id="reference" value="{{ isset($reference->sreference) ? $reference->sreference : ''}}" >
     {!! $errors->first('sreference', '<p class="help-block">:message</p>') !!}
 </div>
 

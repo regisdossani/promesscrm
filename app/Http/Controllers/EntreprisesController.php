@@ -27,7 +27,7 @@ class EntreprisesController extends Controller
         } else {
             $entreprises = Entpartenaire::latest()->paginate($perPage);
         }
-        
+
 
 
         return view('entpartenaires.index', compact('entreprises'));
@@ -40,7 +40,7 @@ class EntreprisesController extends Controller
      */
     public function create()
     {
-     
+
          $entreprises=Entpartenaire::all();
 
         return view('entpartenaires.create',compact('entreprises'));
@@ -56,6 +56,8 @@ class EntreprisesController extends Controller
     public function store(Request $request)
     {
         $this->validator($request->all())->validate();
+
+
         $requestData = $request->all();
 
         Entreprise::create($requestData);
