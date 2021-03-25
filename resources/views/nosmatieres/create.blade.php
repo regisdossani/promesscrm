@@ -1,9 +1,18 @@
 @extends('inc.master')
-@include('equipes.sidebar')
 
- @role('superadmin')
-@include('admins.sidebar')
-@endrole
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 @section('content')
 
