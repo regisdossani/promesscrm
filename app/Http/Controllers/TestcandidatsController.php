@@ -147,6 +147,10 @@ class TestcandidatsController extends Controller
      */
     public function destroy($id)
     {
+       /*  $testcandidat = Testcandidat::findOrFail($id);
+        $candidat=$testcandidat->candidat();
+
+ */
         Testcandidat::destroy($id);
         return redirect('testcandidats')->with('flash_message', 'Testcandidat deleted!');
     }
