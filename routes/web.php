@@ -32,7 +32,7 @@ Route::get('/', function()
         return view('frontend.index');
     })->name('frontend.index');
 
-Route::get('about', function ()
+/* Route::get('about', function ()
     {
         return view('frontend.about');
     });
@@ -43,7 +43,7 @@ Route::get('about', function ()
     Route::get('contact', function ()
     {
         return view('frontend.contact');
-    });
+    }); */
     Route::view('/menu', 'auth.menu')->name('auth.menu');
 /** La page d'inscriprion du candidat dans le frontend*/
 Route::get('/candidat', function () {

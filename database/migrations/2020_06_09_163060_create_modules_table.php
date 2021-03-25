@@ -17,7 +17,6 @@ class CreateModulesTable extends Migration
             $table->id();
             $table->string('nom')->nullable();
             $table->integer('coeff')->nullable();
-
             $table->timestamps();
         });
     }

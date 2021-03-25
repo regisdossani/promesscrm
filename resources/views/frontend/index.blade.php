@@ -60,7 +60,7 @@
     </div>
   </div>
   <!-- navbar -->
-  <div class="navigation w-100">
+  {{-- <div class="navigation w-100">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
       <a class="navbar-brand" href="{{route('frontend.index')}}"><img src="images/logo.png" alt="logo"></a>
@@ -89,11 +89,11 @@
         </div>
       </nav>
     </div>
-  </div>
+  </div> --}}
 </header>
 <!-- /header -->
 <!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+{{-- <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
             <div class="modal-header border-0">
@@ -221,7 +221,7 @@
                 <div class="form-row">
                         <div class="form-submit">
                             <input type="submit" value="Envoyer" class="submit" id="submit" name="submit" />
-                            {{-- <input type="submit" value="Reset" class="submit" id="reset" name="reset" /> --}}
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
                         </div>
                 </div>
 			</form>
@@ -229,9 +229,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+{{-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
             <div class="modal-header border-0">
@@ -258,10 +258,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
+{{-- <section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
   <div class="container">
     <div class="hero-slider">
       <!-- slider item -->
@@ -305,11 +305,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- /hero slider -->
 
 <!-- banner-feature -->
-<section class="bg-gray">
+{{-- <section class="bg-gray">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-xl-4 col-lg-5 align-self-end">
@@ -345,11 +345,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- /banner-feature -->
 
 <!-- about us -->
-<section class="section">
+{{-- <section class="section">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 order-2 order-md-1">
@@ -363,11 +363,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- /about us -->
 
 <!-- courses -->
-<section class="section-sm">
+{{-- <section class="section-sm">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -381,7 +381,7 @@
       </div>
     </div>
     <!-- course list -->
-<div class="row justify-content-center">
+<div class="row justify-content-center"> --}}
   <!-- course item -->
  <!--  <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
@@ -400,7 +400,7 @@
     </div>
   </div> -->
   <!-- course item -->
-  <div class="col-lg-4 col-sm-6 mb-5">
+{{--   <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
       <img class="card-img-top rounded-0" src="images/courses/course-2.jpg" alt="course thumb">
       <div class="card-body">
@@ -416,9 +416,9 @@
         <!-- <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a> -->
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- course item -->
-  <div class="col-lg-4 col-sm-6 mb-5">
+ {{--  <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
       <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
       <div class="card-body">
@@ -434,7 +434,7 @@
         <!-- <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a> -->
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- course item -->
   <!-- <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
@@ -453,7 +453,7 @@
     </div>
   </div> -->
   <!-- course item -->
-  <div class="col-lg-4 col-sm-6 mb-5">
+ {{--  <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
       <img class="card-img-top rounded-0" src="images/courses/course-5.jpg" alt="course thumb">
       <div class="card-body">
@@ -469,7 +469,7 @@
         <!-- <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a> -->
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- course item -->
   <!-- <div class="col-lg-4 col-sm-6 mb-5">
     <div class="card p-0 border-primary rounded-0 hover-shadow">
@@ -486,17 +486,17 @@
           incididunt ut labore et dolore magna.</p>
       </div>
     </div>
-  </div> -->
-</div>
+  </div>
+</div>-->
 <!-- /course list -->
     <!-- mobile see all button -->
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-12 text-center">
         <a href="courses.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- /courses -->
 
 <!-- cta -->
@@ -532,11 +532,9 @@
     </div>
   </div>
 </section>
-/success story -->
 
-<!-- events -->
 <section class="section bg-gray">
-  <!-- <div class="container">
+ <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="d-flex align-items-center section-title justify-content-between">
@@ -586,8 +584,7 @@
         <div class="card-date"><span>23</span><br>December</div>
       </div>
       <div class="card-body">
-        <!-- location -->
-        <!--<p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+      <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
         <a href="event-single.html"><h4 class="card-title">Firefly training in trauma-informed yoga</h4></a>
       </div>
     </div>
