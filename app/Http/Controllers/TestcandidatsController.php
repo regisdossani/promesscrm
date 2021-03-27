@@ -160,7 +160,9 @@ class TestcandidatsController extends Controller
         return Validator::make($data,
         [
             'candidat_id' => ['required','Integer','max:255'],
-            'resultat' => ['required', 'string', 'max:255']
+            'resultat' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
+
         ]);
     }
 
