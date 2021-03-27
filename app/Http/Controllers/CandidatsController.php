@@ -214,10 +214,10 @@ class CandidatsController extends Controller
 
             ]);
 
-            $fileName1 = time().'.'.$request->pj_depotdossier->extension();
+            $fileName1 = time().'.'.$request->pj_depotdossier;
             $request->pj_depotdossier->move(public_path('uploads/candidats'), $fileName1);
 
-            $fileName2 = time().'.'.$request->pj_depotdossier2->extension();
+            $fileName2 = time().'.'.$request->pj_depotdossier2;
             $request->pj_depotdossier2->move(public_path('uploads/candidats'), $fileName2);
 
             $requestData = $request->all();
