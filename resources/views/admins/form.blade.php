@@ -9,7 +9,7 @@
     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="col-md-6 mb-3 {{ $errors->has('password') ? 'has-error' : ''}}">
-    <label for="password" class="control-label">{{ 'Password' }}</label>
+    <label for="password" class="control-label">{{ 'Mot de passe' }}</label>
     <input class="form-control" name="password" type="text" id="password" value="{{ isset($admin->password) ? $admin->password : ''}}" >
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 </div>

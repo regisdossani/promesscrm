@@ -40,7 +40,6 @@
                                             <tr>
                                                 <th>#</th><th>Username</th>
                                                 <th>Email</th>
-                                                {{-- <th>Password</th> --}}
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -49,7 +48,6 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->username }}</td><td>{{ $item->email }}</td>
-                                                {{-- <td>{{ $item->password }}</td> --}}
                                                 <td>
                                                     <a href="{{ url('/admins/' . $item->id) }}" title="Voir admin"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
                                                     <a href="{{ url('/admins/' . $item->id . '/edit') }}" title="Modifier admin"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

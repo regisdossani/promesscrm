@@ -36,7 +36,7 @@
                                                 </tr>
                                                 <tr><th> Nom utilisateur </th><td> {{ $admin->username }} </td></tr>
                                                 <tr><th> Email </th><td> {{ $admin->email }} </td></tr>
-                                                <tr><th> Password </th><td> {{ $admin->password }} </td></tr>
+                                                <tr><th> Mot de passe </th><td> {{ $admin->password }} </td></tr>
                                             </tbody>
                                         </table>
                                     </div>
