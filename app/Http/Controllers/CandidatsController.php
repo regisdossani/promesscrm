@@ -215,7 +215,7 @@ class CandidatsController extends Controller
             ]);
             if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
-                $fileName1 = $request->pj_depotdossier;
+                $fileName1 =time().'_'. $request->pj_depotdossier;
                 // $request->pj_depotdossier->move(public_path('uploads/candidats'), $fileName1);
                 $request->pj_depotdossier = uploadFile($request,$fileName1, public_path('uploads/candidats'));
 
@@ -246,7 +246,7 @@ class CandidatsController extends Controller
 
 
   Candidat::create($requestData);
-return  redirect('preinscription')->with('success', 'Votre dossier a été envoyé !');
+return  view('preinscription')->with('success', 'Votre dossier a été envoyé !');
 
 }
 
