@@ -74,7 +74,7 @@ class TestcandidatsController extends Controller
         if ($request->resultat=="4")
         {
             Apprenant::create([
-                'nom' => $request->nom,
+                'nom' => $nom,
                 'password' => "passer",
                 'filiere_id' => $request->filiere_id,
                 'email' => "Email",
