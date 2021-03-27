@@ -18,12 +18,9 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
+    <div class="table-agile-info">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10">
-                    <section  class="panel">
+        <div class="panel panel-default">
                         {{-- <div class="card-header">Créer un membre de l'équipe Pomess</div> --}}
                         <header class="panel-heading">
                             <div class="panel-title">
@@ -55,8 +52,7 @@
                     </div>
                     </div>
             </div>
-        </div>
-    </div>
+     
 </section>
 </section>
 @endsection

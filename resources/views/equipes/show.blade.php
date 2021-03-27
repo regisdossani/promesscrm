@@ -18,18 +18,14 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
+    <div class="table-agile-info">
 
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-9">
-                        <section  class="panel">
+        <div class="panel panel-default">
 
                             <header class="panel-heading">
-                                <div class="panel-title">
+
                                     AFFICHER UN MEMBRE DU PERSONNEL
-                                </div>
+
                             </header>
 
                     <div class="card-body">
@@ -109,8 +105,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+   
 
     </section>
 </section>
