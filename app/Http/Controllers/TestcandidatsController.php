@@ -11,6 +11,7 @@ use App\Filiere;
 use App\Testcandidat;
 use App\Apprenant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TestcandidatsController extends Controller
 {
