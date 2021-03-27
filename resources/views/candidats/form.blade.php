@@ -20,7 +20,7 @@
                         @endforeach
                 </select>
      </div>
-     <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
+     <div class="col-md-3 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
         <label for="tel" class="control-label">{{'Téléphone:' }}</label>
         <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
         {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
@@ -74,7 +74,7 @@
         </div> --}}
 
      @if(isset($candidat->pj_depotdossier2) && !empty($candidat->pj_depotdossier2))
-        <a href="{{ url('uploads/candidats/'.$candidat->pj_depotdossier2) }}"><i class="fa fa-download"></i> {{'pj_depotdossier2'}}</a>
+        <a href="{{ url('uploads/candidats/'.$candidat->pj_depotdossier2) }}"><i class="fa fa-download"></i> {{'pj depotdossier2'}}</a>
     @endif
    {{-- <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe(2)(Depot de dossier)' }}</label>
