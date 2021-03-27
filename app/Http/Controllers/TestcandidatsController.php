@@ -67,15 +67,10 @@ class TestcandidatsController extends Controller
         }
 
 
-        Testcandidat::create($requestData);
-       /*  'provenance',  'nom', 'email', 'tel','sexe',
-        'reception_dossier','pj_depotdossier',
-         'region','pj_depotdossier2','filiere_id','promo_id','parrain',
-         'tel_parrain','email_parrain','role'
- */
-/* 'email', 'password','annee','visite_terain','lieu_naiss','date_naiss','classe_id'
-,'prenom','nom','candidat_id','filiere_id','tel','promo_id','reference','sexe','annee'
- */
+        $test=Testcandidat::create($requestData);
+
+        $nom=$test->candidat->nom;
+
         if ($request->resultat=="4")
         {
             Apprenant::create([
@@ -85,9 +80,9 @@ class TestcandidatsController extends Controller
                 'email' => "Email",
                 'tel' => $request->tel,
                 'candidat_id' => $request->candidat_id,
-                'prenom' => "Prenom",
+                'prenom' => "MODIFIER Prenom",
                 'password' =>Hash::make("passer") ,
-                'reference' => "REFERENCE",
+                'reference' => "MODIFIER REFERENCE",
 
               ]);
 
