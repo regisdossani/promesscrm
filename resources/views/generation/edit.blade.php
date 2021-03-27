@@ -7,6 +7,13 @@
     @include('equipes.sidebar')
 @endif
 
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 
 {{-- @section('styles')
