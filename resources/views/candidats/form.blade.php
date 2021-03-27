@@ -1,4 +1,4 @@
-<div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+<div class="col-md-6  {{ $errors->has('nom') ? 'has-error' : ''}}">
         <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
         <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
         {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
