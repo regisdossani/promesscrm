@@ -65,7 +65,7 @@
             </div>
 
             @if($candidat->pj_depotdossier)
-                <img  src=="uploads/candidats/{{$candidat->pj_depotdossier}}"><i class="fa fa-download"></i> {{'pj_depotdossier'}}</a>
+                <a href="uploads/candidats/{{$candidat->pj_depotdossier}}"><i class="fa fa-download"></i> {{'pj_depotdossier'}}</a>
             @endif
        {{--  <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
             <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe(1)(Depot de dossier)' }}</label>
