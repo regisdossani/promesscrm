@@ -68,8 +68,16 @@
             <!--search & user info start-->
             <ul class="nav pull-right top-menu">
                 <li>
-                    <input type="text" class="form-control search" placeholder=" Rechercher">
+                    <input type="text" class="form-control search"
+                    id="myInput" onkeyup="myFunction()"  placeholder=" Rechercher">
                 </li>
+
+
+
+
+
+
+
 
                 <!-- user login dropdown start-->
                     <li>
@@ -79,15 +87,15 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                           <li><a href="{{ url('/admins/'. Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li> 
+                           <li><a href="{{ url('/admins/'. Auth::guard('admin')->user()->id) }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                            {{-- <li><a href="{{ url('/admins')}}"><i class=" fa fa-suitcase"></i>Profile</a></li> --}}
 
-                            <li>
+                           {{--  <li>
                                 <a href="#">
                                     <i class="fa fa-cog">
                                     </i> Paramètres
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

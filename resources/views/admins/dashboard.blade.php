@@ -33,7 +33,8 @@
 
 
 		<!-- //market-->
-<div class="market-updates">
+<div id="myUL">
+        <div class="market-updates">
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-1">
                     <a href="{{url('apprenants')}}">
@@ -534,43 +535,9 @@
 </div>
 
 
-
-{{-- <div class="full-screen">
-    <div class="log-w3">
-        <div class="w3layouts-main">
-            <h2>PARAMÉTREZ LE CRM</h2>
-            <div class="card-body">
-                    <form action='{{ url("/formations")}}' method="GET">
-                        <button  class="ggg ">Créer une formation</button>
-                    </form>
-
-                    <form action='{{ url("/classes")}}' method="GET">
-                        <button  class="ggg">  Créer une Classe</button>
-                    </form>
-
-                    <form action='{{ url("/types")}}' method="GET">
-                        <button  class="ggg">Créer un type de formation</button>
-                    </form>
-                        <div class="clearfix"></div>
-                </div>
             </div>
-               {{-- <p><a href="/register">Créer un compte</a></p> --}}
-       </div>
+        </div>
  </div>
-
-
-      <!--Footer-->
-      {{-- <div class="modal-footer justify-content-center">
-        <a type="button" class="btn btn-outline-warning waves-effect">Send <i class="fas fa-paper-plane-o ml-1"></i></a>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
- --}}
-
-
-
 
 
 
@@ -871,4 +838,29 @@
     });
 </script>
 <!-- //calendar -->
+
+<script>
+    function myFunction() {
+        var input, filter, h4, div, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myUL");
+        h4 = div.getElementsByTagName("h4");
+        for (i = 0; i < li.length; i++) {
+            a = h4[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                h4[i].style.display = "";
+            } else {
+                h4[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
+
+
+
+
+
  @endsection
