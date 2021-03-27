@@ -79,12 +79,18 @@ class TestcandidatsController extends Controller
         {
             Apprenant::create([
                 'nom' => $request->nom,
-                'sexe' => $request->sexe,
+                'password' => "passer",
                 'filiere_id' => $request->filiere_id,
                 'email' => "Email",
                 'tel' => $request->tel,
+                'candidat_id' => $request->candidat_id,
+                'prenom' => "Prenom",
+                'password' =>Hash::make("passer") ,
+                'reference' => "REFERENCE",
 
               ]);
+
+
         }
 
         //   $apprenant->candidat()->save($apprenant);
