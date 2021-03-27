@@ -10,17 +10,12 @@
 
 <section class="wrapper">
     <div class="form-w3layouts">
+        <div class="table-agile-info">
 
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="card">
+            <div class="panel panel-default">
                         {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     MODIFIER PERSONNEL ADMINISTRATIF
-                                </div>
                             </header>
                                 {{-- <div class="card-header">Modifier  #{{ $equipe->username }}</div> --}}
                             <div class="card-body">
@@ -55,11 +50,9 @@
                                 </form>
 
                             </div>
-                        </section>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 </section>
 @endsection
