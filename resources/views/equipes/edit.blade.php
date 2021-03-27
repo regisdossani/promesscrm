@@ -17,7 +17,6 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
         <div class="table-agile-info">
 
             <div class="panel panel-default">
@@ -60,7 +59,6 @@
                             </div>
                     </div>
                 </div>
-            </div>
     </section>
 </section>
 @endsection
