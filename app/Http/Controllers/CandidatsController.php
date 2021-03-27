@@ -213,16 +213,23 @@ class CandidatsController extends Controller
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
+
+            $fileName1 = time().'.'.$request->pj_depotdossier->extension();
+            $request->pj_depotdossier->move(public_path('uploads/candidats'), $fileName1);
+
+            $fileName2 = time().'.'.$request->pj_depotdossier2->extension();
+            $request->pj_depotdossier2->move(public_path('uploads/candidats'), $fileName2);
+
             $requestData = $request->all();
 
-            if ($request->hasFile('pj_depotdossier')) {
+           /*  if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
                 $requestData['pj_depotdossier'] = uploadFile($request, 'pj_depotdossier', public_path('uploads/candidats'));
             }
             if ($request->hasFile('pj_depotdossier2')) {
                 checkDirectory("candidats");
                 $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
-            }
+            } */
 
            /*  if ($request->hasFile('test_pj')) {
                 checkDirectory("candidats");
