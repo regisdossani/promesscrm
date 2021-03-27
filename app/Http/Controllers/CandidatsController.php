@@ -246,7 +246,7 @@ class CandidatsController extends Controller
 
 
   Candidat::create($requestData);
-return  redirect('candidat')->with('success', 'Votre dossier a été envoyé !');
+return  redirect('preinscription')->with('success', 'Votre dossier a été envoyé !');
 
 }
 
