@@ -20,18 +20,11 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
+    <div class="table-agile-info">
 
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="panel">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+        <div class="panel panel-default">
                             <header class="card-heading">
-                                <div class="card-title">
                                     GESTION DES MODULES
-                                </div>
                             </header>
                                 <div class="card-body ">
                                     <br/>
@@ -56,7 +49,7 @@
                                     <br/>
                                     <div class="row">
                                         <div class="table-responsive" text-align="center">
-                                            <table style="width: 90%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
+                                            <table style="width: 80%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -88,11 +81,9 @@
                                     </div>
                                 </div>
 
-                    </section>
                 </div>
             </div>
-        </div>
-    </div>
+   
 </section>
 </section>
 @endsection
