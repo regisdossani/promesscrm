@@ -26,7 +26,7 @@
         {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
     </div>
 
-    <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
+    <div class="col-md-3 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
         <label for="email" class="control-label">{{ 'Email:' }}</label>
         <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
         {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
@@ -64,7 +64,7 @@
                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
             </div>
 
-            @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
+            @if(!empty($candidat->pj_depotdossier))
                 <a href="{{ url('uploads/candidats/'.$candidat->pj_depotdossier) }}"><i class="fa fa-download"></i> {{'pj_depotdossier'}}</a>
             @endif
        {{--  <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
@@ -73,7 +73,7 @@
             {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
         </div> --}}
 
-     @if(isset($candidat->pj_depotdossier2) && !empty($candidat->pj_depotdossier2))
+     @if(!empty($candidat->pj_depotdossier2))
         <a href="{{ url('uploads/candidats/'.$candidat->pj_depotdossier2) }}"><i class="fa fa-download"></i> {{'pj depotdossier2'}}</a>
     @endif
    {{-- <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">

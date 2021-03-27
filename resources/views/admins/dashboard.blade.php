@@ -8,29 +8,6 @@
         id="myInput" onkeyup="myFunction()"  placeholder=" Rechercher">
 <!-- //market-->
 
-<!-- Modal -->
-{{-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Paramètres du CRM</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <a href="{{ url("/typeformations")}}">Créer un type de formation</a><br/>
-
-            <a href="{{ url("/formations")}}">Créer une formation</a><br/>
-            <a href="{{ url("/classe")}}">Créer une Classe</a><br/>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-</div>--}}
 
 
 		<!-- //market-->
@@ -324,7 +301,7 @@
             <i class="fa  fa-pencil-square-o" aria-hidden="true" style="font-size:36px;color:white"></i>
         </div>
         <div class="col-md-8 market-update-left">
-            <h4>Suivi horaire des formateurs</h4>
+            <h4>Suivi horaire (formateurs)</h4>
         </div>
         </a>
       <div class="clearfix"> </div>
