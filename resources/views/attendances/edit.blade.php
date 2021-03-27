@@ -1,6 +1,19 @@
-@extends('layouts.app')
-@include('inc.styles')
-@include('admins.sidebar')
+@extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
+
 @section('content')
     <div class="container">
         <div class="row">
