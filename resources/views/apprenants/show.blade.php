@@ -101,11 +101,16 @@
 
                                         <tr>
                                             <th> Filière </th>
-                                            <td> {{ $apprenant->filiere->nom }} </td>
+                                            <td>@if ($apprenant->filiere)
+                                                {{ $apprenant->filiere->nom }}
+                                                @endif
+                                             </td>
                                         </tr>
                                         <tr>
                                             <th> Promo </th>
-                                            <td> {{ $apprenant->promo->nom }} </td>
+                                            <td>@if ($apprenant->promo)
+                                                {{ $apprenant->promo->nom }} </td>
+                                            @endif
                                         </tr>
                                         <tr>
                                             <th> Date de naissance </th>
