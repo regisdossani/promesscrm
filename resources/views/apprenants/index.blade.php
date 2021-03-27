@@ -1,6 +1,6 @@
 @extends('inc.master')
 
-{{--
+
 @if (Auth::guard("equipe")->check())
     @include('equipes.sidebar')
 @endif
@@ -11,7 +11,7 @@
 @if (Auth::guard("formateur")->check())
     @include('formateurs.sidebar')
 @endif
- --}}
+ 
 
 
 @section('content')
