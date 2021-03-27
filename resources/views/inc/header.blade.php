@@ -68,8 +68,7 @@
             <!--search & user info start-->
             <ul class="nav pull-right top-menu">
                 <li>
-                    <input type="text" class="form-control search"
-                    id="myInput" onkeyup="myFunction()"  placeholder=" Rechercher">
+                   
                 </li>
 
 
