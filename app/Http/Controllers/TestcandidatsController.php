@@ -81,7 +81,7 @@ class TestcandidatsController extends Controller
                 'nom' => $request->nom,
                 'sexe' => $request->sexe,
                 'filiere_id' => $request->filiere_id,
-                'email' => $request->email,
+                'email' => "Email",
                 'tel' => $request->tel,
 
               ]);
@@ -161,6 +161,8 @@ class TestcandidatsController extends Controller
         [
             'candidat_id' => ['required','Integer','max:255'],
             'resultat' => ['required', 'string', 'max:255'],
+            'filiere_id' => ['required', 'string', 'max:255'],
+
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
 
         ]);
