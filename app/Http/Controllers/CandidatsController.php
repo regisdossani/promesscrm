@@ -217,7 +217,7 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
                 $fileName1 = $request->pj_depotdossier;
                 // $request->pj_depotdossier->move(public_path('uploads/candidats'), $fileName1);
-                $request->pj_depotdossier = uploadFile($request,  $fileName1, public_path('uploads/candidats'));
+                $request->pj_depotdossier = uploadFile($request,$fileName1, public_path('uploads/candidats'));
 
             }
 
