@@ -40,13 +40,13 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        {{-- <div class="signup-img">
-                    <img src="images/form-img.jpg" alt="">
-                    <div class="signup-img-content">
-                        <h2>Inscrivez-vous maintenant </h2>
-                        <p>formez-vous sur le solaire !</p>
-                    </div>
-                </div> --}}
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                        </div>
+                        {{-- <img src="uploads/{{ Session::get('file') }}"> --}}
+                        @endif
                 <section class="panel">
                     <header class="panel-heading">
                         <div class="panel-title">

@@ -238,7 +238,7 @@ class CandidatsController extends Controller
 
 
   Candidat::create($requestData);
-return  redirect()->back()->with('flash_message', 'Votre dossier a été envoyé !');
+return  redirect('candidat')->with('success', 'Votre dossier a été envoyé !');
 
 }
 
