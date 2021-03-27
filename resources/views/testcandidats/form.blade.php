@@ -9,8 +9,8 @@
 </div>
 
 
-<div class="col-md-6 mb-3 {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
-    <label for="filiere_id" class="control-label">{{ 'Filière' }}</label>
+<div class="col-md-6 mb-3 {{ $errors->has('filiere') ? 'has-error' : ''}}">
+    <label for="filiere" class="control-label">{{ 'Filière' }}</label>
     <select name="filiere" id="filiere" class="form-control">
         <option value="">Choisissez une filière</option>
             @foreach($filieres as $filiere)

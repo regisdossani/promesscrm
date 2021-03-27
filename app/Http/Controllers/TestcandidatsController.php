@@ -161,7 +161,7 @@ class TestcandidatsController extends Controller
         [
             'candidat_id' => ['required','Integer','max:255'],
             'resultat' => ['required', 'string', 'max:255'],
-            'filiere_id' => ['required', 'string', 'max:255'],
+            'filiere' => ['required', 'string', 'max:255'],
 
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
 
