@@ -213,11 +213,14 @@ class CandidatsController extends Controller
             'pj_depotdossier2.*' => 'mimes:doc,docx,pdf,txt'
 
             ]);
+
+            $requestData = $request->all();
+
+
             if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
-                $fileName1 =time().'_'. $request->pj_depotdossier;
                 // $request->pj_depotdossier->move(public_path('uploads/candidats'), $fileName1);
-                $request->pj_depotdossier = uploadFile($request,$fileName1, public_path('uploads/candidats'));
+                $requestData['pj_depotdossier'] = uploadFile($request,$request->pj_depotdossier, public_path('uploads/candidats'));
 
             }
 
@@ -225,10 +228,9 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
             $fileName2 =$request->pj_depotdossier2;
             // $request->pj_depotdossier2->move(public_path('uploads/candidats'), $fileName2);
-            $request->pj_depotdossier2 = uploadFile($request,$fileName2, public_path('uploads/candidats'));
+            $requestData['pj_depotdossier'] = uploadFile($request,$request->pj_depotdossier2, public_path('uploads/candidats'));
         }
 
-            $requestData = $request->all();
 
            /*  if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
@@ -244,9 +246,8 @@ class CandidatsController extends Controller
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
             } */
 
-
   Candidat::create($requestData);
-return  view('preinscription')->with('success', 'Votre dossier a été envoyé !');
+  Redirect::to('preinscription')->with('success', 'Votre dossier a été envoyé !');
 
 }
 
