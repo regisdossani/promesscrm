@@ -64,17 +64,19 @@
                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
             </div>
 
-            @if(isset($candidat->pj_depotdossier))
-                <a href="{{url('/uploads/candidats/'.$candidat->pj_depotdossier)}}"><i class="fa fa-download"></i> {{'pj_depotdossier'}}</a>
-            @endif
+            @if(isset($candidat->pj_depotdossier) && ($candidat->pj_depotdossier!=null))
+                {{-- <a href="{{url('/uploads/candidats/'.$candidat->pj_depotdossier)}}"><i class="fa fa-download"></i> {{'pj_depotdossier'}}</a> --}}
+                <a href="{{URL::to('/uploads/candidats/'.$candidat->pj_depotdossier)}}" target="_blank"><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
+
+                @endif
        {{--  <div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
             <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe(1)(Depot de dossier)' }}</label>
             <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  value="{{ isset($candidat->pj_depotdossier) ? $candidat->pj_depotdossier : ''}}">
             {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
         </div> --}}
 
-     @if(isset($candidat->pj_depotdossier2))
-        <a href="{{url('/uploads/candidats/'.$candidat->pj_depotdossier2)}}"><i class="fa fa-download"></i> {{'pj depotdossier2'}}</a>
+     @if(isset($candidat->pj_depotdossier2) && ($candidat->pj_depotdossier2!=null))
+        <a href="{{URL::to('/uploads/candidats/'.$candidat->pj_depotdossier2)}}" target="_blank"><i class="fa fa-download"></i> {{$candidat->pj_depotdossier2}}</a>
         @endif
    {{-- <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">
         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe(2)(Depot de dossier)' }}</label>
