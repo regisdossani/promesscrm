@@ -219,17 +219,13 @@ class CandidatsController extends Controller
 
             if ($request->hasFile('pj_depotdossier')) {
                 checkDirectory("candidats");
-                $pj_depotdossier = $request->pj_depotdossier;
-                $name = time().'.'.$pj_depotdossier->getClientOriginalExtension();
-                $requestData['pj_depotdossier'] = uploadFile($request,$name, public_path('uploads/candidats'));
+                $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
 
             }
 
         if ($request->hasFile('pj_depotdossier2')) {
                 checkDirectory("candidats");
-                $pj_depotdossier = $request->pj_depotdossier2;
-                $name = time().'.'.$pj_depotdossier->getClientOriginalExtension();
-            $requestData['pj_depotdossier2'] = uploadFile($request,$name, public_path('uploads/candidats'));
+            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
         }
 
 
