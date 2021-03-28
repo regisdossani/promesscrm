@@ -246,9 +246,9 @@ class CandidatsController extends Controller
                 checkDirectory("candidats");
                 $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
             } */
-
   Candidat::create($requestData);
-  Redirect::to('preinscription')->with('success', 'Votre dossier a été envoyé !');
+
+  return redirect()->back()->with('success', 'Votre dossier a été envoyé !');
 
 }
 
