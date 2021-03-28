@@ -244,7 +244,7 @@ class CandidatsController extends Controller
             } */
   Candidat::create($requestData);
 
-  return redirect()->back()->with('success', 'Votre dossier a été envoyé !');
+  return back()->with('success', 'Votre dossier a été envoyé !');
 
 }
 

@@ -54,6 +54,7 @@ Route::get('/candidat', function () {
 });
 
 
+Route::post('/inscription','CandidatsController@inscription');
 
 
 
@@ -175,7 +176,6 @@ function() {
 
 
 
- Route::post('/inscription','CandidatsController@inscription');
 
  Route::group(['middleware'=>['auth:admin,equipe']], function(){
     Route::get('/partenaires', 'PartenairesController@index');
