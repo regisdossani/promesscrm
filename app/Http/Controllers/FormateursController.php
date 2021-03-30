@@ -94,7 +94,7 @@ class FormateursController extends Controller
  */
         $formateur= Formateur::create($requestData);
         if ($formateur->save()) {
-            $formateur->matieres()->sync($request->input('matieres', []));
+            $formateur->matieres()->attach($request->input('matieres', []));
         }
         return redirect('formateurs')->with('flash_message', 'Formateur added!');
     }
