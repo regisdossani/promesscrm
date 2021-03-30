@@ -90,11 +90,10 @@ class FormateursController extends Controller
             $requestData['cv_pj'] = uploadFile($request,'cv_pj', public_path('uploads/formateurs'));
         }
 
-
  */
         $formateur= Formateur::create($requestData);
         if ($formateur->save()) {
-            $formateur->matieres()->attach($request->input('matieres', []));
+            $formateur->matieres()->attach($request->matieres);
         }
         return redirect('formateurs')->with('flash_message', 'Formateur added!');
     }
