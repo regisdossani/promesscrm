@@ -44,6 +44,7 @@
                                                     <th>Classe </th>
                                                     <th>Formateur </th>
                                                     <th>Date</th>
+                                                    <th>Statut</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
