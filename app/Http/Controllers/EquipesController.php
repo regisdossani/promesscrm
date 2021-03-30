@@ -63,7 +63,7 @@ class EquipesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $request->validate($request,[
             'nom_prenom'=> 'required',
             'reference' => 'required|reference|unique:equipes,reference',
             'password'=> 'required',
