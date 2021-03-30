@@ -52,13 +52,13 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
-                                                        @if ({{ $item->class }})
+                                                        @if ($item->class )
                                                         {{ $item->class->name }}
                                                         @endif
                                                     </td>
 
                                                     <td>
-                                                        @if ({{ $item->formateur  }})
+                                                        @if ($item->formateur  )
                                                         {{ $item->formateur->nom  }}
                                                     @endif
                                                     </td>
