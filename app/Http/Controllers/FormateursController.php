@@ -66,14 +66,16 @@ class FormateursController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $rules =[
             'nom' => ['required', 'string', 'nom', 'max:255'],
             'prenom'=> ['required', 'string', 'prnom', 'max:255'],
             'password'=> 'required',
             'tel'=> 'required|numeric|max:15',
             'reference' => ['required', 'string', 'reference', 'max:255', 'unique:formateurs']
 
-        ]);
+        ];
+
+        $this->validate($request, $rules);
 
         $requestData = $request->all();
         $requestData['password'] = Hash::make($requestData['password']);
