@@ -51,8 +51,18 @@
                                             @foreach($attendances as $item)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->class->name }}</td>
-                                                    <td>{{ $item->formateur->nom }}</td>
+                                                    <td>
+                                                        @if ({{ $item->class }})
+                                                        {{ $item->class->name }}
+                                                        @endif
+                                                    </td>
+
+                                                    <td>
+                                                        @if ({{ $item->formateur  }})
+                                                        {{ $item->formateur->nom  }}
+                                                    @endif
+                                                    </td>
+
                                                     <td>{{ $item->date }}</td>
                                                     <td>{{ $item->attendence_status == 1 ? 'Présent(e)' : 'Absent(e)'}}</td>
 
