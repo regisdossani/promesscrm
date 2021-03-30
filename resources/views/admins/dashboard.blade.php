@@ -4,8 +4,8 @@
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
-        <input type="text" class="form-control search"
-        id="myInput" onkeyup="myFunction()"  placeholder=" Rechercher">
+       {{--  <input type="text" class="form-control search"
+        id="myInput" onkeyup="myFunction()"  placeholder=" Rechercher"> --}}
 <!-- //market-->
 
 

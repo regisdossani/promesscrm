@@ -70,11 +70,11 @@ class FormateursController extends Controller
             'nom' => 'required|string|max:255',
             'prenom'=> 'required|string|max:255',
             'password'=> 'required',
-            'tel'=> 'required|numeric|max:15',
+            'tel'=> 'required|numeric',
             'reference' => 'required|string|max:255|unique:formateurs'
 
         ]);
-        
+
 
         $requestData = $request->all();
         $requestData['password'] = Hash::make($requestData['password']);
