@@ -9,6 +9,7 @@ use App\Nosmatiere;
 use App\Formateur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class FormateursController extends Controller
@@ -66,10 +67,10 @@ class FormateursController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nom' => 'required',
-            'prenom'=> 'required',
+            'nom' => ['required', 'string', 'nom', 'max:255'],
+            'prenom'=> ['required', 'string', 'prnom', 'max:255'],
             'password'=> 'required',
-            'tel'=> 'required',
+            'tel'=> 'required|numeric|max:15',
             'reference' => ['required', 'string', 'reference', 'max:255', 'unique:formateurs']
 
         ]);

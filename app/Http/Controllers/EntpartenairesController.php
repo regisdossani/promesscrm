@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 use App\Entpartenaire;
-use Illuminate\Http\Request;
 
 class EntpartenairesController extends Controller
 {
