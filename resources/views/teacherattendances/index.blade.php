@@ -1,5 +1,18 @@
 @extends('inc.master')
-@include('admins.sidebar')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 @section('content')
 <section id="main-content">
@@ -9,7 +22,7 @@
             <div class="panel panel-default">
                         <header class="panel-heading">
                                 GESTION DES PRÉSENCES DES FORMATEURS
-                           
+
                         </header>
                             {{-- <div class="card-header">Teacherattendances</div> --}}
                             <div class="panel-body">
@@ -48,8 +61,8 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
-                                                        @if ($item->class )
-                                                        {{ $item->class->name }}
+                                                        @if ($item->classe )
+                                                        {{ $item->classe->name }}
                                                         @endif
                                                     </td>
 

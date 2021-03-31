@@ -27,10 +27,22 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
+                                            {{-- <tr>
                                                 <th>ID</th><td>{{ $teacherattendance->id }}</td>
+                                            </tr> --}}
+                                            <tr><th> Classe</th>
+                                                <td>
+                                                    {{ $teacherattendance->class_id }}
+                                                </td>
                                             </tr>
-                                            <tr><th> Class Id </th><td> {{ $teacherattendance->class_id }} </td></tr><tr><th> Formateur Id </th><td> {{ $teacherattendance->formateur_id }} </td></tr><tr><th> Date </th><td> {{ $teacherattendance->date }} </td></tr>
+                                            <tr>
+                                                <th> Formateur </th>
+                                                <td> {{ $teacherattendance->formateur_id }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th> Date </th>
+                                                <td> {{ $teacherattendance->date }} </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
