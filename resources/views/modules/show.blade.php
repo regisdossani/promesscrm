@@ -9,20 +9,13 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-8">
-                    <section  class="card">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+    <div class="table-agile-info">
+        <div class="panel panel-default">
                             <header class="panel-heading">
                                 <div class="panel-title">
                                     AFFICHER UN MODULE
                                 </div>
                             </header>
-                    {{-- <div class="card-header">module {{ $module->id }}</div> --}}
                             <div class="card-body">
                                 <br/>
                                 <a href="{{ url('/modules') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
@@ -48,11 +41,9 @@
                                 </div>
 
                             </div>
-                    </section>
                 </div>
             </div>
-        </div>
-    </div>
+   
 </section>
 </section>
 @endsection

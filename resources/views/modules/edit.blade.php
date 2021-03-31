@@ -17,14 +17,9 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
+    <div class="table-agile-info">
 
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="card">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+        <div class="panel panel-default">
                             <header class="panel-heading">
                                 <div class="panel-title">
                                     MODIFIER UN MODULE
@@ -53,11 +48,9 @@
                                 </form>
 
                             </div>
-                    </section>
                 </div>
             </div>
-        </div>
-    </div>
+  
 </section>
 </section>
 @endsection

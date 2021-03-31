@@ -18,18 +18,10 @@
 
 <section id="main-content">
 <section class="wrapper">
-    <div class="form-w3layouts">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="panel">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+    <div class="table-agile-info">
+        <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     CRÉER UNE MATIERE
-                                </div>
                             </header>
                             <div class="card-body">
                                 <br />
@@ -53,11 +45,9 @@
                                 </form>
 
                             </div>
-                    </section>
             </div>
         </div>
-    </div>
-    </div>
+  
 </section>
 </section>
 @endsection
