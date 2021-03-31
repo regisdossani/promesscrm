@@ -49,7 +49,7 @@ class EntpartenairesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $request->validate([
             'reference' => ['required', 'string', 'reference', 'max:255', 'unique:entpartenaires'],
 
             ]);

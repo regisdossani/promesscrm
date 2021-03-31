@@ -57,9 +57,9 @@ class NosmatieresController extends Controller
     {
 
         $this->validate($request,[
-            'module_id' => 'required',
+            'module_id' => 'required|integer',
             'reference'=>'unique:nosmatieres',
-            
+            'formateur_id'=>'required|integer'
             ]);
 
         $requestData = $request->all();
