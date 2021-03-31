@@ -23,7 +23,7 @@
                         <section  class="panel">
                             <header class="panel-heading">
                                 <div class="panel-title">
-                                    MODIFIER UN PARTENAIRE
+                                    CRÉER UN PARTENAIRE
                                 </div>
                             </header>
                             <div class="panel-body">
