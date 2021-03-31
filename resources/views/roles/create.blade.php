@@ -10,44 +10,30 @@
     <section class="wrapper">
 
         <div class="table-agile-info">
-
             <div class="panel panel-default">
-                            <header class="panel-heading">
-                                <div class="panel-title">
-                                    ENRÉGISTRER UN NOUVEAU RÔLE
-                                </div>
-                            </header>
-                    <div class="card-body">
-                        <br/>
 
-                        <a href="{{ url('/admin/roles') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                        <br />
-                        <br />
-
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-
-                        <form method="POST" action="{{ url('/admin/roles') }}" accept-charset="UTF-8" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-
-                            @include ('roles.form', ['formMode' => 'create'])
-
-                        </form>
-
+                <div class='col-lg-4 col-lg-offset-4'>
+                    <h1><i class='fa fa-key'></i> Add Role</h1>
+                    <hr>
+                    {{ Form::open(array('url' => 'roles')) }}
+                    <div class="form-group">
+                        {{ Form::label('name', 'Name') }}
+                        {{ Form::text('name', null, array('class' => 'form-control')) }}
                     </div>
+                    <h5><b>Assign Permissions</b></h5>
+                    <div class='form-group'>
+                        @foreach ($permissions as $permission)
+                            {{ Form::checkbox('permissions[]',  $permission->id ) }}
+                            {{ Form::label($permission->name, ucfirst($permission->name)) }}
+                            <br>
+                        @endforeach
+                    </div>
+                    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+                    {{ Form::close() }}
                 </div>
+
             </div>
         </div>
     </section>
 @endsection
 
-@section('scripts')
-
-    <script src="{{ url('theme/views/roles/form.js') }}" type="text/javascript"></script>
-
-@endsection

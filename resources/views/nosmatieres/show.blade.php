@@ -1,14 +1,26 @@
-@extends('layouts.app')
-@include('inc.styles')
+@extends('inc.master')
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
-
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">nosmatiere {{ $nosmatiere->id }}</div>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                                <header class="panel-heading">
+                                       AFFICHER UNE MATIÈRE
+                                </header>
                     <div class="card-body">
 
                         <a href="{{ url('/nosmatieres') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
@@ -36,6 +48,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </section>
+
 @endsection

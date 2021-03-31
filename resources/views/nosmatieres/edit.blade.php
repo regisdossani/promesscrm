@@ -2,13 +2,15 @@
 @include('inc.styles')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Modifier nosmatiere #{{ $nosmatiere->id }}</div>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                <header class="panel-heading">
+                    MODIFIER UNE MATIERE
+            </header>
+
                     <div class="card-body">
                         <a href="{{ url('/nosmatieres') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
@@ -33,6 +35,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+    </section>
+</section>
 @endsection

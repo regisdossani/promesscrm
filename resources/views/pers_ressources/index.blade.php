@@ -17,17 +17,10 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
-
-        <div class="container">
-
-                <div class="col-md-10">
-                    <section  class="card">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
+    <div class="table-agile-info">
+        <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     GESTION DES PERSONNES RESSOURCES DE PROMESS
-                                </div>
                             </header>
                         <div class="card-body">
                             <br/>
@@ -99,7 +92,6 @@
                             </div>
 
                     </div>
-                    </section>
             </div>
 
     </div>

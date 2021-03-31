@@ -20,11 +20,8 @@
 
     <section class="wrapper">
 
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
 
                             <header class="panel-heading">
                                 <div class="panel-title">
@@ -46,18 +43,17 @@
                                     <div class="panel-body">
 
                                         <form method="POST" action="{{ url('/pers_ressources') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                                            {{ csrf_field() }} 
+                                            {{ csrf_field() }}
                                             @include ('pers_ressources.form', ['formMode' => 'Créer'])
 
                                         </form>
                                     </div>
 
                                 </div>
-                        </section>
-                    </div>
+
                 </div>
             </div>
-        </div>
+       
 </section>
 </section>
 @endsection
