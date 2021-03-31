@@ -9,12 +9,9 @@
 
     <section class="wrapper">
 
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <section  class="panel">
+        <div class="table-agile-info">
 
+            <div class="panel panel-default">
                             <header class="panel-heading">
                                 <div class="panel-title">
                                     ENRÉGISTRER UN NOUVEAU RÔLE
@@ -22,7 +19,7 @@
                             </header>
                     <div class="card-body">
                         <br/>
-                        
+
                         <a href="{{ url('/admin/roles') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                         <br />
                         <br />

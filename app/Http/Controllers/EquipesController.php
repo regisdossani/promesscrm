@@ -11,6 +11,7 @@ use DB;
 use App\Admin;
 use App\Equipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EquipesController extends Controller
 {
@@ -65,12 +66,12 @@ class EquipesController extends Controller
     {
         $request->validate([
             'nom_prenom'=> 'required',
-            'reference' => 'required|reference|unique:equipes,reference',
+            'reference' => 'required|unique:equipes',
             'password'=> 'required',
             'tel'=> 'required',
            'sexe'=> 'required',
 
-            'email' => 'required|email|unique:equipes,email',
+            'email' => 'required|email|unique:equipes',
             'photo' => ['sometimes','image','mimes:jpg,jpeg,bmp,svg,png', 'max:5000'],
             'cv.*' => 'mimes:doc,docx,pdf,txt',
             'contrat.*' => 'mimes:doc,docx,pdf,txt',

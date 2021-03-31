@@ -131,7 +131,7 @@ protected function validator(array $data)
         return Validator::make($data,
         [
             'raison_sociale' => ['required', 'Integer', 'max:255'],
-            'reference' => ['required', 'string', 'max:255','unique:entreprise,reference'],
+            'reference' => ['required', 'string', 'max:255','unique:entreprise'],
             'contact_tel' => ['required', 'string', 'max:255'],
 
         ]);

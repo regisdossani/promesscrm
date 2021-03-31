@@ -27,6 +27,15 @@
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>
 
+                                @if ($message = Session::get('flash_message'))
+                                <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                        <strong>{{ $message }}</strong>
+                                </div>
+                                @endif
+
+
+
                                 <div class="pull-right" style="margin-right:5px">
                                     <form method="GET" action="{{ url('/testcandidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                                         <div class="form-inline">

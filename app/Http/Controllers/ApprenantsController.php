@@ -212,7 +212,7 @@ class ApprenantsController extends Controller
             'tel' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:apprenants'],
             'password' => ['required', 'string', 'min:5'],
-            'reference' => ['required', 'string', 'reference', 'max:255', 'unique:apprenants'],
+            'reference' => ['required', 'string', 'max:255', 'unique:apprenants'],
 
         ]);
     }

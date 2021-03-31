@@ -50,7 +50,7 @@ class EntpartenairesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'reference' => ['required', 'string', 'reference', 'max:255', 'unique:entpartenaires'],
+            'reference' => ['required', 'string', 'max:255', 'unique:entpartenaires'],
 
             ]);
         $requestData = $request->all();

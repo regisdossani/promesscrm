@@ -69,14 +69,14 @@ class TestcandidatsController extends Controller
 
         $test=Testcandidat::create($requestData);
 
-        $nom=$test->candidat->nom;
+      /*   $nom=$test->candidat->nom;
         $sexe=$test->candidat->sexe;
         $tel=$test->candidat->tel;
         $email=$test->candidat->email;
         $promo=$test->candidat->promo;
+ */
 
-
-        if ($request->resultat=="4")
+      /*   if ($request->resultat=="4")
         {
             Apprenant::create([
                 'nom' => $nom,
@@ -84,21 +84,17 @@ class TestcandidatsController extends Controller
                 'filiere_id' => $request->filiere,
                 'email' => $email,
                 'promo' => $promo,
-
                 'tel' => $tel,
                 'candidat_id' => $request->candidat_id,
                 'prenom' => "MODIFIER Prenom",
                 'password' =>Hash::make("passer") ,
                 'reference' => "MODIFIER REFERENCE",
-
               ]);
-
-
         }
-
+ */
         //   $apprenant->candidat()->save($apprenant);
 
-        return redirect('testcandidats')->with('flash_message', 'Testcandidat added!');
+        return redirect('testcandidats')->with('flash_message', 'Test du candidat enrégisré avec succès!');
     }
 
     /**

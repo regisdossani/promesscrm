@@ -41,6 +41,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                 </div>
+                               
                                 <div class="pull-right" style="margin-right:5px">
 
                                             <form method="GET" action="{{ url('/candidats') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">

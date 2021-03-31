@@ -13,14 +13,11 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                    <div class="col-md-10">
-                        <section  class="panel">
+        <div class="table-agile-info">
+
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
-                                    AFFICHER UN CANDIDAT APPRENANT
-                                </div>
+                                    AFFICHER UN TEST CANDIDAT
                             </header>
                             <div class="card-body">
 
@@ -52,7 +49,26 @@
                                                 <th> Entretien </th><td> {{ $testcandidat->entretien }} </td>
                                             </tr>
                                         </tr>
-                                        <tr><th> Résultat </th><td> {{ $testcandidat->resultat }} </td>
+                                        <tr><th> Résultat </th>
+                                            <td>
+                                                @switch($testcandidat->resultat )
+                                                    @case('1')
+                                                    Non retenu
+                                                        @break
+                                                    @case('2')
+                                                    Absent(e)
+                                                        @break
+                                                    @case('3')
+                                                    Excusé(e)
+                                                        @break
+                                                     @case('4')
+                                                     Accepté(e) en FI
+                                                        @break
+                                                    @case('5')
+                                                    Passer tests en FC
+                                                        @break
+                                                @endswitch
+                                                {{-- {{ $testcandidat->resultat }} </td> --}}
                                         </tr>
 
                                         <tr><th> Test(Pièce jointe) </th>
@@ -69,9 +85,8 @@
                                 </div>
 
                             </div>
-                        </section>
-                    </div>
             </div>
+        </div>
         </div>
     </section>
 </section>

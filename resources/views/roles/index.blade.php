@@ -15,11 +15,9 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <section  class="panel">
+        <div class="table-agile-info">
+
+            <div class="panel panel-default">
                             <header class="panel-heading">
                                 <div class="panel-title">
                                     GESTION DES RÔLES
@@ -80,5 +78,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+</section>
+
 @endsection
