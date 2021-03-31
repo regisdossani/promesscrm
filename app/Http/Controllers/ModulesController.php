@@ -66,7 +66,7 @@ class ModulesController extends Controller
             // 'formateur_id'    => 'required|numeric',
             // 'description'   => 'required|string|max:255'
         ]);
-
+        $subject = Modules::findOrFail($id);
         $subject->update([
             'nom'          => $request->nom,
             // 'slug'          => str_slug($request->name),

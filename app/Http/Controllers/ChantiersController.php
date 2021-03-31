@@ -10,6 +10,8 @@ use App\Client;
 use App\Professionnel;
 use App\Newchantier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class ChantiersController extends Controller
 {
