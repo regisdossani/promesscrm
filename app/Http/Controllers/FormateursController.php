@@ -81,9 +81,9 @@ class FormateursController extends Controller
 
 
         $formateur= Formateur::create($requestData);
-        if ($formateur->save()) {
+       /*  if ($formateur->save()) {
             $formateur->matieres()->sync($request->matieres);
-        }
+        } */
 
        /*  $class = Classe::findOrFail($id);
         $class->modules()->sync($request->selectedsubjects); */
