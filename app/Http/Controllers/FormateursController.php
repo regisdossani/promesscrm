@@ -79,22 +79,19 @@ class FormateursController extends Controller
         $requestData = $request->all();
         $requestData['password'] = Hash::make($requestData['password']);
 
-        /* if($request->hasFile('Contratcadre_pj'))
-         {
-            checkDirectory("formateurs");
-                $requestData['Contratcadre_pj'] =uploadFile($request,'Contratcadre_pj',public_path('uploads/formateurs'));
-        }
 
-        if ($request->hasFile('cv_pj')) {
-            checkDirectory("formateurs");
-            $requestData['cv_pj'] = uploadFile($request,'cv_pj', public_path('uploads/formateurs'));
-        }
-
- */
         $formateur= Formateur::create($requestData);
         if ($formateur->save()) {
-            $formateur->matieres()->attach($request->matieres);
+            $formateur->matieres()->sync($request->matieres);
         }
+
+       /*  $class = Classe::findOrFail($id);
+        $class->modules()->sync($request->selectedsubjects); */
+
+
+
+
+
         return redirect('formateurs')->with('flash_message', 'Formateur added!');
     }
 
