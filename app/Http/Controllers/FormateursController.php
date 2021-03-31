@@ -70,7 +70,7 @@ class FormateursController extends Controller
             'nom' => 'required|string|max:255',
             'prenom'=> 'required|string|max:255',
             'password'=> 'required',
-            'tel'=> 'required|numeric',
+            'tel'=> 'required|string|max:255',
             'reference' => 'required|string|max:255|unique:formateurs'
 
         ]);
