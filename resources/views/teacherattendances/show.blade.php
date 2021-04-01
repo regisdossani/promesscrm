@@ -10,7 +10,6 @@
                         <header class="panel-heading">
                                 AFFICHER UN SUIVI HORAIRE  FORMATEURS
                         </header>
-                            {{-- <div class="card-header">teacherattendance {{ $teacherattendance->id }}</div> --}}
                         <div class="card-body">
 
                                 <a href="{{ url('/teacherattendances') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
