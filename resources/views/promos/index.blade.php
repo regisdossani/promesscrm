@@ -42,7 +42,7 @@
                                 <br/>
                                 <br/>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
                                                 <th>#</th><th>Nom</th><th>Année</th><th>Actions</th>
@@ -72,7 +72,7 @@
 
                             </div>
                     </div>
-             
+
     </section>
 </section>
 @endsection

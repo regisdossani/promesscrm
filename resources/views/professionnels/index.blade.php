@@ -44,7 +44,7 @@
 
                                         </div>
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-striped b-t b-light">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th><th>Nom</th><th>Date de naissance</th><th>Tél 1</th><th>Actions</th>
@@ -76,7 +76,7 @@
 
                 </div>
             </div>
-     
+
     </section>
 </section>
 @endsection

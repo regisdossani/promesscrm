@@ -45,7 +45,7 @@
 
                                     <br/>
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table table-striped b-t b-light">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
