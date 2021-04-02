@@ -19,13 +19,8 @@
 <section id="main-content">
 
 <section class="wrapper">
-    <div class="form-w3layouts">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-10">
-                    <section  class="panel">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
                         <header class="panel-heading">
                             <div class="panel-title">
                                 GESTION DES STAGES
@@ -50,7 +45,7 @@
                                     </form>
                                 </div>
                                 <br/>
-                               
+
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -61,7 +56,6 @@
                                                 <th>Référent </th>
                                                 <th>Entreprise </th>
                                                 <th>Encadreur </th>
-                                             {{-- <th>Rapport </th> --}}
 
                                                 <th>Actions</th>
                                             </tr>
@@ -78,8 +72,6 @@
                                                         {{ $item->encadreur->noms }}
                                                     @endif
                                                 </td>
-                                                {{-- <td>{{ $item->rapport }}</td> --}}
-
                                                 <td>
                                                     <a href="{{ url('/stages/' . $item->id) }}" title="Voir ce stage"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                                     <a href="{{ url('/stages/' . $item->id . '/edit') }}" title="Modifier ce stage"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
@@ -98,11 +90,9 @@
                                 </div>
 
                         </div>
-                    </section>
                 </div>
             </div>
-        </div>
-    </div>
+
 </section>
 </section>
 @endsection

@@ -1,26 +1,26 @@
 @extends('inc.master')
 
-@role('equipe')
-@include('equipes.sidebar')
-@endrole
-@role('apprenant')
-@include('apprenants.sidebar')
-@endrole
-@role('formateur')
-@include('formateurs.sidebar')
-@endrole
-@role('superadmin')
-@include('admins.sidebar')
-@endrole
+
+@if (Auth::guard("admin")->check())
+    @include('admins.sidebar')
+@endif
+@if (Auth::guard("equipe")->check())
+    @include('equipes.sidebar')
+@endif
+
+@if (Auth::guard("apprenant")->check())
+    @include('apprenants.sidebar')
+@endif
+@if (Auth::guard("formateur")->check())
+    @include('formateurs.sidebar')
+@endif
+
 
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="card">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                             <header class="panel-heading">
                                 <div class="panel-title">
                                     AFFICHER UN STAGE
@@ -70,9 +70,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+               
     </section>
 </section>
 @endsection
