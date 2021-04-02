@@ -17,14 +17,14 @@
     <section class="wrapper">
         <div class="table-agile-info">
             <div class="panel panel-default">
-                <div class="col-lg-10 col-lg-offset-1">
+                <header class="panel-heading">
+                            <i class="fa fa-key"> GESTION DES RÔLES
+                    </header>
 
-                    <h1><i class="fa fa-key"></i> Roles
-                    {{-- <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a> --}}
                     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
                     <hr>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-striped b-t b-light">
                             <thead>
                                 <tr>
                                     <th>Role</th>
@@ -49,7 +49,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="{{ URL::to('roles/create') }}" class="btn btn-success">Add Role</a>
+                    <a href="{{ URL::to('roles/create') }}" class="btn btn-success">Ajouter un Role</a>
                 </div>
             </div>
         </div>
