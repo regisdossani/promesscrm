@@ -64,21 +64,21 @@
                                                     <td>{{ $item->class_description }}</td>
 
                                                     <td>
-                                                        <a href="{{ url('/classe/' . $item->id) }}" title="View classe">
+                                                        <a href="{{ url('/classe/' . $item->id) }}" title="Voir classe">
                                                             <button class="btn btn-info btn-sm">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i> Voir
+                                                                <i class="fa fa-eye" aria-hidden="true"></i>
                                                             </button>
                                                         </a>
                                                         <a href="{{ url('/classe/' . $item->id . '/edit') }}" title="Edit classe">
                                                             <button class="btn btn-primary btn-sm">
-                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier
+                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                             </button>
                                                         </a>
 
                                                         <form method="POST" action="{{ url('/classe' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                             {{ method_field('DELETE') }}
                                                             {{ csrf_field() }}
-                                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete classe" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                            <button type="submit" class="btn btn-danger btn-sm" title="Supprimer classe" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -91,7 +91,7 @@
                             </div>
                     </div>
                 </div>
-       
+
     </section>
 </section>
 @endsection
