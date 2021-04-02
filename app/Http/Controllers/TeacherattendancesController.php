@@ -69,9 +69,9 @@ class TeacherattendancesController extends Controller
      */
     public function show($id)
     {
-        $attendance = Teacherattendance::findOrFail($id);
+        $teacherattendance = Teacherattendance::findOrFail($id);
 
-        return view('teacherattendances.show', compact('attendance'));
+        return view('teacherattendances.show', compact('teacherattendance'));
     }
 
     /**
