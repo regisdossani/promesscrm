@@ -48,8 +48,8 @@
                                     <br/>
                                     <br/>
                                     <div class="row">
-                                        <div class="table-responsive" text-align="center">
-                                            <table style="width: 80%; display: table; table-layout: fixed;" class="table table-striped table-bordered text-center table-hover table-responsive">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped b-t b-light">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -83,7 +83,7 @@
 
                 </div>
             </div>
-   
+
 </section>
 </section>
 @endsection
