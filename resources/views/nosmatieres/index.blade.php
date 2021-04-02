@@ -19,7 +19,6 @@
     <section class="wrapper">
         <div class="table-agile-info">
             <div class="panel panel-default">
-                        {{-- <div class="card-header">Liste de l'équipe Promess</div> --}}
                                 <header class="panel-heading">
                                         GESTION DES PARAMÈTRES(MATIÈRE)
                                 </header>

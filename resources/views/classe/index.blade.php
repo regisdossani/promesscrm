@@ -25,6 +25,7 @@
                 </header>
 
                 <div class="card-body">
+                    <br/>
                                 <a href="{{ url('/classe/create') }}" class="btn btn-success btn-sm" title="Add New classe">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Nouveau
                                 </a>

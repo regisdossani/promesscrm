@@ -22,7 +22,7 @@
             <div class="panel panel-default">
                 <header class="panel-heading">
 
-                    GESTION DES CLASSES
+                    CRÉER UNE CLASSE
                 </header>
                             <div class="card-body">
                                 <a href="{{ url('/classe') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précéedent</button></a>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-              
+
     </section>
 </section>
 @endsection

@@ -15,18 +15,11 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="row align-items-start">
-                            <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                                 <header class="panel-heading">
-                                    <div class="panel-title">
                                         GESTION DES NOUVEAUX CHANTIERS ÉCOLE
-                                    </div>
                                 </header>
-                                {{-- <div class="card-header">Partenaires</div> --}}
                                 <div class="panel-body">
                                     <br/>
                                         <a href="{{ url('/newchantiers/create') }}" class="btn btn-success btn-sm" title="Nouveau chantier">
@@ -77,7 +70,7 @@
                                                                 A
                                                                 @endif
                                                                 @if ($item->etat==2)
-                                                               
+
                                                                 @endif
                                                             </td>
                                                             <td>{{ $item->valeur }}</td>
@@ -101,13 +94,11 @@
                                     </div>
 
                                 </div>
-                            </section> 
                         </div>
-                            
+
                     </div>
-                </div>
-            </div>
-        </div>
+
+     
     </section>
 </section>
 @endsection

@@ -15,15 +15,10 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
-                        <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     ENRÉGISTRER DES NOUVEAUX CHANTIERS ÉCOLE
-                                </div>
                             </header>
 
                             <div class="card-body">
@@ -48,11 +43,8 @@
                                 </form>
 
                             </div>
-                        </section>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 </section>
 @endsection
