@@ -69,7 +69,7 @@ class TeacherattendancesController extends Controller
      */
     public function show($id)
     {
-        $teacherattendance = Teacherattendance::findOrFail($id);
+        $attendance = Teacherattendance::findOrFail($id);
 
         return view('teacherattendances.show', compact('attendance'));
     }
@@ -123,7 +123,7 @@ class TeacherattendancesController extends Controller
         return redirect('teacherattendances')->with('flash_message', 'Teacherattendance deleted!');
     }
 
-   
+
 
 
 
