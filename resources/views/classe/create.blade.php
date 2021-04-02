@@ -18,14 +18,12 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                  {{--   <div class="col-md-3">
-                    </div> --}}
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-header">Créer un classe</div>
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                <header class="panel-heading">
+
+                    GESTION DES CLASSES
+                </header>
                             <div class="card-body">
                                 <a href="{{ url('/classe') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précéedent</button></a>
                                 <br />
@@ -49,9 +47,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+              
     </section>
 </section>
 @endsection

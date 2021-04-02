@@ -20,17 +20,15 @@
 
 <section class="wrapper">
 
-    <div class="form-w3layouts">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <header class="panel-heading">
+                AFFICHER UNE CLASSE
+           </header>
+                 <div class="card-body">
 
-                    <section  class="panel">
-                        <div class="card-header">classe {{ $classe->id }}</div>
-                        <div class="card-body">
-
-                            <a href="{{ url('/classe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
-                            <a href="{{ url('/classe/' . $classe->id . '/edit') }}" title="Edit classe"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                    <a href="{{ url('/classe') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                    <a href="{{ url('/classe/' . $classe->id . '/edit') }}" title="Edit classe"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
                             <form method="POST" action="{{ url('classe' . '/' . $classe->id) }}" accept-charset="UTF-8" style="display:inline">
                                 {{ method_field('DELETE') }}
@@ -62,11 +60,9 @@
                             </div>
 
                         </div>
-                    </section>
                 </div>
             </div>
-        </div>
-    </div>
+      
 </section>
 </section>
 @endsection
