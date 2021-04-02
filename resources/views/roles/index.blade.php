@@ -18,7 +18,7 @@
         <div class="table-agile-info">
             <div class="panel panel-default">
                 <header class="panel-heading">
-                            <i class="fa fa-key"> GESTION DES RÔLES
+                          GESTION DES RÔLES
                     </header>
 
                     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
