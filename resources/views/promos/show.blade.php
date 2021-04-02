@@ -15,19 +15,12 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     AFFICHER CETTE PROMO
-                                </div>
                             </header>
-                            {{-- <div class="card-header">Partenaires</div> --}}
                             <div class="panel-body">
-
                                 <a href="{{ url('/promos') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
                                 <a href="{{ url('/promos/' . $promo->id . '/edit') }}" title="Modifier cette promo"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
@@ -53,8 +46,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+     
     </section>
 </section>
 @endsection

@@ -15,17 +15,11 @@
 @section('content')
 <section id="main-content">
     <section class="wrapper">
-        <div class="form-w3layouts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <section  class="panel">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
                             <header class="panel-heading">
-                                <div class="panel-title">
                                     CRÉER UNE NOUVELLE PROMO
-                                </div>
                             </header>
-                            {{-- <div class="card-header">Partenaires</div> --}}
                             <div class="panel-body">
                                 <br/>
                                     <a href="{{ url('/promos') }}" title="Retour"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</button></a>
@@ -50,8 +44,7 @@
                              </div>
                     </div>
                 </div>
-            </div>
-        </div>
+         
     </section>
 </section>
 @endsection
