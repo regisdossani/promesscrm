@@ -12,12 +12,12 @@
                         </header>
                 <div class="card-body">
                         <a href="{{ url('/teacherattendances') }}" title="Précédent"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
-                        <a href="{{ url('/teacherattendances/' . $teacherattendance->id . '/edit') }}" title="Edit teacherattendance"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                        <a href="{{ url('/teacherattendances/' . $teacherattendance->id . '/edit') }}" title="Modifier ce suivi"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
                                 <form method="POST" action="{{ url('teacherattendances' . '/' . $teacherattendance->id) }}" accept-charset="UTF-8" style="display:inline">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete teacherattendance" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Supprimer ce suivi" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </form>
                                 <br/>
                                 <br/>

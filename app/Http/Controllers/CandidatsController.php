@@ -40,7 +40,13 @@ class CandidatsController extends Controller
         }
            $filieres=Filiere::all();
              $promos=Promo::all();
-        return view('candidats.index', compact('candidats','filieres','promos'));
+        return view('candidats.index', compact('candidats','filieres','promos'))
+        ->with('i', ($request->input('page', 1) - 1) * 5);
+
+       /*  $roles = Role::orderBy('id','DESC')->paginate(5);
+        return view('roles.index',compact('roles'))
+        ->with('i', ($request->input('page', 1) - 1) * 5); */
+
     }
 
     /**
