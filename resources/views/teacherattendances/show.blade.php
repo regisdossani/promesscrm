@@ -35,7 +35,11 @@
                                             </tr>
                                             <tr>
                                                 <th> Formateur </th>
-                                                <td> {{ $teacherattendance->formateur_id }} </td>
+                                                <td>
+                                                    @if ($teacherattendance->formateur)
+                                                        {{ $teacherattendance->formateur->nom }}
+                                                    @endif
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <th> Date </th>
