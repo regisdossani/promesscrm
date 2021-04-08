@@ -101,8 +101,8 @@ Route::group(['middleware'=>['auth:web,admin']], function() {
     Route::resource('/formations', 'FormationsController');
 
     Route::resource('/typeformations', 'TypeformationsController');
-    Route::resource('/admin/roles','RolesController');
-    Route::resource('admin/permissions', 'PermissionsController');
+    Route::resource('roles','RolesController');
+    Route::resource('permissions', 'PermissionsController');
 
     Route::resource('attendances', 'AttendancesController');
     Route::view('date', 'attendances.date');

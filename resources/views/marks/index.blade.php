@@ -60,7 +60,9 @@
                                                 <td><a href="#" class="xedit"
                                                     data-pk="{{$row->id}}"
                                                     data-name="apprenant_id ">
-                                                    {{ $row->apprenant->nom }}{{ $row->apprenant->prenom }}</a>
+                                                    {{ $row->apprenant->nom }}
+                                                    {{ $row->apprenant->prenom }}
+                                                </a>
                                                 </td>
 
                                                  <td><a href="#" class="xedit"
@@ -101,16 +103,16 @@
                                                 </td>
 
                                                 {{-- <td>{{ $item->module_id }}</td><td>{{ $item->formation_id }}</td> --}}
-                                                {{-- <td>
-                                                    <a href="{{ url('/marks/' . $item->id) }}" title="View mark"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                                    <a href="{{ url('/marks/' . $item->id . '/edit') }}" title="Edit mark"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                 <td>
+                                                    <a href="{{ url('/marks/' . $item->id) }}" title="Voir notes"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
+                                                    <a href="{{ url('/marks/' . $item->id . '/edit') }}" title="Edit mark"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
 
                                                     <form method="POST" action="{{ url('/marks' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete mark" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
                                                     </form>
-                                                </td> --}}
+                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>

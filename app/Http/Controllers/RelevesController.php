@@ -85,8 +85,28 @@ class RelevesController extends Controller
         return view('releve_final',compact('apprenants','filieres','modules','matieres','classes'));
     }
 
+// Generate PDF
+public function createReleveFinalPDF() {
+    $data = [
+        'title' => 'First PDF for Medium',
+        'heading' => 'Hello from 99Points.info',
+          ];
 
 
+
+
+
+          
+      $pdf = PDF::loadView('pdf_view', $data);
+      return $pdf->download('medium.pdf');
+
+    // share data to view
+    view()->share('employee',$data);
+    $pdf = PDF::loadView('pdf_view', $data);
+
+    // download PDF file with download method
+    return $pdf->download('pdf_file.pdf');
+  }
 
     /**
      * Store a newly created resource in storage.

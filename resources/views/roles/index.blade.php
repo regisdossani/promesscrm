@@ -19,9 +19,9 @@
             <div class="panel panel-default">
                 <header class="panel-heading">
                           GESTION DES RÔLES
-                    </header>
+                          <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
+                </header>
 
-                    <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
                     <hr>
                     <div class="table-responsive">
                         <table class="table table-striped b-t b-light">
@@ -41,7 +41,7 @@
                                     <td>
                                     <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                    {!! Form::submit('Sup', ['class' =>  'btn btn-danger btn-sm']) !!}
                                     {!! Form::close() !!}
                                     </td>
                                 </tr>

@@ -27,7 +27,11 @@
 					<td colspan=2><span contenteditable>{{$filiere->annee}}</span></td>
 				</tr>
 				<tr>
-					<td colspan=3><span contenteditable>{{$apprenant->filieres->nom}}</span></td>
+					<td colspan=3><span contenteditable>
+                        @if ($apprenant->filieres)
+                        {{$apprenant->filieres->nom}}
+                        @endif
+                    </span></td>
 					<td colspan=2><span contenteditable></span></td>
 					<th colspan=2><span contenteditable>Durée formation</span></th>
 
@@ -60,7 +64,11 @@
             @foreach ($modules as $item)
                 @if ($item->matiere=="Module de Mise à Niveau")
                     <tr>
-                        <td colspan=2><span contenteditable></span>$item->matieres->coef</td>
+                        <td colspan=2><span contenteditable></span>
+                            @if ($item->matieres)
+                            $item->matieres->coef
+                            @endif
+                        </td>
                         <td><span contenteditable></span>$mark->moyenne</td>
                         <td><span contenteditable></span></td>
                         <td><span contenteditable></span></td>
@@ -106,8 +114,8 @@
 				<tr>
 					<th colspan=2><span contenteditable>Félicitations</span></th>
 					<td><span contenteditable></span></td>
-					<td colspan=4 rowspan=5>
-					<span contenteditable style="font-weight:bold">Appréciations générales: </span></td>
+					<td colspan=4 rowspan=5><span contenteditable style="font-weight:bold">Appréciations générales: </span></td>
+                    <td><span contenteditable></span></td>
 				</tr>
 				<tr>
 					<th colspan=2><span contenteditable>Encouragements </span></th>
