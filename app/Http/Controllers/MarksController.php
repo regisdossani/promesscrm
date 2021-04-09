@@ -29,7 +29,7 @@ class MarksController extends Controller
         } else {
             $mark = Mark::latest()->paginate($perPage);
         } */
-        $classes=Classe::all();
+        $classes=Classe::pluck('name','name')->all();
         $data=Mark::all();
         return view('marks.index', compact('data','classes'));
     }
