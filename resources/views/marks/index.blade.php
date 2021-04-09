@@ -28,7 +28,6 @@
                                     <label for="class_id" class="control-label">{{ 'Classe :' }}</label>
                                         <select name="class_id" id="class_id" class="form-control">
                                             @foreach ($classes as $item)
-                                                <option value="">--Choisissez und classe--</option>
                                                 <option value="item">{{$item}}</option>
                                             @endforeach
                                         </select>
@@ -104,13 +103,13 @@
 
                                                 {{-- <td>{{ $item->module_id }}</td><td>{{ $item->formation_id }}</td> --}}
                                                  <td>
-                                                    <a href="{{ url('/marks/' . $item->id) }}" title="Voir notes"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Voir</button></a>
-                                                    <a href="{{ url('/marks/' . $item->id . '/edit') }}" title="Edit mark"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modifier</button></a>
+                                                    <a href="{{ url('/marks/' . $item->id) }}" title="Voir notes"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
+                                                    <a href="{{ url('/marks/' . $item->id . '/edit') }}" title="Edit mark"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
                                                     <form method="POST" action="{{ url('/marks' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Supprimer" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                     </form>
                                                 </td>
                                             </tr>
