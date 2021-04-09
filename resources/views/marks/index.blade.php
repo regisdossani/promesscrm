@@ -40,7 +40,7 @@
                             <div class="card-body">
 
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-condensed">
+                                    <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
