@@ -12,7 +12,7 @@ class Candidat extends Model
 {
     protected $fillable = [
         'provenance',  'nom', 'email', 'tel','sexe',
-       'reception_dossier','pj_depotdossier',
+       'reception_dossier','pj_depotdossier','niveau','code',
         'region','pj_depotdossier2','filiere_id','promo_id','parrain',
         'tel_parrain','email_parrain','role'
     ];

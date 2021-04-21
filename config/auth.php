@@ -99,7 +99,7 @@ return [
             'model' => App\User::class,
         ],
 
-      
+
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
@@ -140,6 +140,39 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+
+        'equipes' => [
+            'provider' => 'equipes',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'apprenants' => [
+            'provider' => 'apprenants',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+
+        'formateurs' => [
+            'provider' => 'formateurs',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+
+
     ],
 
     /*

@@ -11,6 +11,7 @@ use App\Promo;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Response;
+use Illuminate\Support\Str;
 
 class CandidatsController extends Controller
 {
@@ -125,8 +126,46 @@ class CandidatsController extends Controller
         return view('candidats.show', compact('candidat','filieres','promos'));
     }
 
+    public function voir_dossier(Request $request)
+    {
+        $this->validate($request,[
+            'code' => 'required',
 
-    public function candidatEmailCheck(Request $request)
+            ]);
+        //  return response()->json($attendances);
+        $code=$request->code;
+        $candidat = Candidat::where('code',$code)->firstOrFail();
+        if(!$candidat)
+        {
+            $response = Response::json([
+                                'error' => [
+                                            'message' => 'Ce code est inexistant .'
+                                            ]
+                                ], 404);
+
+            return $response;
+
+        }
+
+
+
+            $candidat = Candidat::findOrFail($candidat->id);
+            $filieres=Filiere::all();
+            $promos=Promo::all();
+            return view('showdossier', compact('candidat','filieres','promos'));
+
+
+
+
+        // return view('candidats.show', compact('candidat','filieres','promos'));
+    }
+
+
+
+
+
+
+    /* public function candidatEmailCheck(Request $request)
     {
         $this->validate($request,[
             'nom' => 'required',
@@ -152,16 +191,12 @@ class CandidatsController extends Controller
         if ($candidatCount->count()) {
             return Response::json(array('msg' => 'true'));
         } else {
-            Candidat::create($requestData);
-            // return Response::json(array('msg' => 'false'));
-          /*  $filieres=Filiere::all();
-            $promos=Promo::all();
-            $candidats=Candidat::all(); */
+
             return redirect('candidat')->with('msg', 'Candidature envoyé!');
 
         }
 
-    }
+    } */
 
     /**
      * Show the form for editing the specified resource.
@@ -177,6 +212,13 @@ class CandidatsController extends Controller
         $filieres=Filiere::all();
         return view('candidats.edit', compact('candidat','promos','filieres'));
     }
+
+    public function test_code()
+        {
+            $candidats=Candidat::all();
+            return view('auth.candidatlogin',compact('candidats'));
+        }
+
 
     /**
      * Update the specified resource in storage.
@@ -194,7 +236,7 @@ class CandidatsController extends Controller
         $candidat = Candidat::findOrFail($id);
         $candidat->update($requestData);
 
-        return redirect('candidats')->with('flash_message', 'Candidat updated!');
+        return redirect('candidats')->with('flash_message', 'Candidat mis à jour!');
     }
 
     /**
@@ -208,8 +250,9 @@ class CandidatsController extends Controller
     {
         Candidat::destroy($id);
 
-        return redirect('candidats')->with('flash_message', 'Candidat deleted!');
+        return redirect('candidats')->with('flash_message', 'Candidat suprimé!');
     }
+
     public function inscription(Request $request)
     {
         $this->validate($request,[
@@ -221,38 +264,43 @@ class CandidatsController extends Controller
             ]);
 
             $requestData = $request->all();
-
+            $name=$request->input('pj_depotdossier');
 
             if ($request->file('pj_depotdossier')!=null) {
                 checkDirectory("candidats");
-                $requestData['pj_depotdossier'] = uploadFile($request,'pj_depotdossier', public_path('uploads/candidats'));
-
+                uploadFile($request,$name,public_path('uploads/candidats'));
+                $requestData['pj_depotdossier']=$name;
             }
+            $name=$request->input('pj_depotdossier2');
+
 
         if ($request->file('pj_depotdossier2')!=null) {
                 checkDirectory("candidats");
-            $requestData['pj_depotdossier2'] = uploadFile($request,'pj_depotdossier2', public_path('uploads/candidats'));
+                 uploadFile($request,$name,public_path('uploads/candidats'));
+                 $requestData['pj_depotdossier2']= $name;
         }
 
 
-           /*  if ($request->hasFile('pj_depotdossier')) {
-                checkDirectory("candidats");
-                $requestData['pj_depotdossier'] = uploadFile($request, 'pj_depotdossier', public_path('uploads/candidats'));
-            }
-            if ($request->hasFile('pj_depotdossier2')) {
-                checkDirectory("candidats");
-                $requestData['pj_depotdossier2'] = uploadFile($request, 'pj_depotdossier2', public_path('uploads/candidats'));
-            } */
 
-           /*  if ($request->hasFile('test_pj')) {
-                checkDirectory("candidats");
-                $requestData['test_pj'] = uploadFile($request, 'test_pj', public_path('uploads/candidats'));
-            } */
-  Candidat::create($requestData);
 
-  return back()->with('success', 'Votre dossier a été envoyé !');
+        $code= Str::random(10) ;
+
+        $requestData['code']=$code;
+
+        $candidat=Candidat::create($requestData);
+//    Session::flash('success','Vous avez bien modifier votre stock');
+
+  return back()->with('success', 'Votre dossier a été envoyé !,  votre numéro de dossier est  :  '.$candidat->id.' .Votre code est : '.$candidat->code.'  .Veuillez garder ce code');
 
 }
+
+public function edit_dossier($id)
+    {
+        $candidat = Candidat::findOrFail($id);
+        $promos=Promo::all();
+        $filieres=Filiere::all();
+         return redirect('/edit_dossier')->with('candidat','promos','filieres');
+    }
 
 
 }

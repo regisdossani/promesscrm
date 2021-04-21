@@ -1,16 +1,38 @@
-<div class="col-md-6  {{ $errors->has('nom') ? 'has-error' : ''}}">
-        <label for="nom" class="control-label">{{ 'Noms du candidat :' }}</label>
-        <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
-        {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+
+
+   <div class="col-md-1 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+    <label for="sexe" class="control-label">{{ 'Genre :' }}</label>
+    <select name="sexe" id="sexe" class="form-control">
+        <option value="M">M</option>
+        <option value="F">F</option>
+    </select>
+</div>
+
+<div class="col-md-4 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+    <label for="nom" class="control-label">{{ 'Noms et Prénoms :' }}</label>
+    <input class="form-control" name="nom" type="text" id="nom" value="{{ isset($candidat->nom) ? $candidat->nom : ''}}">
+    {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+</div>
+
+
+<div class="col-md-4 mb-3  {{ $errors->has('niveau') ? 'has-error' : ''}}">
+    <label for="nom" class="control-label">{{ 'Niveau d\'étude :' }}</label>
+    <input class="form-control" name="niveau" type="text" id="niveau" value="{{ isset($candidat->niveau) ? $candidat->niveau: ''}}">
+    {!! $errors->first('niveau', '<p class="help-block">:message</p>') !!}
+</div>
+
+
+
+
+
+    <div class="col-md-3 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
+        <label for="tel" class="control-label">{{'Téléphone:' }}</label>
+        <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
+        {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
     </div>
 
-    <div class="col-md-3 {{ $errors->has('sexe') ? 'has-error' : ''}}">
-        <label for="sexe" class="control-label">{{ 'Sexe :' }}</label>
-            <select name="sexe" id="sexe" class="form-control">
-                <option value="M">M</option>
-                <option value="F">F</option>
-            </select>
-    </div>
+
+
     <div class="col-md-3 mb-3  {{ $errors->has('filiere_id') ? 'has-error' : ''}}">
         <label for="filiere" class="control-label">{{'Filière:'}}</label>
                 <select name="filiere_id" id="filiere_id" class="form-control">
@@ -20,15 +42,11 @@
                         @endforeach
                 </select>
      </div>
-     <div class="col-md-3 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
-        <label for="tel" class="control-label">{{'Téléphone:' }}</label>
-        <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
-        {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
-    </div>
+
 
     <div class="col-md-3 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
         <label for="email" class="control-label">{{ 'Email:' }}</label>
-        <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
+        <input class="form-control" name="email" type="email" id="email" value="{{ isset($candidat->email) ? $candidat->email : ''}}" >
         {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
     </div>
 

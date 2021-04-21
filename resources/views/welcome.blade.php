@@ -73,7 +73,7 @@
                         <a href="{{ url('/home') }}">Tableau de bord</a>
 
                     @else
-                    <a href="{{ url('/candidat') }}">candidature</a>
+                    <a href="{{ url('/candidature') }}">candidature</a>
 
                     <a href="{{ url('/menu') }}">Connexion</a>
                       {{--   @if (Route::has('register'))

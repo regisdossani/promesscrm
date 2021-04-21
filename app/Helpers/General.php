@@ -14,14 +14,17 @@
 function uploadFile($request, $name, $destination = '')
 {
     $image = $request->file($name);
+    if($image!=null){
+        $name = time().'.'.$image->getClientOriginalExtension();
 
-    $name = time().'.'.$image->getClientOriginalExtension();
 
-    if($destination == '') {
-        $destination = public_path('/uploads');
+        if($destination == '') {
+            $destination = public_path('/uploads');
+        }
+
+        $image->move($destination, $name);
+
     }
-
-    $image->move($destination, $name);
 
     return $name;
 }

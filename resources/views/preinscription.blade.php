@@ -10,10 +10,9 @@
     <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
     {{-- <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet"/> --}}
-    <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet"/>
 
   <!-- Main Stylesheet -->
-  <link href="{{asset('css/frontstyle.css')}}" rel="stylesheet">
+   <link href="{{asset('css/frontstyle.css')}}" rel="stylesheet">
 
 
 
@@ -25,11 +24,11 @@
 
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a class="navbar-brand" href="{{route('frontend.index')}}"><img src="images/logo.png" alt="logo"></a>
-            <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+            {{-- <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
               aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-
+ --}}
 
           </nav>
         </div>
@@ -40,13 +39,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        @if ($message = Session::get('success'))
-                        <div class="alert alert-success alert-block">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                                <strong>{{ $message }}</strong>
-                        </div>
-                        {{-- <img src="uploads/{{ Session::get('file') }}"> --}}
-                        @endif
+
                 <section class="panel">
                     <header class="panel-heading">
                         <div class="panel-title">
@@ -54,43 +47,64 @@
                         FORMULAIRE DE PRÉINSCRIPTION
                         </div>
                     </header>
+
+
+
                     <div class="panel-body">
-                        <a href="{{ url('/') }}" title="Précédent"><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
+                        @if ($message = Session::get('flash_message'))
+                        <div class="alert alert-warning alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
+
+
+                        <br/><br/>
+                        <a href="{{ url('/') }}"><button class="btn btn-warning "><i class="fa fa-arrow-left" aria-hidden="true"></i> Précédent</button></a>
+                        <a href="{{ url('/test')}}"><button class="btn btn-info btn-sm pull-right"><i class="fa fa-eye" aria-hidden="true"></i> Voir votre dossier</button></a>
+                        <br/><br/><br/><br/>
+
+
 
                         <div class="row">
                             <div class="panel-card">
 
-
-                            @if ($errors->any())
-                                <ul class="alert alert-danger">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
-
                         <form method="POST" action="{{ url('/inscription') }}" accept-charset="UTF-8" class="register-form" id="register-form" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
-                            <div class="form-row">
 
-                                <div class="col-md-6 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
-                                    <label for="nom" class="control-label">{{ 'Nom :' }}</label>
-                                    <input class="form-control" name="nom" type="text" id="nom" >
-                                    {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
-                                </div>
 
-                                 <div class="col-md-2 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
+
+
+                                 <div class="col-md-1 mb-2 {{ $errors->has('sexe') ? 'has-error' : ''}}">
                                     <label for="sexe" class="control-label">{{ 'Genre :' }}</label>
-                                    <select name="sexe" id="sexe">
+                                    <select name="sexe" id="sexe" class="form-control">
                                         <option value="M">M</option>
                                         <option value="F" >F</option>
                                     </select>
                                 </div>
 
+                                <div class="col-md-4 mb-3  {{ $errors->has('nom') ? 'has-error' : ''}}">
+                                    <label for="nom" class="control-label">{{ 'Noms et Prénoms :' }}</label>
+                                    <input class="form-control" name="nom" type="text" id="nom" >
+                                    {!! $errors->first('nom', '<p class="help-block">:message</p>') !!}
+                                </div>
 
 
-                                <div class="col-md-2 mb-2">
+                                <div class="col-md-4 mb-3  {{ $errors->has('niveau') ? 'has-error' : ''}}">
+                                    <label for="niveau" class="control-label">{{ 'Niveau d\'étude :' }}</label>
+                                    <input class="form-control" name="niveau" type="text" id="niveau" >
+                                    {!! $errors->first('niveau', '<p class="help-block">:message</p>') !!}
+                                </div>
+
+
+                                {{-- <div class="col-md-2 mb-2">
                                     <label for="filiere">Filière:</label>
                                     <div class="select-list">
                                         <select name="filiere_id" id="filiere_id">
@@ -104,37 +118,40 @@
                                 </div>
                                 <div class="col-md-2 mb-2 {{ $errors->has('promo_id') ? 'has-error' : ''}}">
                                     <label for="promo_id class="control-label">{{ 'Promo:' }}</label>
-                                    <select name="promo_id" id="promo_ud">
+                                    <select name="promo_id" id="promo_id">
                                         <option value="">Choisissez une promo</option>
                                             @foreach($promos as $promo)
                                                 <option value="{{ $promo->id }}" {{ isset($candidats->promo_id) && $candidats->promo_id == $promo->id ? 'selected' : ''}}>{{ $promo->nom}}</option>
                                             @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
 
-                                <div class="col-md-6 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
+                                <div class="col-md-3 mb-3  {{ $errors->has('tel') ? 'has-error' : ''}}">
                                     <label for="tel" class="control-label">{{'Téléphone:' }}</label>
                                     <input class="form-control" name="tel" type="text" id="tel" value="{{ isset($candidat->tel) ? $candidat->tel : ''}}" >
                                     {!! $errors->first('tel', '<p class="help-block">:message</p>') !!}
                                 </div>
 
+                        <div class="form-row">
                                 <div class="col-md-6 mb-3 {{ $errors->has('email') ? 'has-error' : ''}}">
                                     <label for="email" class="control-label">{{ 'Email:' }}</label>
-                                    <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email) ? $candidat->email: ''}}" >
+                                    <input class="form-control" name="email" type="text" id="email" value="{{ isset($candidat->email_1) ? $candidat->email_1 : ''}}" >
                                     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                                 </div>
 
-						    </div>
 
 
-                        <div class="form-row">
+
 
                             <div class="col-md-6 mb-3 {{ $errors->has('parrain') ? 'has-error' : ''}}">
                                 <label for="parrain" class="control-label">{{ 'Parrain :' }}</label>
                                 <input class="form-control" name="parrain" type="text" id="parrain" value="{{ isset($candidat->parrain) ? $candidat->parrain : ''}}" >
                                 {!! $errors->first('parrain', '<p class="help-block">:message</p>') !!}
                             </div>
+                        </div>
 
+
+                    <div class="form-row">
                             <div class="col-md-6 mb-3  {{ $errors->has('tel_parrain') ? 'has-error' : ''}}">
                                 <label for="tel_parrain" class="control-label">{{ 'Tél. Parrain :' }}</label>
                                 <input class="form-control" name="tel_parrain" type="text" id="tel_parrain" value="{{ isset($candidat->tel_parrain) ? $candidat->tel_parrain : ''}}" >
@@ -147,7 +164,6 @@
                                 <input class="form-control" name="email_parrain" type="text" id="email_parrain" value="{{ isset($candidat->email_parrain) ? $candidat->email_parrain : ''}}" >
                                 {!! $errors->first('email_parrain', '<p class="help-block">:message</p>') !!}
                             </div>
-
                         </div>
 
 
@@ -184,7 +200,7 @@
                     @if(isset($candidat->pj_depotdossier) && !empty($candidat->pj_depotdossier))
                         <a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier}}</a>
                     @endif
-                    <div class="col-md-5 mb-3  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
+                    <div class="col-md-6 mb-3  {{ $errors->has('pj_depotdossier') ? 'has-error' : ''}}">
                         <label for="pj_depotdossier" class="control-label">{{ 'Pièce jointe 1 (Depot de dossier)' }}</label>
                         <input class="form-control" name="pj_depotdossier" type="file" id="pj_depotdossier"  >
                         {!! $errors->first('pj_depotdossier', '<p class="help-block">:message</p>') !!}
@@ -193,7 +209,7 @@
                     @if(isset($candidat->pj_depotdossier2) && !empty($candidat->pj_depotdossier2))
 							<a href="{{ url('uploads/candidats/' . $candidat->pj_depotdossier2) }}" ><i class="fa fa-download"></i> {{$candidat->pj_depotdossier2}}</a>
 						@endif
-						<div class="col-md-5 mb-3 {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">
+						<div class="col-md-6 mb-3 {{ $errors->has('pj_depotdossier2') ? 'has-error' : ''}}">
 							<label for="pj_depotdossier2" class="control-label">{{ 'Pièce jointe 2 (Depot de dossier)' }}</label>
 							<input class="form-control" name="pj_depotdossier2" type="file" id="pj_depotdossier2"  >
 							{!! $errors->first('pj_depotdossier2', '<p class="help-block">:message</p>') !!}

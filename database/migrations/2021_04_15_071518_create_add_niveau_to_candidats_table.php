@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddFormateurIdToNosmatieresTable extends Migration
+class CreateAddNiveauToCandidatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAddFormateurIdToNosmatieresTable extends Migration
      */
     public function up()
     {
-        Schema::table('nosmatieres', function (Blueprint $table) {
-            $table->unsignedBigInteger('formateur_id')->nullable();
-            $table->foreign("formateur_id")->references("id")->on("formateurs");
+        Schema::table('candidats', function (Blueprint $table) {
+            $table->string('niveau')->nullable();
+            $table->string('code')->nullable()->unique();
 
         });
     }
@@ -27,6 +27,6 @@ class CreateAddFormateurIdToNosmatieresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_formateur_id_to_nosmatieres');
+        Schema::dropIfExists('add_niveau_to_candidats');
     }
 }

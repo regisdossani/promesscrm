@@ -32,29 +32,54 @@ Route::get('/', function()
         return view('frontend.index');
     })->name('frontend.index');
 
-/* Route::get('about', function ()
-    {
-        return view('frontend.about');
-    });
-    Route::get('courses', function ()
-    {
-        return view('frontend.courses');
-    });
-    Route::get('contact', function ()
-    {
-        return view('frontend.contact');
-    }); */
+
     Route::view('/menu', 'auth.menu')->name('auth.menu');
 /** La page d'inscriprion du candidat dans le frontend*/
-Route::get('/candidat', function () {
-    $filieres=Filiere::all();
-    $promos=Promo::all();
+Route::get('/candidature', function () {
+
     $candidats=Candidat::all();
-    return view('preinscription',compact('filieres','promos','candidats'));
+    return view('preinscription',compact('candidats'));
 });
 
 
+Route::get('/test','CandidatsController@test_code' ) ;
+
 Route::post('/inscription','CandidatsController@inscription');
+
+Route::post('dossier','CandidatsController@voir_dossier');
+
+
+Route::get('candidature/{$id}/edit', 'CandidatsController@edit_dossier');
+Route::get('/editdossier', function () {
+    return view('editdossier');
+});
+
+//Customer Password Reset routes
+Route::prefix('admin')->group(function() {
+  /*   Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+    Route::get('/password/email', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+
+    Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+  Route::get('/password/reset', 'Auth\AdminResetPasswordController@reset')->name('admin.password.reset')->name('admin.password.update');
+ */
+
+//admin password reset routes
+    /* Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+    Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+    Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
+    Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+ */
+  //admin password reset routes
+  Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+  Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+  Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
+  Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+
+});
+
+
+
+
 
 
 
@@ -138,7 +163,15 @@ Route::group(['middleware'=>['auth:formateur']], function(){
 Route::get('logout', [LoginController::class,'logout']);
 
 Route::group(['middleware'=>['auth:equipe,admin']], function() {
-    Route::resource('/candidats', 'CandidatsController');
+    Route::get('/candidats', 'CandidatsController@index');
+    Route::get('/candidats/{$id}', 'CandidatsController@show');
+    // Route::get('/candidats/{$id}/edit', 'CandidatsController@edit');
+    Route::get('/candidats/create', 'CandidatsController@create');
+    Route::post('/candidats', 'CandidatsController@store');
+
+
+
+
     Route::resource('/formateurs', 'FormateursController');
     Route::resource('/stages', 'StagesController');
     Route::get('/listpartenaires','PartenairesController@index');

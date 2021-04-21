@@ -5,7 +5,7 @@
 <div class="log-w3">
     <div class="w3layouts-main">
                 <div class="card-header">
-                    {{ __('RÉINITIALISATION DU MOT DE PASSE') }}
+                    {{ __('RÉINITIALISATION DU MOT DE PASSE ADMIN') }}
                 </div>
 
                 <div class="card-body">
@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{ route('admin.password.email') }}">
                         @csrf
 
                         <div class="form-group row">

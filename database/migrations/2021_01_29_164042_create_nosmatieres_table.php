@@ -19,6 +19,8 @@ class CreateNosmatieresTable extends Migration
             $table->string('reference')->unique();
             $table->unsignedBigInteger('module_id')->nullable();
             // $table->unsignedBigInteger('formateur_id')->nullable();
+            // $table->unsignedBigInteger('classe_id')->nullable();
+
             $table->integer('coef')->unsigned()->nullable();
             $table->timestamps();
         });

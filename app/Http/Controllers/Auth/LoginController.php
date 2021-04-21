@@ -54,7 +54,7 @@ class LoginController extends Controller
     public function showAdminLoginForm()
     {
 
-        return view('auth.login', ['url' => 'admin']);
+        return view('auth.adminlogin', ['url' => 'admin']);
 
     }
 
@@ -71,6 +71,31 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
+
+    /* public function showCandidatLoginForm()
+    {
+        return view('auth.login', ['url' => 'candidat']);
+    }
+
+
+    public function candidatLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::user()->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/candidat');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
+ */
+
+
 
 
     public function showApprenantLoginForm()

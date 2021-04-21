@@ -53,7 +53,7 @@
           <ul class="list-inline">
 
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{('/menu')}}" >Connexion</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{('candidat')}}" >Candidature</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{('candidature')}}" >Candidature</a></li>
           </ul>
         </div>
       </div>

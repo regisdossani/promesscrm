@@ -5,7 +5,7 @@
     <div class="log-w3">
         <div class="w3layouts-main">
 
-            <h2>CONNEXION</h2>
+            <h2>CONNEXION ADMIN</h2>
             <div class="card-header">
                  {{ isset($url) ? ucwords($url) : ""}}{{ __('Connexion') }}
             </div>
@@ -43,8 +43,8 @@
                                {{ __('Login') }}
                             </button> --}}
 
-                             @if (Route::has('password.request'))
-                               <a class="btn btn-link" href="{{ route('password.request') }}">
+                             @if (Route::has('admin.password.request'))
+                               <a class="btn btn-link" href="{{ route('admin.password.request') }}">
                                 {{ __('Mot de Passe oublié?') }}
                                </a>
                             @endif

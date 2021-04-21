@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Module;
 use App\Formateur;
 use App\Nosmatiere;
+use App\Classe;
 use Illuminate\Http\Request;
 
 class NosmatieresController extends Controller
@@ -43,7 +44,9 @@ class NosmatieresController extends Controller
         $formateurs=Formateur::all();
         $modules=Module::all();
         $nosmatieres=Nosmatiere::all();
-        return view('nosmatieres.create',compact('nosmatieres','formateurs','modules'));
+        $classes=Classe::all();
+
+        return view('nosmatieres.create',compact('nosmatieres','classes','formateurs','modules'));
     }
 
     /**
@@ -59,7 +62,8 @@ class NosmatieresController extends Controller
         $this->validate($request,[
             'module_id' => 'required|integer',
             'reference'=>'unique:nosmatieres',
-            'formateur_id'=>'required|integer'
+            'formateur_id'=>'required|integer',
+            'nom'=>'required|unique:nosmatieres'
             ]);
 
         $requestData = $request->all();

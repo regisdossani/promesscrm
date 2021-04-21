@@ -381,7 +381,7 @@
                 <i class="fa  fa-retweet" aria-hidden="true" style="font-size:36px;color:white"></i>
             </div>
             <div class="col-md-8 market-update-left">
-                <h4>Paramètres</h4>
+                <h4>Gestion des matières</h4>
             </div>
             </a>
           <div class="clearfix"> </div>
@@ -816,29 +816,6 @@
     });
 </script>
 <!-- //calendar -->
-
-<script>
-    function myFunction() {
-        var input, filter, h4, div, a, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myUL");
-        h4 = div.getElementsByTagName("h4");
-        for (i = 0; i < li.length; i++) {
-            a = h4[i].getElementsByTagName("a")[0];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                h4[i].style.display = "";
-            } else {
-                h4[i].style.display = "none";
-            }
-        }
-    }
-    </script>
-
-
-
-
 
 
  @endsection

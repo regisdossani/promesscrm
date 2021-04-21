@@ -49,6 +49,9 @@ h1, .h1 {
   }
 }
 
+.form-control{
+    margin-bottom: 12px;
+}
 h2, .h2 {
   font-size: 40px;
 }

@@ -42,10 +42,10 @@
                                     <table class="table table-striped b-t b-light">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+
                                                 <th>Apprenant </th>
                                                 <th>Matière </th>
-                                                {{-- <th>Classe </th> --}}
+                                                {{-- {<th>#</th>{-- <th>Classe </th> --}} --}}
                                                 <th>Note1 </th>
                                                 <th>Note2 </th>
                                                 <th>Note Examen </th>
@@ -102,7 +102,7 @@
                                                 </td>
 
                                                 {{-- <td>{{ $item->module_id }}</td><td>{{ $item->formation_id }}</td> --}}
-                                                 <td>
+                                                {{--  <td>
                                                     <a href="{{ url('/marks/' . $item->id) }}" title="Voir notes"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> </button></a>
                                                     <a href="{{ url('/marks/' . $item->id . '/edit') }}" title="Edit mark"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></a>
 
@@ -112,7 +112,7 @@
                                                         <button type="submit" class="btn btn-danger btn-sm" title="Supprimer" onclick="return confirm(&quot;Confirmez-vous la suppression??&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
                                                     </form>
                                                 </td>
-                                            </tr>
+                                            </tr> --}}
                                         @endforeach
                                         </tbody>
                                     </table>

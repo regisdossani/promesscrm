@@ -130,6 +130,14 @@ ul.sidebar-menu li ul.sub li {
     margin-left:0;
     margin-right:0;
 }
+
+
+
+
+
+
+
+
 ul.sidebar-menu li ul.sub li a {
     font-size:12px;
     padding-top:13px;
@@ -2546,6 +2554,8 @@ h4 input[type="checkbox"] {
 }
 :-ms-input-placeholder {
 	color:#fff !important;
+    
+     margin-bottom: 10px;
 }
 /*--//placeholder-color--*/
 .alert {

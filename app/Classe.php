@@ -25,7 +25,10 @@ class Classe extends Model
         return $this->hasMany(Apprenant::class);
     }
 
-
+    public function matieres()
+    {
+        return $this->hasMany(Nosmatiere::class,'classe_id');
+    }
 
     public function formateur()
     {

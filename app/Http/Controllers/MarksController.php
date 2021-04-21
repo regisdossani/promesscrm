@@ -21,18 +21,51 @@ class MarksController extends Controller
      */
     public function index(Request $request)
     {
-        /* $keyword = $request->get('search');
+         $keyword = $request->get('search');
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $mark = Mark::latest()->paginate($perPage);
+            $data = Mark::latest()->paginate($perPage);
         } else {
-            $mark = Mark::latest()->paginate($perPage);
-        } */
+            $data = Mark::latest()->paginate($perPage);
+        }
         $classes=Classe::pluck('name','name')->all();
-        $data=Mark::all();
+        // $data=Mark::all();
         return view('marks.index', compact('data','classes'));
     }
+
+
+    public function search(Request $request)
+    {
+        if($request->ajax())
+            {
+                $output="";
+                $classes=DB::table('classes')->where('name','LIKE','%'.$request->search."%")->get();
+            }
+            if($classes)
+                {
+                    foreach ($classes as $key => $classe) {
+                    $output.='<tr>'.
+                    '<td>'.$classe->id.'</td>'.
+                    '<td>'.$classe->apprenant->nom.''.$classe->apprenant->prenom.'</td>'.
+                    '<td>'.$classe->matiere-.'</td>'.
+
+                    '<td>'.$classe->name.'</td>'.
+                    '<td>'.$product->price.'</td>'.
+                    '</tr>';
+
+
+
+                    }
+
+
+            }
+
+        }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -51,15 +84,14 @@ class MarksController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    /* public function store(Request $request)
+     public function store(Request $request)
     {
 
         $requestData = $request->all();
 
         Mark::create($requestData);
-
-        return redirect('')->with('flash_message', 'Mark added!');
-    } */
+        return redirect('marks')->with('flash_message', 'Note ajouté!');
+    }
 
     /**
      * Display the specified resource.
@@ -68,12 +100,12 @@ class MarksController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    /* public function show($id)
+     public function show($id)
     {
-        $ = Mark::findOrFail($id);
+        $mark = Mark::findOrFail($id);
 
-        return view('.show', compact(''));
-    } */
+        return view('.show', compact('mark'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -82,12 +114,11 @@ class MarksController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    /* public function edit($id)
+     public function edit($id)
     {
-        $ = Mark::findOrFail($id);
-
-        return view('.edit', compact(''));
-    } */
+        $mark = Mark::findOrFail($id);
+        return view('.edit', compact('mark'));
+    }
 
 
     public function releve()
@@ -124,6 +155,7 @@ class MarksController extends Controller
         return response()->json(['succes'=>true]);
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -131,10 +163,9 @@ class MarksController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    /* public function destroy($id)
+     public function destroy($id)
     {
         Mark::destroy($id);
-
-        return redirect('')->with('flash_message', 'Mark deleted!');
-    } */
+        return redirect('')->with('flash_message', 'note supprimée!');
+    }
 }
